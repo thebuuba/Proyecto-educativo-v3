@@ -1,0 +1,203 @@
+{
+  "baseCommit": "80460443138e8b89be9babd98acefa859c63810a",
+  "branch": "ampliacion-de-instrumentos-2",
+  "backendFull": {
+    "files": 251,
+    "passed": 98388,
+    "failed": 0
+  },
+  "frontendFull": {
+    "files": 228,
+    "passed": 95239,
+    "failed": 0,
+    "beforeLastTestOnlyTypeAnnotation": true
+  },
+  "frontendFocalAfterTypeAnnotation": {
+    "passed": 15,
+    "failed": 0
+  },
+  "runs": [
+    {
+      "name": "backend-test",
+      "exitCode": 0,
+      "ms": 111741
+    },
+    {
+      "name": "backend-build",
+      "exitCode": 0,
+      "ms": 11172
+    },
+    {
+      "name": "frontend-test",
+      "exitCode": 0,
+      "ms": 350578
+    },
+    {
+      "name": "frontend-build",
+      "exitCode": 2,
+      "ms": 16228
+    },
+    {
+      "name": "frontend-build",
+      "exitCode": 0,
+      "ms": 22811
+    },
+    {
+      "name": "cloudflare-build",
+      "exitCode": 0,
+      "ms": 36686
+    },
+    {
+      "name": "backend-lint",
+      "exitCode": 0,
+      "ms": 8195
+    },
+    {
+      "name": "frontend-lint",
+      "exitCode": 0,
+      "ms": 18457
+    }
+  ],
+  "buildFailureResolved": "TS2532 en la prueba nueva: expected opcional del banco JSON. Se especificó su presencia conocida en el caso congelado, sin cambiar comportamiento ni expectativas. Focal15 y builds posteriores aprobados.",
+  "runtime": {
+    "generator": "science-descriptive-report-v2",
+    "generatorAssets": [
+      "instrumentos-tecnicos-DwSE6nB5.js"
+    ],
+    "catalogBuild": "evaluation-2026.173",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-NhSZlGsY.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-NhSZlGsY.js",
+        "sha256": "ebc69fe5193c6966d75030cc70299cc24d01e2f6f65d0b29187a3fe4fa2e359b",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-Cn9wvQo3.js",
+        "sha256": "56972a18c26fd21e14cd3d236406023a4bbbd601db1bc2b32a34552413651793",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-Bv0M9CpK.js",
+        "sha256": "6b42c603158829318fc7a5a22d76cf28e366a0ff0ef2e159d8282ced740ef1b2",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-ingles-1-preferences-ByhqfMws.js",
+        "sha256": "f7db3339473e0f144d245a7dda30820a2e84913939078aa7b30fa17f7f67199d",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-DwSE6nB5.js",
+        "sha256": "3dde453b3c960bba7137e2b36ba99b49484407c5bffab065cc23ce94e5990870",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-Dx93-lI1.js",
+        "sha256": "08dc3c4e74a1a7aa4e86701d559b6860844d42a05d9a4b2ac1b77f7e70769e19",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-composicion-piloto-BWYInrD3.js",
+        "sha256": "1641a0faa61c98ce625400ab0757b9eaa08882ee34cb4e899c6d85dd6189c9af",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "ecbb83ed781c7dd0396b92cf686d7efac469cbc848e22a20f036bdc46e94daff",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "deployment": false,
+  "handoffRuntime": {
+    "generator": "science-descriptive-report-v2",
+    "generatorAssets": [
+      "instrumentos-tecnicos-DwSE6nB5.js"
+    ],
+    "catalogBuild": "evaluation-2026.173",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-NhSZlGsY.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-NhSZlGsY.js",
+        "sha256": "ebc69fe5193c6966d75030cc70299cc24d01e2f6f65d0b29187a3fe4fa2e359b",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-Cn9wvQo3.js",
+        "sha256": "56972a18c26fd21e14cd3d236406023a4bbbd601db1bc2b32a34552413651793",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-Bv0M9CpK.js",
+        "sha256": "6b42c603158829318fc7a5a22d76cf28e366a0ff0ef2e159d8282ced740ef1b2",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-ingles-1-preferences-ByhqfMws.js",
+        "sha256": "f7db3339473e0f144d245a7dda30820a2e84913939078aa7b30fa17f7f67199d",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-DwSE6nB5.js",
+        "sha256": "3dde453b3c960bba7137e2b36ba99b49484407c5bffab065cc23ce94e5990870",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-Dx93-lI1.js",
+        "sha256": "08dc3c4e74a1a7aa4e86701d559b6860844d42a05d9a4b2ac1b77f7e70769e19",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-composicion-piloto-BWYInrD3.js",
+        "sha256": "1641a0faa61c98ce625400ab0757b9eaa08882ee34cb4e899c6d85dd6189c9af",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "ecbb83ed781c7dd0396b92cf686d7efac469cbc848e22a20f036bdc46e94daff",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  }
+}

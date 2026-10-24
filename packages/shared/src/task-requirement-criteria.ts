@@ -11,7 +11,7 @@ export const actionableTaskConditions=(report:TaskRequirementReport)=>{
 }
 
 function row(id:string,title:string,conditions:TaskCondition[]):Criterion{
- const details=conditions.map(taskConditionLabel).join('; ')
+ const details=conditions.map(taskConditionLabel).join('; ')+(conditions.some(c=>c.property==='extent'&&c.operator==='MAX')?'; sin exigir alcanzar el límite si se satisface el contenido solicitado':'')
  const levels:Criterion['progressionLevels']=[
   `La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: ${details}.`,
   `La entrega conserva su organización y se reconoce la aplicación de las condiciones, con omisiones localizadas: ${details}.`,

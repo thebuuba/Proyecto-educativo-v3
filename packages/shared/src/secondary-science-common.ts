@@ -120,7 +120,8 @@ type ScienceTaskOptions={additionalVerbs?:string;selectTopics?:(text:string,topi
 export function resolveScienceTaskForTopics(title:string,description:string,grade:number,topics:CommonScienceTopic[],options:ScienceTaskOptions={}):CommonScienceTask|null{
  const text=scienceRequirementText(description.trim()||title)
  const find=(part:string)=>options.selectTopics?options.selectTopics(part,topics):topics.filter(t=>(new RegExp(`\\b(?:${t.match})\\b`).test(part)
-  ||options.descriptiveReports&&t.id==='earth-structure'&&['corteza','manto','nucleo'].every(name=>new RegExp(`\\b${name}\\b`).test(part)))&&(!t.exclude||!new RegExp(t.exclude).test(part)))
+  ||options.descriptiveReports&&(t.id==='earth-structure'&&['corteza','manto','nucleo'].every(name=>new RegExp(`\\b${name}\\b`).test(part))
+   ||t.id==='atmosphere'&&/\b(?:troposfera|estratosfera|mesosfera|termosfera|exosfera)\b/.test(part)))&&(!t.exclude||!new RegExp(t.exclude).test(part)))
   .filter(t=>t.grade!==6||t.id!=='heat-temperature'||!/movimiento de atomos y moleculas/.test(part)||/calor|transferencia/.test(part))
   .filter(t=>t.grade!==5||t.id!=='element-families'||!/puente de hidrogeno/.test(part))
   .filter(t=>t.id!=='ecosystems'||!/flujo de energia/.test(part)||/estructura|funcion|sucesion|componentes|interacciones/.test(part))

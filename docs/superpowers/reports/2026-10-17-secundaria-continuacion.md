@@ -1,3 +1,19 @@
+# Cierre vigente — transferencia descriptiva de atmósfera (24/10)
+
+Encargo terminado dentro de su alcance. DETENERSE; no retomar ampliación curricular ni otra tarea automáticamente. SOLO coordinador; sin agentes, push, merge, despliegues, reset, producción, credenciales ni dependencias. Rama `ampliacion-de-instrumentos-2`, base80460443138e8b89be9babd98acefa859c63810a; commit local español final, hash en Git y entrega.
+
+Informe `2026-10-24-informe-atmosfera.md`; banco y expectativas previos en `data/evaluation-instruments/atmosphere-report/cases.json`. Primeras salidas `before.json`/`http-before.json` inmutables; NO reejecutar esas fases ni `after`. `after.json`, instrumentos completos, comparación anterior, paridad, HTTP final, browser, persistencia, preservación y verification contienen evidencia final. Corrección: componentes enlazan tema existente, proveedor descriptivo compartido conserva tres capas, ubicación/temperatura, esquema rotulado/ordenado/desarrollo. Contrato y presentación MAX/MIN/RANGE/EXACT corregidos; esquema HTML y contextos ajenos guardados. Catálogo173 intacto; generador `science-descriptive-report-v2`. Criterios/descriptores completos de Tierra/densidad idénticos a la evidencia previa.
+
+Gates terminados, sin suites activas: backend98388/251archivos y build0; frontend95239/228archivos0. Se corrigió TS2532 solo en referencia tipada de la prueba nueva; focal15 posterior0, frontend build0, Cloudflare dry-run0, lints backend/frontend y cuatro archivos compartidos0. Sin repetir suites completas por esa anotación. Ocho errores heredados del lint compartido completo siguen fuera de alcance.
+
+HTTP QA: cinco interpretaciones+15propuestas200, login201, sin guardados;8propuestas/5casos y7extensiones. Navegador PERSONAL: cuatro formatos completos, puntos pendientes;17.35, edición manual y pesos30/20/18.75/12.5/6.25/6.25/6.25. UNA muestra ficticia24925148-155e-4616-9129-e0e9596e5eab guardadaPOST201 y reabierta;22campos y tabla exactos,1735centésimas. Snapshotv2/MAX/condiciones confirmado enDB. Capturas privadas atmosphere-personal-reopened-{science,limit}.png. Pestaña final1796703733 marcada entregable; original1796703677 intacta por comparaciónDOM, no recargar ni regenerar.
+
+Preservación final:104catálogos,1285snapshots y84actividades previos intactos; ahora1286snapshots y85actividades por la única muestra autorizada. Evidencias previas earth-report por SHA256 intactas. Sin migraciones ni catálogos nuevos. Runtime de entrega único en8787: lanzador48780/listener61240 (anterior23612/23924 terminó entre turnos, sin causa registrada). Comprobación de entrega atmosphere-runtime-handoff.json confirma nuevamente proyecto y hashes idénticos. Comprobar procesos antes de iniciar otro. Development eolgunypmtgrsyrjzcld, PostgreSQL app_backend_local sin bypass, Auth/Storage/frontend mismo proyecto. Entryindex-NhSZlGsY.js, generador en instrumentos-tecnicos-DwSE6nB5.js;8assets+SW comprobados por hashes. RegistroSW no inspeccionable por política de navegación, sin elusión; caché/almacenamiento no borrados. AntecedenteDNS intermitente y cabecerascontradictorias documentados, sin cambios enred.
+
+No push. Mantener cierre; no reabrir ampliación curricular sin otro encargo.
+
+---
+
 # Cierre vigente — informe descriptivo de la Tierra (24/10)
 
 Encargo `2026-10-24-informe-tierra.md` terminado dentro de su alcance. DETENERSE; no retomar ampliación curricular ni otra tarea automáticamente. Base `1a473dfa`, rama `ampliacion-de-instrumentos-2`, cierre con commit local en español; hash en Git y mensaje final. SOLO coordinador; sin agentes, IA nueva, dependencias, push, main, despliegues, resets, producción ni credenciales. Banco de cinco casos y expectativas anteriores a los cambios en `data/evaluation-instruments/earth-report/`. Primeras salidas completas `before.json` y `http-before.json`, no sobrescribirlas.

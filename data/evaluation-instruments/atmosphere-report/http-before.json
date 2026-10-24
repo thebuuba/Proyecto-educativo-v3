@@ -1,0 +1,2240 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.173",
+  "mode": "READ_ONLY_GENERATION_WITH_EXISTING_QA; NOT_BROWSER",
+  "phase": "before",
+  "interpretation": {
+    "suggestedActivityType": "REPORT",
+    "activityType": "REPORT",
+    "activityTypes": [
+      "EXPOSITION",
+      "ORAL_PRESENTATION",
+      "DEBATE",
+      "NEWSCAST",
+      "NEWS_ANALYSIS",
+      "NEWS_COMPARISON",
+      "NEWS_WRITING",
+      "TOURIST_GUIDE_CREATION",
+      "TOURIST_GUIDE_ANALYSIS",
+      "TOURIST_GUIDE_PRESENTATION",
+      "TOURIST_GUIDE_COMPARISON",
+      "POSTER_CREATION",
+      "POSTER_ANALYSIS",
+      "POSTER_COMPARISON",
+      "POSTER_PRESENTATION",
+      "READING_REPORT_WRITING",
+      "READING_REPORT_ANALYSIS",
+      "READING_REPORT_PRESENTATION",
+      "READING_REPORT_COMPARISON",
+      "DETECTIVE_STORY_WRITING",
+      "DETECTIVE_STORY_ANALYSIS",
+      "DETECTIVE_STORY_NARRATION",
+      "DETECTIVE_STORY_COMPARISON",
+      "DETECTIVE_STORY_ANALYSIS_PRESENTATION",
+      "CALLIGRAM_CREATION",
+      "CALLIGRAM_ANALYSIS",
+      "CALLIGRAM_COMPARISON",
+      "CALLIGRAM_RECITATION",
+      "CALLIGRAM_EXPLANATION",
+      "EXPERIMENT",
+      "LAB_PRACTICE",
+      "WRITTEN_PRODUCTION",
+      "ESSAY",
+      "REPORT",
+      "RESEARCH",
+      "PROJECT",
+      "PROBLEM_SOLVING",
+      "EXERCISE_SET",
+      "CONCEPT_MAP",
+      "PORTFOLIO",
+      "ARTISTIC_PRODUCTION",
+      "PERFORMANCE",
+      "MOTOR_SPORTS_PRACTICE",
+      "OBSERVATION",
+      "QUIZ_TEST",
+      "OTHER",
+      "ANALYSIS",
+      "COMPARISON",
+      "ORAL_INTERACTION",
+      "LISTENING_COMPREHENSION",
+      "READING_COMPREHENSION",
+      "AUDIOVISUAL_PRODUCTION"
+    ],
+    "suggestedEvaluationTechnique": "analisis-producciones",
+    "suggestedInstrumentType": "rubrica",
+    "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+    "curriculumScopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf",
+    "curriculumStatus": "PUBLISHED",
+    "curriculumCandidates": [
+      {
+        "elementId": "1111b537-4350-55d6-b6ae-62356deb50f1",
+        "versionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+        "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf",
+        "type": "ACHIEVEMENT_INDICATOR",
+        "text": "• Produce apropiadamente textos, ensayos, carteles, informes de laboratorio, proyectos e información sobre Ciencias de\nla Tierra y el Universo.",
+        "sources": [
+          {
+            "documentId": "69de4fa5-ab87-53e2-929e-e4b7947391a2",
+            "pdfPage": 295,
+            "printedPage": "294"
+          }
+        ],
+        "topicCoverage": 0.125
+      },
+      {
+        "elementId": "22148b03-eb84-5c77-a0ca-454353bdca94",
+        "versionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+        "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf",
+        "type": "ACHIEVEMENT_INDICATOR",
+        "text": "• Realiza proyectos escolares o prácticas experimentales apropiadamente observando la sistematización y los informes de\nlas actividades de investigación.",
+        "sources": [
+          {
+            "documentId": "69de4fa5-ab87-53e2-929e-e4b7947391a2",
+            "pdfPage": 295,
+            "printedPage": "294"
+          }
+        ],
+        "topicCoverage": 0.125
+      },
+      {
+        "elementId": "a06bf1cc-581e-55bf-a8e7-499851359ae7",
+        "versionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+        "scopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf",
+        "type": "PROCEDURE",
+        "text": "• Un filtro para purificar el agua con diferentes tipos de arenas\ny gravas.",
+        "sources": [
+          {
+            "documentId": "69de4fa5-ab87-53e2-929e-e4b7947391a2",
+            "pdfPage": 294,
+            "printedPage": "293"
+          }
+        ],
+        "topicCoverage": 0.125
+      }
+    ],
+    "curriculumMatch": "NONE",
+    "requiresCurriculumConfirmation": true,
+    "message": "No hay una coincidencia curricular suficientemente clara; se preparará un instrumento basado en la actividad."
+  },
+  "proposals": [
+    {
+      "format": "rubrica",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.173",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "REPORT",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+        "curriculumScopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-focus:0",
+            "templateId": "task-report-focus",
+            "title": "Propósito y procedimiento de la investigación",
+            "description": "Expone la pregunta o propósito del informe y describe el procedimiento empleado para obtener la información.",
+            "maxScore": 3.86,
+            "maxScoreUnits": 386,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expone la pregunta o propósito del informe y describe el procedimiento empleado para obtener la información.",
+              "Expone el propósito y el procedimiento; un paso queda sin precisar.",
+              "Menciona el propósito, pero omite pasos necesarios para comprender cómo obtuvo la información.",
+              "El procedimiento descrito no permite responder al propósito planteado.",
+              "No permite reconocer el propósito ni el procedimiento utilizado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expone la pregunta o propósito del informe y describe el procedimiento empleado para obtener la información.",
+                "scoreUnits": 386
+              },
+              {
+                "levelId": "L3",
+                "text": "Expone el propósito y el procedimiento; un paso queda sin precisar.",
+                "scoreUnits": 257
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona el propósito, pero omite pasos necesarios para comprender cómo obtuvo la información.",
+                "scoreUnits": 129
+              },
+              {
+                "levelId": "L1",
+                "text": "No permite reconocer el propósito ni el procedimiento utilizado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-reasoning:1",
+            "templateId": "task-report-reasoning",
+            "title": "Análisis de resultados",
+            "description": "Relaciona los resultados obtenidos con la pregunta investigada y distingue los datos de su interpretación.",
+            "maxScore": 4.82,
+            "maxScoreUnits": 482,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona los resultados obtenidos con la pregunta investigada y distingue los datos de su interpretación.",
+              "Relaciona los resultados principales con la pregunta; una interpretación queda sin justificar.",
+              "Presenta resultados, pero explica débilmente qué aportan a la pregunta.",
+              "La interpretación contradice los resultados que presenta.",
+              "No comunica resultados que permitan valorar la investigación."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona los resultados obtenidos con la pregunta investigada y distingue los datos de su interpretación.",
+                "scoreUnits": 482
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los resultados principales con la pregunta; una interpretación queda sin justificar.",
+                "scoreUnits": 321
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta resultados, pero explica débilmente qué aportan a la pregunta.",
+                "scoreUnits": 161
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica resultados que permitan valorar la investigación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-support:2",
+            "templateId": "task-report-support",
+            "title": "Sustento de las conclusiones",
+            "description": "Vincula sus conclusiones con datos, ejemplos o información pertinente del material disponible.",
+            "maxScore": 3.86,
+            "maxScoreUnits": 386,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Vincula sus conclusiones con datos, ejemplos o información pertinente del material disponible.",
+              "Sustenta las conclusiones principales; una conexión con la información necesita aclaración.",
+              "Menciona información, pero no explica cómo respalda sus conclusiones.",
+              "Las conclusiones contradicen la información aportada.",
+              "No aporta información que permita sostener sus conclusiones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Vincula sus conclusiones con datos, ejemplos o información pertinente del material disponible.",
+                "scoreUnits": 386
+              },
+              {
+                "levelId": "L3",
+                "text": "Sustenta las conclusiones principales; una conexión con la información necesita aclaración.",
+                "scoreUnits": 257
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona información, pero no explica cómo respalda sus conclusiones.",
+                "scoreUnits": 129
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta información que permita sostener sus conclusiones.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-communication:3",
+            "templateId": "task-report-communication",
+            "title": "Claridad de la explicación",
+            "description": "Comunica las ideas en una secuencia comprensible y usa términos que permiten seguir el razonamiento.",
+            "maxScore": 1.93,
+            "maxScoreUnits": 193,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica las ideas en una secuencia comprensible y usa términos que permiten seguir el razonamiento.",
+              "Se comprende la explicación; una expresión o transición queda ambigua.",
+              "Se entienden ideas aisladas, pero faltan vínculos para seguir la explicación.",
+              "La secuencia o el vocabulario alteran el sentido de las ideas principales.",
+              "No comunica una explicación que permita reconocer el razonamiento."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica las ideas en una secuencia comprensible y usa términos que permiten seguir el razonamiento.",
+                "scoreUnits": 193
+              },
+              {
+                "levelId": "L3",
+                "text": "Se comprende la explicación; una expresión o transición queda ambigua.",
+                "scoreUnits": 129
+              },
+              {
+                "levelId": "L2",
+                "text": "Se entienden ideas aisladas, pero faltan vínculos para seguir la explicación.",
+                "scoreUnits": 64
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica una explicación que permita reconocer el razonamiento.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:delivery-format:4",
+            "templateId": "delivery-format",
+            "title": "Formato del documento",
+            "description": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+            "maxScore": 0.96,
+            "maxScoreUnits": 96,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+              "Mantiene la tipografía solicitada (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); presenta inconsistencias localizadas en la disposición o el estilo: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+              "La fuente o el tamaño se omiten o se aplican a un ámbito distinto del indicado (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); conserva parte de la disposición solicitada: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+              "Aplica formatos aislados sin mantener la tipografía ni la disposición asignadas a los elementos: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+              "La entrega no incorpora las condiciones solicitadas: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título."
+            ],
+            "relativeWeight": 1,
+            "taskConditionIds": [
+              "task:7",
+              "task:8",
+              "task:9",
+              "task:10",
+              "task:11",
+              "task:12",
+              "task:13"
+            ],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+                "scoreUnits": 96
+              },
+              {
+                "levelId": "L3",
+                "text": "Mantiene la tipografía solicitada (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); presenta inconsistencias localizadas en la disposición o el estilo: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+                "scoreUnits": 64
+              },
+              {
+                "levelId": "L2",
+                "text": "La fuente o el tamaño se omiten o se aplican a un ámbito distinto del indicado (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); conserva parte de la disposición solicitada: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+                "scoreUnits": 32
+              },
+              {
+                "levelId": "L1",
+                "text": "La entrega no incorpora las condiciones solicitadas: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:delivery-organization:5",
+            "templateId": "delivery-organization",
+            "title": "Organización solicitada",
+            "description": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+            "maxScore": 0.96,
+            "maxScoreUnits": 96,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "La entrega conserva su organización y se reconoce la aplicación de las condiciones, con omisiones localizadas: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "La aplicación es parcial: hay elementos que respetan las condiciones y otros que las contradicen o las omiten. Condiciones: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "Aplica las condiciones en elementos aislados, mientras el resto de los elementos contradice el formato o la organización solicitados. Condiciones: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "La entrega no incorpora las condiciones solicitadas: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión."
+            ],
+            "relativeWeight": 1,
+            "taskConditionIds": [
+              "task:1",
+              "task:2",
+              "task:3",
+              "task:4"
+            ],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+                "scoreUnits": 96
+              },
+              {
+                "levelId": "L3",
+                "text": "La entrega conserva su organización y se reconoce la aplicación de las condiciones, con omisiones localizadas: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+                "scoreUnits": 64
+              },
+              {
+                "levelId": "L2",
+                "text": "La aplicación es parcial: hay elementos que respetan las condiciones y otros que las contradicen o las omiten. Condiciones: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+                "scoreUnits": 32
+              },
+              {
+                "levelId": "L1",
+                "text": "La entrega no incorpora las condiciones solicitadas: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:delivery-submission:6",
+            "templateId": "delivery-submission",
+            "title": "Entrega y extensión solicitadas",
+            "description": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: archivo en Word o PDF; dos páginas sin contar la portada.",
+            "maxScore": 0.96,
+            "maxScoreUnits": 96,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: archivo en Word o PDF; dos páginas sin contar la portada.",
+              "El archivo utiliza una de las opciones permitidas (archivo en Word o PDF), pero la extensión no respeta dos páginas sin contar la portada.",
+              "El texto se presenta en un formato distinto de los permitidos (archivo en Word o PDF); la cantidad de páginas no compensa ese incumplimiento. Extensión solicitada: dos páginas sin contar la portada.",
+              "La entrega está incompleta: no presenta el texto completo en una de las opciones permitidas (archivo en Word o PDF); no satisface dos páginas sin contar la portada.",
+              "La entrega no incorpora las condiciones solicitadas: archivo en Word o PDF; dos páginas sin contar la portada."
+            ],
+            "relativeWeight": 1,
+            "taskConditionIds": [
+              "task:5",
+              "task:6"
+            ],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: archivo en Word o PDF; dos páginas sin contar la portada.",
+                "scoreUnits": 96
+              },
+              {
+                "levelId": "L3",
+                "text": "El archivo utiliza una de las opciones permitidas (archivo en Word o PDF), pero la extensión no respeta dos páginas sin contar la portada.",
+                "scoreUnits": 64
+              },
+              {
+                "levelId": "L2",
+                "text": "El texto se presenta en un formato distinto de los permitidos (archivo en Word o PDF); la cantidad de páginas no compensa ese incumplimiento. Extensión solicitada: dos páginas sin contar la portada.",
+                "scoreUnits": 32
+              },
+              {
+                "levelId": "L1",
+                "text": "La entrega no incorpora las condiciones solicitadas: archivo en Word o PDF; dos páginas sin contar la portada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=science",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "coverage=ACTION_ONLY",
+            "STRUCTURED_SUBJECT_CODE"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "1111b537-4350-55d6-b6ae-62356deb50f1",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "22148b03-eb84-5c77-a0ca-454353bdca94",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a06bf1cc-581e-55bf-a8e7-499851359ae7",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "PUBLISHED",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "taskRequirements": {
+            "conditions": [
+              {
+                "id": "task:1",
+                "property": "extent",
+                "values": [
+                  "dos"
+                ],
+                "unit": "párrafos",
+                "scope": "desarrollo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 197,
+                  "end": 209,
+                  "text": "dos párrafos"
+                }
+              },
+              {
+                "id": "task:2",
+                "property": "section",
+                "values": [
+                  "introducción"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 166,
+                  "end": 178,
+                  "text": "introducción"
+                }
+              },
+              {
+                "id": "task:3",
+                "property": "section",
+                "values": [
+                  "desarrollo"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 183,
+                  "end": 193,
+                  "text": "desarrollo"
+                }
+              },
+              {
+                "id": "task:4",
+                "property": "section",
+                "values": [
+                  "conclusión"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 216,
+                  "end": 226,
+                  "text": "conclusión"
+                }
+              },
+              {
+                "id": "task:5",
+                "property": "file-format",
+                "values": [
+                  "Word",
+                  "PDF"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "ALTERNATIVE",
+                "origin": {
+                  "start": 345,
+                  "end": 358,
+                  "text": "en Word o PDF"
+                }
+              },
+              {
+                "id": "task:6",
+                "property": "extent",
+                "values": [
+                  "dos"
+                ],
+                "unit": "páginas",
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 388,
+                  "end": 399,
+                  "text": "dos páginas"
+                },
+                "exclusion": "sin contar la portada"
+              },
+              {
+                "id": "task:7",
+                "property": "font",
+                "values": [
+                  "Arial"
+                ],
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 441,
+                  "end": 452,
+                  "text": "letra Arial"
+                }
+              },
+              {
+                "id": "task:8",
+                "property": "font-size",
+                "values": [
+                  "14"
+                ],
+                "unit": "pt",
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 441,
+                  "end": 455,
+                  "text": "letra Arial 14"
+                }
+              },
+              {
+                "id": "task:9",
+                "property": "line-spacing",
+                "values": [
+                  "1,5"
+                ],
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 457,
+                  "end": 473,
+                  "text": "interlineado 1,5"
+                }
+              },
+              {
+                "id": "task:10",
+                "property": "alignment",
+                "values": [
+                  "justificado"
+                ],
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 482,
+                  "end": 493,
+                  "text": "justificado"
+                }
+              },
+              {
+                "id": "task:11",
+                "property": "font-size",
+                "values": [
+                  "20"
+                ],
+                "unit": "pt",
+                "scope": "título",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 522,
+                  "end": 531,
+                  "text": "tamaño 20"
+                }
+              },
+              {
+                "id": "task:12",
+                "property": "emphasis",
+                "values": [
+                  "negrita"
+                ],
+                "scope": "título",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 534,
+                  "end": 541,
+                  "text": "negrita"
+                }
+              },
+              {
+                "id": "task:13",
+                "property": "alignment",
+                "values": [
+                  "centrado"
+                ],
+                "scope": "título",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 509,
+                  "end": 517,
+                  "text": "centrado"
+                }
+              }
+            ],
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "format": "lista-cotejo",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.173",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "REPORT",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+        "curriculumScopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-focus:0",
+            "templateId": "task-report-focus",
+            "title": "Expone la pregunta o propósito del informe y describe el procedimiento empleado para obtener la información.",
+            "description": "Expone la pregunta o propósito del informe y describe el procedimiento empleado para obtener la información.",
+            "maxScore": 3.86,
+            "maxScoreUnits": 386,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expone la pregunta o propósito del informe y describe el procedimiento empleado para obtener la información.",
+              "Expone el propósito y el procedimiento; un paso queda sin precisar.",
+              "Menciona el propósito, pero omite pasos necesarios para comprender cómo obtuvo la información.",
+              "El procedimiento descrito no permite responder al propósito planteado.",
+              "No permite reconocer el propósito ni el procedimiento utilizado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-reasoning:1",
+            "templateId": "task-report-reasoning",
+            "title": "Relaciona los resultados obtenidos con la pregunta investigada y distingue los datos de su interpretación.",
+            "description": "Relaciona los resultados obtenidos con la pregunta investigada y distingue los datos de su interpretación.",
+            "maxScore": 4.82,
+            "maxScoreUnits": 482,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona los resultados obtenidos con la pregunta investigada y distingue los datos de su interpretación.",
+              "Relaciona los resultados principales con la pregunta; una interpretación queda sin justificar.",
+              "Presenta resultados, pero explica débilmente qué aportan a la pregunta.",
+              "La interpretación contradice los resultados que presenta.",
+              "No comunica resultados que permitan valorar la investigación."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-support:2",
+            "templateId": "task-report-support",
+            "title": "Vincula sus conclusiones con datos, ejemplos o información pertinente del material disponible.",
+            "description": "Vincula sus conclusiones con datos, ejemplos o información pertinente del material disponible.",
+            "maxScore": 3.86,
+            "maxScoreUnits": 386,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Vincula sus conclusiones con datos, ejemplos o información pertinente del material disponible.",
+              "Sustenta las conclusiones principales; una conexión con la información necesita aclaración.",
+              "Menciona información, pero no explica cómo respalda sus conclusiones.",
+              "Las conclusiones contradicen la información aportada.",
+              "No aporta información que permita sostener sus conclusiones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-communication:3",
+            "templateId": "task-report-communication",
+            "title": "Comunica las ideas en una secuencia comprensible y usa términos que permiten seguir el razonamiento.",
+            "description": "Comunica las ideas en una secuencia comprensible y usa términos que permiten seguir el razonamiento.",
+            "maxScore": 1.93,
+            "maxScoreUnits": 193,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica las ideas en una secuencia comprensible y usa términos que permiten seguir el razonamiento.",
+              "Se comprende la explicación; una expresión o transición queda ambigua.",
+              "Se entienden ideas aisladas, pero faltan vínculos para seguir la explicación.",
+              "La secuencia o el vocabulario alteran el sentido de las ideas principales.",
+              "No comunica una explicación que permita reconocer el razonamiento."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:delivery-format:requested:4",
+            "templateId": "delivery-format:requested",
+            "title": "Sí solo si se cumplen las condiciones de formato del documento en los ámbitos indicados: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+            "description": "Sí solo si se cumplen las condiciones de formato del documento en los ámbitos indicados: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+            "maxScore": 0.96,
+            "maxScoreUnits": 96,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+              "Mantiene la tipografía solicitada (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); presenta inconsistencias localizadas en la disposición o el estilo: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+              "La fuente o el tamaño se omiten o se aplican a un ámbito distinto del indicado (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); conserva parte de la disposición solicitada: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+              "Aplica formatos aislados sin mantener la tipografía ni la disposición asignadas a los elementos: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+              "La entrega no incorpora las condiciones solicitadas: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título."
+            ],
+            "relativeWeight": 1,
+            "taskConditionIds": [
+              "task:7",
+              "task:8",
+              "task:9",
+              "task:10",
+              "task:11",
+              "task:12",
+              "task:13"
+            ],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:delivery-organization:requested:5",
+            "templateId": "delivery-organization:requested",
+            "title": "Sí solo si se cumplen las condiciones de organización solicitada en los ámbitos indicados: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+            "description": "Sí solo si se cumplen las condiciones de organización solicitada en los ámbitos indicados: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+            "maxScore": 0.96,
+            "maxScoreUnits": 96,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "La entrega conserva su organización y se reconoce la aplicación de las condiciones, con omisiones localizadas: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "La aplicación es parcial: hay elementos que respetan las condiciones y otros que las contradicen o las omiten. Condiciones: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "Aplica las condiciones en elementos aislados, mientras el resto de los elementos contradice el formato o la organización solicitados. Condiciones: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "La entrega no incorpora las condiciones solicitadas: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión."
+            ],
+            "relativeWeight": 1,
+            "taskConditionIds": [
+              "task:1",
+              "task:2",
+              "task:3",
+              "task:4"
+            ],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:delivery-submission:requested:6",
+            "templateId": "delivery-submission:requested",
+            "title": "Sí solo si se cumplen las condiciones de entrega y extensión solicitadas en los ámbitos indicados: archivo en Word o PDF; dos páginas sin contar la portada.",
+            "description": "Sí solo si se cumplen las condiciones de entrega y extensión solicitadas en los ámbitos indicados: archivo en Word o PDF; dos páginas sin contar la portada.",
+            "maxScore": 0.96,
+            "maxScoreUnits": 96,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: archivo en Word o PDF; dos páginas sin contar la portada.",
+              "El archivo utiliza una de las opciones permitidas (archivo en Word o PDF), pero la extensión no respeta dos páginas sin contar la portada.",
+              "El texto se presenta en un formato distinto de los permitidos (archivo en Word o PDF); la cantidad de páginas no compensa ese incumplimiento. Extensión solicitada: dos páginas sin contar la portada.",
+              "La entrega está incompleta: no presenta el texto completo en una de las opciones permitidas (archivo en Word o PDF); no satisface dos páginas sin contar la portada.",
+              "La entrega no incorpora las condiciones solicitadas: archivo en Word o PDF; dos páginas sin contar la portada."
+            ],
+            "relativeWeight": 1,
+            "taskConditionIds": [
+              "task:5",
+              "task:6"
+            ],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=science",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "coverage=ACTION_ONLY",
+            "STRUCTURED_SUBJECT_CODE"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "1111b537-4350-55d6-b6ae-62356deb50f1",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "22148b03-eb84-5c77-a0ca-454353bdca94",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a06bf1cc-581e-55bf-a8e7-499851359ae7",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "PUBLISHED",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "taskRequirements": {
+            "conditions": [
+              {
+                "id": "task:1",
+                "property": "extent",
+                "values": [
+                  "dos"
+                ],
+                "unit": "párrafos",
+                "scope": "desarrollo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 197,
+                  "end": 209,
+                  "text": "dos párrafos"
+                }
+              },
+              {
+                "id": "task:2",
+                "property": "section",
+                "values": [
+                  "introducción"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 166,
+                  "end": 178,
+                  "text": "introducción"
+                }
+              },
+              {
+                "id": "task:3",
+                "property": "section",
+                "values": [
+                  "desarrollo"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 183,
+                  "end": 193,
+                  "text": "desarrollo"
+                }
+              },
+              {
+                "id": "task:4",
+                "property": "section",
+                "values": [
+                  "conclusión"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 216,
+                  "end": 226,
+                  "text": "conclusión"
+                }
+              },
+              {
+                "id": "task:5",
+                "property": "file-format",
+                "values": [
+                  "Word",
+                  "PDF"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "ALTERNATIVE",
+                "origin": {
+                  "start": 345,
+                  "end": 358,
+                  "text": "en Word o PDF"
+                }
+              },
+              {
+                "id": "task:6",
+                "property": "extent",
+                "values": [
+                  "dos"
+                ],
+                "unit": "páginas",
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 388,
+                  "end": 399,
+                  "text": "dos páginas"
+                },
+                "exclusion": "sin contar la portada"
+              },
+              {
+                "id": "task:7",
+                "property": "font",
+                "values": [
+                  "Arial"
+                ],
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 441,
+                  "end": 452,
+                  "text": "letra Arial"
+                }
+              },
+              {
+                "id": "task:8",
+                "property": "font-size",
+                "values": [
+                  "14"
+                ],
+                "unit": "pt",
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 441,
+                  "end": 455,
+                  "text": "letra Arial 14"
+                }
+              },
+              {
+                "id": "task:9",
+                "property": "line-spacing",
+                "values": [
+                  "1,5"
+                ],
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 457,
+                  "end": 473,
+                  "text": "interlineado 1,5"
+                }
+              },
+              {
+                "id": "task:10",
+                "property": "alignment",
+                "values": [
+                  "justificado"
+                ],
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 482,
+                  "end": 493,
+                  "text": "justificado"
+                }
+              },
+              {
+                "id": "task:11",
+                "property": "font-size",
+                "values": [
+                  "20"
+                ],
+                "unit": "pt",
+                "scope": "título",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 522,
+                  "end": 531,
+                  "text": "tamaño 20"
+                }
+              },
+              {
+                "id": "task:12",
+                "property": "emphasis",
+                "values": [
+                  "negrita"
+                ],
+                "scope": "título",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 534,
+                  "end": 541,
+                  "text": "negrita"
+                }
+              },
+              {
+                "id": "task:13",
+                "property": "alignment",
+                "values": [
+                  "centrado"
+                ],
+                "scope": "título",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 509,
+                  "end": 517,
+                  "text": "centrado"
+                }
+              }
+            ],
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "format": "escala",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.173",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "REPORT",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+        "curriculumScopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-focus:0",
+            "templateId": "task-report-focus",
+            "title": "Expone la pregunta o propósito del informe y describe el procedimiento empleado para obtener la información.",
+            "description": "Expone la pregunta o propósito del informe y describe el procedimiento empleado para obtener la información.",
+            "maxScore": 3.86,
+            "maxScoreUnits": 386,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expone la pregunta o propósito del informe y describe el procedimiento empleado para obtener la información.",
+              "Expone el propósito y el procedimiento; un paso queda sin precisar.",
+              "Menciona el propósito, pero omite pasos necesarios para comprender cómo obtuvo la información.",
+              "El procedimiento descrito no permite responder al propósito planteado.",
+              "No permite reconocer el propósito ni el procedimiento utilizado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expone la pregunta o propósito del informe y describe el procedimiento empleado para obtener la información.",
+                "scoreUnits": 386
+              },
+              {
+                "levelId": "L3",
+                "text": "Expone el propósito y el procedimiento; un paso queda sin precisar.",
+                "scoreUnits": 257
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona el propósito, pero omite pasos necesarios para comprender cómo obtuvo la información.",
+                "scoreUnits": 129
+              },
+              {
+                "levelId": "L1",
+                "text": "No permite reconocer el propósito ni el procedimiento utilizado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-reasoning:1",
+            "templateId": "task-report-reasoning",
+            "title": "Relaciona los resultados obtenidos con la pregunta investigada y distingue los datos de su interpretación.",
+            "description": "Relaciona los resultados obtenidos con la pregunta investigada y distingue los datos de su interpretación.",
+            "maxScore": 4.82,
+            "maxScoreUnits": 482,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona los resultados obtenidos con la pregunta investigada y distingue los datos de su interpretación.",
+              "Relaciona los resultados principales con la pregunta; una interpretación queda sin justificar.",
+              "Presenta resultados, pero explica débilmente qué aportan a la pregunta.",
+              "La interpretación contradice los resultados que presenta.",
+              "No comunica resultados que permitan valorar la investigación."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona los resultados obtenidos con la pregunta investigada y distingue los datos de su interpretación.",
+                "scoreUnits": 482
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los resultados principales con la pregunta; una interpretación queda sin justificar.",
+                "scoreUnits": 321
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta resultados, pero explica débilmente qué aportan a la pregunta.",
+                "scoreUnits": 161
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica resultados que permitan valorar la investigación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-support:2",
+            "templateId": "task-report-support",
+            "title": "Vincula sus conclusiones con datos, ejemplos o información pertinente del material disponible.",
+            "description": "Vincula sus conclusiones con datos, ejemplos o información pertinente del material disponible.",
+            "maxScore": 3.86,
+            "maxScoreUnits": 386,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Vincula sus conclusiones con datos, ejemplos o información pertinente del material disponible.",
+              "Sustenta las conclusiones principales; una conexión con la información necesita aclaración.",
+              "Menciona información, pero no explica cómo respalda sus conclusiones.",
+              "Las conclusiones contradicen la información aportada.",
+              "No aporta información que permita sostener sus conclusiones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Vincula sus conclusiones con datos, ejemplos o información pertinente del material disponible.",
+                "scoreUnits": 386
+              },
+              {
+                "levelId": "L3",
+                "text": "Sustenta las conclusiones principales; una conexión con la información necesita aclaración.",
+                "scoreUnits": 257
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona información, pero no explica cómo respalda sus conclusiones.",
+                "scoreUnits": 129
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta información que permita sostener sus conclusiones.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-communication:3",
+            "templateId": "task-report-communication",
+            "title": "Comunica las ideas en una secuencia comprensible y usa términos que permiten seguir el razonamiento.",
+            "description": "Comunica las ideas en una secuencia comprensible y usa términos que permiten seguir el razonamiento.",
+            "maxScore": 1.93,
+            "maxScoreUnits": 193,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica las ideas en una secuencia comprensible y usa términos que permiten seguir el razonamiento.",
+              "Se comprende la explicación; una expresión o transición queda ambigua.",
+              "Se entienden ideas aisladas, pero faltan vínculos para seguir la explicación.",
+              "La secuencia o el vocabulario alteran el sentido de las ideas principales.",
+              "No comunica una explicación que permita reconocer el razonamiento."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica las ideas en una secuencia comprensible y usa términos que permiten seguir el razonamiento.",
+                "scoreUnits": 193
+              },
+              {
+                "levelId": "L3",
+                "text": "Se comprende la explicación; una expresión o transición queda ambigua.",
+                "scoreUnits": 129
+              },
+              {
+                "levelId": "L2",
+                "text": "Se entienden ideas aisladas, pero faltan vínculos para seguir la explicación.",
+                "scoreUnits": 64
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica una explicación que permita reconocer el razonamiento.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:delivery-format:4",
+            "templateId": "delivery-format",
+            "title": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+            "description": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+            "maxScore": 0.96,
+            "maxScoreUnits": 96,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+              "Mantiene la tipografía solicitada (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); presenta inconsistencias localizadas en la disposición o el estilo: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+              "La fuente o el tamaño se omiten o se aplican a un ámbito distinto del indicado (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); conserva parte de la disposición solicitada: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+              "Aplica formatos aislados sin mantener la tipografía ni la disposición asignadas a los elementos: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+              "La entrega no incorpora las condiciones solicitadas: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título."
+            ],
+            "relativeWeight": 1,
+            "taskConditionIds": [
+              "task:7",
+              "task:8",
+              "task:9",
+              "task:10",
+              "task:11",
+              "task:12",
+              "task:13"
+            ],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+                "scoreUnits": 96
+              },
+              {
+                "levelId": "L3",
+                "text": "Mantiene la tipografía solicitada (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); presenta inconsistencias localizadas en la disposición o el estilo: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+                "scoreUnits": 64
+              },
+              {
+                "levelId": "L2",
+                "text": "La fuente o el tamaño se omiten o se aplican a un ámbito distinto del indicado (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); conserva parte de la disposición solicitada: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+                "scoreUnits": 32
+              },
+              {
+                "levelId": "L1",
+                "text": "La entrega no incorpora las condiciones solicitadas: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:delivery-organization:5",
+            "templateId": "delivery-organization",
+            "title": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+            "description": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+            "maxScore": 0.96,
+            "maxScoreUnits": 96,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "La entrega conserva su organización y se reconoce la aplicación de las condiciones, con omisiones localizadas: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "La aplicación es parcial: hay elementos que respetan las condiciones y otros que las contradicen o las omiten. Condiciones: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "Aplica las condiciones en elementos aislados, mientras el resto de los elementos contradice el formato o la organización solicitados. Condiciones: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "La entrega no incorpora las condiciones solicitadas: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión."
+            ],
+            "relativeWeight": 1,
+            "taskConditionIds": [
+              "task:1",
+              "task:2",
+              "task:3",
+              "task:4"
+            ],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+                "scoreUnits": 96
+              },
+              {
+                "levelId": "L3",
+                "text": "La entrega conserva su organización y se reconoce la aplicación de las condiciones, con omisiones localizadas: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+                "scoreUnits": 64
+              },
+              {
+                "levelId": "L2",
+                "text": "La aplicación es parcial: hay elementos que respetan las condiciones y otros que las contradicen o las omiten. Condiciones: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+                "scoreUnits": 32
+              },
+              {
+                "levelId": "L1",
+                "text": "La entrega no incorpora las condiciones solicitadas: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:delivery-submission:6",
+            "templateId": "delivery-submission",
+            "title": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: archivo en Word o PDF; dos páginas sin contar la portada.",
+            "description": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: archivo en Word o PDF; dos páginas sin contar la portada.",
+            "maxScore": 0.96,
+            "maxScoreUnits": 96,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: archivo en Word o PDF; dos páginas sin contar la portada.",
+              "El archivo utiliza una de las opciones permitidas (archivo en Word o PDF), pero la extensión no respeta dos páginas sin contar la portada.",
+              "El texto se presenta en un formato distinto de los permitidos (archivo en Word o PDF); la cantidad de páginas no compensa ese incumplimiento. Extensión solicitada: dos páginas sin contar la portada.",
+              "La entrega está incompleta: no presenta el texto completo en una de las opciones permitidas (archivo en Word o PDF); no satisface dos páginas sin contar la portada.",
+              "La entrega no incorpora las condiciones solicitadas: archivo en Word o PDF; dos páginas sin contar la portada."
+            ],
+            "relativeWeight": 1,
+            "taskConditionIds": [
+              "task:5",
+              "task:6"
+            ],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: archivo en Word o PDF; dos páginas sin contar la portada.",
+                "scoreUnits": 96
+              },
+              {
+                "levelId": "L3",
+                "text": "El archivo utiliza una de las opciones permitidas (archivo en Word o PDF), pero la extensión no respeta dos páginas sin contar la portada.",
+                "scoreUnits": 64
+              },
+              {
+                "levelId": "L2",
+                "text": "El texto se presenta en un formato distinto de los permitidos (archivo en Word o PDF); la cantidad de páginas no compensa ese incumplimiento. Extensión solicitada: dos páginas sin contar la portada.",
+                "scoreUnits": 32
+              },
+              {
+                "levelId": "L1",
+                "text": "La entrega no incorpora las condiciones solicitadas: archivo en Word o PDF; dos páginas sin contar la portada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=science",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "coverage=ACTION_ONLY",
+            "STRUCTURED_SUBJECT_CODE"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "1111b537-4350-55d6-b6ae-62356deb50f1",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "22148b03-eb84-5c77-a0ca-454353bdca94",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a06bf1cc-581e-55bf-a8e7-499851359ae7",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "PUBLISHED",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "taskRequirements": {
+            "conditions": [
+              {
+                "id": "task:1",
+                "property": "extent",
+                "values": [
+                  "dos"
+                ],
+                "unit": "párrafos",
+                "scope": "desarrollo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 197,
+                  "end": 209,
+                  "text": "dos párrafos"
+                }
+              },
+              {
+                "id": "task:2",
+                "property": "section",
+                "values": [
+                  "introducción"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 166,
+                  "end": 178,
+                  "text": "introducción"
+                }
+              },
+              {
+                "id": "task:3",
+                "property": "section",
+                "values": [
+                  "desarrollo"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 183,
+                  "end": 193,
+                  "text": "desarrollo"
+                }
+              },
+              {
+                "id": "task:4",
+                "property": "section",
+                "values": [
+                  "conclusión"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 216,
+                  "end": 226,
+                  "text": "conclusión"
+                }
+              },
+              {
+                "id": "task:5",
+                "property": "file-format",
+                "values": [
+                  "Word",
+                  "PDF"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "ALTERNATIVE",
+                "origin": {
+                  "start": 345,
+                  "end": 358,
+                  "text": "en Word o PDF"
+                }
+              },
+              {
+                "id": "task:6",
+                "property": "extent",
+                "values": [
+                  "dos"
+                ],
+                "unit": "páginas",
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 388,
+                  "end": 399,
+                  "text": "dos páginas"
+                },
+                "exclusion": "sin contar la portada"
+              },
+              {
+                "id": "task:7",
+                "property": "font",
+                "values": [
+                  "Arial"
+                ],
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 441,
+                  "end": 452,
+                  "text": "letra Arial"
+                }
+              },
+              {
+                "id": "task:8",
+                "property": "font-size",
+                "values": [
+                  "14"
+                ],
+                "unit": "pt",
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 441,
+                  "end": 455,
+                  "text": "letra Arial 14"
+                }
+              },
+              {
+                "id": "task:9",
+                "property": "line-spacing",
+                "values": [
+                  "1,5"
+                ],
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 457,
+                  "end": 473,
+                  "text": "interlineado 1,5"
+                }
+              },
+              {
+                "id": "task:10",
+                "property": "alignment",
+                "values": [
+                  "justificado"
+                ],
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 482,
+                  "end": 493,
+                  "text": "justificado"
+                }
+              },
+              {
+                "id": "task:11",
+                "property": "font-size",
+                "values": [
+                  "20"
+                ],
+                "unit": "pt",
+                "scope": "título",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 522,
+                  "end": 531,
+                  "text": "tamaño 20"
+                }
+              },
+              {
+                "id": "task:12",
+                "property": "emphasis",
+                "values": [
+                  "negrita"
+                ],
+                "scope": "título",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 534,
+                  "end": 541,
+                  "text": "negrita"
+                }
+              },
+              {
+                "id": "task:13",
+                "property": "alignment",
+                "values": [
+                  "centrado"
+                ],
+                "scope": "título",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 509,
+                  "end": 517,
+                  "text": "centrado"
+                }
+              }
+            ],
+            "issues": []
+          }
+        }
+      }
+    },
+    {
+      "format": "lista-ponderada",
+      "proposal": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.173",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "REPORT",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": "4dcc85da-0f84-5670-8a56-656d56f63fea",
+        "curriculumScopeId": "3f5745a4-bcd3-5936-98dd-e19cb65133bf",
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-focus:0",
+            "templateId": "task-report-focus",
+            "title": "Propósito y procedimiento de la investigación",
+            "description": "Expone la pregunta o propósito del informe y describe el procedimiento empleado para obtener la información. Parcial (50%): Menciona el propósito, pero omite pasos necesarios para comprender cómo obtuvo la información.",
+            "maxScore": 3.86,
+            "maxScoreUnits": 386,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expone la pregunta o propósito del informe y describe el procedimiento empleado para obtener la información.",
+              "Expone el propósito y el procedimiento; un paso queda sin precisar.",
+              "Menciona el propósito, pero omite pasos necesarios para comprender cómo obtuvo la información.",
+              "El procedimiento descrito no permite responder al propósito planteado.",
+              "No permite reconocer el propósito ni el procedimiento utilizado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-reasoning:1",
+            "templateId": "task-report-reasoning",
+            "title": "Análisis de resultados",
+            "description": "Relaciona los resultados obtenidos con la pregunta investigada y distingue los datos de su interpretación. Parcial (50%): Presenta resultados, pero explica débilmente qué aportan a la pregunta.",
+            "maxScore": 4.82,
+            "maxScoreUnits": 482,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona los resultados obtenidos con la pregunta investigada y distingue los datos de su interpretación.",
+              "Relaciona los resultados principales con la pregunta; una interpretación queda sin justificar.",
+              "Presenta resultados, pero explica débilmente qué aportan a la pregunta.",
+              "La interpretación contradice los resultados que presenta.",
+              "No comunica resultados que permitan valorar la investigación."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-support:2",
+            "templateId": "task-report-support",
+            "title": "Sustento de las conclusiones",
+            "description": "Vincula sus conclusiones con datos, ejemplos o información pertinente del material disponible. Parcial (50%): Menciona información, pero no explica cómo respalda sus conclusiones.",
+            "maxScore": 3.86,
+            "maxScoreUnits": 386,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Vincula sus conclusiones con datos, ejemplos o información pertinente del material disponible.",
+              "Sustenta las conclusiones principales; una conexión con la información necesita aclaración.",
+              "Menciona información, pero no explica cómo respalda sus conclusiones.",
+              "Las conclusiones contradicen la información aportada.",
+              "No aporta información que permita sostener sus conclusiones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:task-report-communication:3",
+            "templateId": "task-report-communication",
+            "title": "Claridad de la explicación",
+            "description": "Comunica las ideas en una secuencia comprensible y usa términos que permiten seguir el razonamiento. Parcial (50%): Se entienden ideas aisladas, pero faltan vínculos para seguir la explicación.",
+            "maxScore": 1.93,
+            "maxScoreUnits": 193,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica las ideas en una secuencia comprensible y usa términos que permiten seguir el razonamiento.",
+              "Se comprende la explicación; una expresión o transición queda ambigua.",
+              "Se entienden ideas aisladas, pero faltan vínculos para seguir la explicación.",
+              "La secuencia o el vocabulario alteran el sentido de las ideas principales.",
+              "No comunica una explicación que permita reconocer el razonamiento."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:delivery-format:4",
+            "templateId": "delivery-format",
+            "title": "Formato del documento",
+            "description": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título. Parcial (50%): La fuente o el tamaño se omiten o se aplican a un ámbito distinto del indicado (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); conserva parte de la disposición solicitada: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+            "maxScore": 0.96,
+            "maxScoreUnits": 96,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+              "Mantiene la tipografía solicitada (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); presenta inconsistencias localizadas en la disposición o el estilo: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+              "La fuente o el tamaño se omiten o se aplican a un ámbito distinto del indicado (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); conserva parte de la disposición solicitada: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.",
+              "Aplica formatos aislados sin mantener la tipografía ni la disposición asignadas a los elementos: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título.",
+              "La entrega no incorpora las condiciones solicitadas: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título."
+            ],
+            "relativeWeight": 1,
+            "taskConditionIds": [
+              "task:7",
+              "task:8",
+              "task:9",
+              "task:10",
+              "task:11",
+              "task:12",
+              "task:13"
+            ],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:delivery-organization:5",
+            "templateId": "delivery-organization",
+            "title": "Organización solicitada",
+            "description": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión. Parcial (50%): La aplicación es parcial: hay elementos que respetan las condiciones y otros que las contradicen o las omiten. Condiciones: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+            "maxScore": 0.96,
+            "maxScoreUnits": 96,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "La entrega conserva su organización y se reconoce la aplicación de las condiciones, con omisiones localizadas: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "La aplicación es parcial: hay elementos que respetan las condiciones y otros que las contradicen o las omiten. Condiciones: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "Aplica las condiciones en elementos aislados, mientras el resto de los elementos contradice el formato o la organización solicitados. Condiciones: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.",
+              "La entrega no incorpora las condiciones solicitadas: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión."
+            ],
+            "relativeWeight": 1,
+            "taskConditionIds": [
+              "task:1",
+              "task:2",
+              "task:3",
+              "task:4"
+            ],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.173:3f5745a4-bcd3-5936-98dd-e19cb65133bf:delivery-submission:6",
+            "templateId": "delivery-submission",
+            "title": "Entrega y extensión solicitadas",
+            "description": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: archivo en Word o PDF; dos páginas sin contar la portada. Parcial (50%): El texto se presenta en un formato distinto de los permitidos (archivo en Word o PDF); la cantidad de páginas no compensa ese incumplimiento. Extensión solicitada: dos páginas sin contar la portada.",
+            "maxScore": 0.96,
+            "maxScoreUnits": 96,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: archivo en Word o PDF; dos páginas sin contar la portada.",
+              "El archivo utiliza una de las opciones permitidas (archivo en Word o PDF), pero la extensión no respeta dos páginas sin contar la portada.",
+              "El texto se presenta en un formato distinto de los permitidos (archivo en Word o PDF); la cantidad de páginas no compensa ese incumplimiento. Extensión solicitada: dos páginas sin contar la portada.",
+              "La entrega está incompleta: no presenta el texto completo en una de las opciones permitidas (archivo en Word o PDF); no satisface dos páginas sin contar la portada.",
+              "La entrega no incorpora las condiciones solicitadas: archivo en Word o PDF; dos páginas sin contar la portada."
+            ],
+            "relativeWeight": 1,
+            "taskConditionIds": [
+              "task:5",
+              "task:6"
+            ],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "RESOLVED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=science",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "coverage=ACTION_ONLY",
+            "STRUCTURED_SUBJECT_CODE"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [
+            {
+              "elementId": "1111b537-4350-55d6-b6ae-62356deb50f1",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "22148b03-eb84-5c77-a0ca-454353bdca94",
+              "score": 31,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=16",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            },
+            {
+              "elementId": "a06bf1cc-581e-55bf-a8e7-499851359ae7",
+              "score": 27,
+              "topicCoverage": 0.125,
+              "reasons": [
+                "topicTokens=1/8",
+                "typeWeight=12",
+                "blockMatches=0",
+                "procedureMatches=0"
+              ]
+            }
+          ],
+          "curriculumStatus": "PUBLISHED",
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ],
+          "taskRequirements": {
+            "conditions": [
+              {
+                "id": "task:1",
+                "property": "extent",
+                "values": [
+                  "dos"
+                ],
+                "unit": "párrafos",
+                "scope": "desarrollo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 197,
+                  "end": 209,
+                  "text": "dos párrafos"
+                }
+              },
+              {
+                "id": "task:2",
+                "property": "section",
+                "values": [
+                  "introducción"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 166,
+                  "end": 178,
+                  "text": "introducción"
+                }
+              },
+              {
+                "id": "task:3",
+                "property": "section",
+                "values": [
+                  "desarrollo"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 183,
+                  "end": 193,
+                  "text": "desarrollo"
+                }
+              },
+              {
+                "id": "task:4",
+                "property": "section",
+                "values": [
+                  "conclusión"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 216,
+                  "end": 226,
+                  "text": "conclusión"
+                }
+              },
+              {
+                "id": "task:5",
+                "property": "file-format",
+                "values": [
+                  "Word",
+                  "PDF"
+                ],
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "ALTERNATIVE",
+                "origin": {
+                  "start": 345,
+                  "end": 358,
+                  "text": "en Word o PDF"
+                }
+              },
+              {
+                "id": "task:6",
+                "property": "extent",
+                "values": [
+                  "dos"
+                ],
+                "unit": "páginas",
+                "scope": "documento",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 388,
+                  "end": 399,
+                  "text": "dos páginas"
+                },
+                "exclusion": "sin contar la portada"
+              },
+              {
+                "id": "task:7",
+                "property": "font",
+                "values": [
+                  "Arial"
+                ],
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 441,
+                  "end": 452,
+                  "text": "letra Arial"
+                }
+              },
+              {
+                "id": "task:8",
+                "property": "font-size",
+                "values": [
+                  "14"
+                ],
+                "unit": "pt",
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 441,
+                  "end": 455,
+                  "text": "letra Arial 14"
+                }
+              },
+              {
+                "id": "task:9",
+                "property": "line-spacing",
+                "values": [
+                  "1,5"
+                ],
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 457,
+                  "end": 473,
+                  "text": "interlineado 1,5"
+                }
+              },
+              {
+                "id": "task:10",
+                "property": "alignment",
+                "values": [
+                  "justificado"
+                ],
+                "scope": "cuerpo",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 482,
+                  "end": 493,
+                  "text": "justificado"
+                }
+              },
+              {
+                "id": "task:11",
+                "property": "font-size",
+                "values": [
+                  "20"
+                ],
+                "unit": "pt",
+                "scope": "título",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 522,
+                  "end": 531,
+                  "text": "tamaño 20"
+                }
+              },
+              {
+                "id": "task:12",
+                "property": "emphasis",
+                "values": [
+                  "negrita"
+                ],
+                "scope": "título",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 534,
+                  "end": 541,
+                  "text": "negrita"
+                }
+              },
+              {
+                "id": "task:13",
+                "property": "alignment",
+                "values": [
+                  "centrado"
+                ],
+                "scope": "título",
+                "operator": "EXACT",
+                "relation": "REQUIRED",
+                "origin": {
+                  "start": 509,
+                  "end": 517,
+                  "text": "centrado"
+                }
+              }
+            ],
+            "issues": []
+          }
+        }
+      }
+    }
+  ],
+  "requests": [
+    {
+      "path": "/auth/login",
+      "status": 201
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200
+    }
+  ],
+  "newActivities": 0
+}

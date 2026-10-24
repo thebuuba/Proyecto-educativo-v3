@@ -103,7 +103,7 @@ export function extractTaskRequirements(description:string):TaskRequirementRepor
   for(const m of clause.matchAll(/\borientacion\s+(vertical|horizontal)\b/g))add('orientation',m,[m[1]],undefined,'página')
   for(const m of clause.matchAll(/\bnumeracion\b(?:\s+(?:de|las|paginas|en|la|parte|al|abajo|arriba|a|izquierda|derecha|centro|centrada|pie|superior|inferior))*/g))add('page-numbering',m,[m[0].replace(/^numeracion\s*/, '').trim()||'solicitada'],undefined,'página')
   for(const m of clause.matchAll(/\b(?:desde|comenzando (?:en|por)|a partir de)\s+(?:la\s+)?pagina\s+(\d+)\b/g))if(/numeracion/.test(clause))add('page-number-start',m,[m[1]],'página','página')
-  const extent=new RegExp(`\\b(?:(entre)\\s+(${numeral})\\s+(?:y|a)\\s+(${numeral})|(minimo|maximo|al menos|como maximo|hasta|aproximadamente|alrededor de)\\s+(${numeral})|(${numeral}))\\s+(paginas?|palabras?|parrafos?|imagenes?|tablas?|graficos?|citas?|ejemplos?|oraciones?|fuentes?|apartados?|fragmentos?)\\b`,'g')
+  const extent=new RegExp(`\\b(?:(entre)\\s+(${numeral})\\s+(?:y|a)\\s+(${numeral})|(?:extension\\s+)?(minim[ao]|maxim[ao]|al menos|como maximo|hasta|exactamente|aproximadamente|alrededor de)\\s*,?\\s+(?:de\\s+)?(${numeral})|(${numeral}))\\s+(paginas?|palabras?|parrafos?|imagenes?|tablas?|graficos?|citas?|ejemplos?|oraciones?|fuentes?|apartados?|fragmentos?)\\b`,'g')
   const unitPattern='(?:paginas?|palabras?|parrafos?|ejemplos?|oraciones?|fuentes?)'
   for(const m of clause.matchAll(new RegExp(`\\b(minimo|maximo)\\s+(${numeral})(?:\\s+(${unitPattern}))?\\s+(?:y|e)\\s+(minimo|maximo)\\s+(${numeral})(?:\\s+(${unitPattern}))?\\b`,'g'))){
    if(Boolean(m[3])===Boolean(m[6]))continue
@@ -115,13 +115,13 @@ export function extractTaskRequirements(description:string):TaskRequirementRepor
   for(const m of clause.matchAll(/\b(au moins|au plus)\s+(\d+|une?|deux|trois|quatre|cinq|six|sept|huit|neuf|dix)\s+pages?\b/g))add('extent',m,[m[2]],'pages','documento',m[1]==='au moins'?'MIN':'MAX')
   for(const m of clause.matchAll(extent)){
    const bare=new RegExp(`^\\s*${numeral}\\s+(?:paginas?|palabras?|parrafos?|ejemplos?|oraciones?|fuentes?)(?:\\s+y\\s+${numeral}\\s+(?:paginas?|palabras?|parrafos?|ejemplos?|oraciones?|fuentes?))?\\s*$`).test(clause)
-   if(!bare&&!instruction.test(clause)&&!/(?:cuerpo|introduccion|desarrollo|conclusion|maximo|minimo|entre)\b/.test(clause))continue
+   if(!bare&&!instruction.test(clause)&&!m[4]&&!/(?:cuerpo|introduccion|desarrollo|conclusion|entre)\b/.test(clause))continue
    if(/^\s+(?:proporcionad|dad)[a-z]*\b/.test(clause.slice(m.index!+m[0].length))&&!/inclu|incorpor|agreg/.test(clause.slice(0,m.index)))continue
    if(/\b(?:conserv\w*|manten\w*|manteng\w*)\s+(?:(?:las?|los?|otras?|otros?|mismas?|mismos?)\s+)*$/.test(clause.slice(0,m.index)))continue
    if(/oracion/.test(m[7])&&/\b(?:revis\w*|corrig\w*)\s+(?:(?:las?|los?)\s+)*$/.test(clause.slice(0,m.index)))continue
    if(/^fuente/.test(m[7])&&/^(?:un|una)$/.test(m[6]??'')&&/seleccion/.test(clause.slice(0,m.index))&&!/entreg|inclu|incorpor/.test(clause.slice(0,m.index)))continue
    const unit=m[7],property=/pagina|palabra|parrafo/.test(unit)?'extent':/imagen/.test(unit)?'images':/tabla/.test(unit)?'tables':/grafico/.test(unit)?'charts':/cita/.test(unit)?'citations':'evidence-count'
-   const op=m[1]?'RANGE':/minimo|al menos/.test(m[4]??'')?'MIN':/maximo|hasta/.test(m[4]??'')?'MAX':m[4]?'APPROX':'EXACT'
+   const op=m[1]?'RANGE':/minim[ao]|al menos/.test(m[4]??'')?'MIN':/maxim[ao]|hasta/.test(m[4]??'')?'MAX':m[4]&&m[4]!=='exactamente'?'APPROX':'EXACT'
    const literalUnit=original(m.index!+m[0].lastIndexOf(unit),m.index!+m[0].length)
    add(property,m,m[1]?[m[2],m[3]]:[m[5]??m[6]],literalUnit,undefined,op)
    if(['tables','charts','images'].includes(property)&&/\bo\s+(?:elabora|crea|presenta|incluye|entrega)/.test(clause)){
@@ -130,7 +130,8 @@ export function extractTaskRequirements(description:string):TaskRequirementRepor
    }
   }
   if(instruction.test(clause)||/\b(?:sin portada|con (?:una )?portada|secciones|apartados)/.test(clause)){
-   for(const m of clause.matchAll(/\bdibujos?\b[^,;]*/g)){
+   for(const m of clause.matchAll(/\b(?:dibujos?|esquemas?(?=\s+(?:rotulad\w*|etiquetad\w*|con\s+(?:los\s+)?nombres\b|de\s+(?:las\s+)?capas\b)))\b[^,;]*/g)){
+    if(/^esquema/.test(m[0])&&/\bhtml\b/.test(clause))continue
     const location=clause.match(/\ben\s+(?:el|la)\s+(desarrollo|cuerpo|introduccion|conclusion|anexos?)\b/)
     add('drawing',m,[original(m.index!,m.index!+m[0].length).trim()],undefined,location?canonicalScope(location[1]):undefined)
    }
@@ -185,7 +186,7 @@ export function extractTaskRequirements(description:string):TaskRequirementRepor
 
 export function taskConditionLabel(c:TaskCondition):string{
  const prefixes:Record<string,string>={'font':'fuente','font-size':'tamaño de letra','emphasis':'énfasis','color':'color','line-spacing':'interlineado','alignment':'alineación','indent':'sangría','paragraph-spacing':'separación entre párrafos','margin':'márgenes','paper-size':'papel','orientation':'orientación','page-numbering':'numeración','page-number-start':'numeración desde la página','file-format':'archivo','filename':'nombre del archivo','submission':'entrega','section':'incluye','images':'imágenes','tables':'tablas','charts':'gráficos','captions':'pies de imagen','citation':'cita','attribution':'atribución','bibliography':'bibliografía','reference-style':'estilo de referencias'}
- const operators={EXACT:'',MIN:'mínimo ',MAX:'máximo ',RANGE:'entre ',APPROX:'aproximadamente '}
+ const operators={EXACT:/^exactamente\b/i.test(c.origin.text)?'exactamente ':'',MIN:'mínimo ',MAX:'máximo ',RANGE:'entre ',APPROX:'aproximadamente '}
  const value=c.operator==='RANGE'?c.values.join(' y '):c.values.join(c.relation==='ALTERNATIVE'?' o ':' y ')
  const property=c.property==='file-format'?'archivo en':c.unit&&['images','tables','charts','citations','evidence-count'].includes(c.property)?'':prefixes[c.property]??''
  const scoped=!['documento','contenido','archivo'].includes(c.scope)&&!(c.property==='extent'&&c.scope==='párrafo')?` en ${c.scope}`:''

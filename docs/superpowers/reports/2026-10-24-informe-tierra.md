@@ -1,5 +1,7 @@
 # Caso real: «Así es la Tierra por dentro»
 
+**Precisión posterior (24/10, encargo de atmósfera):** la variante atmosférica de este informe usaba literalmente «atmósfera», no nombraba troposfera/estratosfera/mesosfera ni ubicación/temperatura y no fijaba máximo de páginas. Solo se generó su rúbrica; las cuatro lecturas completas correspondían a Tierra. Esa evidencia no acreditaba el caso nuevo. Véase `2026-10-24-informe-atmosfera.md`; las consignas y salidas originales se conservan sin sobrescribir.
+
 Estado: caso exacto corregido y comprobado en el creador real, con guardado y reapertura. Trabajo del coordinador solo, sin agentes ni revisión independiente. Sin ampliación curricular, IA nueva, dependencias, rediseño, push, merge, despliegues, resets, producción ni credenciales.
 
 Encargo literal: `../specs/2026-10-24-informe-tierra-literal.txt`. Plan: `../plans/2026-10-24-informe-tierra.md`. Banco y primeras salidas inmutables: `data/evaluation-instruments/earth-report/`.

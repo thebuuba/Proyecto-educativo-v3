@@ -3,7 +3,7 @@ import type {CommonScienceTask} from './secondary-science-common'
 import {extractTaskRequirements,taskConditionLabel} from './task-presentation-requirements'
 import {actionableTaskConditions} from './task-requirement-criteria'
 
-export const scienceReportGeneratorVersion='science-descriptive-report-v1'
+export const scienceReportGeneratorVersion='science-descriptive-report-v2'
 
 /** Existing scientific topics, limited to an explicitly descriptive/explanatory report purpose. */
 export function descriptiveScienceReportCriteria(task:CommonScienceTask):Criterion[]|null{
@@ -17,7 +17,9 @@ export function descriptiveScienceReportCriteria(task:CommonScienceTask):Criteri
  }
  const names=topics.map(t=>t.id==='earth-structure'
   ?['corteza','manto','núcleo'].filter(n=>text.includes(n.normalize('NFD').replace(/\p{M}/gu,''))).join(', ')||t.label
-  :t.id==='atmosphere'&&/\bcapas\b/.test(text)?`las capas de ${t.label}`:t.label).join('; ')
+  :t.id==='atmosphere'?['troposfera','estratosfera','mesosfera','termosfera','exosfera'].filter(n=>new RegExp(`\\b${n}\\b`).test(text)).join(', ')||(/\bcapas\b/.test(text)?`las capas de ${t.label}`:t.label):t.label).join('; ')
+ const dimensions=[['ubicacion','ubicación'],['temperatura','temperatura']].filter(([match])=>new RegExp(`\\b${match}\\b`).test(text)).map(([,label])=>label)
+ const comparison=dimensions.length?`su ${dimensions.join(' y ')}`:'características equivalentes'
  add('description','Descripción científica del contenido',[
   `Describe ${names} con características científicas que permiten reconocer cada elemento solicitado, sin confundir sus nombres ni atribuirles rasgos de otros elementos.`,
   `Describe ${names} y permite reconocer los elementos; alguna característica queda enunciada sin aclarar a cuál corresponde.`,
@@ -26,23 +28,25 @@ export function descriptiveScienceReportCriteria(task:CommonScienceTask):Criteri
   `No presenta una descripción científica reconocible de ${names}.`,
  ],4)
  if(/\bdiferencias\b|\bcompar\w*\b|\bdisting\w*\b/.test(text))add('differences','Diferencias entre los elementos descritos',[
-  `Explica diferencias entre ${names}, comparando características equivalentes y manteniendo correspondencia con su descripción científica.`,
-  `Explica diferencias pertinentes entre ${names}, pero deja implícita la característica utilizada en alguna comparación.`,
-  `Enumera características de ${names}, pero no explica sus diferencias o compara características que no corresponden entre sí.`,
-  `Atribuye a ${names} diferencias incompatibles con sus características científicas.`,
-  `No establece diferencias entre ${names}.`,
+  `Explica diferencias entre ${names}, comparando ${comparison} y manteniendo correspondencia con su descripción científica.`,
+  `Explica diferencias pertinentes entre ${names}, pero deja implícita ${dimensions.length?'parte de la comparación de '+comparison:'la característica utilizada en alguna comparación'}.`,
+  `Enumera características de ${names}, pero no explica sus diferencias${dimensions.length?' de '+dimensions.join(' y '):''} o compara características que no corresponden entre sí.`,
+  `Atribuye a ${names} diferencias${dimensions.length?' de '+dimensions.join(' y '):''} incompatibles con sus características científicas.`,
+  `No establece diferencias${dimensions.length?' de '+dimensions.join(' y '):''} entre ${names}.`,
  ],4)
  const drawings=requested.filter(c=>c.property==='drawing')
  if(drawings.length){
   const details=drawings.map(taskConditionLabel).join('; ')
   const labeled=drawings.some(c=>/nombre|r[oó]tul|etiquet/.test(c.values.join(' ')))
   const placed=drawings.some(c=>c.scope!=='documento')
+  const medium=drawings.some(c=>/^esquema/i.test(c.values[0]))?'esquema':'dibujo'
+  const ordered=drawings.some(c=>/orden/.test(c.values.join(' ')))
   add('drawing','Representación científica y rótulos',[
-   `El dibujo representa ${names} con una disposición científicamente coherente${labeled?'; los nombres o rótulos identifican las partes representadas':''}. Recurso solicitado: ${details}. Se evalúa la representación científica, sin valorar destreza artística.`,
-   `La disposición permite reconocer ${names}, pero una relación entre el dibujo y su descripción queda poco clara${labeled?', algún rótulo no corresponde con claridad a la parte señalada':''}${placed?' o el dibujo está fuera de la ubicación solicitada':''}. Recurso: ${details}.`,
-   `El dibujo muestra solo parte de ${names}${labeled?' o deja partes sin nombres':''}; la relación entre dibujo y descripción resulta incompleta.`,
-   `El dibujo${labeled?' o sus rótulos':''} atribuye a ${names} ubicaciones o relaciones científicas incompatibles con el contenido.`,
-   `No presenta el dibujo solicitado de ${names}.`,
+   `El ${medium} representa ${names} con una disposición científicamente coherente${ordered?' y en su orden correcto':''}${labeled?'; los nombres o rótulos identifican las partes representadas':''}. Recurso solicitado: ${details}. Se evalúa la representación científica, sin valorar destreza artística.`,
+   `La disposición permite reconocer ${names}, pero una relación entre el ${medium} y su descripción queda poco clara${labeled?', algún rótulo no corresponde con claridad a la parte señalada':''}${placed?' o el '+medium+' está fuera de la ubicación solicitada':''}. Recurso: ${details}.`,
+   `El ${medium} muestra solo parte de ${names}${labeled?' o deja partes sin nombres':''}; la relación entre ${medium} y descripción resulta incompleta.`,
+   `El ${medium}${labeled?' o sus rótulos':''} atribuye a ${names} ${ordered?'un orden, ':''}ubicaciones o relaciones científicas incompatibles con el contenido.`,
+   `No presenta el ${medium} solicitado de ${names}.`,
   ],3,drawings.map(c=>c.id))
  }
  const sections=requested.filter(c=>c.property==='section'||c.property==='extent'&&/p[aá]rrafo/.test(c.unit??''))

@@ -1,0 +1,22 @@
+{
+  "red": {
+    "tests": 16,
+    "failed": 10,
+    "passed": 6,
+    "reason": "Componentes atmosféricos sin tema; esquema ausente; máximo perdido; hasta/exactamente aislados omitidos"
+  },
+  "greenBackend": {
+    "tests": 16,
+    "passed": 16
+  },
+  "priorCriteriaPreservation": [
+    {
+      "id": "earth",
+      "fullCriteriaAndDescriptorsUnchanged": true
+    },
+    {
+      "id": "density-experiment",
+      "fullCriteriaAndDescriptorsUnchanged": true
+    }
+  ]
+}

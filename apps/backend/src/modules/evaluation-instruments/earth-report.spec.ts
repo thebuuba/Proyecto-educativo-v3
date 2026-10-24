@@ -36,7 +36,7 @@ describe('Informe real de la Tierra: expectativas congeladas antes de corregir',
  it.each(formats)('expresa todos los requisitos evaluables en %s sin convertirlos en investigación',format=>{
   const p=proposal('earth',format),s=text(p)
   expect(p.instrumentType).toBe(format)
-  expect(p.internalTrace.generatorVersion).toBe('science-descriptive-report-v1')
+  expect(p.internalTrace.generatorVersion).toBe('science-descriptive-report-v2')
   expect(p.activityType).toBe('REPORT')
   expect(s).toMatch(/corteza/);expect(s).toMatch(/manto/);expect(s).toMatch(/núcleo/)
   expect(s).toMatch(/diferencias/);expect(s).toMatch(/dibujo/);expect(s).toMatch(/nombres|rótulos/)

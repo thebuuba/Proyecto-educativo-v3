@@ -1,0 +1,126 @@
+{
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "subjectCode": "NAT-TU",
+    "subjectName": "Ciencias de la Naturaleza"
+  },
+  "expectationsFrozenBeforeFix": true,
+  "cases": [
+    {
+      "id": "atmosphere",
+      "title": "Conocemos las capas de la atmósfera",
+      "description": "Los estudiantes elaborarán un informe que describa la troposfera, la estratosfera y la mesosfera y explique sus diferencias de ubicación y temperatura. Incluirán una introducción, un desarrollo de dos párrafos y una conclusión. En el desarrollo colocarán un esquema con los nombres de las tres capas en su orden correcto.\n\nEntregarán el informe en Word o PDF, con una extensión máxima de dos páginas, sin contar la portada. El cuerpo tendrá letra Arial 14, interlineado 1,5 y texto justificado. El título irá centrado, en tamaño 20 y negrita. Revisarán la ortografía antes de entregar.",
+      "expected": [
+        "troposfera",
+        "estratosfera",
+        "mesosfera",
+        "ubicación",
+        "temperatura",
+        "esquema",
+        "nombres",
+        "orden",
+        "desarrollo",
+        "ortografía",
+        "máximo dos páginas sin contar la portada"
+      ],
+      "forbidden": [
+        "termosfera",
+        "exosfera",
+        "composición química",
+        "altitudes",
+        "hipótesis",
+        "procedimiento de investigación",
+        "resultados obtenidos"
+      ]
+    },
+    {
+      "id": "atmosphere-no-format",
+      "title": "Conocemos las capas de la atmósfera",
+      "description": "Los estudiantes elaborarán un informe que describa la troposfera, la estratosfera y la mesosfera y explique sus diferencias de ubicación y temperatura. Incluirán una introducción, un desarrollo de dos párrafos y una conclusión. En el desarrollo colocarán un esquema con los nombres de las tres capas en su orden correcto. Revisarán la ortografía antes de entregar."
+    },
+    {
+      "id": "atmosphere-brief",
+      "title": "Capas cercanas",
+      "description": "Redacten un informe que describa troposfera, estratosfera y mesosfera y compare su ubicación y temperatura."
+    },
+    {
+      "id": "earth",
+      "title": "Así es la Tierra por dentro.",
+      "description": "Los estudiantes elaborarán un informe breve que describa la corteza, el manto y el núcleo y explique sus diferencias. Incluirán una introducción, un desarrollo de tres párrafos y una conclusión. Añadirán en el desarrollo un dibujo de las capas con sus nombres.\n\nEntregarán el trabajo en Word o PDF, con una extensión de entre dos y tres páginas, sin contar la portada. El cuerpo utilizará letra Calibri 13, interlineado 1,5 y texto justificado. El título irá centrado, en tamaño 18 y negrita. Revisarán la ortografía antes de entregar.",
+      "expected": [
+        "Descripción de corteza, manto y núcleo",
+        "Diferencias entre capas",
+        "Dibujo con nombres en desarrollo",
+        "Introducción, desarrollo de tres párrafos, conclusión",
+        "Ortografía",
+        "Cuerpo Calibri 13, interlineado 1,5, justificado",
+        "Título centrado, tamaño 18, negrita",
+        "Word o PDF; entre dos y tres páginas excluyendo portada; sin exigir portada",
+        "Sin investigación, hipótesis, experimento, método ni resultados inventados"
+      ]
+    },
+    {
+      "id": "density-experiment",
+      "title": "Medimos la densidad",
+      "description": "Realicen una práctica experimental de densidad. Midan la masa y el volumen de las muestras proporcionadas, registren el procedimiento y los resultados en una tabla, calculen la densidad y comparen los resultados. Elaboren un informe de la práctica que explique la relación entre masa, volumen y densidad.",
+      "expected": [
+        "Práctica real conserva procedimiento y observaciones",
+        "Mediciones, tabla, cálculos y resultados pertinentes",
+        "No convertir toda investigación o práctica en informe descriptivo"
+      ]
+    }
+  ],
+  "extents": [
+    {
+      "text": "Extensión máxima de dos páginas",
+      "operator": "MAX",
+      "values": [
+        "dos"
+      ]
+    },
+    {
+      "text": "Máximo dos páginas",
+      "operator": "MAX",
+      "values": [
+        "dos"
+      ]
+    },
+    {
+      "text": "Hasta dos páginas",
+      "operator": "MAX",
+      "values": [
+        "dos"
+      ]
+    },
+    {
+      "text": "Como máximo, dos páginas",
+      "operator": "MAX",
+      "values": [
+        "dos"
+      ]
+    },
+    {
+      "text": "Mínimo dos páginas",
+      "operator": "MIN",
+      "values": [
+        "dos"
+      ]
+    },
+    {
+      "text": "Entre dos y tres páginas",
+      "operator": "RANGE",
+      "values": [
+        "dos",
+        "tres"
+      ]
+    },
+    {
+      "text": "Exactamente dos páginas",
+      "operator": "EXACT",
+      "values": [
+        "dos"
+      ]
+    }
+  ]
+}

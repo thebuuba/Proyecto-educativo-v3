@@ -1,0 +1,823 @@
+{
+  "previousCase": {
+    "id": "atmosphere-report",
+    "title": "Así se organiza la atmósfera",
+    "description": "Elaboren un informe descriptivo sobre la atmósfera que explique sus capas y sus diferencias. Incluyan una introducción, un desarrollo y una conclusión. Añadan un dibujo rotulado de las capas en el desarrollo. Revisen la ortografía.",
+    "expected": [
+      "Informe descriptivo de un segundo tema implementado",
+      "Explicación y diferencias de capas atmosféricas",
+      "Dibujo rotulado sin habilidad artística",
+      "Sin método, hipótesis o resultados experimentales"
+    ]
+  },
+  "previousFullOutput": {
+    "id": "atmosphere-report",
+    "requirements": {
+      "conditions": [
+        {
+          "id": "task:1",
+          "property": "section",
+          "values": [
+            "introducción"
+          ],
+          "scope": "documento",
+          "operator": "EXACT",
+          "relation": "REQUIRED",
+          "origin": {
+            "start": 106,
+            "end": 118,
+            "text": "introducción"
+          }
+        },
+        {
+          "id": "task:2",
+          "property": "section",
+          "values": [
+            "desarrollo"
+          ],
+          "scope": "documento",
+          "operator": "EXACT",
+          "relation": "REQUIRED",
+          "origin": {
+            "start": 123,
+            "end": 133,
+            "text": "desarrollo"
+          }
+        },
+        {
+          "id": "task:3",
+          "property": "section",
+          "values": [
+            "conclusión"
+          ],
+          "scope": "documento",
+          "operator": "EXACT",
+          "relation": "REQUIRED",
+          "origin": {
+            "start": 140,
+            "end": 150,
+            "text": "conclusión"
+          }
+        },
+        {
+          "id": "task:4",
+          "property": "drawing",
+          "values": [
+            "dibujo rotulado de las capas en el desarrollo"
+          ],
+          "scope": "desarrollo",
+          "operator": "EXACT",
+          "relation": "REQUIRED",
+          "origin": {
+            "start": 162,
+            "end": 207,
+            "text": "dibujo rotulado de las capas en el desarrollo"
+          }
+        }
+      ],
+      "issues": []
+    },
+    "task": {
+      "grade": 1,
+      "actions": [
+        {
+          "text": "elaboren un informe descriptivo sobre la atmosfera que explice sus capas y sus diferencias. incluyan una introduccion, un desarrollo y una conclusion. anadan un dibujo rotulado de las capas en el desarrollo. revisen la ortografia.",
+          "topics": [
+            {
+              "grade": 1,
+              "pages": [
+                293
+              ],
+              "id": "atmosphere",
+              "label": "atmósfera",
+              "match": "atmosfera|atmosferic\\w*",
+              "relation": "las capas o propiedades atmosféricas solicitadas y su relación con el fenómeno estudiado"
+            }
+          ]
+        }
+      ],
+      "activityType": "REPORT",
+      "technique": "analisis-producciones",
+      "description": "Elaboren un informe descriptivo sobre la atmósfera que explique sus capas y sus diferencias. Incluyan una introducción, un desarrollo y una conclusión. Añadan un dibujo rotulado de las capas en el desarrollo. Revisen la ortografía.",
+      "reportPurpose": "DESCRIPTIVE"
+    },
+    "formats": [
+      {
+        "format": "rubrica",
+        "server": {
+          "kind": "RECOMMENDATION",
+          "catalogVersion": "evaluation-2026.173",
+          "instrumentType": "rubrica",
+          "confidence": "LOW",
+          "activityType": "REPORT",
+          "evidenceTypes": [
+            "PRODUCT",
+            "KNOWLEDGE"
+          ],
+          "participationMode": "INDIVIDUAL",
+          "curriculumVersionId": null,
+          "curriculumScopeId": null,
+          "selectedCurriculumElements": [],
+          "criteria": [
+            {
+              "id": "proposal:evaluation-2026.173:fallback:nat-1-descriptive-description:0",
+              "templateId": "nat-1-descriptive-description",
+              "title": "Descripción científica del contenido",
+              "description": "Describe las capas de atmósfera con características científicas que permiten reconocer cada elemento solicitado, sin confundir sus nombres ni atribuirles rasgos de otros elementos.",
+              "maxScore": 4.96,
+              "maxScoreUnits": 496,
+              "sourceType": "CONTEXTUALIZED",
+              "sourceReferences": [],
+              "progressionLevels": [
+                "Describe las capas de atmósfera con características científicas que permiten reconocer cada elemento solicitado, sin confundir sus nombres ni atribuirles rasgos de otros elementos.",
+                "Describe las capas de atmósfera y permite reconocer los elementos; alguna característica queda enunciada sin aclarar a cuál corresponde.",
+                "Describe solo parte de las capas de atmósfera o mezcla características que impiden distinguir algunos elementos.",
+                "Los nombres y las características atribuidos a las capas de atmósfera se contradicen y no permiten reconocer los elementos descritos.",
+                "No presenta una descripción científica reconocible de las capas de atmósfera."
+              ],
+              "relativeWeight": 4,
+              "taskConditionIds": [],
+              "descriptors": [
+                {
+                  "levelId": "L4",
+                  "text": "Describe las capas de atmósfera con características científicas que permiten reconocer cada elemento solicitado, sin confundir sus nombres ni atribuirles rasgos de otros elementos.",
+                  "scoreUnits": 496
+                },
+                {
+                  "levelId": "L3",
+                  "text": "Describe las capas de atmósfera y permite reconocer los elementos; alguna característica queda enunciada sin aclarar a cuál corresponde.",
+                  "scoreUnits": 331
+                },
+                {
+                  "levelId": "L2",
+                  "text": "Describe solo parte de las capas de atmósfera o mezcla características que impiden distinguir algunos elementos.",
+                  "scoreUnits": 165
+                },
+                {
+                  "levelId": "L1",
+                  "text": "No presenta una descripción científica reconocible de las capas de atmósfera.",
+                  "scoreUnits": 0
+                }
+              ]
+            },
+            {
+              "id": "proposal:evaluation-2026.173:fallback:nat-1-descriptive-differences:1",
+              "templateId": "nat-1-descriptive-differences",
+              "title": "Diferencias entre los elementos descritos",
+              "description": "Explica diferencias entre las capas de atmósfera, comparando características equivalentes y manteniendo correspondencia con su descripción científica.",
+              "maxScore": 4.95,
+              "maxScoreUnits": 495,
+              "sourceType": "CONTEXTUALIZED",
+              "sourceReferences": [],
+              "progressionLevels": [
+                "Explica diferencias entre las capas de atmósfera, comparando características equivalentes y manteniendo correspondencia con su descripción científica.",
+                "Explica diferencias pertinentes entre las capas de atmósfera, pero deja implícita la característica utilizada en alguna comparación.",
+                "Enumera características de las capas de atmósfera, pero no explica sus diferencias o compara características que no corresponden entre sí.",
+                "Atribuye a las capas de atmósfera diferencias incompatibles con sus características científicas.",
+                "No establece diferencias entre las capas de atmósfera."
+              ],
+              "relativeWeight": 4,
+              "taskConditionIds": [],
+              "descriptors": [
+                {
+                  "levelId": "L4",
+                  "text": "Explica diferencias entre las capas de atmósfera, comparando características equivalentes y manteniendo correspondencia con su descripción científica.",
+                  "scoreUnits": 495
+                },
+                {
+                  "levelId": "L3",
+                  "text": "Explica diferencias pertinentes entre las capas de atmósfera, pero deja implícita la característica utilizada en alguna comparación.",
+                  "scoreUnits": 330
+                },
+                {
+                  "levelId": "L2",
+                  "text": "Enumera características de las capas de atmósfera, pero no explica sus diferencias o compara características que no corresponden entre sí.",
+                  "scoreUnits": 165
+                },
+                {
+                  "levelId": "L1",
+                  "text": "No establece diferencias entre las capas de atmósfera.",
+                  "scoreUnits": 0
+                }
+              ]
+            },
+            {
+              "id": "proposal:evaluation-2026.173:fallback:nat-1-descriptive-drawing:2",
+              "templateId": "nat-1-descriptive-drawing",
+              "title": "Representación científica y rótulos",
+              "description": "El dibujo representa las capas de atmósfera con una disposición científicamente coherente; los nombres o rótulos identifican las partes representadas. Recurso solicitado: dibujo rotulado de las capas en el desarrollo en desarrollo. Se evalúa la representación científica, sin valorar destreza artística.",
+              "maxScore": 3.72,
+              "maxScoreUnits": 372,
+              "sourceType": "CONTEXTUALIZED",
+              "sourceReferences": [],
+              "progressionLevels": [
+                "El dibujo representa las capas de atmósfera con una disposición científicamente coherente; los nombres o rótulos identifican las partes representadas. Recurso solicitado: dibujo rotulado de las capas en el desarrollo en desarrollo. Se evalúa la representación científica, sin valorar destreza artística.",
+                "La disposición permite reconocer las capas de atmósfera, pero una relación entre el dibujo y su descripción queda poco clara, algún rótulo no corresponde con claridad a la parte señalada o el dibujo está fuera de la ubicación solicitada. Recurso: dibujo rotulado de las capas en el desarrollo en desarrollo.",
+                "El dibujo muestra solo parte de las capas de atmósfera o deja partes sin nombres; la relación entre dibujo y descripción resulta incompleta.",
+                "El dibujo o sus rótulos atribuye a las capas de atmósfera ubicaciones o relaciones científicas incompatibles con el contenido.",
+                "No presenta el dibujo solicitado de las capas de atmósfera."
+              ],
+              "relativeWeight": 3,
+              "taskConditionIds": [
+                "task:4"
+              ],
+              "descriptors": [
+                {
+                  "levelId": "L4",
+                  "text": "El dibujo representa las capas de atmósfera con una disposición científicamente coherente; los nombres o rótulos identifican las partes representadas. Recurso solicitado: dibujo rotulado de las capas en el desarrollo en desarrollo. Se evalúa la representación científica, sin valorar destreza artística.",
+                  "scoreUnits": 372
+                },
+                {
+                  "levelId": "L3",
+                  "text": "La disposición permite reconocer las capas de atmósfera, pero una relación entre el dibujo y su descripción queda poco clara, algún rótulo no corresponde con claridad a la parte señalada o el dibujo está fuera de la ubicación solicitada. Recurso: dibujo rotulado de las capas en el desarrollo en desarrollo.",
+                  "scoreUnits": 248
+                },
+                {
+                  "levelId": "L2",
+                  "text": "El dibujo muestra solo parte de las capas de atmósfera o deja partes sin nombres; la relación entre dibujo y descripción resulta incompleta.",
+                  "scoreUnits": 124
+                },
+                {
+                  "levelId": "L1",
+                  "text": "No presenta el dibujo solicitado de las capas de atmósfera.",
+                  "scoreUnits": 0
+                }
+              ]
+            },
+            {
+              "id": "proposal:evaluation-2026.173:fallback:nat-1-descriptive-organization:3",
+              "templateId": "nat-1-descriptive-organization",
+              "title": "Estructura y claridad del informe",
+              "description": "Ordena la descripción y la explicación de las capas de atmósfera en una secuencia comprensible; conecta las ideas sin repetirlas ni contradecirlas. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+              "maxScore": 2.48,
+              "maxScoreUnits": 248,
+              "sourceType": "CONTEXTUALIZED",
+              "sourceReferences": [],
+              "progressionLevels": [
+                "Ordena la descripción y la explicación de las capas de atmósfera en una secuencia comprensible; conecta las ideas sin repetirlas ni contradecirlas. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+                "La descripción y la explicación se comprenden; una transición o la distribución de los párrafos interrumpe su continuidad. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+                "Se reconocen ideas del contenido, pero las secciones o los párrafos quedan desconectados y no se distingue la función de cada parte. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+                "El orden de los fragmentos impide seguir la descripción y relacionarla con la explicación.",
+                "No presenta un informe organizado que permita seguir las ideas del contenido solicitado."
+              ],
+              "relativeWeight": 2,
+              "taskConditionIds": [
+                "task:1",
+                "task:2",
+                "task:3"
+              ],
+              "descriptors": [
+                {
+                  "levelId": "L4",
+                  "text": "Ordena la descripción y la explicación de las capas de atmósfera en una secuencia comprensible; conecta las ideas sin repetirlas ni contradecirlas. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+                  "scoreUnits": 248
+                },
+                {
+                  "levelId": "L3",
+                  "text": "La descripción y la explicación se comprenden; una transición o la distribución de los párrafos interrumpe su continuidad. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+                  "scoreUnits": 165
+                },
+                {
+                  "levelId": "L2",
+                  "text": "Se reconocen ideas del contenido, pero las secciones o los párrafos quedan desconectados y no se distingue la función de cada parte. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+                  "scoreUnits": 83
+                },
+                {
+                  "levelId": "L1",
+                  "text": "No presenta un informe organizado que permita seguir las ideas del contenido solicitado.",
+                  "scoreUnits": 0
+                }
+              ]
+            },
+            {
+              "id": "proposal:evaluation-2026.173:fallback:nat-1-descriptive-orthography:4",
+              "templateId": "nat-1-descriptive-orthography",
+              "title": "Ortografía del informe",
+              "description": "La ortografía del informe conserva la escritura correcta de las palabras, la acentuación y las mayúsculas, manteniendo el sentido del texto.",
+              "maxScore": 1.24,
+              "maxScoreUnits": 124,
+              "sourceType": "CONTEXTUALIZED",
+              "sourceReferences": [],
+              "progressionLevels": [
+                "La ortografía del informe conserva la escritura correcta de las palabras, la acentuación y las mayúsculas, manteniendo el sentido del texto.",
+                "La escritura permite comprender el informe; presenta errores ortográficos localizados que no cambian el sentido de las ideas.",
+                "Los errores de escritura o acentuación se repiten y dificultan reconocer palabras o relaciones del informe.",
+                "Los errores ortográficos alteran el sentido de las palabras y dificultan comprender las ideas del informe.",
+                "No presenta texto legible que permita evaluar la ortografía del informe."
+              ],
+              "relativeWeight": 1,
+              "taskConditionIds": [],
+              "descriptors": [
+                {
+                  "levelId": "L4",
+                  "text": "La ortografía del informe conserva la escritura correcta de las palabras, la acentuación y las mayúsculas, manteniendo el sentido del texto.",
+                  "scoreUnits": 124
+                },
+                {
+                  "levelId": "L3",
+                  "text": "La escritura permite comprender el informe; presenta errores ortográficos localizados que no cambian el sentido de las ideas.",
+                  "scoreUnits": 83
+                },
+                {
+                  "levelId": "L2",
+                  "text": "Los errores de escritura o acentuación se repiten y dificultan reconocer palabras o relaciones del informe.",
+                  "scoreUnits": 41
+                },
+                {
+                  "levelId": "L1",
+                  "text": "No presenta texto legible que permita evaluar la ortografía del informe.",
+                  "scoreUnits": 0
+                }
+              ]
+            }
+          ],
+          "levels": [
+            {
+              "id": "L4",
+              "label": "Destacado",
+              "proportion": 1
+            },
+            {
+              "id": "L3",
+              "label": "Logrado",
+              "proportion": 0.6666666666666666
+            },
+            {
+              "id": "L2",
+              "label": "En proceso",
+              "proportion": 0.3333333333333333
+            },
+            {
+              "id": "L1",
+              "label": "Inicial",
+              "proportion": 0
+            }
+          ],
+          "totalScore": 17.35,
+          "totalScoreUnits": 1735,
+          "scoreUnit": 0.01,
+          "internalTrace": {
+            "mappingStatus": "UNMAPPED",
+            "reasons": [
+              "band=SECONDARY",
+              "discipline=science",
+              "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+              "module=ciencias-naturaleza-comun-1",
+              "topics=atmosphere",
+              "coverage=DEFINED_SCIENTIFIC_ACTIONS"
+            ],
+            "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+            "activityTypeOrigin": "DETECTED",
+            "ranking": [],
+            "curriculumStatus": null,
+            "lowCurriculumConfidence": true,
+            "consideredTypes": [
+              "SPECIFIC_COMPETENCY",
+              "EVALUATION_CRITERION",
+              "ACHIEVEMENT_INDICATOR",
+              "CONCEPT",
+              "PROCEDURE",
+              "ATTITUDE_VALUE"
+            ],
+            "taskRequirements": {
+              "conditions": [
+                {
+                  "id": "task:1",
+                  "property": "section",
+                  "values": [
+                    "introducción"
+                  ],
+                  "scope": "documento",
+                  "operator": "EXACT",
+                  "relation": "REQUIRED",
+                  "origin": {
+                    "start": 106,
+                    "end": 118,
+                    "text": "introducción"
+                  }
+                },
+                {
+                  "id": "task:2",
+                  "property": "section",
+                  "values": [
+                    "desarrollo"
+                  ],
+                  "scope": "documento",
+                  "operator": "EXACT",
+                  "relation": "REQUIRED",
+                  "origin": {
+                    "start": 123,
+                    "end": 133,
+                    "text": "desarrollo"
+                  }
+                },
+                {
+                  "id": "task:3",
+                  "property": "section",
+                  "values": [
+                    "conclusión"
+                  ],
+                  "scope": "documento",
+                  "operator": "EXACT",
+                  "relation": "REQUIRED",
+                  "origin": {
+                    "start": 140,
+                    "end": 150,
+                    "text": "conclusión"
+                  }
+                },
+                {
+                  "id": "task:4",
+                  "property": "drawing",
+                  "values": [
+                    "dibujo rotulado de las capas en el desarrollo"
+                  ],
+                  "scope": "desarrollo",
+                  "operator": "EXACT",
+                  "relation": "REQUIRED",
+                  "origin": {
+                    "start": 162,
+                    "end": 207,
+                    "text": "dibujo rotulado de las capas en el desarrollo"
+                  }
+                }
+              ],
+              "issues": []
+            },
+            "generatorVersion": "science-descriptive-report-v1"
+          }
+        },
+        "local": {
+          "kind": "RECOMMENDATION",
+          "catalogVersion": "editable-fallback-v1",
+          "instrumentType": "rubrica",
+          "confidence": "LOW",
+          "activityType": "REPORT",
+          "evidenceTypes": [
+            "KNOWLEDGE",
+            "PRODUCT",
+            "PERFORMANCE"
+          ],
+          "participationMode": "INDIVIDUAL",
+          "curriculumVersionId": null,
+          "curriculumScopeId": null,
+          "selectedCurriculumElements": [],
+          "criteria": [
+            {
+              "id": "editable:nat-1-descriptive-description",
+              "templateId": "nat-1-descriptive-description",
+              "title": "Descripción científica del contenido",
+              "description": "Describe las capas de atmósfera con características científicas que permiten reconocer cada elemento solicitado, sin confundir sus nombres ni atribuirles rasgos de otros elementos.",
+              "maxScore": 4.96,
+              "maxScoreUnits": 496,
+              "sourceType": "ACTIVITY_TEMPLATE",
+              "sourceReferences": [],
+              "progressionLevels": [
+                "Describe las capas de atmósfera con características científicas que permiten reconocer cada elemento solicitado, sin confundir sus nombres ni atribuirles rasgos de otros elementos.",
+                "Describe las capas de atmósfera y permite reconocer los elementos; alguna característica queda enunciada sin aclarar a cuál corresponde.",
+                "Describe solo parte de las capas de atmósfera o mezcla características que impiden distinguir algunos elementos.",
+                "Los nombres y las características atribuidos a las capas de atmósfera se contradicen y no permiten reconocer los elementos descritos.",
+                "No presenta una descripción científica reconocible de las capas de atmósfera."
+              ],
+              "relativeWeight": 4,
+              "taskConditionIds": [],
+              "descriptors": [
+                {
+                  "levelId": "L4",
+                  "text": "Describe las capas de atmósfera con características científicas que permiten reconocer cada elemento solicitado, sin confundir sus nombres ni atribuirles rasgos de otros elementos.",
+                  "scoreUnits": 496
+                },
+                {
+                  "levelId": "L3",
+                  "text": "Describe las capas de atmósfera y permite reconocer los elementos; alguna característica queda enunciada sin aclarar a cuál corresponde.",
+                  "scoreUnits": 331
+                },
+                {
+                  "levelId": "L2",
+                  "text": "Describe solo parte de las capas de atmósfera o mezcla características que impiden distinguir algunos elementos.",
+                  "scoreUnits": 165
+                },
+                {
+                  "levelId": "L1",
+                  "text": "No presenta una descripción científica reconocible de las capas de atmósfera.",
+                  "scoreUnits": 0
+                }
+              ]
+            },
+            {
+              "id": "editable:nat-1-descriptive-differences",
+              "templateId": "nat-1-descriptive-differences",
+              "title": "Diferencias entre los elementos descritos",
+              "description": "Explica diferencias entre las capas de atmósfera, comparando características equivalentes y manteniendo correspondencia con su descripción científica.",
+              "maxScore": 4.95,
+              "maxScoreUnits": 495,
+              "sourceType": "ACTIVITY_TEMPLATE",
+              "sourceReferences": [],
+              "progressionLevels": [
+                "Explica diferencias entre las capas de atmósfera, comparando características equivalentes y manteniendo correspondencia con su descripción científica.",
+                "Explica diferencias pertinentes entre las capas de atmósfera, pero deja implícita la característica utilizada en alguna comparación.",
+                "Enumera características de las capas de atmósfera, pero no explica sus diferencias o compara características que no corresponden entre sí.",
+                "Atribuye a las capas de atmósfera diferencias incompatibles con sus características científicas.",
+                "No establece diferencias entre las capas de atmósfera."
+              ],
+              "relativeWeight": 4,
+              "taskConditionIds": [],
+              "descriptors": [
+                {
+                  "levelId": "L4",
+                  "text": "Explica diferencias entre las capas de atmósfera, comparando características equivalentes y manteniendo correspondencia con su descripción científica.",
+                  "scoreUnits": 495
+                },
+                {
+                  "levelId": "L3",
+                  "text": "Explica diferencias pertinentes entre las capas de atmósfera, pero deja implícita la característica utilizada en alguna comparación.",
+                  "scoreUnits": 330
+                },
+                {
+                  "levelId": "L2",
+                  "text": "Enumera características de las capas de atmósfera, pero no explica sus diferencias o compara características que no corresponden entre sí.",
+                  "scoreUnits": 165
+                },
+                {
+                  "levelId": "L1",
+                  "text": "No establece diferencias entre las capas de atmósfera.",
+                  "scoreUnits": 0
+                }
+              ]
+            },
+            {
+              "id": "editable:nat-1-descriptive-drawing",
+              "templateId": "nat-1-descriptive-drawing",
+              "title": "Representación científica y rótulos",
+              "description": "El dibujo representa las capas de atmósfera con una disposición científicamente coherente; los nombres o rótulos identifican las partes representadas. Recurso solicitado: dibujo rotulado de las capas en el desarrollo en desarrollo. Se evalúa la representación científica, sin valorar destreza artística.",
+              "maxScore": 3.72,
+              "maxScoreUnits": 372,
+              "sourceType": "ACTIVITY_TEMPLATE",
+              "sourceReferences": [],
+              "progressionLevels": [
+                "El dibujo representa las capas de atmósfera con una disposición científicamente coherente; los nombres o rótulos identifican las partes representadas. Recurso solicitado: dibujo rotulado de las capas en el desarrollo en desarrollo. Se evalúa la representación científica, sin valorar destreza artística.",
+                "La disposición permite reconocer las capas de atmósfera, pero una relación entre el dibujo y su descripción queda poco clara, algún rótulo no corresponde con claridad a la parte señalada o el dibujo está fuera de la ubicación solicitada. Recurso: dibujo rotulado de las capas en el desarrollo en desarrollo.",
+                "El dibujo muestra solo parte de las capas de atmósfera o deja partes sin nombres; la relación entre dibujo y descripción resulta incompleta.",
+                "El dibujo o sus rótulos atribuye a las capas de atmósfera ubicaciones o relaciones científicas incompatibles con el contenido.",
+                "No presenta el dibujo solicitado de las capas de atmósfera."
+              ],
+              "relativeWeight": 3,
+              "taskConditionIds": [
+                "task:4"
+              ],
+              "descriptors": [
+                {
+                  "levelId": "L4",
+                  "text": "El dibujo representa las capas de atmósfera con una disposición científicamente coherente; los nombres o rótulos identifican las partes representadas. Recurso solicitado: dibujo rotulado de las capas en el desarrollo en desarrollo. Se evalúa la representación científica, sin valorar destreza artística.",
+                  "scoreUnits": 372
+                },
+                {
+                  "levelId": "L3",
+                  "text": "La disposición permite reconocer las capas de atmósfera, pero una relación entre el dibujo y su descripción queda poco clara, algún rótulo no corresponde con claridad a la parte señalada o el dibujo está fuera de la ubicación solicitada. Recurso: dibujo rotulado de las capas en el desarrollo en desarrollo.",
+                  "scoreUnits": 248
+                },
+                {
+                  "levelId": "L2",
+                  "text": "El dibujo muestra solo parte de las capas de atmósfera o deja partes sin nombres; la relación entre dibujo y descripción resulta incompleta.",
+                  "scoreUnits": 124
+                },
+                {
+                  "levelId": "L1",
+                  "text": "No presenta el dibujo solicitado de las capas de atmósfera.",
+                  "scoreUnits": 0
+                }
+              ]
+            },
+            {
+              "id": "editable:nat-1-descriptive-organization",
+              "templateId": "nat-1-descriptive-organization",
+              "title": "Estructura y claridad del informe",
+              "description": "Ordena la descripción y la explicación de las capas de atmósfera en una secuencia comprensible; conecta las ideas sin repetirlas ni contradecirlas. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+              "maxScore": 2.48,
+              "maxScoreUnits": 248,
+              "sourceType": "ACTIVITY_TEMPLATE",
+              "sourceReferences": [],
+              "progressionLevels": [
+                "Ordena la descripción y la explicación de las capas de atmósfera en una secuencia comprensible; conecta las ideas sin repetirlas ni contradecirlas. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+                "La descripción y la explicación se comprenden; una transición o la distribución de los párrafos interrumpe su continuidad. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+                "Se reconocen ideas del contenido, pero las secciones o los párrafos quedan desconectados y no se distingue la función de cada parte. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+                "El orden de los fragmentos impide seguir la descripción y relacionarla con la explicación.",
+                "No presenta un informe organizado que permita seguir las ideas del contenido solicitado."
+              ],
+              "relativeWeight": 2,
+              "taskConditionIds": [
+                "task:1",
+                "task:2",
+                "task:3"
+              ],
+              "descriptors": [
+                {
+                  "levelId": "L4",
+                  "text": "Ordena la descripción y la explicación de las capas de atmósfera en una secuencia comprensible; conecta las ideas sin repetirlas ni contradecirlas. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+                  "scoreUnits": 248
+                },
+                {
+                  "levelId": "L3",
+                  "text": "La descripción y la explicación se comprenden; una transición o la distribución de los párrafos interrumpe su continuidad. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+                  "scoreUnits": 165
+                },
+                {
+                  "levelId": "L2",
+                  "text": "Se reconocen ideas del contenido, pero las secciones o los párrafos quedan desconectados y no se distingue la función de cada parte. Organización solicitada: incluye introducción; incluye desarrollo; incluye conclusión.",
+                  "scoreUnits": 83
+                },
+                {
+                  "levelId": "L1",
+                  "text": "No presenta un informe organizado que permita seguir las ideas del contenido solicitado.",
+                  "scoreUnits": 0
+                }
+              ]
+            },
+            {
+              "id": "editable:nat-1-descriptive-orthography",
+              "templateId": "nat-1-descriptive-orthography",
+              "title": "Ortografía del informe",
+              "description": "La ortografía del informe conserva la escritura correcta de las palabras, la acentuación y las mayúsculas, manteniendo el sentido del texto.",
+              "maxScore": 1.24,
+              "maxScoreUnits": 124,
+              "sourceType": "ACTIVITY_TEMPLATE",
+              "sourceReferences": [],
+              "progressionLevels": [
+                "La ortografía del informe conserva la escritura correcta de las palabras, la acentuación y las mayúsculas, manteniendo el sentido del texto.",
+                "La escritura permite comprender el informe; presenta errores ortográficos localizados que no cambian el sentido de las ideas.",
+                "Los errores de escritura o acentuación se repiten y dificultan reconocer palabras o relaciones del informe.",
+                "Los errores ortográficos alteran el sentido de las palabras y dificultan comprender las ideas del informe.",
+                "No presenta texto legible que permita evaluar la ortografía del informe."
+              ],
+              "relativeWeight": 1,
+              "taskConditionIds": [],
+              "descriptors": [
+                {
+                  "levelId": "L4",
+                  "text": "La ortografía del informe conserva la escritura correcta de las palabras, la acentuación y las mayúsculas, manteniendo el sentido del texto.",
+                  "scoreUnits": 124
+                },
+                {
+                  "levelId": "L3",
+                  "text": "La escritura permite comprender el informe; presenta errores ortográficos localizados que no cambian el sentido de las ideas.",
+                  "scoreUnits": 83
+                },
+                {
+                  "levelId": "L2",
+                  "text": "Los errores de escritura o acentuación se repiten y dificultan reconocer palabras o relaciones del informe.",
+                  "scoreUnits": 41
+                },
+                {
+                  "levelId": "L1",
+                  "text": "No presenta texto legible que permita evaluar la ortografía del informe.",
+                  "scoreUnits": 0
+                }
+              ]
+            }
+          ],
+          "levels": [
+            {
+              "id": "L4",
+              "label": "Destacado",
+              "proportion": 1
+            },
+            {
+              "id": "L3",
+              "label": "Logrado",
+              "proportion": 0.6666666666666666
+            },
+            {
+              "id": "L2",
+              "label": "En proceso",
+              "proportion": 0.3333333333333333
+            },
+            {
+              "id": "L1",
+              "label": "Inicial",
+              "proportion": 0
+            }
+          ],
+          "totalScore": 17.35,
+          "totalScoreUnits": 1735,
+          "scoreUnit": 0.01,
+          "internalTrace": {
+            "taskRequirements": {
+              "conditions": [
+                {
+                  "id": "task:1",
+                  "property": "section",
+                  "values": [
+                    "introducción"
+                  ],
+                  "scope": "documento",
+                  "operator": "EXACT",
+                  "relation": "REQUIRED",
+                  "origin": {
+                    "start": 106,
+                    "end": 118,
+                    "text": "introducción"
+                  }
+                },
+                {
+                  "id": "task:2",
+                  "property": "section",
+                  "values": [
+                    "desarrollo"
+                  ],
+                  "scope": "documento",
+                  "operator": "EXACT",
+                  "relation": "REQUIRED",
+                  "origin": {
+                    "start": 123,
+                    "end": 133,
+                    "text": "desarrollo"
+                  }
+                },
+                {
+                  "id": "task:3",
+                  "property": "section",
+                  "values": [
+                    "conclusión"
+                  ],
+                  "scope": "documento",
+                  "operator": "EXACT",
+                  "relation": "REQUIRED",
+                  "origin": {
+                    "start": 140,
+                    "end": 150,
+                    "text": "conclusión"
+                  }
+                },
+                {
+                  "id": "task:4",
+                  "property": "drawing",
+                  "values": [
+                    "dibujo rotulado de las capas en el desarrollo"
+                  ],
+                  "scope": "desarrollo",
+                  "operator": "EXACT",
+                  "relation": "REQUIRED",
+                  "origin": {
+                    "start": 162,
+                    "end": 207,
+                    "text": "dibujo rotulado de las capas en el desarrollo"
+                  }
+                }
+              ],
+              "issues": []
+            },
+            "mappingStatus": "FALLBACK",
+            "reasons": [
+              "module=ciencias-naturaleza-comun-1",
+              "Adaptación evaluativa editable; no constituye aprobación curricular."
+            ],
+            "ruleId": "editable-topic",
+            "activityTypeOrigin": "DETECTED",
+            "ranking": [],
+            "curriculumStatus": null,
+            "lowCurriculumConfidence": true,
+            "consideredTypes": [],
+            "generatorVersion": "science-descriptive-report-v1"
+          }
+        }
+      }
+    ]
+  },
+  "comparison": {
+    "namedLayersPreviouslyRequested": false,
+    "locationAndTemperaturePreviouslyRequested": false,
+    "maximumPagesPreviouslyRequested": false,
+    "formatsPreviouslyGenerated": [
+      "rubrica"
+    ],
+    "limitations": "Se leyó el contenido genérico de atmósfera y se comparó paridad; las cuatro lecturas completas correspondían a Tierra. No acreditaba capas nombradas, esquema ordenado ni máximo."
+  },
+  "preservation": [
+    {
+      "id": "earth",
+      "fullCriteriaAndDescriptorsUnchanged": true
+    },
+    {
+      "id": "density-experiment",
+      "fullCriteriaAndDescriptorsUnchanged": true
+    }
+  ],
+  "previousEvidenceSha256": {
+    "after.json": "f944dcb3f1615f7c4512e555b1e3b52cbb336a6021f7d4ff2513153a727857f8",
+    "before.json": "cf7809f1a0822b2aff1aa3bd4ceb5fb18bf11fc2600b4534d218e7e016b38655",
+    "browser.json": "9a5da1e219734cb9a85ac7505750d1f1dfbe62a1c977c4573f31c090049dec50",
+    "cases.json": "cb88a1e00ac27ba981ab03a9494e4015d556ed3c68a48e78c440b647b44d5a7d",
+    "environment-before.json": "add33ca544872e03f9336980d3f2df474f86b8411e382fcb5fedcf48353b4c33",
+    "http-after.json": "fcbd4d345b124e8444c794df59987385188fc34576db75bca8ab6bae0a804c61",
+    "http-before.json": "5cf4bc983b01a229cc7948d5c436be527666589cf7e8c859a40e171447b50fba",
+    "http-final.json": "ca562e72b7c84b980239dd1396c386ebeb984f6cd480df8c69252583ed5029e7",
+    "instrumentos-completos.md": "bf5bdbd196f961a1017ff0a18c55bfb83e8d5fdd3cfe1c11401979b22e311f10",
+    "parity.json": "8122eb1f2927a66d22c5ff5b0c85d8e2344c42c86093d9a4c7f98558efa4f3df",
+    "preservation-final.json": "48f0e8eeda5e5a43c8a018566f3524e35e73da8b61e407f21e5d7a94a71e7bc0",
+    "preservation.json": "48f0e8eeda5e5a43c8a018566f3524e35e73da8b61e407f21e5d7a94a71e7bc0",
+    "runtime-final.json": "124ef10340004371003b749acc6d56590ddf15376bc110f80f65768aaf2a888b",
+    "runtime.json": "f5da778333245079a837d259d6abcb20a9d4d9b30f0fbfd844ae8019867385d6",
+    "verification-final.json": "ef0f327ddf64bea07a8660d057b612ec6b1cea2c37a6103c06281c609b266f58",
+    "verification.json": "8037ac8b442548b250827c36ed8d52b1480ce668559eef18143bba51d79dbf89"
+  }
+}

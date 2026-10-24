@@ -1,0 +1,160 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "account": "PERSONAL_DEVELOPMENT_NOT_QA",
+  "entry": [
+    "http://localhost:8787/assets/index-NhSZlGsY.js",
+    "http://localhost:8787/registerSW.js"
+  ],
+  "formats": [
+    {
+      "format": "rubrica",
+      "fieldCount": 43,
+      "initialScorePending": true,
+      "requiredContentChecked": true
+    },
+    {
+      "format": "lista-cotejo",
+      "fieldCount": 15,
+      "initialScorePending": true,
+      "requiredContentChecked": true
+    },
+    {
+      "format": "escala",
+      "fieldCount": 36,
+      "initialScorePending": true,
+      "requiredContentChecked": true
+    },
+    {
+      "format": "lista-ponderada",
+      "fieldCount": 22,
+      "initialScorePending": true,
+      "requiredContentChecked": true
+    }
+  ],
+  "activityId": "24925148-155e-4616-9129-e0e9596e5eab",
+  "singlePostStatus": 201,
+  "descriptionUnchanged": true,
+  "manualTextAndWeightsPreserved": true,
+  "reopened": {
+    "url": "http://localhost:8787/actividades/crear?sectionSubjectId=df69cca0-3db5-47d5-a2f5-68500cacfc65&academicPeriodId=fec939cd-a621-4a7e-af29-795e8d792c49&activityId=24925148-155e-4616-9129-e0e9596e5eab",
+    "fields": [
+      {
+        "label": null,
+        "placeholder": "Ej. Lista ponderada para la actividad",
+        "value": "Lista ponderada para FICTICIA PERSONAL ATMÓSFERA 2026-10-24 · Conocemos las capas de la atmósfera"
+      },
+      {
+        "label": "Criterio 1",
+        "placeholder": "Criterio 1",
+        "value": "Descripción de las capas · edición manual personal"
+      },
+      {
+        "label": "Indicador del criterio 1",
+        "placeholder": "Describe la evidencia observable de este criterio",
+        "value": "Describe troposfera, estratosfera, mesosfera con características científicas que permiten reconocer cada elemento solicitado, sin confundir sus nombres ni atribuirles rasgos de otros elementos. Parcial (50%): Describe solo parte de troposfera, estratosfera, mesosfera o mezcla características que impiden distinguir algunos elementos."
+      },
+      {
+        "label": null,
+        "placeholder": "0",
+        "value": "30"
+      },
+      {
+        "label": "Criterio 2",
+        "placeholder": "Criterio 2",
+        "value": "Diferencias entre los elementos descritos"
+      },
+      {
+        "label": "Indicador del criterio 2",
+        "placeholder": "Describe la evidencia observable de este criterio",
+        "value": "Explica diferencias entre troposfera, estratosfera, mesosfera, comparando su ubicación y temperatura y manteniendo correspondencia con su descripción científica. Parcial (50%): Enumera características de troposfera, estratosfera, mesosfera, pero no explica sus diferencias de ubicación y temperatura o compara características que no corresponden entre sí."
+      },
+      {
+        "label": null,
+        "placeholder": "0",
+        "value": "20"
+      },
+      {
+        "label": "Criterio 3",
+        "placeholder": "Criterio 3",
+        "value": "Representación científica y rótulos"
+      },
+      {
+        "label": "Indicador del criterio 3",
+        "placeholder": "Describe la evidencia observable de este criterio",
+        "value": "El esquema representa troposfera, estratosfera, mesosfera con una disposición científicamente coherente y en su orden correcto; los nombres o rótulos identifican las partes representadas. Recurso solicitado: esquema con los nombres de las tres capas en su orden correcto en desarrollo. Se evalúa la representación científica, sin valorar destreza artística. Parcial (50%): El esquema muestra solo parte de troposfera, estratosfera, mesosfera o deja partes sin nombres; la relación entre esquema y descripción resulta incompleta."
+      },
+      {
+        "label": null,
+        "placeholder": "0",
+        "value": "18.75"
+      },
+      {
+        "label": "Criterio 4",
+        "placeholder": "Criterio 4",
+        "value": "Estructura y claridad del informe"
+      },
+      {
+        "label": "Indicador del criterio 4",
+        "placeholder": "Describe la evidencia observable de este criterio",
+        "value": "Ordena la descripción y la explicación de troposfera, estratosfera, mesosfera en una secuencia comprensible; conecta las ideas sin repetirlas ni contradecirlas. Organización solicitada: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión. Parcial (50%): Se reconocen ideas del contenido, pero las secciones o los párrafos quedan desconectados y no se distingue la función de cada parte. Organización solicitada: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión."
+      },
+      {
+        "label": null,
+        "placeholder": "0",
+        "value": "12.5"
+      },
+      {
+        "label": "Criterio 5",
+        "placeholder": "Criterio 5",
+        "value": "Ortografía del informe"
+      },
+      {
+        "label": "Indicador del criterio 5",
+        "placeholder": "Describe la evidencia observable de este criterio",
+        "value": "La ortografía del informe conserva la escritura correcta de las palabras, la acentuación y las mayúsculas, manteniendo el sentido del texto. Parcial (50%): Los errores de escritura o acentuación se repiten y dificultan reconocer palabras o relaciones del informe."
+      },
+      {
+        "label": null,
+        "placeholder": "0",
+        "value": "6.25"
+      },
+      {
+        "label": "Criterio 6",
+        "placeholder": "Criterio 6",
+        "value": "Formato del documento"
+      },
+      {
+        "label": "Indicador del criterio 6",
+        "placeholder": "Describe la evidencia observable de este criterio",
+        "value": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título. Parcial (50%): La fuente o el tamaño se omiten o se aplican a un ámbito distinto del indicado (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); conserva parte de la disposición solicitada: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título."
+      },
+      {
+        "label": null,
+        "placeholder": "0",
+        "value": "6.25"
+      },
+      {
+        "label": "Criterio 7",
+        "placeholder": "Criterio 7",
+        "value": "Entrega y extensión solicitadas"
+      },
+      {
+        "label": "Indicador del criterio 7",
+        "placeholder": "Describe la evidencia observable de este criterio",
+        "value": "La entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: archivo en Word o PDF; máximo dos páginas sin contar la portada; sin exigir alcanzar el límite si se satisface el contenido solicitado. Parcial (50%): El texto se presenta en un formato distinto de los permitidos (archivo en Word o PDF); la cantidad de páginas no compensa ese incumplimiento. Extensión solicitada: máximo dos páginas sin contar la portada."
+      },
+      {
+        "label": null,
+        "placeholder": "0",
+        "value": "6.25"
+      }
+    ],
+    "table": "#\tCRITERIO\tINDICADOR OBSERVABLE\tPONDERACIÓN\tVALOR MÁXIMO\tACCIONES\n\n1\n\t\t\t\n%\n\t5.21 pts\t\n\n\n2\n\t\t\t\n%\n\t3.47 pts\t\n\n\n3\n\t\t\t\n%\n\t3.25 pts\t\n\n\n4\n\t\t\t\n%\n\t2.17 pts\t\n\n\n5\n\t\t\t\n%\n\t1.09 pts\t\n\n\n6\n\t\t\t\n%\n\t1.08 pts\t\n\n\n7\n\t\t\t\n%\n\t1.08 pts\t\n\n\nPonderación máxima totalConfiguración correcta.\t100/100 %\t17.35 pts\t",
+    "all22FieldsEqual": true,
+    "tableAndPointsEqual": true,
+    "preview": "VISTA PREVIA · SOLO LECTURA\n\nLista ponderada para FICTICIA PERSONAL ATMÓSFERA 2026-10-24 · Conocemos las capas de la atmósfera\n\nActividad: FICTICIA PERSONAL ATMÓSFERA 2026-10-24 · Conocemos las capas de la atmósfera · Bloque 3 · 17.35 puntos · 7 criterios\n\nCriterio / indicador\tSí\nValor relativo: 100\n\tParcial\nValor relativo: 50\n\tNo\nValor relativo: 0\n\tMáximo\nDescripción de las capas · edición manual personal\n\nDescribe troposfera, estratosfera, mesosfera con características científicas que permiten reconocer cada elemento solicitado, sin confundir sus nombres ni atribuirles rasgos de otros elementos. Parcial (50%): Describe solo parte de troposfera, estratosfera, mesosfera o mezcla características que impiden distinguir algunos elementos.\n\n\t\n—\n5.21 pts\n\t\n—\n2.61 pts\n\t\n—\n0 pts\n\t5.21 pts\nDiferencias entre los elementos descritos\n\nExplica diferencias entre troposfera, estratosfera, mesosfera, comparando su ubicación y temperatura y manteniendo correspondencia con su descripción científica. Parcial (50%): Enumera características de troposfera, estratosfera, mesosfera, pero no explica sus diferencias de ubicación y temperatura o compara características que no corresponden entre sí.\n\n\t\n—\n3.47 pts\n\t\n—\n1.74 pts\n\t\n—\n0 pts\n\t3.47 pts\nRepresentación científica y rótulos\n\nEl esquema representa troposfera, estratosfera, mesosfera con una disposición científicamente coherente y en su orden correcto; los nombres o rótulos identifican las partes representadas. Recurso solicitado: esquema con los nombres de las tres capas en su orden correcto en desarrollo. Se evalúa la representación científica, sin valorar destreza artística. Parcial (50%): El esquema muestra solo parte de troposfera, estratosfera, mesosfera o deja partes sin nombres; la relación entre esquema y descripción resulta incompleta.\n\n\t\n—\n3.25 pts\n\t\n—\n1.63 pts\n\t\n—\n0 pts\n\t3.25 pts\nEstructura y claridad del informe\n\nOrdena la descripción y la explicación de troposfera, estratosfera, mesosfera en una secuencia comprensible; conecta las ideas sin repetirlas ni contradecirlas. Organización solicitada: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión. Parcial (50%): Se reconocen ideas del contenido, pero las secciones o los párrafos quedan desconectados y no se distingue la función de cada parte. Organización solicitada: dos párrafos en desarrollo; incluye introducción; incluye desarrollo; incluye conclusión.\n\n\t\n—\n2.17 pts\n\t\n—\n1.09 pts\n\t\n—\n0 pts\n\t2.17 pts\nOrtografía del informe\n\nLa ortografía del informe conserva la escritura correcta de las palabras, la acentuación y las mayúsculas, manteniendo el sentido del texto. Parcial (50%): Los errores de escritura o acentuación se repiten y dificultan reconocer palabras o relaciones del informe.\n\n\t\n—\n1.09 pts\n\t\n—\n0.55 pts\n\t\n—\n0 pts\n\t1.09 pts\nFormato del documento\n\nLa entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; interlineado 1,5 en cuerpo; alineación justificado en cuerpo; tamaño de letra 20 pt en título; énfasis negrita en título; alineación centrado en título. Parcial (50%): La fuente o el tamaño se omiten o se aplican a un ámbito distinto del indicado (fuente Arial en cuerpo; tamaño de letra 14 pt en cuerpo; tamaño de letra 20 pt en título); conserva parte de la disposición solicitada: interlineado 1,5 en cuerpo; alineación justificado en cuerpo; énfasis negrita en título; alineación centrado en título.\n\n\t\n—\n1.08 pts\n\t\n—\n0.54 pts\n\t\n—\n0 pts\n\t1.08 pts\nEntrega y extensión solicitadas\n\nLa entrega aplica las condiciones solicitadas en sus ámbitos correspondientes: archivo en Word o PDF; máximo dos páginas sin contar la portada; sin exigir alcanzar el límite si se satisface el contenido solicitado. Parcial (50%): El texto se presenta en un formato distinto de los permitidos (archivo en Word o PDF); la cantidad de páginas no compensa ese incumplimiento. Extensión solicitada: máximo dos páginas sin contar la portada.\n\n\t\n—\n1.08 pts\n\t\n—\n0.54 pts\n\t\n—\n0 pts\n\t1.08 pts\n\nPuntuación máxima: 17.35 pts\n\nVolver a editar"
+  },
+  "originalUserDraftUnchanged": true,
+  "screenshots": "Local private .wrangler/realistic-audit/atmosphere-personal-reopened-{science,limit}.png",
+  "serviceWorkerRegistration": "INTERNAL_PAGE_BLOCKED_BY_BROWSER_POLICY; NO_BYPASS; SERVED_SW_HASH_CHECKED"
+}
