@@ -1,0 +1,121 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.173",
+  "mode": "AUTHENTICATED_QA_HTTP; NOT PERSONAL BROWSER",
+  "samples": [
+    {
+      "id": "huerto",
+      "status": "VERIFIED",
+      "grade": 1,
+      "subjectCode": "LEN",
+      "format": "rubrica",
+      "contractParity": true,
+      "scoreUnits": 1735,
+      "pendingBlank": true
+    },
+    {
+      "id": "scoped-type",
+      "status": "VERIFIED",
+      "grade": 2,
+      "subjectCode": "ING",
+      "format": "lista-cotejo",
+      "contractParity": true,
+      "scoreUnits": 1735,
+      "pendingBlank": true
+    },
+    {
+      "id": "page-delivery",
+      "status": "VERIFIED",
+      "grade": 2,
+      "subjectCode": "MAT",
+      "format": "lista-ponderada",
+      "contractParity": true,
+      "scoreUnits": 1735,
+      "pendingBlank": true
+    },
+    {
+      "id": "structure-evidence",
+      "status": "VERIFIED",
+      "grade": 1,
+      "subjectCode": "NAT-TU",
+      "format": "escala",
+      "contractParity": true,
+      "scoreUnits": 1735,
+      "pendingBlank": true
+    },
+    {
+      "id": "bounds",
+      "status": "VERIFIED",
+      "grade": 2,
+      "subjectCode": "SOC",
+      "format": "rubrica",
+      "contractParity": true,
+      "scoreUnits": 1735,
+      "pendingBlank": true
+    }
+  ],
+  "requests": [
+    {
+      "path": "/auth/login",
+      "status": 201
+    },
+    {
+      "path": "/activities/center",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/interpret",
+      "status": 200
+    },
+    {
+      "path": "/evaluation-instruments/recommend",
+      "status": 200
+    },
+    {
+      "path": "/activities",
+      "status": 201
+    },
+    {
+      "path": "/activities",
+      "status": 200
+    }
+  ],
+  "newFictitiousActivities": 1,
+  "manualTextExact": true,
+  "manualPointsExact": true,
+  "totalScoreUnits": 1735,
+  "reopenedFieldsExact": true,
+  "productionWrites": 0
+}

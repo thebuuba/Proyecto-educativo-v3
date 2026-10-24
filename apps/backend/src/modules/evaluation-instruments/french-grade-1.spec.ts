@@ -90,8 +90,8 @@ describe('Francés común 1.º: evidencia de las funciones y modalidades, PDF 18
     expect(p.criteria.find(c => c.templateId === 'delivery-format')?.description).toContain('3 oraciones')
     expect(p.criteria.find(c => c.templateId === 'fra-1-routine')?.description).not.toContain('oraciones')
   })
-  it('detecta límites de páginas incompatibles en francés antes de generar', () => {
-    expect(() => propose('Écrivez votre routine en français. Au moins trois pages et au plus une page.')).toThrow(/contradictorios/)
+  it('conserva límites incompatibles en francés como conflicto interno sin bloquear', () => {
+    expect(propose('Écrivez votre routine en français. Au moins trois pages et au plus une page.').internalTrace.taskRequirements?.issues.some(i=>i.kind==='CONFLICT')).toBe(true)
   })
   it('mantiene la identidad del dato al cambiar los campos personales solicitados', () => {
     const first = propose('Escribe en francés el nombre y la edad de un personaje.', 'lista-cotejo')
@@ -114,8 +114,9 @@ describe('Francés común 1.º: evidencia de las funciones y modalidades, PDF 18
   })
   it('reconoce una portada pedida en francés sin inventar otros requisitos', () => {
     const p = propose('Écrivez votre routine en français avec une couverture.')
-    expect(p.criteria.find(c => c.templateId === 'delivery-format')?.description).toContain('incluye portada')
-    expect(p.criteria.find(c => c.templateId === 'delivery-format')?.description).not.toContain('paginas')
+    const presentation=p.criteria.find(c=>c.description.includes('incluye portada'))!
+    expect(presentation).toBeDefined()
+    expect(presentation.description).not.toContain('paginas')
   })
   it('el presente gramatical no se confunde con la instrucción presentar oralmente', () => {
     const p = propose('Utiliza el presente de indicativo en francés.')

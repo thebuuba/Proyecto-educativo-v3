@@ -1,0 +1,227 @@
+REQUISITOS TRANSVERSALES DE PRESENTACIÓN, ESTRUCTURA Y ENTREGA
+
+Implementa una mejora compartida para interpretar e incorporar los requisitos que el docente escribe en la descripción de una actividad, especialmente en trabajos realizados en Word.
+
+Trabaja SOLO, SIN AGENTES NI SUBAGENTES.
+
+Comprueba primero la rama, los cambios existentes, el catálogo y el entorno servido. Conserva el trabajo anterior, incluido el compositor compartido del piloto. No retomes la ampliación curricular.
+
+OBJETIVO
+
+La aplicación debe conservar qué se solicita, su valor y dónde se aplica, y reflejarlo en un instrumento pertinente.
+
+Ejemplos:
+- “Arial 13” significa fuente Arial y tamaño 13.
+- “Título en 18 y cuerpo en 12” contiene dos condiciones con ámbitos distintos.
+- “Titular en negrita” no exige negrita en todo el documento.
+- “Cuerpo organizado en tres párrafos” no significa tres párrafos en toda la entrega.
+- “Word o PDF” permite cualquiera de los dos.
+- “Sin portada” no debe activar un criterio que exija portada.
+
+No implementes listas de valores cerradas como Arial 12, Arial 13 y Arial 14. Extrae dinámicamente los valores.
+
+1. DIAGNÓSTICO Y UBICACIÓN COMPARTIDA
+
+Rastrea los extractores de condiciones, proveedores, compositor, formateadores, servidor y alternativa local.
+
+Implementa la mejora en la capa compartida adecuada. No la limites al proveedor de noticias ni a Lengua Española de primero.
+
+Comprueba qué rutas de generación consumen esa capa y cuáles no. Conecta los consumidores correspondientes sin sustituir de forma general sus criterios temáticos.
+
+No declares cobertura transversal si solo funciona en una familia. Documenta cualquier ruta que quede pendiente.
+
+Reutiliza lo existente y evita una reescritura completa o dependencias nuevas.
+
+2. CONTRATO DE REQUISITOS
+
+Cada condición reconocida debe conservar internamente:
+- Propiedad.
+- Valor o valores.
+- Unidad cuando corresponda.
+- Ámbito: documento, portada, título, subtítulo, cuerpo, párrafo, imagen, tabla u otro elemento indicado.
+- Operador: exacto, mínimo, máximo, intervalo o aproximado.
+- Relación: obligación, alternativa, condición, opción o negación.
+- Fragmento e índices de origen en la descripción.
+
+No fuerces un esquema nuevo si los tipos existentes ya permiten representarlo.
+
+Distingue instrucciones de ejemplos, citas y datos narrativos. La presencia de “12” en los datos de una noticia no solicita letra tamaño 12.
+
+3. COBERTURA BÁSICA
+
+A. Archivo y entrega:
+- Word/DOCX, PDF y otros formatos explícitos que ya admita el producto.
+- Nombre del archivo.
+- Entrega digital o impresa.
+
+B. Tipografía:
+- Nombre de fuente.
+- Tamaño, incluidos valores distintos de 12 y tamaños decimales cuando se indiquen.
+- Negrita, cursiva, subrayado y color.
+- Diferencias entre título, subtítulos y cuerpo.
+
+C. Párrafos:
+- Interlineado numérico y expresiones habituales: sencillo, doble, etc.
+- Alineación izquierda, derecha, centrada y justificada.
+- Sangría y separación entre párrafos, conservando unidades.
+
+D. Página:
+- Márgenes generales y por lado.
+- Tamaño de papel.
+- Orientación vertical u horizontal.
+- Numeración, posición y página inicial cuando se especifiquen.
+
+E. Extensión:
+- Páginas, palabras y párrafos.
+- Cantidades exactas, mínimas, máximas e intervalos.
+- Exclusiones como “sin contar la portada”.
+- Cantidades asignadas a una sección concreta.
+
+F. Organización:
+- Portada, título, subtítulos, introducción, desarrollo, conclusión, anexos y referencias.
+- Secciones específicas del producto, como titular, entrada y cuerpo de una noticia.
+
+G. Elementos adicionales:
+- Imágenes, tablas, gráficos y pies de imagen.
+- Citas directas, atribución y bibliografía.
+- Cantidades y ubicación solicitadas.
+- Estilo de referencias cuando se indique, sin afirmar una validación normativa que el motor no realiza.
+
+Esta lista define una cobertura básica verificable; no autoriza prometer comprensión de cualquier formulación.
+
+4. VALORES DINÁMICOS Y ALCANCE
+
+Reconoce construcciones habituales como:
+- “Arial 13”, “letra Arial tamaño 14” y “fuente Calibri de 11 puntos”.
+- “Título en 18 y cuerpo en 12”.
+- “Interlineado 1.5” y “1,5”.
+- “Márgenes de 2,5 cm”.
+- “Entre 2 y 4 páginas”.
+- “Máximo 800 palabras”.
+- “Tres párrafos en el cuerpo”.
+- “Dos imágenes con sus respectivos pies”.
+
+No cambies números, nombres de fuentes ni unidades silenciosamente. No confundas una enumeración con un decimal.
+
+Conserva formatos o fuentes no incluidos en una lista conocida cuando la instrucción permita identificarlos claramente. No afirmes que están instalados o disponibles en el dispositivo.
+
+Si hay ambigüedad o contradicción, regístrala internamente y conserva el texto original. No inventes una resolución, no cambies valores por defecto ni bloquees el formulario con validaciones nuevas dentro de este encargo.
+
+5. AGRUPACIÓN PEDAGÓGICA
+
+No crees una fila por cada propiedad de Word.
+
+Agrupa condiciones relacionadas sin perder sus detalles:
+
+- Presentación del documento: tipografía, interlineado, alineación, márgenes y otros aspectos formales.
+- Estructura: secciones y organización del producto.
+- Contenido y evidencias: qué información aportan imágenes, tablas, citas o gráficos.
+- Entrega: archivo y condiciones de presentación final cuando corresponda.
+
+No impongas cuatro criterios fijos: utiliza solo las agrupaciones justificadas.
+
+Integra los requisitos en criterios existentes cuando sea pertinente. Ejemplos:
+- Los tres párrafos del cuerpo pertenecen a estructura de la noticia.
+- La declaración proporcionada y su atribución pertenecen al uso de información/citas.
+- Arial 12 y titular en negrita pertenecen a presentación.
+
+Evita puntuar dos veces el mismo cumplimiento.
+
+Un recurso visual no implica habilidad artística. Una cita no obliga a investigar nuevas fuentes si el docente proporcionó el texto.
+
+6. DESCRIPTORES Y CUATRO INSTRUMENTOS
+
+Mantén rúbrica, lista de cotejo, escala estimativa y lista ponderada.
+
+- Rúbrica: descriptores observables y distintos, relacionados con el criterio.
+- Cotejo: cumplimiento verificable de los indicadores.
+- Escala: grados de desempeño pertinentes; no convertir todo en frecuencia.
+- Ponderada: componentes y cumplimiento parcial defendibles.
+
+No repitas “cumple tres párrafos” en varios niveles con nombres diferentes.
+No uses incertidumbre del evaluador como desempeño del estudiante.
+No inventes tolerancias o porcentajes de cumplimiento.
+
+Las condiciones binarias pueden integrarse en un criterio compuesto coherente cuando el formato lo requiera. No construyas progresiones artificiales para una única cantidad exacta.
+
+Conserva una ponderación proporcionada al objetivo de aprendizaje. No dejes que numerosos detalles de formato desplacen automáticamente el contenido principal.
+
+7. REGRESIÓN REAL OBLIGATORIA
+
+Contexto: Lengua Española, primero de secundaria.
+Título: El huerto escolar da su primera cosecha.
+
+Descripción exacta:
+“Los estudiantes redactarán una noticia a partir de estos datos ficticios: el jueves 15 de octubre, 24 estudiantes de primero de secundaria cosecharon 18 lechugas y 12 manojos de cilantro en el huerto de la escuela. La siembra comenzó seis semanas antes con el acompañamiento de la profesora de Ciencias de la Naturaleza. Los productos se entregaron al comedor escolar. Una estudiante expresó: «Aprendimos a cuidar las plantas y a trabajar juntos».
+
+La noticia debe incluir un titular, una entrada que resuma lo principal y un cuerpo organizado en tres párrafos. Debe informar qué ocurrió, quiénes participaron, cuándo, dónde y para qué se utilizaron los productos. Incorporarán la declaración de la estudiante entre comillas, conservarán las cantidades proporcionadas y evitarán inventar información. Utilizarán conectores temporales y mantendrán un tono informativo.
+
+Entregarán el texto en Word, con letra Arial 12, interlineado 1.5 y el titular en negrita. Revisarán la ortografía y la puntuación antes de entregar.”
+
+Reproduce primero el comportamiento actual.
+
+Debe quedar evaluado:
+- Fidelidad a los datos, cantidades y destino de los productos.
+- Titular, entrada que resume y cuerpo de tres párrafos.
+- Incorporación fiel de la declaración, entre comillas y atribuida a la estudiante.
+- Conectores y tono informativo.
+- Ortografía y puntuación.
+- Word, Arial 12, interlineado 1.5 y titular en negrita.
+
+No hace falta una fila por cada requisito.
+No exijas borradores, fotografías, entrevistas ni otras entregas.
+
+8. VERIFICACIÓN TRANSVERSAL ACOTADA
+
+Antes de corregir, define y conserva las expectativas.
+
+Además del caso obligatorio:
+- Prueba cambios de tamaños, fuentes, interlineados y cantidades sin modificar el código entre ejemplos.
+- Incluye mínimos, máximos, intervalos, alternativas y negaciones.
+- Comprueba que números narrativos y texto citado no se conviertan en condiciones de formato.
+- Verifica un texto breve sin requisitos de formato: no deben añadirse.
+- Comprueba que requisitos opcionales no sean puntuados como obligatorios.
+
+Realiza pruebas de integración representativas en Lengua Española, Inglés o Francés, Matemática, Ciencias de la Naturaleza y Ciencias Sociales, utilizando contextos existentes y al menos dos grados.
+
+Comprueba los cuatro instrumentos en una selección pequeña representativa. No multipliques todos los casos por todas las combinaciones sin necesidad.
+
+Servidor y alternativa local deben conservar el mismo contenido y condiciones.
+
+No cambies las consignas para hacer pasar las pruebas ni apruebes cobertura solo por encontrar una palabra en la salida: lee el criterio y sus descriptores completos.
+
+9. CONSERVACIÓN Y OPERACIÓN
+
+Mantén:
+- Diseño y flujo vertical.
+- Sugerencias silenciosas y selección manual.
+- Puntaje inicialmente pendiente y cálculo exacto de 20 y 17.35.
+- Textos, pesos e identidades editados.
+- Confirmación antes de reemplazar cambios.
+- Protección ante respuestas obsoletas.
+- Añadir y completar criterios.
+- Opción manual al agotar candidatos.
+- Históricos y borradores existentes.
+
+Esta mejora interpreta la consigna para preparar el instrumento. No implementes inspección automática de archivos Word ni afirmes comprobar el formato de documentos entregados.
+
+No amplíes el diagnóstico de rendimiento salvo que detectes una regresión causada por estos cambios.
+
+Ejecuta pruebas focalizadas y después las comprobaciones obligatorias. Realiza una muestra de generación, edición, guardado y reapertura en Development si la sesión está disponible.
+
+10. RESTRICCIONES E INFORME
+
+Sin agentes, IA, rediseño, nuevas dependencias, ampliación curricular, push, merge, despliegues, resets ni cambios en producción o credenciales. Conserva las restricciones anteriores del repositorio.
+
+Entrega un informe con:
+- Causas y archivos modificados.
+- Propiedades y formulaciones realmente cubiertas.
+- Rutas conectadas y pendientes.
+- Resultado antes/después del caso del huerto.
+- Ejemplos con valores dinámicos.
+- Instrumentos completos representativos.
+- Pruebas automáticas, HTTP y navegador separadas.
+- Limitaciones, ambigüedades y fallos pendientes.
+- Rama, commits locales, catálogo y entorno servido.
+
+No declares listas todas las asignaturas por esta mejora. Finaliza este encargo sin retomar la ampliación curricular.

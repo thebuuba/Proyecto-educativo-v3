@@ -1,0 +1,142 @@
+[
+  {
+    "id": "huerto",
+    "formats": [
+      {
+        "format": "rubrica",
+        "contractEqual": true,
+        "completeContentEqual": true
+      },
+      {
+        "format": "lista-cotejo",
+        "contractEqual": true,
+        "completeContentEqual": true
+      },
+      {
+        "format": "escala",
+        "contractEqual": true,
+        "completeContentEqual": true
+      },
+      {
+        "format": "lista-ponderada",
+        "contractEqual": true,
+        "completeContentEqual": true
+      }
+    ]
+  },
+  {
+    "id": "scoped-type",
+    "formats": [
+      {
+        "format": "rubrica",
+        "contractEqual": true,
+        "completeContentEqual": true
+      }
+    ]
+  },
+  {
+    "id": "page-delivery",
+    "formats": [
+      {
+        "format": "rubrica",
+        "contractEqual": true,
+        "completeContentEqual": false
+      }
+    ]
+  },
+  {
+    "id": "structure-evidence",
+    "formats": [
+      {
+        "format": "rubrica",
+        "contractEqual": true,
+        "completeContentEqual": true
+      },
+      {
+        "format": "lista-cotejo",
+        "contractEqual": true,
+        "completeContentEqual": true
+      },
+      {
+        "format": "escala",
+        "contractEqual": true,
+        "completeContentEqual": true
+      },
+      {
+        "format": "lista-ponderada",
+        "contractEqual": true,
+        "completeContentEqual": true
+      }
+    ]
+  },
+  {
+    "id": "bounds",
+    "formats": [
+      {
+        "format": "rubrica",
+        "contractEqual": true,
+        "completeContentEqual": false
+      }
+    ]
+  },
+  {
+    "id": "custom-font-format",
+    "formats": [
+      {
+        "format": "rubrica",
+        "contractEqual": true,
+        "completeContentEqual": false
+      }
+    ]
+  },
+  {
+    "id": "optional-negative",
+    "formats": [
+      {
+        "format": "rubrica",
+        "contractEqual": true,
+        "completeContentEqual": false
+      }
+    ]
+  },
+  {
+    "id": "narrative-quote",
+    "formats": [
+      {
+        "format": "rubrica",
+        "contractEqual": true,
+        "completeContentEqual": true
+      }
+    ]
+  },
+  {
+    "id": "brief",
+    "formats": [
+      {
+        "format": "rubrica",
+        "contractEqual": true,
+        "completeContentEqual": false
+      }
+    ]
+  },
+  {
+    "id": "contradiction",
+    "formats": [
+      {
+        "format": "rubrica",
+        "contractEqual": true,
+        "completeContentEqual": true
+      }
+    ]
+  },
+  {
+    "id": "dynamic-variants",
+    "formats": [
+      {
+        "format": "rubrica",
+        "contractEqual": true,
+        "completeContentEqual": false
+      }
+    ]
+  }
+]

@@ -1,7 +1,7 @@
 import {readFileSync} from 'node:fs'
 import {resolve} from 'node:path'
 import {describe,it,expect} from 'vitest'
-import {deliveryConditions,deliveryCriteria,TaskRequirementError} from '@aula/shared'
+import {deliveryConditions,deliveryCriteria,extractTaskRequirements} from '@aula/shared'
 import {recommend} from './recommendation-engine'
 const bank=JSON.parse(readFileSync(resolve(process.cwd(),'../../data/evaluation-instruments/realistic-audit-bank-v1.json'),'utf8'))
 const task=(id:string)=>bank.cases.find((c:{id:string})=>c.id===id)
@@ -21,9 +21,9 @@ describe('Requisitos realistas: extracción y agrupación de presentación',()=>
    {key:'file-format',label:'documento de Word'},{key:'title',label:'incluye título'},
    {key:'font',label:'fuente Arial'},{key:'size',label:'tamaño de letra 12'},
    {key:'spacing',label:'interlineado 1.5'},{key:'indent',label:'sangría solicitada'},
-   {key:'color',label:'color indicado'},
   ]))
   expect(JSON.stringify(conditions)).not.toMatch(/centímetro|azul|rojo|introducción|conclusión/)
+  expect(extractTaskRequirements(task('B-MF0024-formato').description).issues.some(i=>i.kind==='AMBIGUOUS'&&/color/.test(i.text))).toBe(true)
  })
  it('reconoce Arial 12 precedido por Usen en el informe desarrollado',()=>{
   expect(deliveryConditions(task('B-LEN1-informe-desarrollado').description)).toEqual(expect.arrayContaining([
@@ -40,8 +40,9 @@ describe('Requisitos realistas: extracción y agrupación de presentación',()=>
   expect(deliveryConditions('Usen Arial o Calibri, tamaño 12.').find(c=>c.key==='font')?.label).toBe('fuente Arial o Calibri')
   expect(deliveryConditions(task('B-LEN1-informe-retirado').description)).toEqual([])
  })
- it('rechaza tamaños incompatibles expresados sin la palabra tamaño',()=>{
-  expect(()=>deliveryConditions('Usen Arial 12. Usen Arial 14.')).toThrow(TaskRequirementError)
+ it('registra tamaños incompatibles sin bloquear ni resolverlos silenciosamente',()=>{
+  expect(()=>deliveryConditions('Usen Arial 12. Usen Arial 14.')).not.toThrow()
+  expect(extractTaskRequirements('Usen Arial 12. Usen Arial 14.').issues.some(i=>i.kind==='CONFLICT')).toBe(true)
  })
  it.each(['No usen Arial 12 ni sangría.','No deben utilizar fuente Arial 12.','Analicen la sangría del documento proporcionado.'])('respeta exclusiones o análisis de insumos: %s',text=>{
   expect(deliveryConditions(text)).toEqual([])
@@ -68,7 +69,8 @@ describe('Requisitos realistas: extracción y agrupación de presentación',()=>
  })
  for(const format of formats)it(`Word completo y sin valoración duplicada: ${format}`,()=>{
   const p=proposal('B-MF0024-formato',format),text=p.criteria.map(c=>c.description).join('\n')
-  for(const term of ['Word','título','Arial','12','1.5','sangría','color indicado'])expect(text).toContain(term)
+  for(const term of ['Word','título','Arial','12','1.5','sangría'])expect(text).toContain(term)
+  expect(text).not.toContain('color indicado') // No valor indicado en la consigna: conservar la ambigüedad interna.
   expect(text).not.toMatch(/según el modelo|introducción|conclusión/)
   expect(p.criteria.some(c=>/^technical-mf002-(?:document|text-format)-creation/.test(c.templateId))).toBe(false)
   expect(p.criteria.length).toBeLessThanOrEqual(format==='lista-cotejo'?4:2)
@@ -80,6 +82,6 @@ describe('Requisitos realistas: extracción y agrupación de presentación',()=>
  it('un número de fragmentos es evidencia de contenido, no un ajuste de apariencia',()=>{
   const rows=deliveryCriteria('Entreguen un informe. Usen Arial 12. Justifiquen con dos fragmentos del texto.')
   expect(rows.find(r=>r.title==='Formato del documento')?.observable).not.toContain('fragmentos')
-  expect(rows.find(r=>r.title==='Evidencias solicitadas')?.observable).toContain('2 fragmentos')
+  expect(rows.find(r=>r.title==='Evidencias solicitadas')?.observable).toMatch(/(?:dos|2) fragmentos/)
  })
 })

@@ -37,6 +37,6 @@ describe('La evidencia solicitada distingue el contenido del recurso inglés',()
  })
  it('conserva una cantidad de fuentes solicitada como entrega',()=>{
   const p=propose('Escriban en inglés una explicación e incluyan dos fuentes con los datos de la tarea.')
-  expect(p.criteria.some(c=>c.templateId==='delivery-format')).toBe(true)
+  expect(p.criteria.some(c=>/dos fuentes/.test(c.description)&&c.taskConditionIds?.length)).toBe(true)
  })
 })

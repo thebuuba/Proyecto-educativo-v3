@@ -1,5 +1,5 @@
 import {markEnglishTaskProvisional} from '@aula/shared'
-import {composePilotInstrument} from '@aula/shared'
+import {composePilotInstrument,extractTaskRequirements} from '@aula/shared'
 import {resolveOptativeSocialTask,optativeSocialCriteria,optativeSocialSelections} from '@aula/shared'
 import {resolveOptativeLanguageTask,optativeLanguageCriteria,optativeLanguageSelections,adaptOptativeLanguageScale} from '@aula/shared'
 import {resolveCommonPhysicalTask,commonPhysicalCriteria,commonPhysicalSelections,adaptPhysicalScale} from '@aula/shared'
@@ -247,6 +247,12 @@ export function suggestedSelections(activityType: string, context: AcademicConte
 
 export function recommend(input: RecommendationInput, context: AcademicContext | null, scope: ScopeCandidate | null,
   elements: RankedElement[], mappingStatus: string, curriculumStatus: string | null, catalog: EvaluationCatalog = evaluationCatalogCurrent, compositionMode:'SHARED'|'LEGACY'='SHARED'): InstrumentRecommendation {
+  const result=recommendContent(input,context,scope,elements,mappingStatus,curriculumStatus,catalog,compositionMode)
+  result.internalTrace.taskRequirements=extractTaskRequirements([input.description,input.evidenceInstructions].filter(Boolean).join('\n'))
+  return result
+}
+function recommendContent(input: RecommendationInput, context: AcademicContext | null, scope: ScopeCandidate | null,
+  elements: RankedElement[], mappingStatus: string, curriculumStatus: string | null, catalog: EvaluationCatalog = evaluationCatalogCurrent, compositionMode:'SHARED'|'LEGACY'='SHARED'): InstrumentRecommendation {
   if (input.evidenceInstructions?.trim()) input = { ...input, description: [input.description, input.evidenceInstructions].filter(Boolean).join('\n'), evidenceInstructions: undefined }
   const genericDescription = [withoutResources(input.description ?? ''), input.evidenceInstructions ?? '', ...(input.evaluationPriorities ?? [])].join(' ')
   const text = normalize(`${input.activityTitle} ${genericDescription} ${(input.resources ?? []).join(' ')}`)
@@ -433,6 +439,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     ...(item.progressionLevels ? {progressionLevels:[...item.progressionLevels]} : {}),
     ...(item.fourLevelLowest ? {fourLevelLowest:item.fourLevelLowest} : {}),
     relativeWeight: item.weight,
+    ...(item.coveredTaskConditionIds?{taskConditionIds:item.coveredTaskConditionIds}:{}),
     descriptors: levels.map((level, levelIndex) => ({ levelId: level.id,
       text: levelCount===4&&levelIndex===3&&item.fourLevelLowest ? item.fourLevelLowest : item.progressionLevels ? item.progressionLevels[(levelCount === 4 ? [0, 1, 2, 4] : [0, 1, 2, 3, 4])[levelIndex]]
         : item.progression && levelCount === 4 ? levelIndex === 0 ? item.observable : item.progression[levelIndex - 1]

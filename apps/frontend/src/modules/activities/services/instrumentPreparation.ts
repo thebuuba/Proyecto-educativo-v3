@@ -1,5 +1,5 @@
 import {markEnglishTaskProvisional} from '@aula/shared'
-import {composePilotInstrument} from '@aula/shared'
+import {composePilotInstrument,extractTaskRequirements} from '@aula/shared'
 import {resolveOptativeSocialTask,optativeSocialCriteria} from '@aula/shared'
 import {resolveCommonPhysicalTask,commonPhysicalCriteria,adaptPhysicalScale} from '@aula/shared'
 import {resolveCommonFhrTask,commonFhrCriteria,adaptFhrScale} from '@aula/shared'
@@ -382,15 +382,23 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
     'Conclusión argumentada': ['Expresa una interpretación propia con una referencia pertinente al cuento.', 'Incluye una opinión personal sin apoyarla en el análisis.', 'No formula todavía una conclusión personal.'],
     'Organización y revisión': ['Ordena las secciones y corrige la mayoría de los errores formales.', 'Presenta secciones desordenadas o errores que dificultan algunos pasajes.', 'No organiza ni revisa todavía el informe.'],
   }
+  const fallbackProgression=(title:string,description:string,index:number):[string,string,string,string]=>{
+    const progression=readingReport?reportProgressions[title]:undefined
+    return generic?generic[index].descriptors:[description,
+      progression?.[0]??(input.variation?`${description} Cumple la mayor parte de lo solicitado; necesita precisar un detalle.`:`${description} Incluye la evidencia principal, con detalles por precisar.`),
+      progression?.[1]??(input.variation?`${description} Desarrolla un aspecto reconocible, pero omite otros necesarios.`:`${description} Incluye solo parte de la evidencia o presenta errores que afectan su sentido.`),
+      progression?.[2]??(input.variation?`${description} La evidencia presentada todavía no permite comprobarlo.`:`${description} Aún no aporta evidencia suficiente de este criterio.`)]
+  }
+  // Reuse the original topic-specific progression, including checklist/weighted proposals without exposed levels.
+  if(extractTaskRequirements(input.description??'').conditions.length)return editableAuthoredRecommendation(authored.map(([title,observable],index)=>{
+    const p=fallbackProgression(title,observable,index)
+    return {templateId:generic?.[index].id??`fallback-${index}`,title,observable,weight:3,progressionLevels:[p[0],p[1],p[2],p[2],p[3]]}
+  }),input,input.activityType??genericActivity,'generic-task-requirements')
   const criteria = authored.map(([title, description], index) => {
     const maxScoreUnits = base + (index < totalUnits - base * authored.length ? 1 : 0)
-    const progression = readingReport ? reportProgressions[title] : undefined
     return { id: `fallback:${generic?.[index].id ?? index}`, templateId: generic?.[index].id ?? 'editable-fallback', title, description, maxScore: maxScoreUnits / 100, maxScoreUnits,
       sourceType: 'ACTIVITY_TEMPLATE' as const, sourceReferences: [], descriptors: levels.map(level => ({ levelId: level.id,
-        text: generic ? generic[index].descriptors[4 - Number(level.id.slice(1))] : level.id === 'L4' ? description : progression ? progression[level.id === 'L3' ? 0 : level.id === 'L2' ? 1 : 2]
-          : level.id === 'L3' ? input.variation ? `${description} Cumple la mayor parte de lo solicitado; necesita precisar un detalle.` : `${description} Incluye la evidencia principal, con detalles por precisar.`
-            : level.id === 'L2' ? input.variation ? `${description} Desarrolla un aspecto reconocible, pero omite otros necesarios.` : `${description} Incluye solo parte de la evidencia o presenta errores que afectan su sentido.`
-              : input.variation ? `${description} La evidencia presentada todavía no permite comprobarlo.` : `${description} Aún no aporta evidencia suficiente de este criterio.`,
+        text:fallbackProgression(title,description,index)[4-Number(level.id.slice(1))],
         scoreUnits: Math.round(maxScoreUnits * level.proportion) })) }
   })
   return { kind: 'RECOMMENDATION', catalogVersion: 'editable-fallback-v1', instrumentType: input.instrumentType, confidence: 'LOW', activityType: input.activityType || (generic ? genericActivity : 'OTHER'), evidenceTypes: ['KNOWLEDGE', 'PERFORMANCE', 'PRODUCT'], participationMode: input.participationMode,

@@ -7,6 +7,7 @@ export interface CurriculumReference {
   sources: { documentId: string; pdfPage: number; printedPage: string | null }[]
 }
 export interface RecommendationCriterion {
+  taskConditionIds?: string[]
   id: string; title: string; description: string; maxScore: number; maxScoreUnits: number
   sourceType: CriterionSource; sourceReferences: CurriculumReference[]; templateId: string
   descriptors: { levelId: string; text: string; scoreUnits: number }[]
@@ -23,6 +24,7 @@ export interface InstrumentRecommendation {
   selectedCurriculumElements: CurriculumReference[]; criteria: RecommendationCriterion[]
   levels: { id: string; label: string; proportion: number }[]; totalScore: number; totalScoreUnits: number; scoreUnit: 0.01
   internalTrace: {
+    taskRequirements?: import('./task-presentation-requirements').TaskRequirementReport
     composition?: import('./instrument-composition-pilot').PilotCompositionTrace
     mappingStatus: string; reasons: string[]; ruleId: string; activityTypeOrigin: 'EXPLICIT' | 'DETECTED' | 'DEFAULT'
     ranking: { elementId: string; score: number; topicCoverage: number; reasons: string[] }[]

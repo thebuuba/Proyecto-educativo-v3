@@ -66,7 +66,7 @@ describe('Desarrollo e Implementación de Soluciones Web y Multimedia: acciones 
   'Examina los medios de actualización tecnológica proporcionados y selecciona una fuente pertinente al caso. Entrega una fuente con la ficha de selección.',
  ])('conserva cantidades explícitas o entregas de fuentes: %s',description=>{
   const p=recommend({activityTitle:'Actividad',description,maxScore:17.35,preferredInstrumentType:'rubrica',participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
-  expect(p.criteria.some(c=>c.templateId==='delivery-format')).toBe(true)
+  expect(p.criteria.some(c=>/fuente/.test(c.description)&&c.taskConditionIds?.length)).toBe(true)
  })
  it('vincula adaptaciones a texto oficial sin evaluar actitudes privadas ni orientaciones docentes',()=>{
   const module=technicalModules.find(m=>m.moduleCode==='MF_060_3')

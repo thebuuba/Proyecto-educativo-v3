@@ -9,12 +9,12 @@ describe('alternativa contextual de noticia de primero', () => {
         secondaryLanguageGrade: 1, activityType: 'NEWS_WRITING', participationMode: 'INDIVIDUAL', maxScore: 17.35, instrumentType: format })
       expect(result.criteria[0].templateId).toBe('news-essential')
       expect(result.criteria[0].maxScoreUnits).toBe(434)
-      if (format === 'rubrica') expect(result.criteria[0].descriptors[2].text).toBe('Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.')
+      if (format === 'rubrica') expect(result.criteria[0].descriptors[2].text).toBe('Recoge datos disponibles, pero omite una relación necesaria para comprender quién hizo qué, dónde o cuándo.')
       if (format === 'escala') {
         expect(result.criteria[0].title).toMatch(/quién|hecho|noticia/)
-        expect(result.criteria[0].descriptors[2].text).toBe('Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.')
+        expect(result.criteria[0].descriptors[2].text).toBe('Recoge datos disponibles, pero omite una relación necesaria para comprender quién hizo qué, dónde o cuándo.')
       }
-      if (format === 'lista-ponderada') expect(result.criteria[0].description).toContain('Parcial (50%): Se reconoce el hecho')
+      if (format === 'lista-ponderada') expect(result.criteria[0].description).toContain('Parcial (50%): Recoge datos disponibles')
       const fields = recommendationToFields(result, 'Actividad')
       expect(fields[`${format}:description:0`]).toBe(result.criteria[0].description)
     })

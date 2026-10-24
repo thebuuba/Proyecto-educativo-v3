@@ -53,19 +53,18 @@ describe('Consignas naturales y condiciones explícitas',()=>{
  })
  for(const format of formats)it(`condiciones independientes de entrega ${format}`,()=>{
   const p=propose('Hacen un informe de lectura de una noticia. Entre una y tres páginas, interlineado 1,5, fuente Arial, tamaño 12 y con portada.',1,'LEN',format)
-  const rows=p.criteria.filter(c=>c.templateId.startsWith('delivery-'))
-  // Separa extensión y presentación; fuente/tamaño comparten una comprobación explícita.
-  expect(rows).toHaveLength(format==='lista-cotejo'?4:2)
-  const text=JSON.stringify(rows);expect(text).toMatch(/1.*3.*páginas/);expect(text).toContain('1.5');expect(text).toContain('Arial');expect(text).toContain('12');expect(text).toContain('portada')
+  const rows=p.criteria.filter(c=>c.taskConditionIds?.length)
+  // Agrupa sin exigir un número fijo de filas; preserva todos los valores y ámbitos.
+  const text=JSON.stringify(rows);expect(text).toMatch(/una.*tres.*páginas/);expect(text).toContain('1,5');expect(text).toContain('Arial');expect(text).toContain('12');expect(text).toContain('portada')
   expect(p.criteria.filter(c=>!c.templateId.startsWith('delivery-')).length).toBeGreaterThan(0)
  })
- it('rechaza requisitos contradictorios sin elegir un límite',()=>{
-  expect(()=>propose('Escriben un informe de lectura de una noticia. Mínimo cinco páginas y máximo tres páginas.',1,'LEN')).toThrow(/contradictori/i)
+ it('registra requisitos contradictorios sin elegir un límite ni bloquear',()=>{
+  expect(propose('Escriben un informe de lectura de una noticia. Mínimo cinco páginas y máximo tres páginas.',1,'LEN').internalTrace.taskRequirements?.issues.some(i=>i.kind==='CONFLICT')).toBe(true)
  })
  it('no exige formato ausente ni portada excluida',()=>{
   expect(propose('Hacen un informe de lectura de una noticia',1,'LEN').criteria.some(c=>c.templateId.startsWith('delivery-'))).toBe(false)
-  const rows=propose('Hacen un informe de lectura de una noticia. Arial o Calibri, sin portada.',1,'LEN','lista-cotejo').criteria.filter(c=>c.templateId.startsWith('delivery-'))
-  expect(rows).toHaveLength(2);expect(JSON.stringify(rows)).toContain('Arial o Calibri');expect(JSON.stringify(rows)).toContain('sin portada')
+  const rows=propose('Hacen un informe de lectura de una noticia. Arial o Calibri, sin portada.',1,'LEN','lista-cotejo').criteria.filter(c=>c.taskConditionIds?.length)
+  expect(rows.length).toBeGreaterThan(0);expect(JSON.stringify(rows)).toContain('Arial o Calibri');expect(JSON.stringify(rows)).toContain('sin portada')
  })
  for(let grade=1;grade<=6;grade++)it(`informe breve de noticia sin investigación ni ficción añadidas ${grade}`,()=>{
   const p=propose('Hacen un informe de lectura de una noticia',grade,'LEN'),text=JSON.stringify(p.criteria)

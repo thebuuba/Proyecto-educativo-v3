@@ -1,6 +1,8 @@
 import {withoutResources} from './evaluation-task-text'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import type {InstrumentType} from './instrument-recommendation'
+import {extractTaskRequirements,taskConditionLabel} from './task-presentation-requirements'
+import {actionableTaskConditions,reconcileTaskCriteria} from './task-requirement-criteria'
 
 export class TaskRequirementError extends RangeError {
  constructor(detail:string){super(`Requisitos de entrega contradictorios: ${detail}. Revisa la consigna; se conservaron tus cambios.`);this.name='TaskRequirementError'}
@@ -11,6 +13,43 @@ const numbers:Record<string,number>={un:1,una:1,uno:1,dos:2,tres:3,cuatro:4,cinc
 const number='(?:\\d+(?:[.,]\\d+)?|'+Object.keys(numbers).join('|')+')'
 const value=(n:string)=>numbers[n]??Number(n.replace(',','.'))
 export function deliveryConditions(description:string,options:DeliveryOptions={}):Condition[]{
+ const report=extractTaskRequirements(description)
+ if(report.conditions.length){
+  const keys:Record<string,string>={'font-size':'size','line-spacing':'spacing','file-format':'file-format','section':'sections','extent':'pages'}
+  const compact=actionableTaskConditions(report).map(c=>{
+   let label=taskConditionLabel(c)
+   // Legacy consumers compare these compact labels; the full contract retains literal numbers/units/scopes.
+   if(c.scope==='documento'&&c.values.length===1){
+    const v=c.values[0].replace(/(\d),(\d)/g,'$1.$2')
+    if(c.property==='font-size')label=`tamaño de letra ${v}`
+    if(c.property==='indent')label=`sangría ${v==='solicitada'||v.startsWith('al comenzar')?v:`de ${v}${c.unit?' '+c.unit:''}`}`
+   }
+   if(c.property==='file-format'&&c.values[0]==='Word')label=c.values.length===1?'documento de Word':label
+   if(c.property==='section'&&/^t[ií]tulo$/.test(c.values[0]))return {key:'title',label:'incluye título'}
+   if(c.property==='color'&&c.scope==='título')label=`${/títulos/i.test(description)?'títulos':'título'} en color ${c.values.join(' o ')}`
+   if(c.property==='extent'||c.property==='evidence-count')label=label.replace(new RegExp(`\\b(${Object.keys(numbers).join('|')})\\b`,'g'),n=>String(numbers[n]))
+   if(c.property==='line-spacing')label=label.replace(/(\d),(\d)/g,'$1.$2')
+   const unit=c.unit?.normalize('NFD').replace(/\p{M}/gu,'').replace(/s$/,'')
+   if(c.property==='evidence-count')return {key:'quantity-'+unit,label:label.replace(/^\w+/,n=>String(numbers[n]??n))}
+   return {key:c.property==='extent'&&unit!=='pagina'?'quantity-'+unit:keys[c.property]??c.property,label}
+  }).reduce<Condition[]>((all,c)=>{
+   if(c.key==='sections'&&/\b(?:secciones|apartados)\b/i.test(description)){
+    const values=report.conditions.filter(r=>r.property==='section'&&r.relation==='REQUIRED').flatMap(r=>r.values)
+    const list=values.length>1?values.slice(0,-1).join(', ')+' y '+values.at(-1):values.join('')
+    if(!all.some(item=>item.key==='sections'))all.push({key:'sections',label:'apartados solicitados: '+list.normalize('NFD').replace(/\p{M}/gu,'')})
+   }else all.push(c)
+   return all
+  },[])
+  if(report.conditions.some(c=>!report.issues.some(i=>i.conditionIds.includes(c.id))&&c.property==='section'&&c.values[0]==='portada'&&c.relation==='NEGATED'&&/\bsin portada\b/i.test(c.condition??'')))compact.push({key:'cover',label:'sin portada'})
+  const pageConditions=actionableTaskConditions(report).filter(c=>c.property==='extent'&&/^p[aá]ginas?$/.test(c.unit??'')&&c.scope==='documento')
+  const min=pageConditions.find(c=>c.operator==='MIN'),max=pageConditions.find(c=>c.operator==='MAX')
+  if(min&&max){
+   const units=(v:string)=>numbers[v]??Number(v.replace(',','.'))
+   const indices=compact.flatMap((c,i)=>c.key==='pages'?[i]:[])
+   if(indices.length){compact[indices[0]]={key:'pages',label:`entre ${units(min.values[0])} y ${units(max.values[0])} páginas`};for(const i of indices.slice(1).reverse())compact.splice(i,1)}
+  }
+  return compact
+ }
  let text=withoutResources(description).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
   .replace(/\bno se (?:pide|requiere|exige)\b[^.;]*/g,'')
   .replace(/\b(?:opcionalmente|si lo deseas)\b[^.;]*/g,'')
@@ -103,6 +142,8 @@ export function deliveryConditions(description:string,options:DeliveryOptions={}
 }
 const distinctStrings=(values:string[])=>[...new Set(values)]
 export function deliveryCriteria(description:string,options:DeliveryOptions={},coveredKeys:ReadonlySet<string>=new Set()):ContextualTopicCriterion[]{
+ const report=extractTaskRequirements(description)
+ if(report.conditions.length)return reconcileTaskCriteria([],description,report)
  const conditions=deliveryConditions(description,options).filter(condition=>!coveredKeys.has(condition.key))
  if(!conditions.length)return []
  const appearance=conditions.filter(c=>['font','size','spacing','indent','color','title','cover'].includes(c.key))
@@ -160,6 +201,8 @@ function conditionCriterion(templateId:string,title:string,conditions:Condition[
  }
 }
 export function withDeliveryCriteria<T extends {templateId:string;coveredDeliveryKeys?:string[]}>(criteria:T[],description:string,options:DeliveryOptions={}):(T|ContextualTopicCriterion)[]{
+ const report=extractTaskRequirements(description)
+ if(report.conditions.length)return reconcileTaskCriteria(criteria as unknown as ContextualTopicCriterion[],description,report) as (T|ContextualTopicCriterion)[]
  const coveredKeys=new Set(criteria.flatMap(row=>row.coveredDeliveryKeys??[]))
  return [...criteria,...deliveryCriteria(description,options,coveredKeys).filter(c=>!criteria.some(row=>row.templateId===c.templateId))]
 }

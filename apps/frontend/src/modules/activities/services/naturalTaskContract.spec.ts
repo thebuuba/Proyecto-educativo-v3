@@ -1,5 +1,5 @@
 import {it,expect} from 'vitest'
-import {deliveryConditions,TaskRequirementError} from '@aula/shared'
+import {deliveryConditions,extractTaskRequirements} from '@aula/shared'
 import {recommend} from '../../../../../backend/src/modules/evaluation-instruments/recommendation-engine'
 import {editableFallbackRecommendation,recommendationToFields} from './instrumentPreparation'
 import {scoreInstrumentFields} from './instrumentScoring'
@@ -41,9 +41,10 @@ for(const [description,label] of [
 for(const description of ['Como recurso: documento de tres páginas con fuente Arial.','La noticia menciona Arial.','No se exige fuente Arial.','Escriben un informe sin investigar.'])it(`no inventa formato ${description}`,()=>expect(deliveryConditions(description)).toEqual([]))
 it('no transfiere a páginas un límite expresado en otra unidad',()=>expect(deliveryConditions('Mínimo dos páginas y máximo tres ejemplos').map(c=>c.label)).toEqual(['mínimo 2 páginas','máximo 3 ejemplos']))
 for(const description of ['Mínimo cinco y máximo tres páginas','Tres páginas. Cinco páginas.','Tres páginas y cinco páginas.','Interlineado 1.5 e interlineado 2','Con portada. Sin portada.','Incluye tres ejemplos y cinco ejemplos.'])it(`contradicción ${description}`,()=>{
- expect(()=>deliveryConditions(description)).toThrow(TaskRequirementError)
- expect(()=>editableFallbackRecommendation({activityTitle:'Actividad',description:'Escriben en inglés un correo. '+description,maxScore:20,instrumentType:'rubrica',participationMode:'INDIVIDUAL',academicContext:{level:'SECONDARY',grade:4,subjectCode:'ING'}})).toThrow(TaskRequirementError)
+ expect(()=>deliveryConditions(description)).not.toThrow()
+ expect(extractTaskRequirements(description).issues.some(i=>i.kind==='CONFLICT')).toBe(true)
+ expect(()=>editableFallbackRecommendation({activityTitle:'Actividad',description:'Escriben en inglés un correo. '+description,maxScore:20,instrumentType:'rubrica',participationMode:'INDIVIDUAL',academicContext:{level:'SECONDARY',grade:4,subjectCode:'ING'}})).not.toThrow()
  const draft={name:'Manual',description,instrumentFields:{},instrumentType:'rubrica'}
- expect(validateActivityDraft(draft).some(i=>i.target==='description'&&/contradictorios/.test(i.detail))).toBe(true)
+ expect(validateActivityDraft(draft).some(i=>i.target==='description'&&/contradictorios/.test(i.detail))).toBe(false)
  expect(draft.description).toBe(description)
 })

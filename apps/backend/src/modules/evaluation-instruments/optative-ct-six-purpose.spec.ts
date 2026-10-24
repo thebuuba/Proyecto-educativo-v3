@@ -13,9 +13,9 @@ describe('CT6: instrumento y técnica según el propósito efectivo',()=>{
  it('conserva PDF y la exclusión de portada a la vez',()=>{
   expect(deliveryConditions('Entrega el esquema en PDF, sin portada.',{includeFileFormats:true,requestedOnly:true})).toEqual([{key:'file-format',label:'archivo en PDF'},{key:'cover',label:'sin portada'}])
  })
- it('la entrega de archivo explícita se reconoce solo al habilitarla en el ámbito revisado',()=>{
+ it('la entrega de archivo explícita se reconoce en la capa transversal',()=>{
   const description='Diseña un esquema HTML. Entrega el esquema en PDF.'
-  expect(deliveryConditions(description)).toEqual([])
+  expect(deliveryConditions(description)).toEqual([{key:'file-format',label:'archivo en PDF'}])
   expect(deliveryConditions(description,{includeFileFormats:true})).toEqual([{key:'file-format',label:'archivo en PDF'}])
  })
  for(const description of ['Analiza el esquema en PDF proporcionado.','No entregues el esquema en PDF.','Puedes entregar el esquema en PDF como recurso opcional.'])it('no inventa entrega: '+description,()=>{

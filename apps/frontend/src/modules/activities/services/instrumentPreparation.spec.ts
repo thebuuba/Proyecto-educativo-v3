@@ -201,9 +201,10 @@ describe('informe de lectura de la actividad real', () => {
     const result = editableFallbackRecommendation({ activityTitle: 'Un cuento en pocas palabras',
       description: 'Los estudiantes leerán un cuento y redactarán un informe de lectura con introducción, resumen de las ideas principales, análisis de los personajes y conclusión personal.',
       maxScore: 20, instrumentType, participationMode: 'INDIVIDUAL' })
-    expect(result.criteria.map(item => item.title)).toContain('Resumen del texto')
-    expect(result.criteria.map(item => item.title)).toContain('Análisis de los personajes')
-    expect(result.criteria.map(item => item.title)).toContain('Conclusión personal')
+    const text=result.criteria.map(item=>item.title+' '+item.description).join('\n')
+    expect(text).toMatch(/Resumen del texto|Resume (?:los acontecimientos|las ideas principales)/)
+    expect(text).toMatch(/Análisis de los personajes|Analiza las acciones/)
+    expect(text).toMatch(/Conclusión personal|Expresa una interpretación personal|Formula una conclusión personal/)
     expect(JSON.stringify(result.criteria)).not.toMatch(/sociocultural|dicción|volumen|informe que lee/)
     expect(result.totalScoreUnits).toBe(2000)
     expect(alignRecommendationWithFields(result, recommendationToFields(result, 'Un cuento en pocas palabras'), 20)?.totalScoreUnits).toBe(2000)

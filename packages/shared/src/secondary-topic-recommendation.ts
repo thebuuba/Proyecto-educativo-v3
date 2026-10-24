@@ -6,6 +6,7 @@ import type { SecondaryLanguageTopic } from './secondary-topic-types'
 import { formatAuthoredCriteria } from './authored-instrument-format'
 import { adaptLanguageScale } from './language-scale'
 import {withDeliveryCriteria,type DeliveryOptions} from './task-delivery-requirements'
+import {extractTaskRequirements} from './task-presentation-requirements'
 
 export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTopic, input: {
   activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType
@@ -39,10 +40,11 @@ export function editableAuthoredRecommendation(authored: ContextualTopicCriterio
       progressionLevels: [...criterion.progressionLevels],
       ...(criterion.fourLevelLowest ? {fourLevelLowest:criterion.fourLevelLowest} : {}),
       relativeWeight: criterion.weight,
+      ...(criterion.coveredTaskConditionIds?{taskConditionIds:criterion.coveredTaskConditionIds}:{}),
       descriptors: levels.map((level, levelIndex) => ({ levelId: level.id, text: levelCount===4&&levelIndex===3&&criterion.fourLevelLowest ? criterion.fourLevelLowest : criterion.progressionLevels[(levelCount===4?[0, 1, 2, 4]:[0,1,2,3,4])[levelIndex]], scoreUnits: Math.round(points[index] * level.proportion) })),
     })),
     levels, totalScore: input.maxScore, totalScoreUnits: points.reduce((sum, units) => sum + units, 0), scoreUnit: 0.01,
-    internalTrace: { mappingStatus: 'FALLBACK', reasons: [`module=${moduleName}`, 'Adaptación evaluativa editable; no constituye aprobación curricular.'],
+    internalTrace: { taskRequirements:extractTaskRequirements(input.description??''),mappingStatus: 'FALLBACK', reasons: [`module=${moduleName}`, 'Adaptación evaluativa editable; no constituye aprobación curricular.'],
       ruleId: 'editable-topic', activityTypeOrigin: input.activityType ? 'EXPLICIT' : 'DETECTED', ranking: [], curriculumStatus: null, lowCurriculumConfidence: true, consideredTypes: [] },
   }
   return /^(?:lengua-|novela-|ingles-|frances-)/.test(moduleName) ? adaptLanguageScale(proposal,input.description??'',moduleName.startsWith('frances-')?'fr':undefined) : proposal

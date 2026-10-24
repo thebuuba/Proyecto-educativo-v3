@@ -61,7 +61,7 @@ describe('Noticia1: procedimientos y continuación de la página74',()=>{
   const c=bank.cases[1]
   const p=recommend({activityTitle:c.title,description:c.description+' Entreguen el documento en dos páginas con fuente Arial 12.',maxScore:20,participationMode:'INDIVIDUAL',preferredInstrumentType:'lista-cotejo'},bank.context,null,[],'UNMAPPED',null)
   const text=p.criteria.map(r=>r.description).join(' ')
-  expect(text).toMatch(/2 páginas/)
+  expect(text).toMatch(/(?:2|dos) páginas/)
   expect(text).toMatch(/Arial/)
   expect(text).toMatch(/cada clase de oración/)
  })

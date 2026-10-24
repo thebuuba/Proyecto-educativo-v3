@@ -75,7 +75,7 @@ export class EvaluationInstrumentsService {
       const result = timeDevelopmentSync('composition.convert',()=>recommend(input, context, resolution.scope, rows, resolution.status, version?.status ?? null))
       result.internalTrace.reasons.push(resolution.reason)
       result.curriculumVersionId = version?.id ?? null
-      return result.internalTrace.composition ? result : await this.refineWithAi(result, input, context)
+      return result.internalTrace.composition || result.internalTrace.taskRequirements?.conditions.length ? result : await this.refineWithAi(result, input, context)
     } catch (error) {
       if(error instanceof InstrumentCapacityError||error instanceof TaskRequirementError)throw new BadRequestException(error.message)
       const details = { route: 'POST /evaluation-instruments/recommend', sectionSubjectId: input.sectionSubjectId,
