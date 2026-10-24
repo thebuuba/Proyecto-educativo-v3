@@ -1,5 +1,6 @@
 import type {CommonScienceTopic} from './secondary-science-common-types'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
+import {taskClauseSpans} from './task-clause-spans'
 
 type Levels=ContextualTopicCriterion['progressionLevels']
 const criterion=(topic:CommonScienceTopic,key:string,title:string,levels:Levels,weight=3):ContextualTopicCriterion=>({
@@ -49,15 +50,18 @@ const numbers:Record<string,string>={un:'1',uno:'1',dos:'2',tres:'3',cuatro:'4',
 /** El texto recibido ya excluye recursos opcionales y acciones negadas. */
 export function presentationDurationMatch(text:string):RegExpExecArray|null{
  const number='(\\d+(?:[.,]\\d+)?|'+Object.keys(numbers).join('|')+')'
- for(const clause of text.matchAll(/(?:[^.;]|\.(?=\d))+/g)){
-  const value=clause[0]
+ for(const clause of taskClauseSpans(text)){
+  const value=clause.text
+  // Explicit presentation time remains eligible beside a separate preparation time.
+  const explicit=new RegExp('\\b(?:(maximo|aproximadamente|alrededor de|unos|unas|no mas de|hasta)\\s+)?'+number+'\\s+(minutos?|segundos?)\\s+para\\s+(?:exponer|presentar|la exposicion|la presentacion)\\b').exec(value)
+  if(explicit){const amount=new RegExp('\\b(?:(maximo|aproximadamente|alrededor de|unos|unas|no mas de|hasta)\\s+)?'+number+'\\s+(minutos?|segundos?)\\b').exec(explicit[0])!;amount.index+=clause.start+explicit.index;return amount}
   const eligible=
   (/duracion|durara?\w*|exposicion|presentacion|intervencion|expong\w*|expon\w*/.test(value)
    ||new RegExp('^\\s*(?:maximo|aproximadamente|alrededor de|unos|unas|no mas de|hasta)?\\s*'+number+'\\s+(?:minutos?|segundos?)\\s*$').test(value))
   &&!/para preparar|preparacion|ensay\w*|recreo|descanso/.test(value)
   if(!eligible)continue
   const match=new RegExp('\\b(?:(maximo|aproximadamente|alrededor de|unos|unas|no mas de|hasta)\\s+)?'+number+'\\s+(minutos?|segundos?)\\b').exec(value)
-  if(match){match.index+=clause.index!;return match}
+  if(match){match.index+=clause.start;return match}
  }
  return null
 }

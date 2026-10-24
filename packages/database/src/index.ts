@@ -6,6 +6,7 @@
 import { PrismaClient } from '@prisma/client'
 import { PrismaPg } from '@prisma/adapter-pg'
 import { AsyncLocalStorage } from 'node:async_hooks'
+import {timedDevelopmentPool,type DatabaseTiming} from './development-timing.js'
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | undefined }
 const requestPrisma = new AsyncLocalStorage<PrismaClient>()
@@ -22,18 +23,25 @@ export function databaseUrlForPg(url: string) {
   return parsedUrl.toString()
 }
 
-function createPrismaClient(databaseUrl = process.env.DATABASE_URL) {
+function createPrismaClient(databaseUrl = process.env.DATABASE_URL,observe?:DatabaseTiming) {
   if (!databaseUrl) {
     throw new Error('DATABASE_URL is required')
   }
 
-  const adapter = new PrismaPg({
+  const config={
     connectionString: databaseUrlForPg(databaseUrl),
     max: DEFAULT_CONNECTION_LIMIT,
     connectionTimeoutMillis: 20_000,
-  })
+  }
+  const adapter = observe ? new PrismaPg(timedDevelopmentPool(config,observe),{disposeExternalPool:true}) : new PrismaPg(config)
 
-  return new PrismaClient({ adapter, log: ['error', 'warn'] })
+  const client=new PrismaClient({ adapter, log: ['error', 'warn'] })
+  if(!observe)return client
+  return client.$extends({query:{$allOperations:async({model,operation,args,query})=>{
+    const start=performance.now()
+    try{const result=await query(args);observe(`db.${model??'raw'}.${operation}`,start,performance.now(),false,Array.isArray(result)?result.length:undefined);return result}
+    catch(error){observe(`db.${model??'raw'}.${operation}`,start,performance.now(),true);throw error}
+  }}}) as unknown as PrismaClient
 }
 
 function currentPrisma() {
@@ -50,12 +58,15 @@ export const prisma: PrismaClient = new Proxy({} as PrismaClient, {
   },
 })
 
-export async function runWithPrismaClient<T>(databaseUrl: string, operation: () => Promise<T>) {
-  const client = createPrismaClient(databaseUrl)
+export async function runWithPrismaClient<T>(databaseUrl: string, operation: () => Promise<T>,observe?:DatabaseTiming) {
+  const started=performance.now()
+  const client = createPrismaClient(databaseUrl,observe)
+  observe?.('db.client.create',started,performance.now(),false)
   try {
     return await requestPrisma.run(client, operation)
   } finally {
-    await client.$disconnect()
+    const disconnectStarted=performance.now();let failed=false
+    try{await client.$disconnect()}catch(error){failed=true;throw error}finally{observe?.('db.disconnect',disconnectStarted,performance.now(),failed)}
   }
 }
 

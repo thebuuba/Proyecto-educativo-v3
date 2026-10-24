@@ -1,0 +1,27 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "baseline": "closure-history-before.json; original pilot-history-before.json retained",
+  "before": {
+    "releases": 104,
+    "snapshots": 1281
+  },
+  "after": {
+    "releases": 104,
+    "snapshots": 1282
+  },
+  "allPreviousHashesExact": true,
+  "additionalReleaseCount": 0,
+  "additionalSnapshotCount": 1,
+  "additionalSnapshotMatchesOnlyNewTestActivity": true,
+  "originalPersonalBaselines": 15,
+  "allOriginalPersonalSettingsExact": true,
+  "noOriginalDuplicates": true,
+  "previousPilotSamples": {
+    "previousQa": 3,
+    "previousPersonal": 3,
+    "qaFieldsExact": true,
+    "personalTextScoreRowsExact": true,
+    "manualPointsBExact": true
+  },
+  "noOldBaselinesReplaced": true
+}

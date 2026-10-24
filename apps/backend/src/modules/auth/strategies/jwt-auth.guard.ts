@@ -5,14 +5,15 @@
 import { Injectable, type ExecutionContext } from '@nestjs/common'
 import { AuthGuard } from '@nestjs/passport'
 import { enforceAcademicAccess } from '../../billing/billing-access'
+import {timeDevelopmentStage} from '../../../common/development-request-timing'
 
 @Injectable()
 export class JwtAuthGuard extends AuthGuard('jwt') {
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    const authenticated = await super.canActivate(context)
+    const authenticated = await timeDevelopmentStage('auth.jwt',async()=>await super.canActivate(context))
     if (!authenticated) return false
     const request = context.switchToHttp().getRequest()
-    await enforceAcademicAccess(request.user.id, request.path)
+    await timeDevelopmentStage('auth.academic-access',()=>enforceAcademicAccess(request.user.id, request.path))
     return true
   }
 }

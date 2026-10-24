@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { GradingService } from '../grading/grading.service'
 import { SaveActivityDto } from './dto/save-activity.dto'
+import {timeDevelopmentStage} from '../../common/development-request-timing'
 
 /**
  * Punto de entrada del dominio Actividades.
@@ -14,15 +15,15 @@ export class ActivitiesService {
   constructor(private readonly grading: GradingService) {}
 
   findAll(schoolId: string, filters: { sectionSubjectId?: string; academicPeriodId?: string; planningEntryId?: string }, userId: string, roles: string[]) {
-    return this.grading.getActivities(schoolId, filters, userId, roles)
+    return timeDevelopmentStage('activity.read',()=>this.grading.getActivities(schoolId, filters, userId, roles))
   }
 
   getCenter(schoolId: string, userId: string, roles: string[], contextOnly = false) {
-    return this.grading.getActivityCenter(schoolId, userId, roles, contextOnly)
+    return timeDevelopmentStage('context.workspace',()=>this.grading.getActivityCenter(schoolId, userId, roles, contextOnly))
   }
 
   save(schoolId: string, userId: string, dto: SaveActivityDto, roles: string[]) {
-    return this.grading.saveActivity(schoolId, userId, dto, roles)
+    return timeDevelopmentStage('activity.save',()=>this.grading.saveActivity(schoolId, userId, dto, roles))
   }
 
   linkPlanning(schoolId: string, id: string, dto: { planningEntryId: string | null; planningMoment?: string }, userId: string, roles: string[]) {

@@ -44,8 +44,8 @@ describe('Piloto: requisitos trazables reconciliados antes del formato',()=>{
    const p=proposal(id),t=p.internalTrace.composition!
    expect(t.contract.requirements.find((r:any)=>r.key==='duration')?.mode).toBe(mode)
    expect(p.criteria.some((r:any)=>r.templateId==='pilot-oral-communication')).toBe(true)
-   expect(p.criteria.some((r:any)=>r.templateId==='pilot-duration')).toBe(true)
-   expect(p.criteria.find((r:any)=>r.templateId==='pilot-oral-communication')?.description).not.toMatch(/minutos/)
+   expect(p.criteria.some((r:any)=>r.templateId==='pilot-duration')).toBe(false)
+   expect(p.criteria.find((r:any)=>r.templateId==='pilot-oral-communication')?.description).toMatch(/minutos/)
   }
   expect(JSON.stringify(proposal('NEW-B2').criteria)).not.toMatch(/±|entre [0-9]|exactamente/)
   expect(proposal('NEW-B1').criteria.some((r:any)=>r.templateId==='pilot-support')).toBe(false)

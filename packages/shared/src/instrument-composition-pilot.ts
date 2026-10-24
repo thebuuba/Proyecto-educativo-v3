@@ -51,24 +51,22 @@ export function composePilotInstrument(input:{
    'La explicación confunde la naturaleza de un planeta con la de una estrella o un satélite.',
    'No aporta una explicación reconocible de los planetas solicitados.',
   ],4),['planet-explanation'],['scientific-precision'])
-  candidate(row('pilot-oral-communication','Comunicación de la explicación oral',[
-   'La voz o el medio de acceso oral permite comprender las ideas; el orden y las referencias enlazan las partes de la explicación.',
-   'La explicación oral se comprende; una transición o referencia poco clara interrumpe una conexión secundaria.',
+  const duration=contract.requirements.find(r=>r.key==='duration')
+  const time=duration?.origin.text.replace(/^(?:hasta|máximo|aproximadamente|alrededor de|unos|unas|no más de)\s+/i,'')
+  const condition=!duration?'':duration.mode==='MAX'?`La exposición no supera ${time}; una duración menor cumple el límite.`:
+   duration.mode==='APPROX'?`La exposición dura aproximadamente ${time}, conforme a la consigna y al juicio docente.`:`La exposición dura ${time}, según la duración exacta indicada.`
+  const grouped=Boolean(duration&&input.instrumentType!=='lista-cotejo')
+  candidate(row('pilot-oral-communication',grouped?'Organización de la explicación oral y duración solicitada':'Comunicación de la explicación oral',[
+   'La voz o el medio de acceso oral permite comprender las ideas; el orden y las referencias enlazan las partes de la explicación.'+(grouped?' '+condition:''),
+   'La explicación oral se comprende; una transición o referencia poco clara interrumpe una conexión secundaria.'+(grouped?' También corresponde este nivel si las ideas se enlazan claramente pero no se respeta la condición temporal solicitada.':''),
    'Se comprenden ideas aisladas, pero el orden o las referencias dificultan seguir la explicación completa.',
    'La expresión oral o las conexiones entre ideas impiden reconocer el sentido de la explicación.',
    'No hay evidencia oral que permita comprender la explicación solicitada.',
-  ]),['oral'],['oral-communication'])
-  const duration=contract.requirements.find(r=>r.key==='duration')
-  if(duration){
-   const time=duration.origin.text.replace(/^(?:hasta|máximo|aproximadamente|alrededor de|unos|unas|no más de)\s+/i,'')
-   const condition=duration.mode==='MAX'?`no supera ${time}; una duración menor cumple el límite`:
-    duration.mode==='APPROX'?`dura aproximadamente ${time}`:`dura ${time}, según la duración exacta indicada`
+  ],grouped?4:3),grouped?['oral','duration']:['oral'],['oral-communication'])
+  if(duration&&!grouped){
+   // Checklist has two decisions; this tuple is not exposed as graduated performance.
    candidate(row('pilot-duration','Duración solicitada',[
-    `La exposición ${condition}.`,
-    `La evidencia disponible aproxima la duración a la condición solicitada (${duration.origin.text}), pero no permite confirmar su cumplimiento completo.`,
-    `Se comprueba una exposición, pero su duración se aparta de la condición solicitada: ${duration.origin.text}.`,
-    `La duración observada no permite cumplir la condición solicitada: ${duration.origin.text}.`,
-    'No hay evidencia temporal de la exposición que permita comprobar esta condición.',
+    condition,condition,`No cumple: ${condition}`,`No cumple: ${condition}`,`No cumple: ${condition}`,
    ],1),['duration'])
   }
   if(has('support')||has('support-choice')){

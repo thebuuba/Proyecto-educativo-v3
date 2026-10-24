@@ -1,0 +1,111 @@
+{
+  "initial": {
+    "active": null,
+    "results": [
+      {
+        "name": "frontend-focal",
+        "exit": 0,
+        "ms": 61112
+      },
+      {
+        "name": "backend-test",
+        "exit": 0,
+        "ms": 123549
+      },
+      {
+        "name": "backend-build",
+        "exit": 0,
+        "ms": 8155
+      },
+      {
+        "name": "frontend-build",
+        "exit": 0,
+        "ms": 19432
+      },
+      {
+        "name": "cloudflare-build",
+        "exit": 0,
+        "ms": 28401
+      },
+      {
+        "name": "backend-lint",
+        "exit": 1,
+        "ms": 2839
+      }
+    ]
+  },
+  "correctedAndRepeated": [
+    {
+      "name": "cloudflare-build",
+      "exit": 0,
+      "ms": 20809
+    },
+    {
+      "name": "backend-lint",
+      "exit": 0,
+      "ms": 2144
+    },
+    {
+      "name": "shared-lint",
+      "exit": 0,
+      "ms": 1991
+    },
+    {
+      "name": "frontend-lint",
+      "exit": 0,
+      "ms": 2218
+    }
+  ],
+  "telemetryFailureFlagsRechecked": {
+    "tests": 2,
+    "files": 1,
+    "exit": 0,
+    "databaseTypecheck": 0,
+    "backendBuild": 0
+  },
+  "developmentEnvironmentGuards": {
+    "tests": 5,
+    "exit": 0
+  },
+  "bankFinalCheck": {
+    "cases": 12,
+    "instruments": 24,
+    "affectedComplete": 16,
+    "parity": true,
+    "exactScores": [
+      20,
+      17.35
+    ],
+    "exit": 0
+  },
+  "compatibleFinal": {
+    "active": null,
+    "results": [
+      {
+        "name": "backend-test",
+        "exit": 0,
+        "ms": 107493
+      },
+      {
+        "name": "backend-build",
+        "exit": 0,
+        "ms": 8342
+      },
+      {
+        "name": "frontend-build",
+        "exit": 0,
+        "ms": 19353
+      },
+      {
+        "name": "cloudflare-build",
+        "exit": 0,
+        "ms": 21266
+      },
+      {
+        "name": "backend-lint",
+        "exit": 0,
+        "ms": 2370
+      }
+    ]
+  }
+}

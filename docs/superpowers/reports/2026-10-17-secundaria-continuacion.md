@@ -1,4 +1,20 @@
-# Continuación vigente — piloto cerrado con dictamen parcial
+# Continuación vigente — cierre del piloto terminado; prueba docente pendiente
+
+DETENERSE. Encargo acotado terminado: `2026-10-23-cierre-piloto-latencia.md`. No ampliar currículo, asignaturas, grados ni familias. Sin agentes, push, main, despliegues, resets, producción, credenciales ni integraciones. La siguiente acción del docente es probar tres consignas propias; no redactarlas ni declararlas aprobadas por él.
+
+Base `6986662c`, rama `ampliacion-de-instrumentos-2`. MAT04 conserva `Compara −0.75 y −2/3`, intervalo `[0,20)`, sin cambiar criterios. Segmentación compartida y mapa de índices originales; coma decimal y listas conservadas literalmente. Duración: cotejo separado; agrupada con oralidad en los formatos graduados, sin niveles de incertidumbre ni tolerancias. No cambia la calificación general.
+
+Doce casos inmutables, 24 propuestas, 16 instrumentos afectados leídos, paridad y totales20/17.35; nueve propuestas con criterios idénticos. Backend98332/248 y editor181/7 aprobados; builds obligatorios y lints aprobados. El ajuste final de indicadores de fallo de métricas se comprobó con focalizadas, typecheck database, backend build y Cloudflare dry-run. Evidencia en `data/evaluation-instruments/composition-pilot/closure/`; no sobrescribir bancos ni primeras salidas. Revisión del coordinador solo.
+
+Las trazas muestran19 consultas por interpretar/recomendar y descarga de59 versiones al buscar alternativa compatible. Filtro PostgreSQL parametrizado y sin distinguir mayúsculas:59→1 filas, con validador completo y política histórica intactos. Ocho fixtures SQL de solo lectura comprobaron compatibilidad; tras este ajuste se repitieron suite backend y los tres builds. Mediana final recomendar11.078→4.937s, interpretar8.611→4.369s en dos muestras por fase. Composición/conversión2–7ms; lectura filtrada4.047→2.708s, con variación intermedia hasta4.714s sin relación causal demostrada con el filtro. No repetir benchmarks sin cambios ni atribuir toda la demora a una marca o componente. Persisten variabilidad de conexión y dos cierres ENOTFOUND; no se cambió infraestructura ni timeouts.
+
+Development `eolgunypmtgrsyrjzcld`, PostgreSQL app_backend_local sin bypass; Auth/Storage/frontend exclusivamente Development. Catálogo173 conservado, sin migraciones ni nuevo release. Entry `index-9_tdxOuL.js`, chunk `instrumentos-composicion-piloto-cYGe1gFl.js` y SW coinciden con build. Una instancia en8787. Diagnóstico opcional `AULABASE_DEV_TIMING=true`, apagado por defecto. No borrar almacenamiento.
+
+Muestra personal Chrome NEW-B2 creada una sola vez y reabierta: `FICTICIA PERSONAL CIERRE PILOTO 2026-10-23 · Planetas`, ponderada, cuatro filas, título manual, pesos40/30/15/15 y17.35. No recrearla ni volver a guardarla para comprobarla. Captura y diario privados `.wrangler/realistic-audit/closure-*`. Los104 catálogos/1281 snapshots previos siguen exactos; final104/1282, solo el snapshot nuevo. Quince referencias personales y seis muestras anteriores conservadas; no sustituir checkpoints originales.
+
+Dictamen: listo para prueba docente limitada, con latencia/DNS pendientes. No significa cierre curricular ni aprobación de consignas nuevas. Commit local de cierre posterior a6986662c; hash en Git y mensaje final. No hacer push.
+
+## Antecedente: piloto anterior cerrado con dictamen parcial
 
 El piloto autorizado de tres familias de primero terminó. DETENERSE: no retomar currículo ni extender el compositor automáticamente. Sin agentes, push, main, despliegues, resets, credenciales ni producción. Informe final: `2026-10-23-piloto-compositor-compartido.md`; plan: `../plans/2026-10-23-compositor-compartido-piloto.md`. Banco y primeras salidas inmutables en `data/evaluation-instruments/composition-pilot/`; doce casos, cuatro formatos de tres representantes y diez regresiones fuera del piloto. Revisión del coordinador solo.
 

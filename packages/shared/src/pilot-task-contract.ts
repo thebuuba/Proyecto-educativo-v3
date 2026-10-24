@@ -3,6 +3,7 @@ import {deliveryConditions} from './task-delivery-requirements'
 import {completeFirstGradeNewsCriteria} from './secondary-language-grade-one-complete'
 import {resolveFirstGradeTransversalTask} from './secondary-language-grade-one-transversal'
 import {presentationDurationMatch} from './science-presentation-criteria'
+import {foldedTaskText,taskClauseMatches} from './task-clause-spans'
 
 export const pilotCompositionVersion='composition-pilot-v1'
 export type PilotFamily='NEWS'|'ORAL_SCIENCE'|'MATH_REPRESENTATION'
@@ -19,9 +20,10 @@ export const foldPilotText=(text:string)=>text.normalize('NFD').replace(/\p{M}/g
 /** Deliberately bounded dispatcher. Titles and the rest of the curriculum cannot opt a task in. */
 export function extractPilotContract(description:string,context:InstrumentAcademicContext|null|undefined,activityType?:string):PilotContract|null{
  if(context?.level!=='SECONDARY'||context.grade!==1||context.optativeExitName)return null
- const original=foldPilotText(description)
+ const folded=foldedTaskText(description),original=folded.text
  // Keep offsets while masking negative clauses; their original spans are retained separately below.
- const text=original.replace(/\b(?:no(?!\s+mas de\b)|sin|opcionalmente|si lo deseas)\b[^.;\n]*(?:\.(?=\d)[^.;\n]*)*/g,match=>' '.repeat(match.length))
+ let text=original
+ for(const match of taskClauseMatches(original,/\b(?:no(?!\s+mas de\b)|sin|opcionalmente|si lo deseas)\b[\s\S]*/))text=text.slice(0,match.index)+' '.repeat(match[0].length)+text.slice(match.index+match[0].length)
  const code=context.subjectCode?.trim().toUpperCase(),subject=code==='NAT-TU'?'NAT':code
  const news=/\b(?:escrib\w*|redact\w*|elabor\w*)\s+(?:(?:individualmente|una|la)\s+)*noticia\b/.exec(text)
  const oral=/\b(?:exposicion|expongan|expone\w*|expon\w*|oralmente)\b/.exec(text)
@@ -39,30 +41,30 @@ export function extractPilotContract(description:string,context:InstrumentAcadem
  const requirements:PilotRequirement[]=[]
  const add=(key:string,kind:PilotRequirement['kind'],match:RegExpExecArray|null,label?:string,extra:Partial<PilotRequirement>={})=>{
   if(!match||requirements.some(r=>r.key===key))return
-  const start=match.index,end=start+match[0].length
+  const {start,end}=folded.span(match.index,match.index+match[0].length)
   requirements.push({id:`req:${key}`,key,kind,label:label??description.slice(start,end),origin:{start,end,text:description.slice(start,end)},...extra})
  }
- const find=(pattern:RegExp)=>pattern.exec(text)
+ const find=(pattern:RegExp)=>taskClauseMatches(text,pattern).next().value??null
  if(family==='NEWS'){
   add('news-product','CONTENT',news)
   add('news-data','CONTENT',find(/(?:a partir de|con) estos datos[^:]*:|sin inventar datos|evita inventar datos/))
-  add('news-parts','CONTENT',find(/(?:incluye|con) (?:un )?titular[^.;]*(?:entrada|cuerpo)[^.;]*/))
-  add('news-questions','CONTENT',find(/(?:explica|informa) que ocurrio[^.;]*/))
+  add('news-parts','CONTENT',find(/(?:incluye|con) (?:un )?titular[\s\S]*(?:entrada|cuerpo)[\s\S]*/))
+  add('news-questions','CONTENT',find(/(?:explica|informa) que ocurrio[\s\S]*/))
   add('news-tone','CONTENT',find(/(?:manten|mantengan|usa\w*)\s+(?:un )?tono informativo/))
-  add('news-order','CONTENT',find(/revisa[^.;]*organizacion[^.;]*/))
-  add('news-orthography','CONTENT',find(/(?:revisa[^.;]*)?ortografia/))
-  add('news-punctuation','CONTENT',find(/(?:revisa[^.;]*)?puntuacion/))
+  add('news-order','CONTENT',find(/revisa[\s\S]*organizacion[\s\S]*/))
+  add('news-orthography','CONTENT',find(/(?:revisa[\s\S]*)?ortografia/))
+  add('news-punctuation','CONTENT',find(/(?:revisa[\s\S]*)?puntuacion/))
   const patterns:Record<string,RegExp>={font:/arial(?:\s+\d+)?/,size:/arial\s+\d+|tamano[^.;,]*/,spacing:/interlineado\s*(?:de\s*)?\d+(?:[.,]\d+)?/,indent:/sangria[^.;,]*/,color:/titulos?\s+(?:en\s+)?color\s+\w+/}
   for(const condition of deliveryConditions(description,{requestedOnly:true}))add('presentation-'+condition.key,'PRESENTATION',find(patterns[condition.key]??/\b(?!)\b/),condition.label)
  }else if(family==='ORAL_SCIENCE'){
   add('oral','EXECUTION',oral)
   add('planets','CONTENT',find(/(?:todos los|ocho) planetas/))
-  add('planet-explanation','CONTENT',find(/(?:explic\w*|expliqu\w*)[^.;]*(?:que es cada uno|que son|que es cada planeta|planetas)/))
+  add('planet-explanation','CONTENT',find(/(?:explic\w*|expliqu\w*)[\s\S]*(?:que es cada uno|que son|que es cada planeta|planetas)/))
   const duration=presentationDurationMatch(text)
   if(duration)add('duration','EXECUTION',duration,undefined,{mode:duration[1]&&/hasta|maximo|no mas de/.test(duration[1])?'MAX':duration[1]?'APPROX':'EXACT'})
   // A negated support is not an affirmative candidate. Negations remain in the contract.
   if(!/\b(?:no (?:uses?|utilic\w*|utiliz\w*)|sin)\s+material de apoyo/.test(original)){
-   add('support','EXECUTION',find(/(?:utilizar\w*|usen?|con|apoyo obligatorio)[^.;]*material de apoyo|material de apoyo obligatorio[^.;]*/))
+   add('support','EXECUTION',find(/(?:utilizar\w*|usen?|con|apoyo obligatorio)[\s\S]*material de apoyo|material de apoyo obligatorio[\s\S]*/))
    add('support-choice','EXECUTION',find(/(?:un )?dibujo\s+o\s+(?:una )?lamina/),undefined,{mode:'OR',alternatives:['dibujo','lámina']})
   }
  }else if(stats){
@@ -70,19 +72,19 @@ export function extractPilotContract(description:string,context:InstrumentAcadem
   add('chart','CONTENT',find(/grafico de barras/))
   add('mean','CONTENT',find(/\bmedia\b/))
   add('median','CONTENT',find(/\bmediana\b/))
-  add('interpretation','CONTENT',find(/interpret\w*[^.;]*/))
-  add('conclusion','CONTENT',find(/(?:formula[^.;]*|una )conclusion[^.;]*/))
+  add('interpretation','CONTENT',find(/interpret\w*[\s\S]*/))
+  add('conclusion','CONTENT',find(/(?:formula[\s\S]*|una )conclusion[\s\S]*/))
   add('explanation-choice','PRESENTATION',find(/(?:un )?audio\s+o\s+(?:en )?(?:un )?texto/),undefined,{mode:'OR',alternatives:['audio','texto']})
  }else{
-  add('comparison','CONTENT',find(/compar\w*[^.;]*/))
-  add('reasoning-choice','CONTENT',find(/recta numerica[^.;]*\bo\b[^.;]*(?:texto|explicacion escrita)[^.;]*/),undefined,{mode:'OR',alternatives:['recta numérica','texto con cálculos']})
+  add('comparison','CONTENT',find(/compar\w*[\s\S]*/))
+  add('reasoning-choice','CONTENT',find(/recta numerica[\s\S]*\bo\b[\s\S]*(?:texto|explicacion escrita)[\s\S]*/),undefined,{mode:'OR',alternatives:['recta numérica','texto con cálculos']})
  }
  // Negative obligations constrain selection; they never become additional scored deliverables.
- for(const match of original.matchAll(/\b(?:no (?:entreg\w*|tienen que|es necesario usar|se pid\w*|construy\w*|uses?|utilic\w*)|sin)\b[^.;]*/g)){
+ for(const match of taskClauseMatches(original,/\b(?:no (?:entreg\w*|tienen que|es necesario usar|se pid\w*|construy\w*|uses?|utilic\w*)|sin)\b[\s\S]*/)){
   const key=/borrador/.test(match[0])?'exclude-draft':/maqueta/.test(match[0])?'exclude-model':/encuesta/.test(match[0])?'exclude-survey':/material de apoyo/.test(match[0])?'exclude-support':/amb[oa]s/.test(match[0])?'exclude-both':null
   if(key)add(key,'EXCLUSION',match as RegExpExecArray)
  }
  // Explicit unsupported additional actions stay uncovered, rather than receiving a filler criterion.
- for(const match of text.matchAll(/\b(?:tradu[cz]\w*|recit\w*|dramatiz\w*|entrevist\w*)\b[^.;]*/g))add('unresolved-'+match.index,'CONTENT',match as RegExpExecArray)
+ for(const match of taskClauseMatches(text,/\b(?:tradu[cz]\w*|recit\w*|dramatiz\w*|entrevist\w*)\b[\s\S]*/))add('unresolved-'+match.index,'CONTENT',match)
  return {family,context:{level:context.level,grade:context.grade,subjectCode:subject!},product:family==='NEWS'?'noticia escrita':family==='ORAL_SCIENCE'?'explicación oral':stats?'representación y análisis de datos':'comparación justificada de racionales',mainAction:family==='NEWS'?'WRITE':family==='ORAL_SCIENCE'?'EXPLAIN':stats?'REPRESENT':'COMPARE',additionalActions:requirements.filter(r=>['mean','median','interpretation','conclusion','support'].includes(r.key)).map(r=>r.key),content:family==='NEWS'?'hecho noticioso y datos disponibles':family==='ORAL_SCIENCE'?'planetas del sistema solar':stats?'datos proporcionados y medidas solicitadas':'racionales proporcionados',activityType:activityType??(family==='NEWS'?'NEWS_WRITING':family==='ORAL_SCIENCE'?'ORAL_PRESENTATION':stats?'EXERCISE_SET':'ANALYSIS'),requirements,dimensions:family==='NEWS'?['news-essential','news-structure','news-sequence','news-language','news-revision']:family==='ORAL_SCIENCE'?['scientific-precision','oral-communication']:['mathematical-validity']}
 }

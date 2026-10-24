@@ -1,0 +1,627 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.173",
+  "mode": "REAL_PERSONAL_CHROME_UI_NOT_QA_HTTP",
+  "case": "NEW-B2",
+  "testActivityName": "FICTICIA PERSONAL CIERRE PILOTO 2026-10-23 · Planetas",
+  "autoRubric": true,
+  "initialScoreBlank": true,
+  "strategyVisible": true,
+  "manualFormat": "lista-ponderada",
+  "manualTextExact": true,
+  "manualWeights": [
+    40,
+    30,
+    15,
+    15
+  ],
+  "score": 17.35,
+  "criteria": 4,
+  "singleCreation": true,
+  "saved": true,
+  "visuallyReopened": true,
+  "temporalConditionAndSupportOrPreserved": true,
+  "entry": "/assets/index-9_tdxOuL.js",
+  "screenshot": ".wrangler/realistic-audit/closure-personal-reopened.png",
+  "clientTiming": "UI VERIFIED; NO PRECISE BROWSER NETWORK DURATION CAPTURED",
+  "serverSave": {
+    "kind": "development-request-timing",
+    "id": "d0dc56ba-1861-483b-820e-dda305a76630",
+    "route": "POST /api/v1/activities",
+    "cold": false,
+    "status": 201,
+    "totalMs": 5898,
+    "spans": [
+      {
+        "stage": "request.initialize",
+        "startMs": 0,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.client.create",
+        "startMs": 0,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.connect",
+        "startMs": 10,
+        "ms": 725,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 10,
+        "ms": 725,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 735,
+        "ms": 159,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 894,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 894,
+        "ms": 184,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 1079,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 1079,
+        "ms": 231,
+        "failed": false
+      },
+      {
+        "stage": "db.AppUser.findUnique",
+        "startMs": 9,
+        "ms": 1302,
+        "failed": false
+      },
+      {
+        "stage": "auth.jwt",
+        "startMs": 8,
+        "ms": 1303,
+        "failed": false
+      },
+      {
+        "stage": "auth.academic-access",
+        "startMs": 1311,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 1313,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 1313,
+        "ms": 208,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 1521,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 1521,
+        "ms": 166,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 1688,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 1688,
+        "ms": 144,
+        "failed": false
+      },
+      {
+        "stage": "db.SectionSubject.findFirst",
+        "startMs": 1313,
+        "ms": 520,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 1833,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 1833,
+        "ms": 155,
+        "failed": false
+      },
+      {
+        "stage": "db.AcademicPeriod.findFirst",
+        "startMs": 1833,
+        "ms": 155,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 1989,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 1989,
+        "ms": 173,
+        "failed": false
+      },
+      {
+        "stage": "db.EvaluationActivity.findUnique",
+        "startMs": 1989,
+        "ms": 173,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 2164,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 2164,
+        "ms": 78,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 2244,
+        "ms": 190,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 2434,
+        "ms": 217,
+        "failed": false
+      },
+      {
+        "stage": "db.CurriculumScope.findFirst",
+        "startMs": 2244,
+        "ms": 408,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 2653,
+        "ms": 148,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 2801,
+        "ms": 322,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 3124,
+        "ms": 291,
+        "failed": false
+      },
+      {
+        "stage": "db.Grade.findUnique",
+        "startMs": 2652,
+        "ms": 764,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 3416,
+        "ms": 223,
+        "failed": false
+      },
+      {
+        "stage": "db.Subject.findUnique",
+        "startMs": 3416,
+        "ms": 223,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 3639,
+        "ms": 308,
+        "failed": false
+      },
+      {
+        "stage": "db.SectionCurriculumContext.findUnique",
+        "startMs": 3639,
+        "ms": 308,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 3948,
+        "ms": 163,
+        "failed": false
+      },
+      {
+        "stage": "db.CurriculumScope.findMany",
+        "startMs": 3947,
+        "ms": 164,
+        "failed": false,
+        "rows": 1
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 4112,
+        "ms": 187,
+        "failed": false
+      },
+      {
+        "stage": "db.CurriculumSubjectMapping.findMany",
+        "startMs": 4111,
+        "ms": 188,
+        "failed": false,
+        "rows": 0
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 4300,
+        "ms": 144,
+        "failed": false
+      },
+      {
+        "stage": "db.CurriculumElement.findMany",
+        "startMs": 4299,
+        "ms": 146,
+        "failed": false,
+        "rows": 0
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 4445,
+        "ms": 160,
+        "failed": false
+      },
+      {
+        "stage": "db.Teacher.findFirst",
+        "startMs": 4445,
+        "ms": 160,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 4609,
+        "ms": 122,
+        "failed": false
+      },
+      {
+        "stage": "db.EvaluationInstrument.create",
+        "startMs": 4605,
+        "ms": 127,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 4734,
+        "ms": 267,
+        "failed": false
+      },
+      {
+        "stage": "db.EvaluationInstrumentSnapshot.create",
+        "startMs": 4732,
+        "ms": 270,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 5003,
+        "ms": 234,
+        "failed": false
+      },
+      {
+        "stage": "db.EvaluationActivity.create",
+        "startMs": 5002,
+        "ms": 235,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 5239,
+        "ms": 193,
+        "failed": false
+      },
+      {
+        "stage": "db.EvaluationActivityGroup.updateMany",
+        "startMs": 5237,
+        "ms": 195,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 5433,
+        "ms": 207,
+        "failed": false
+      },
+      {
+        "stage": "db.TeacherInstrumentPreference.findFirst",
+        "startMs": 5432,
+        "ms": 209,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 5641,
+        "ms": 188,
+        "failed": false
+      },
+      {
+        "stage": "db.TeacherInstrumentPreference.create",
+        "startMs": 5641,
+        "ms": 188,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 5830,
+        "ms": 66,
+        "failed": false
+      },
+      {
+        "stage": "activity.save",
+        "startMs": 1312,
+        "ms": 4586,
+        "failed": false
+      },
+      {
+        "stage": "request.dispatch",
+        "startMs": 0,
+        "ms": 5898,
+        "failed": false
+      },
+      {
+        "stage": "db.disconnect",
+        "startMs": 5898,
+        "ms": 0,
+        "failed": false
+      }
+    ]
+  },
+  "serverReopen": {
+    "kind": "development-request-timing",
+    "id": "85f8e1c0-7bbb-40dc-ac75-3074a0d1989c",
+    "route": "GET /api/v1/activities",
+    "cold": false,
+    "status": 200,
+    "totalMs": 3743,
+    "spans": [
+      {
+        "stage": "request.initialize",
+        "startMs": 0,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.client.create",
+        "startMs": 0,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.connect",
+        "startMs": 10,
+        "ms": 914,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 10,
+        "ms": 914,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 924,
+        "ms": 179,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 1104,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 1104,
+        "ms": 150,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 1254,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 1254,
+        "ms": 215,
+        "failed": false
+      },
+      {
+        "stage": "db.AppUser.findUnique",
+        "startMs": 9,
+        "ms": 1460,
+        "failed": false
+      },
+      {
+        "stage": "auth.jwt",
+        "startMs": 8,
+        "ms": 1461,
+        "failed": false
+      },
+      {
+        "stage": "auth.academic-access",
+        "startMs": 1469,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 1470,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 1470,
+        "ms": 169,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 1640,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 1640,
+        "ms": 208,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 1848,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 1848,
+        "ms": 531,
+        "failed": false
+      },
+      {
+        "stage": "db.SectionSubject.findFirst",
+        "startMs": 1470,
+        "ms": 910,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 2380,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 2380,
+        "ms": 182,
+        "failed": false
+      },
+      {
+        "stage": "db.AcademicPeriod.findFirst",
+        "startMs": 2380,
+        "ms": 183,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 2564,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 2564,
+        "ms": 202,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 2766,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 2766,
+        "ms": 401,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 3168,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 3168,
+        "ms": 369,
+        "failed": false
+      },
+      {
+        "stage": "db.acquire",
+        "startMs": 3538,
+        "ms": 0,
+        "failed": false
+      },
+      {
+        "stage": "db.sql",
+        "startMs": 3538,
+        "ms": 201,
+        "failed": false
+      },
+      {
+        "stage": "db.EvaluationActivity.findMany",
+        "startMs": 2563,
+        "ms": 1178,
+        "failed": false,
+        "rows": 6
+      },
+      {
+        "stage": "activity.read",
+        "startMs": 1469,
+        "ms": 2272,
+        "failed": false
+      },
+      {
+        "stage": "request.dispatch",
+        "startMs": 0,
+        "ms": 3742,
+        "failed": false
+      },
+      {
+        "stage": "db.disconnect",
+        "startMs": 3742,
+        "ms": 0,
+        "failed": false
+      }
+    ]
+  }
+}

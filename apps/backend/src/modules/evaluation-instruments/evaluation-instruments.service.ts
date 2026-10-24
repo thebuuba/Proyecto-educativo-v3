@@ -12,7 +12,8 @@ import { resolveCommonFrenchTask, commonFrenchSelections } from '@aula/shared'
 import {resolveOptativeMathTask,optativeMathSelections} from '@aula/shared'
 import {resolveCommonMathTask,commonMathSelections} from '@aula/shared'
 import { BadRequestException, ForbiddenException, HttpException, Injectable, Logger, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
-import { prisma } from '@aula/database'
+import { prisma,type CurriculumVersion } from '@aula/database'
+import {timeDevelopmentStage,timeDevelopmentSync,recordDevelopmentTiming} from '../../common/development-request-timing'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { evaluationCatalogCurrent } from './catalog-current'
 import { catalogFingerprint } from './catalog-fingerprint'
@@ -30,6 +31,7 @@ export class EvaluationInstrumentsService {
   async interpret(user: AuthenticatedUser, input: InterpretActivityDto) {
     if (input.evidenceInstructions?.trim()) input = { ...input, description: [input.description, input.evidenceInstructions].filter(Boolean).join('\n'), evidenceInstructions: undefined }
     const resolved = await this.resolve(user, input, true)
+    const processingStarted=performance.now()
     try {deliveryConditions(input.description??'')}catch(error){if(error instanceof TaskRequirementError)throw new BadRequestException(error.message);throw error}
     const frenchTask=resolveCommonFrenchTask(input.activityTitle,input.description??'',resolved.context)
     const optativeMath=resolveOptativeMathTask(input.activityTitle,input.description??'',resolved.context)
@@ -50,12 +52,13 @@ export class EvaluationInstrumentsService {
     const selections = technical ? technicalSelections(technical,input.description??'') : optativeScience ? optativeScienceSelections(optativeScience,input.description??'') : optativeMath ? optativeMathSelections(optativeMath,input.description??'') : socialOptative ? optativeSocialSelections(socialOptative) : optativeTask ? optativeLanguageSelections(optativeTask) : fhrTask ? commonFhrSelections(fhrTask) : physicalTask ? commonPhysicalSelections(physicalTask) : artTask ? commonArtSelections(artTask) : socialTask?commonSocialSelections(socialTask,input.description??''):commonScience?commonScienceSelections(commonScience,input.description??''):mathTask?commonMathSelections(mathTask,input.description??''):frenchTask?commonFrenchSelections(frenchTask,input.description??''):englishTask?commonEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '', resolved.context) : suggestedSelections(detected.id, resolved.context, input.description ?? '')
     const pilot=extractPilotContract(input.description??'',resolved.context,input.pedagogicalActivityType)
     const type = input.pedagogicalActivityType ?? pilot?.activityType ?? detected.id
-    const ranked = rankCurriculum(input.activityTitle, input.description ?? '', type, input.competencyBlock,
-      resolved.resolution.scope, resolved.rows)
+    const ranked = timeDevelopmentSync('curriculum.rank',()=>rankCurriculum(input.activityTitle, input.description ?? '', type, input.competencyBlock,
+      resolved.resolution.scope, resolved.rows))
     const candidates = ranked.slice(0, 5).map(({ element, topicCoverage }) => ({
       ...element, normalizedText: undefined, topicCoverage,
     }))
     const confident = Boolean(resolved.resolution.scope && ranked[0]?.topicCoverage >= 0.6)
+    recordDevelopmentTiming('interpret.processing',processingStarted,performance.now())
     return { suggestedActivityType: pilot?.activityType ?? detected.id, activityType: type, activityTypes: evaluationCatalogCurrent.activityTypes.map(({ id }) => id),
       ...(selections ?? {}),
       ...(input.evaluationTechnique ? { suggestedEvaluationTechnique: input.evaluationTechnique } : {}),
@@ -69,7 +72,7 @@ export class EvaluationInstrumentsService {
     try {
       const { context, resolution, rows, version } = await this.resolve(user, input, true)
       if (input.selectedCurriculumElementIds?.some(id => !rows.some(row => row.elementId === id))) throw new BadRequestException('Elemento curricular ajeno al ámbito autorizado.')
-      const result = recommend(input, context, resolution.scope, rows, resolution.status, version?.status ?? null)
+      const result = timeDevelopmentSync('composition.convert',()=>recommend(input, context, resolution.scope, rows, resolution.status, version?.status ?? null))
       result.internalTrace.reasons.push(resolution.reason)
       result.curriculumVersionId = version?.id ?? null
       return result.internalTrace.composition ? result : await this.refineWithAi(result, input, context)
@@ -143,12 +146,12 @@ export class EvaluationInstrumentsService {
   private async resolve(user: AuthenticatedUser, input: InterpretActivityDto & { curriculumScopeId?: string }, developmentDraft = false) {
     const manager = user.roles.some(r => ['admin', 'director', 'coordinator'].includes(r))
     if (!manager && !user.roles.includes('teacher')) throw new ForbiddenException('Rol no autorizado.')
-    const assignment = await prisma.sectionSubject.findFirst({
+    const assignment = await timeDevelopmentStage('context.authorize',()=>prisma.sectionSubject.findFirst({
       where: { id: input.sectionSubjectId, schoolId: user.schoolId, status: 'ACTIVE',
         ...(manager ? {} : { teacher: { userId: user.id, schoolId: user.schoolId, status: 'ACTIVE' } }) },
       include: { grade: { include: { academicLevel: true, academicCycle: true, defaultModality: true } },
         subject: true, section: true, schoolYear: true, curriculumContext: true },
-    })
+    }))
     if (!assignment) throw new NotFoundException('Asignatura no disponible para este usuario.')
     if ([assignment.grade, assignment.subject, assignment.section, assignment.schoolYear].some(row => row.schoolId !== user.schoolId || row.status !== 'ACTIVE')
       || assignment.section.gradeId !== assignment.gradeId) throw new ForbiddenException('Contexto académico inconsistente.')
@@ -156,9 +159,9 @@ export class EvaluationInstrumentsService {
     let releases: Array<{ identical: boolean }>
     try {
       // Validate every request, including cold starts, against the complete reviewed content.
-      releases = await prisma.$queryRaw<Array<{ identical: boolean }>>`
+      releases = await timeDevelopmentStage('catalog.verify',()=>prisma.$queryRaw<Array<{ identical: boolean }>>`
         SELECT encode(sha256(convert_to(payload::text, 'UTF8')), 'hex') = ${reviewedCatalogFingerprint} AS identical
-        FROM public.evaluation_catalog_releases WHERE version = ${evaluationCatalogCurrent.version}`
+        FROM public.evaluation_catalog_releases WHERE version = ${evaluationCatalogCurrent.version}`)
     } catch (error) {
       const code = typeof error === 'object' && error && 'code' in error ? String(error.code) : ''
       const databaseCode = typeof error === 'object' && error && 'meta' in error ? (error.meta as { code?: string } | null)?.code : undefined
@@ -169,22 +172,22 @@ export class EvaluationInstrumentsService {
     if (releases[0].identical !== true) throw new ServiceUnavailableException('El catálogo difiere del seed revisado.')
     let version = null
     if (input.curriculumVersionId) {
-      version = await prisma.curriculumVersion.findUnique({ where: { id: input.curriculumVersionId } })
+      version = await timeDevelopmentStage('curriculum.version.explicit',()=>prisma.curriculumVersion.findUnique({ where: { id: input.curriculumVersionId } }))
       if (!context || !version || version.level !== context.level || !['DRAFT', 'PUBLISHED'].includes(version.status) || !versionAllowsContext(version, context)) throw new BadRequestException('Versión curricular incompatible o no disponible.')
     } else if (context) {
-      version = await versionForContext(context, 'PUBLISHED')
+      version = await timeDevelopmentStage('curriculum.version.published',()=>versionForContext(context, 'PUBLISHED'))
       if (!version && developmentDraft && process.env.NODE_ENV !== 'production') {
-        version = await versionForContext(context, 'DRAFT')
+        version = await timeDevelopmentStage('curriculum.version.draft',()=>versionForContext(context, 'DRAFT'))
       }
     }
     // Both depend on the authorized version/context, but neither depends on the other.
-    const [scopes, mappings] = version && context ? await Promise.all([
+    const [scopes, mappings] = version && context ? await timeDevelopmentStage('curriculum.scopes-mappings',()=>Promise.all([
       prisma.curriculumScope.findMany({ where: { versionId: version.id, grade: context.grade, cycle: context.cycle } }),
       prisma.curriculumSubjectMapping.findMany({ where: { subjectId: assignment.subjectId, mappingStatus: 'REVIEWED', scope: { versionId: version.id, grade: context.grade, cycle: context.cycle } } }),
-    ]) : [[], []]
+    ])) : [[], []]
     const resolution = context && version ? resolveScope(context, scopes, mappings.map(m => m.scopeId)) : { status: context ? 'NO_PUBLISHED_VERSION' : 'INCOMPLETE_CONTEXT', scope: null, reason: 'Se requiere contexto estructurado y versión disponible.' }
     if (input.curriculumScopeId && input.curriculumScopeId !== resolution.scope?.id) throw new BadRequestException('El ámbito solicitado no corresponde al contexto autorizado.')
-    const elements = resolution.scope ? await prisma.curriculumElement.findMany({ where: { scopeId: resolution.scope.id, versionId: resolution.scope.versionId }, select: { id: true, versionId: true, scopeId: true, elementType: true, originalText: true, normalizedText: true, sourceSpans: { select: { documentId: true, pdfPage: true, printedPage: true } } }, orderBy: { id: 'asc' } }) : []
+    const elements = resolution.scope ? await timeDevelopmentStage('curriculum.elements',()=>prisma.curriculumElement.findMany({ where: { scopeId: resolution.scope.id, versionId: resolution.scope.versionId }, select: { id: true, versionId: true, scopeId: true, elementType: true, originalText: true, normalizedText: true, sourceSpans: { select: { documentId: true, pdfPage: true, printedPage: true } } }, orderBy: { id: 'asc' } })) : []
     const metadata=version?.importMetadata
     const excluded=metadata&&typeof metadata==='object'&&!Array.isArray(metadata)&&Array.isArray(metadata.excludedAssessmentElementIds)
       ? new Set(metadata.excludedAssessmentElementIds.filter(id=>typeof id==='string')) : new Set<string>()
@@ -216,7 +219,7 @@ export function versionAllowsContext(version: { importMetadata?: unknown }, cont
   if (metadata.commonOnly === true && context.optativeExitName) return false
   if ('grades' in metadata && (!Array.isArray(metadata.grades) || !metadata.grades.includes(context.grade))) return false
   if (!('subjectCodes' in metadata)) return true // Historical complete catalogs retain their policy.
-  const code = context.subjectCode.trim().toUpperCase() || (/frances|francais/.test((context.subjectName ?? '').normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()) ? 'FRA' : '')
+  const code = versionSubjectCode(context)
   return Array.isArray(metadata.subjectCodes) && metadata.subjectCodes.some(value => typeof value === 'string' && value.toUpperCase() === code)
 }
 
@@ -228,7 +231,25 @@ async function versionForContext(context: AcademicContext, status: 'PUBLISHED' |
   }, orderBy: [{ editionYear: 'desc' as const }, ...(status === 'PUBLISHED' ? [{ publishedAt: 'desc' as const }] : []), { id: 'asc' as const }] }
   const latest = await prisma.curriculumVersion.findFirst(query)
   if (!latest || versionAllowsContext(latest, context)) return latest
-  return (await prisma.curriculumVersion.findMany(query)).find(version => versionAllowsContext(version, context)) ?? null
+  // Coarse filter only: absent keys keep the historical policy; every candidate still passes the full validator.
+  const candidates=technical?await prisma.curriculumVersion.findMany(query):await timeDevelopmentStage('curriculum.version.candidates',()=>prisma.$queryRaw<CurriculumVersion[]>`
+    SELECT id, code, level, edition_year AS "editionYear", status, import_metadata AS "importMetadata",
+      validated_at AS "validatedAt", published_at AS "publishedAt", created_at AS "createdAt", updated_at AS "updatedAt"
+    FROM public.curriculum_versions
+    WHERE level=${context.level} AND status=${status} AND (
+      jsonb_typeof(import_metadata) IS DISTINCT FROM 'object' OR NOT (import_metadata ? 'subjectCodes')
+      OR CASE WHEN jsonb_typeof(import_metadata->'subjectCodes')='array' THEN EXISTS (
+        SELECT 1 FROM jsonb_array_elements(import_metadata->'subjectCodes') AS entry(value)
+        WHERE jsonb_typeof(entry.value)='string' AND upper(entry.value #>> '{}')=${versionSubjectCode(context)}
+      ) ELSE false END
+    )
+    ORDER BY edition_year DESC, CASE WHEN ${status}='PUBLISHED' THEN published_at END DESC, id ASC`)
+  const counted=performance.now();recordDevelopmentTiming('curriculum.version.candidate-count',counted,counted,false,candidates.length)
+  return candidates.find(version => versionAllowsContext(version, context)) ?? null
+}
+
+function versionSubjectCode(context:AcademicContext){
+  return context.subjectCode.trim().toUpperCase() || (/frances|francais/.test((context.subjectName ?? '').normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()) ? 'FRA' : '')
 }
 
 export function canonicalJson(value: unknown): string {

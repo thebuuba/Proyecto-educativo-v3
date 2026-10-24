@@ -36,7 +36,7 @@ const mocks = vi.hoisted(() => ({
   curriculumVersion: { findUnique: vi.fn(), findFirst: vi.fn(), findMany: vi.fn() }, curriculumScope: { findMany: vi.fn() },
   curriculumSubjectMapping: { findMany: vi.fn() }, curriculumElement: { findMany: vi.fn() },
 }))
-vi.mock('@aula/database', () => ({ prisma: mocks }))
+vi.mock('@aula/database', () => ({prisma:mocks}))
 const user = { id: 'teacher-user', schoolId: 'school', email: 'test@example.invalid', roles: ['teacher'] }
 const input = { sectionSubjectId: 'cc32a9cf-8ca2-452e-b7e9-9b786ae1d475', activityTitle: 'Exposición sobre el sistema circulatorio', participationMode: 'INDIVIDUAL' as const, maxScore: 20, curriculumVersionId: '37843eac-3f65-55ab-8a7e-e4fd95715380' }
 const scope = { id: 'scope', versionId: input.curriculumVersionId, grade: 5, cycle: 2, areaName: 'Ciencias de la Naturaleza', subjectName: 'Ciencias de la Naturaleza', optativeExitName: null, modalityName: null }
@@ -49,7 +49,7 @@ function assignment() {
 beforeEach(() => {
   vi.resetAllMocks()
   vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('External AI calls disabled in tests')))
-  mocks.$queryRaw.mockResolvedValue([{ identical: true }])
+  mocks.$queryRaw.mockImplementation(async(parts:TemplateStringsArray)=>parts.join('').includes('FROM public.curriculum_versions')?await mocks.curriculumVersion.findMany({}):[{identical:true}])
   mocks.sectionSubject.findFirst.mockResolvedValue(assignment())
   mocks.evaluationCatalogRelease.findUnique.mockResolvedValue({ payload: evaluationCatalogCurrent })
   mocks.curriculumVersion.findUnique.mockResolvedValue({ id: input.curriculumVersionId, level: 'PRIMARY', status: 'DRAFT' })
@@ -61,6 +61,24 @@ beforeEach(() => {
 })
 afterEach(() => { vi.unstubAllGlobals() })
 describe('API service security and version policy', () => {
+  it('reduce candidatos comunes en PostgreSQL sin excluir catálogos históricos sin subjectCodes',async()=>{
+    const row=assignment();row.grade.sequence=1;row.grade.academicLevel.code='secundario';row.grade.academicCycle.code='secundario_primer_ciclo';row.subject.code='NAT-TU'
+    mocks.sectionSubject.findFirst.mockResolvedValue(row)
+    mocks.curriculumVersion.findFirst.mockResolvedValue({id:'other',level:'SECONDARY',status:'PUBLISHED',importMetadata:{subjectCodes:['FRA']}})
+    const compatible={id:'compatible',level:'SECONDARY',status:'PUBLISHED',importMetadata:{subjectCodes:['NAT-TU'],grades:[1]}}
+    mocks.curriculumVersion.findMany.mockResolvedValue([compatible])
+    const result=await new EvaluationInstrumentsService().interpret(user,{sectionSubjectId:input.sectionSubjectId,activityTitle:'Actividad'})
+    expect(result.curriculumVersionId).toBe('compatible')
+    const [sql,...parameters]=mocks.$queryRaw.mock.calls.find(([parts])=>parts.join('').includes('FROM public.curriculum_versions'))!
+    expect(sql.join('')).toContain("upper(entry.value #>> '{}')=")
+    expect(sql.join('')).toContain("NOT (import_metadata ? 'subjectCodes')")
+    expect(sql.join('')).toContain("jsonb_typeof(entry.value)='string'")
+    expect(parameters).toContain('NAT-TU')
+    mocks.curriculumVersion.findMany.mockResolvedValue([{...compatible,id:'mixed-case',importMetadata:{subjectCodes:['nat-Tu'],grades:[1]}}])
+    expect((await new EvaluationInstrumentsService().interpret(user,{sectionSubjectId:input.sectionSubjectId,activityTitle:'Actividad'})).curriculumVersionId).toBe('mixed-case')
+    mocks.curriculumVersion.findMany.mockResolvedValue([{...compatible,id:'historical',importMetadata:{}}])
+    expect((await new EvaluationInstrumentsService().interpret(user,{sectionSubjectId:input.sectionSubjectId,activityTitle:'Actividad'})).curriculumVersionId).toBe('historical')
+  })
   for (const code of ['MF_053_3','MF_002_3','MF_054_3','MF_056_3','MF_059_3']) it(`filtra la búsqueda de ${code} en PostgreSQL sin descargar las otras fuentes`, async () => {
     const subject=reviewedTechnicalSubject(code)!
     const base=assignment()

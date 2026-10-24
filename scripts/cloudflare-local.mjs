@@ -30,6 +30,8 @@ const build = runPnpm(['build'])
 if (build.error) throw build.error
 if (build.status !== 0) process.exit(build.status ?? 1)
 
-const dev = runPnpm(['exec', 'wrangler', 'dev', '--local', '--env-file', '.dev.vars.local'])
+const dev = runPnpm(['exec', 'wrangler', 'dev', '--local', '--env-file', '.dev.vars.local',
+  ...(process.env.AULABASE_DEV_TIMING === 'true' ? ['--var', 'AULABASE_DEV_TIMING:true'] : []),
+])
 if (dev.error) throw dev.error
 process.exit(dev.status ?? 1)

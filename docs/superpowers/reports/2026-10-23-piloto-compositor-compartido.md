@@ -1,5 +1,7 @@
 # Piloto acotado del compositor compartido
 
+Cierre posterior de los dos defectos y diagnóstico medido de latencia: [2026-10-23-cierre-piloto-latencia.md](2026-10-23-cierre-piloto-latencia.md). Este informe conserva el estado anterior como evidencia; no sustituir sus primeras salidas ni sus checkpoints.
+
 Intervención cerrada desde `bc4a4153` en `ampliacion-de-instrumentos-2`. Trabajo del coordinador solo, sin revisión independiente. Piloto implementado y evaluado con dictamen parcial; no acredita asignaturas ni grados completos. La ampliación curricular permanece detenida.
 
 ## Alcance y arquitectura

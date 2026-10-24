@@ -1,0 +1,47 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "readOnly": true,
+  "fixture": "WITH examples AS VALUES; no tables changed",
+  "results": [
+    {
+      "label": "historical",
+      "initial_exact_filter": true,
+      "compatible_filter": true
+    },
+    {
+      "label": "mixed-case",
+      "initial_exact_filter": false,
+      "compatible_filter": true
+    },
+    {
+      "label": "nonobject",
+      "initial_exact_filter": true,
+      "compatible_filter": true
+    },
+    {
+      "label": "nonstring",
+      "initial_exact_filter": false,
+      "compatible_filter": false
+    },
+    {
+      "label": "null-key",
+      "initial_exact_filter": false,
+      "compatible_filter": false
+    },
+    {
+      "label": "other-code",
+      "initial_exact_filter": false,
+      "compatible_filter": false
+    },
+    {
+      "label": "uppercase",
+      "initial_exact_filter": true,
+      "compatible_filter": true
+    },
+    {
+      "label": "wrong-type",
+      "initial_exact_filter": false,
+      "compatible_filter": false
+    }
+  ]
+}
