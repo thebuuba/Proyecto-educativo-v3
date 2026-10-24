@@ -67,11 +67,14 @@ export function explicitWritingProcess(description: string, scope: string, genre
   const task = affirmativeLanguageTask(description)
   const rows: ContextualTopicCriterion[] = []
   const revisedVersion=/\bversion final\b/.test(task)?'final':'revisada'
-  if (revisionRequested || /\brevis(?:a|an|ar|aran|aremos|en|ion|ad[oa]s?)\b|\bcorreg\w*|\bcorrij\w*/.test(task)) rows.push({
+  const revision = revisionRequested || /\brevis(?:a|an|ar|aran|aremos|en|ion|ad[oa]s?)\b|\bcorreg\w*|\bcorrij\w*/.test(task)
+  // Revisar un producto final no solicita conservar ni entregar evidencias del proceso.
+  const processEvidence = /\bborrador\w*\b|\bversiones\b|\bcambios\b|\bcorrecciones\b/.test(task)
+  if (revision && processEvidence) rows.push({
     templateId:`${scope}-process-revision`,title:'Revisión del borrador',weight:2,
-    observable:`Muestra cambios entre el borrador y la versión ${revisedVersion} de ${genre} que resuelven problemas de contenido, organización o escritura encontrados.`,
+    observable:`Contrasta el borrador y la versión ${revisedVersion} de ${genre}: muestra los cambios necesarios para corregir los problemas encontrados y conserva las partes que ya son correctas.`,
     progressionLevels:[
-      `Los cambios del borrador de ${genre} resuelven los problemas identificados y conservan el sentido que se desea comunicar.`,
+      `La revisión de ${genre} resuelve los problemas identificados y conserva el sentido y las partes correctas; si no había errores, mantener el texto es válido.`,
       'Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.',
       'Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.',
       'Los cambios introducen contradicciones o eliminan información necesaria para comprender el texto.',

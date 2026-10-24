@@ -1,0 +1,46 @@
+{
+  "results": [
+    {
+      "name": "backend-test",
+      "exit": 0,
+      "ms": 91998
+    },
+    {
+      "name": "frontend-focal",
+      "exit": 0,
+      "ms": 61333
+    },
+    {
+      "name": "backend-build",
+      "exit": 0,
+      "ms": 8784
+    },
+    {
+      "name": "frontend-build",
+      "exit": 0,
+      "ms": 19539
+    },
+    {
+      "name": "cloudflare-build",
+      "exit": 0,
+      "ms": 77684
+    },
+    {
+      "name": "backend-lint",
+      "exit": 0,
+      "ms": 3153
+    },
+    {
+      "name": "shared-lint",
+      "exit": 0,
+      "ms": 1963
+    }
+  ],
+  "backendTests": 98293,
+  "frontendFocalTests": 172,
+  "cloudflareDryRun": true,
+  "productionDeployment": false,
+  "initialBackendRun": "7 failures: missing conventions after publication and keyword assertions; evidence retained privately",
+  "secondBackendRun": "Interrupted after known focal failures; no duplicate suite kept running",
+  "finalBackendRun": "PASS_AFTER_FOCAL_FIXES"
+}

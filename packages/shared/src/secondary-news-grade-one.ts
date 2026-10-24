@@ -190,26 +190,37 @@ export function refineFirstGradeNewsRequirements(activity:string,description:str
       'No se reconoce una secuencia comprensible entre los datos de la noticia.',
     ])
     if(row.templateId==='news-language'&&writing)return withLevels(row.title,[
-      'El vocabulario y las formas verbales permiten comprender los hechos y sus referentes sin ambigüedad.',
-      'Los hechos se comprenden; una palabra o un tiempo verbal deja impreciso un dato secundario.',
-      'Varias palabras o formas verbales dificultan reconocer quién hizo qué o cuándo ocurrió.',
-      'El vocabulario o los verbos cambian el sentido de los hechos informados.',
+      'Mantiene un tono informativo: el vocabulario y las formas verbales comunican los hechos sin presentarlos como opiniones ni cambiar sus referentes.',
+      'El tono es informativo y los hechos se comprenden; una palabra o un tiempo verbal deja impreciso un dato secundario.',
+      'Mezcla opiniones con información o usa expresiones que dificultan reconocer quién hizo qué o cuándo ocurrió.',
+      'Presenta opiniones como hechos o el vocabulario y los verbos cambian el sentido de la información.',
       'El lenguaje no permite comprender el hecho que se pretende comunicar.',
     ])
-    if(row.templateId==='news-revision'&&writing&&!/\b(?:borrador\w*|revis\w*|correg\w*|corrij\w*)\b/.test(task))return withLevels('Legibilidad y convenciones de la noticia',[
-      'Presenta la noticia con puntuación y escritura que permiten comprender los hechos.',
-      'La noticia se comprende; un signo o una palabra dificulta un dato secundario.',
-      'Varios errores de puntuación o escritura vuelven ambiguos datos del hecho.',
-      'La puntuación o escritura cambia quién hizo qué o cuándo ocurrió.',
-      'La escritura no permite reconocer los hechos comunicados.',
-    ])
-    if(row.templateId==='news-essential'&&/\bfichas?\b/.test(task))return withLevels(row.title,[
-      'Informa qué ocurrió, a quién, dónde, cuándo y cómo, conservando los hechos de la ficha suministrada.',
-      'Conserva los hechos principales de la ficha; una referencia secundaria queda poco precisa.',
-      'Recoge datos de la ficha, pero omite una relación necesaria para comprender quién hizo qué, dónde o cuándo.',
-      'Añade o cambia un dato de la ficha y altera el hecho informado.',
+    if(row.templateId==='news-revision'&&writing){
+      const separatePunctuation=criteria.some(c=>c.templateId==='news-feature-punctuation')
+      return withLevels(separatePunctuation?'Ortografía y legibilidad':'Legibilidad y convenciones de la noticia',separatePunctuation?[
+        'Presenta la noticia con ortografía y escritura legible que conservan el sentido de los hechos.',
+        'La noticia se comprende; un error ortográfico aislado dificulta una palabra secundaria.',
+        'Varios errores ortográficos o de legibilidad dificultan reconocer palabras necesarias para comprender el hecho.',
+        'La escritura cambia un nombre o una palabra y altera la información comunicada.',
+        'No presenta escritura legible que permita reconocer los hechos de la noticia.',
+      ]:[
+        'Presenta la noticia con ortografía, puntuación y escritura que permiten comprender los hechos.',
+        'La noticia se comprende; un signo o una palabra dificulta un dato secundario.',
+        'Varios errores de ortografía, puntuación o escritura vuelven ambiguos datos del hecho.',
+        'La ortografía, puntuación o escritura cambia quién hizo qué o cuándo ocurrió.',
+        'La escritura no permite reconocer los hechos comunicados.',
+      ])
+    }
+    if(row.templateId==='news-essential'&&writing){
+      const source=/\bfichas?\b/.test(task)?'de la ficha suministrada':'disponibles'
+      return withLevels(row.title,[
+      `Informa qué ocurrió, quiénes participaron, dónde y cuándo, conservando los datos ${source} sin inventar hechos; incluye otros datos esenciales cuando la información los aporta.`,
+      `Conserva los hechos principales ${source}; una referencia secundaria queda poco precisa.`,
+      `Recoge datos ${source}, pero omite una relación necesaria para comprender quién hizo qué, dónde o cuándo.`,
+      'Añade o cambia un dato y altera el hecho informado.',
       'No presenta información reconocible del hecho suministrado.',
-    ])
+    ])}
     if(row.templateId==='news-structure'&&writing&&/comunidad escolar/.test(task))return withLevels(row.title,[
       'Titular, entrada y cuerpo organizan los datos con vocabulario comprensible y relevancia para la comunidad escolar.',
       'Las partes orientan a la comunidad escolar; la entrada repite un dato del cuerpo sin destacar lo principal.',

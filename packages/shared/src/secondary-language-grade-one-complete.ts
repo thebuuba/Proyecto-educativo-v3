@@ -160,14 +160,15 @@ function complete(genre:string,activity:string,description:string,base:Contextua
     if(!broad) rows=[]
     else rows=rows.filter(row=>!/-resources$|-language$|-revision$/.test(row.templateId))
   }
-  if(features.length && (production||oralProduction)) rows=rows.filter(row=>!/-resources$|-language$/.test(row.templateId))
+  // Un recurso puntual no sustituye toda la adecuación lingüística del producto.
+  if(features.length && (production||oralProduction)) rows=rows.filter(row=>!/-resources$/.test(row.templateId))
   if(genre==='noticia'&&production&&features.some(f=>f.id==='connectors'))rows=rows.filter(r=>r.templateId!=='news-sequence')
   if(features.length && production && /solo|unicamente|exclusivamente/.test(task) && /revis|correg/.test(task))rows=[]
   rows=[...rows,...features.map(feature=>languageFeatureCriterion(feature,scope,genre,compare?'comparison':production?'production':oralProduction?'oral-production':recitation?'recitation':'analysis'))]
   if(production) {
     const focusedCorrection=features.length && /solo|unicamente|exclusivamente/.test(task) && /revis|correg/.test(task) && !/borrador|versiones|cambios|public/.test(task)
     const process=focusedCorrection?[]:explicitWritingProcess(description,scope,genre)
-    if(process.length) rows=rows.filter(row=>!/-revision$/.test(row.templateId))
+    if(process.some(row=>row.templateId.endsWith('-process-revision'))) rows=rows.filter(row=>!/-revision$/.test(row.templateId))
     rows.push(...process)
     if(genre==='guía turística') rows=rows.map(row=>row.templateId==='guide-revision'?{
       ...row,title:'Claridad y convenciones de la guía',observable:'Presenta la guía con escritura legible, puntuación y ortografía que permiten comprender la información de los lugares.',

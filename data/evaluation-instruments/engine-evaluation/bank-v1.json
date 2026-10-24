@@ -1,0 +1,891 @@
+{
+  "id": "evaluacion-acotada-motor-sin-ia-v1",
+  "sourceCommit": "b6b342d2ccd4dfd4f464b73eb720614651db8662",
+  "protocol": {
+    "total": 24,
+    "diagnosticBefore": 18,
+    "reservedAfter": 6,
+    "reserveRule": "Una actividad alternativa por asignatura; no ejecutar ni usar sus salidas para ajustar antes de la corrección.",
+    "fullFormats": [
+      "LEN02",
+      "ING02",
+      "FRA02",
+      "MAT02",
+      "SOC02",
+      "NAT02"
+    ],
+    "expectationsFixedBeforeExecution": true,
+    "designer": "COORDINADOR_SOLO",
+    "independentReview": false,
+    "knownPriorExposure": "El coordinador conoce código y bancos previos por el encargo anterior. Las consignas actuales se redactaron desde productos y requisitos pedagógicos, sin buscar los patrones del motor para formularlas.",
+    "defaultProvenance": "SINTETICA_DISEÑADA_PARA_EVALUACION_NO_TESTIMONIO_DOCENTE",
+    "criteriaRule": "Agrupar evidencias relacionadas sin perderlas; justificar cada criterio por consigna o dimensión esencial, admitir modalidades alternativas y niveles parciales observables.",
+    "scopeRule": "Evaluación transversal de contextos ya implementados; no amplía currículo ni cierra asignaturas.",
+    "formatRule": "Comprobar selección automática en24; cuatro formatos completos en6 casos representativos. La recomendación es defendible, no una etiqueta única obligatoria."
+  },
+  "cases": [
+    {
+      "id": "LEN01",
+      "subjectCode": "LEN",
+      "grade": 1,
+      "category": "BREVE",
+      "title": "Una noticia de la escuela",
+      "description": "Escribe una noticia sobre una actividad de tu escuela.",
+      "product": "Noticia escrita",
+      "content": [
+        "Actividad escolar elegida"
+      ],
+      "requirements": [
+        "Escribir una noticia"
+      ],
+      "inherent": [
+        "Información esencial verificable",
+        "Titular, entrada y cuerpo proporcionados",
+        "Organización, tono informativo y convenciones escritas"
+      ],
+      "forbidden": [
+        "Entrevistar personas",
+        "Presentar borrador y versión final",
+        "Publicar o exponer oralmente"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "LEN02",
+      "subjectCode": "LEN",
+      "grade": 1,
+      "category": "DETALLADA",
+      "provenance": "REGRESION_SOLICITADA_POR_USUARIO_TEXTO_ORIGINADO_EN_ASISTENTE",
+      "title": "Una noticia para el mural escolar",
+      "description": "Redacta individualmente una noticia a partir de estos datos ficticios: el viernes por la mañana, los estudiantes de 1.º A organizaron una jornada de lectura en la biblioteca de la escuela. Participaron 25 estudiantes y la profesora de Lengua Española. Leyeron cuentos en pequeños grupos y compartieron sus recomendaciones de lectura.\n\nIncluye un titular, una entrada que resuma lo principal y un cuerpo que desarrolle los hechos. Explica qué ocurrió, quiénes participaron, cuándo y dónde sucedió. Mantén un tono informativo, evita inventar datos y revisa la organización, la ortografía y la puntuación antes de entregar.",
+      "product": "Noticia escrita final individual",
+      "content": [
+        "Jornada de lectura ficticia con los datos dados"
+      ],
+      "requirements": [
+        "Fidelidad a los datos y qué/quién/cuándo/dónde",
+        "Titular, entrada y cuerpo",
+        "Organización y tono informativo",
+        "Ortografía y puntuación revisadas"
+      ],
+      "inherent": [
+        "Cohesión entre entrada y cuerpo",
+        "Selección y jerarquía de información esencial"
+      ],
+      "forbidden": [
+        "Entregar borrador además del final",
+        "Modificar obligatoriamente un texto correcto",
+        "Investigar, entrevistar o realizar una jornada",
+        "Convertir 25 estudiantes y cada otro dato en criterios independientes"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "LEN03",
+      "subjectCode": "LEN",
+      "grade": 1,
+      "category": "VARIAS_ACCIONES",
+      "title": "Dos lugares para quien nos visita",
+      "description": "Prepara una guía turística escrita de dos lugares de tu comunidad. Describe qué puede encontrar el visitante en cada uno, compara una semejanza y una diferencia y propone un recorrido entre ambos. Entrega la guía con letra Arial 12, interlineado 1.5, sangría al inicio de los párrafos y títulos en color azul.",
+      "product": "Guía turística escrita",
+      "content": [
+        "Dos lugares elegidos de la comunidad",
+        "Comparación y recorrido"
+      ],
+      "requirements": [
+        "Descripción de ambos lugares",
+        "Una semejanza y una diferencia",
+        "Recorrido propuesto comprensible",
+        "Presentación: Arial12, interlineado1.5, sangría y títulos azules agrupados sin omisiones"
+      ],
+      "inherent": [
+        "Organización útil para visitante",
+        "Claridad y convenciones escritas"
+      ],
+      "forbidden": [
+        "Visitar físicamente los lugares",
+        "Entregar fotografías, mapa o video no solicitados",
+        "Cuatro criterios separados solo por tipografía",
+        "Exposición oral"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE",
+        "PROJECT_BASED"
+      ]
+    },
+    {
+      "id": "LEN04",
+      "subjectCode": "LEN",
+      "grade": 1,
+      "category": "ALTERNATIVA_NEGACION",
+      "holdout": true,
+      "title": "Mi recomendación de un cuento",
+      "description": "Después de leer un cuento elegido de la biblioteca, presenta tu recomendación en un audio o en una nota escrita. Resume el conflicto sin revelar el desenlace y explica una razón para recomendarlo o para no recomendarlo. No entregues ambos formatos.",
+      "product": "Recomendación de lectura en modalidad elegida",
+      "content": [
+        "Conflicto del cuento elegido",
+        "Valoración sustentada"
+      ],
+      "requirements": [
+        "Audio O nota escrita",
+        "Resumen sin desenlace",
+        "Una razón relacionada con el cuento",
+        "Recomendación positiva O negativa válida"
+      ],
+      "inherent": [
+        "Fidelidad al cuento",
+        "Comprensibilidad según el medio"
+      ],
+      "forbidden": [
+        "Ambos formatos",
+        "Exigir recomendar favorablemente",
+        "Pronunciación en la nota o puntuación escrita en audio",
+        "Entregar informe extenso, borrador o datos biográficos del autor"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "ING01",
+      "subjectCode": "ING",
+      "grade": 1,
+      "category": "BREVE",
+      "title": "This is me",
+      "description": "Preséntate brevemente en inglés.",
+      "product": "Presentación personal breve",
+      "content": [
+        "Información personal elegida"
+      ],
+      "requirements": [
+        "Presentación breve en inglés"
+      ],
+      "inherent": [
+        "Información comprensible y pertinente",
+        "Claridad adecuada a la modalidad que se acuerde"
+      ],
+      "forbidden": [
+        "Entrevista o diálogo",
+        "Inventar obligación de dirección, nacionalidad, familia y teléfono",
+        "Acento nativo",
+        "Calificar un medio no precisado como obligatorio"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "ING02",
+      "subjectCode": "ING",
+      "grade": 6,
+      "category": "DETALLADA",
+      "provenance": "ACTIVIDAD_REAL_APORTADA_POR_USUARIO_EN_CHAT",
+      "title": "Una entrevista de trabajo en inglés.",
+      "description": "En parejas, los estudiantes realizarán una entrevista de trabajo simulada en inglés. Uno entrevistará y el otro responderá sobre la experiencia y las capacidades de un personaje ficticio. Luego intercambiarán los roles.",
+      "product": "Entrevista oral simulada con intercambio de roles",
+      "content": [
+        "Experiencia y capacidades de personaje ficticio"
+      ],
+      "requirements": [
+        "Ambos roles por cada participante",
+        "Preguntar y responder sobre experiencia y capacidades",
+        "Realizar intercambio oral en inglés"
+      ],
+      "inherent": [
+        "Coherencia entre pregunta y respuesta",
+        "Claridad y trato comunicativo",
+        "Referencia consistente al personaje"
+      ],
+      "forbidden": [
+        "Currículum vitae, carta o grabación",
+        "Experiencia laboral real",
+        "Vocabulario o tiempos verbales específicos obligatorios no pedidos",
+        "Exigir perfil o documentos previos entregables"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "ROLE_PLAY",
+        "NONE"
+      ]
+    },
+    {
+      "id": "ING03",
+      "subjectCode": "ING",
+      "grade": 1,
+      "category": "VARIAS_ACCIONES",
+      "title": "Reading our preferences",
+      "description": "Lee estos mensajes: «I like swimming, but I prefer cycling.» (Sara) y «I do not like cycling. I enjoy swimming.» (Joel). Escribe en inglés qué actividad gusta a cada persona, qué preferencia se conoce y qué preferencia no se puede afirmar. Justifica esta última respuesta con el contenido de los mensajes.",
+      "product": "Respuesta escrita de comprensión lectora",
+      "content": [
+        "Gustos y preferencias expresadas y ausentes"
+      ],
+      "requirements": [
+        "Distinguir ambos referentes y su gusto",
+        "Preferencia de Sara y ausencia de comparación en Joel",
+        "Justificación desde los mensajes"
+      ],
+      "inherent": [
+        "Fidelidad, polaridad y respaldo textual",
+        "Respuesta comprensible"
+      ],
+      "forbidden": [
+        "Preferencia comparativa inventada de Joel",
+        "Expresar gustos propios",
+        "Entrevistar o escuchar audio",
+        "Exigir porque en inglés como palabra única"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "ING04",
+      "subjectCode": "ING",
+      "grade": 1,
+      "category": "ALTERNATIVA_NEGACION",
+      "holdout": true,
+      "title": "A pet for our character",
+      "description": "Describe en inglés una mascota real o imaginaria mediante un audio o una ficha escrita. Comunica su nombre, su aspecto y algo que hace habitualmente. No prepares una conversación ni entregues los dos medios.",
+      "product": "Descripción de mascota en modalidad elegida",
+      "content": [
+        "Nombre, aspecto y hábito de mascota real o imaginaria"
+      ],
+      "requirements": [
+        "Audio O ficha",
+        "Nombre, aspecto y acción habitual",
+        "Referencia consistente"
+      ],
+      "inherent": [
+        "Comprensibilidad lingüística según medio"
+      ],
+      "forbidden": [
+        "Ambos medios",
+        "Conversación",
+        "Gustos, comparaciones, árbol familiar o información no pedida",
+        "Pronunciación obligatoria para ficha escrita"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "FRA01",
+      "subjectCode": "FRA",
+      "grade": 1,
+      "category": "BREVE",
+      "title": "Bonjour !",
+      "description": "Preséntate en francés.",
+      "product": "Presentación personal breve",
+      "content": [
+        "Información personal pertinente"
+      ],
+      "requirements": [
+        "Presentación en francés"
+      ],
+      "inherent": [
+        "Comprensibilidad y coherencia de información elegida"
+      ],
+      "forbidden": [
+        "Diálogo realizado",
+        "Teléfono y domicilio obligatorios",
+        "Una modalidad cierta si no se precisó",
+        "Memorización y acento nativo"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "FRA02",
+      "subjectCode": "FRA",
+      "grade": 1,
+      "category": "DETALLADA",
+      "title": "La fiche de Camille",
+      "description": "Escribe en francés una ficha de presentación de Camille, un personaje ficticio de 13 años que vive en Santiago y disfruta dibujar. Incluye su nombre, edad, ciudad y gusto. Organiza la información para que otra persona pueda entenderla y revisa la escritura antes de entregar.",
+      "product": "Ficha escrita de personaje",
+      "content": [
+        "Camille,13años,Santiago,dibujar"
+      ],
+      "requirements": [
+        "Cuatro datos dados fieles",
+        "Ficha organizada y comprensible",
+        "Escritura revisada"
+      ],
+      "inherent": [
+        "Recursos lingüísticos comprensibles sin fórmula única"
+      ],
+      "forbidden": [
+        "Foto, audio, entrevista o nacionalidad inventada",
+        "Datos privados reales",
+        "Borrador obligatorio",
+        "Modificar un texto ya correcto"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "FRA03",
+      "subjectCode": "FRA",
+      "grade": 1,
+      "category": "VARIAS_ACCIONES",
+      "title": "Nous faisons connaissance",
+      "description": "En parejas, mantengan una conversación breve en francés. Cada participante preguntará y responderá sobre el nombre, la edad y la ciudad de un personaje inventado. Después, cada uno presentará oralmente a su compañero con esos datos.",
+      "product": "Conversación y presentación oral posterior",
+      "content": [
+        "Nombre, edad y ciudad de personajes"
+      ],
+      "requirements": [
+        "Cada participante pregunta y responde",
+        "Tres datos con referente correcto",
+        "Presentación oral posterior de cada compañero"
+      ],
+      "inherent": [
+        "Correspondencia pregunta/respuesta",
+        "Claridad oral y trato respetuoso"
+      ],
+      "forbidden": [
+        "Entregar guion, video o ficha",
+        "Calificar personalidad o acento nativo",
+        "Omitir la presentación posterior",
+        "Inventar hábitos y nacionalidad"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "ROLE_PLAY",
+        "NONE"
+      ]
+    },
+    {
+      "id": "FRA04",
+      "subjectCode": "FRA",
+      "grade": 1,
+      "category": "ALTERNATIVA_NEGACION",
+      "holdout": true,
+      "title": "Un message pour notre groupe",
+      "description": "Prepara en francés un mensaje para presentar a un personaje al grupo. Puedes entregarlo por escrito o en audio; incluye su nombre y dos rasgos de su aspecto. Hoy solo se entrega el mensaje, sin conversación ni presentación en vivo.",
+      "product": "Mensaje de presentación preparado",
+      "content": [
+        "Nombre y dos rasgos físicos"
+      ],
+      "requirements": [
+        "Escrito O audio",
+        "Nombre y dos rasgos",
+        "Solo entrega del mensaje actual"
+      ],
+      "inherent": [
+        "Referencia clara y comprensibilidad según medio"
+      ],
+      "forbidden": [
+        "Ambos medios",
+        "Conversación o exposición en vivo",
+        "Gustos y nacionalidad obligatorios",
+        "Pronunciación en escrito o puntuación en audio"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "MAT01",
+      "subjectCode": "MAT",
+      "grade": 1,
+      "category": "BREVE",
+      "title": "Operaciones con enteros",
+      "description": "Resuelve y muestra cómo lo hiciste: −8 + 13; 7 − 12; (−3) × 4.",
+      "product": "Resolución escrita de ejercicios",
+      "content": [
+        "Operaciones con enteros"
+      ],
+      "requirements": [
+        "Resolver tres expresiones",
+        "Mostrar procedimiento"
+      ],
+      "inherent": [
+        "Cálculo y signos correctos",
+        "Correspondencia procedimiento/resultado"
+      ],
+      "forbidden": [
+        "Problema contextual inventado",
+        "Investigación, exposición o trabajo en grupo",
+        "Exigir un método único",
+        "Diagramas obligatorios"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE",
+        "PROBLEM_BASED"
+      ]
+    },
+    {
+      "id": "MAT02",
+      "subjectCode": "MAT",
+      "grade": 1,
+      "category": "DETALLADA",
+      "title": "Movimientos de una cuenta ficticia",
+      "description": "Una cuenta tenía RD$250. Se retiraron RD$375 y después se depositaron RD$180. Representa los movimientos con números enteros, calcula el saldo final y explica qué significa el signo del resultado. Muestra las operaciones.",
+      "product": "Resolución razonada de problema",
+      "content": [
+        "Enteros y movimientos de saldo"
+      ],
+      "requirements": [
+        "Representar movimientos con signo",
+        "Operaciones y saldo final",
+        "Interpretación del signo en contexto"
+      ],
+      "inherent": [
+        "Razonamiento consistente y comunicación matemática"
+      ],
+      "forbidden": [
+        "Presupuesto, intereses o porcentajes inventados",
+        "Gráfica o recta obligatorias",
+        "Datos bancarios reales",
+        "Encuesta o experimento"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "PROBLEM_BASED",
+        "NONE"
+      ]
+    },
+    {
+      "id": "MAT03",
+      "subjectCode": "MAT",
+      "grade": 1,
+      "category": "VARIAS_ACCIONES",
+      "title": "Lecturas del grupo",
+      "description": "Estos son los libros leídos por ocho estudiantes durante un mes: 0, 1, 1, 2, 2, 2, 3, 5. Organiza una tabla de frecuencias, representa los datos en un gráfico de barras, calcula la media y la mediana y escribe una conclusión que los datos permitan sostener.",
+      "product": "Análisis estadístico escrito con tabla y gráfico",
+      "content": [
+        "Frecuencias, barras,media,mediana"
+      ],
+      "requirements": [
+        "Tabla de frecuencias",
+        "Gráfico fiel y rotulado",
+        "Media y mediana con cálculos",
+        "Conclusión respaldada"
+      ],
+      "inherent": [
+        "Coherencia entre representaciones y cálculos"
+      ],
+      "forbidden": [
+        "Realizar encuesta o recopilar más datos",
+        "Moda obligatoria",
+        "Generalizar a toda la escuela",
+        "Exposición oral o informe formal extenso"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "PROBLEM_BASED",
+        "NONE"
+      ]
+    },
+    {
+      "id": "MAT04",
+      "subjectCode": "MAT",
+      "grade": 1,
+      "category": "ALTERNATIVA_NEGACION",
+      "holdout": true,
+      "title": "¿Cuál queda más a la izquierda?",
+      "description": "Compara −0.75 y −2/3. Justifica cuál es menor mediante una recta numérica o una explicación escrita con cálculos. No es necesario usar ambos procedimientos.",
+      "product": "Comparación justificada de racionales",
+      "content": [
+        "Orden de números negativos racionales"
+      ],
+      "requirements": [
+        "Comparación correcta",
+        "Recta O explicación con cálculos",
+        "Justificación consistente"
+      ],
+      "inherent": [
+        "Equivalencia de representaciones y signos"
+      ],
+      "forbidden": [
+        "Ambos procedimientos",
+        "Investigación o exposición",
+        "Premiar solo resultado sin justificación",
+        "Redondeo arbitrario que cambie el orden"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "PROBLEM_BASED",
+        "NONE"
+      ]
+    },
+    {
+      "id": "SOC01",
+      "subjectCode": "SOC",
+      "grade": 1,
+      "category": "BREVE",
+      "title": "El Caribe en el mapa",
+      "description": "Ubica las Antillas Mayores en un mapa del Caribe y escribe sus nombres.",
+      "product": "Mapa localizado y rotulado",
+      "content": [
+        "Antillas Mayores"
+      ],
+      "requirements": [
+        "Ubicación y nombres"
+      ],
+      "inherent": [
+        "Correspondencia espacial y legibilidad funcional"
+      ],
+      "forbidden": [
+        "Historia, economía,capitales o población obligatorias",
+        "Decoración artística",
+        "Investigación o exposición",
+        "Mapa de todos los continentes"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "SOC02",
+      "subjectCode": "SOC",
+      "grade": 1,
+      "category": "DETALLADA",
+      "title": "Relieve y ocupación del territorio",
+      "description": "Redacta una explicación sobre cómo el relieve puede influir en la ubicación de los asentamientos humanos. Usa como ejemplo una zona montañosa y una llanura, señala una posibilidad y una dificultad de cada una y evita afirmar que el relieve determina por sí solo dónde vive la población.",
+      "product": "Explicación geográfica comparativa escrita",
+      "content": [
+        "Relieve y asentamientos humanos"
+      ],
+      "requirements": [
+        "Relación explicada sin determinismo",
+        "Dos entornos y posibilidad/dificultad en cada uno"
+      ],
+      "inherent": [
+        "Razonamiento geográfico y organización comparativa"
+      ],
+      "forbidden": [
+        "Trabajo de campo,encuesta o estadísticas no dadas",
+        "Mapa obligatorio",
+        "Determinismo geográfico",
+        "Exigir solución a un problema ambiental diferente"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "SOC03",
+      "subjectCode": "SOC",
+      "grade": 1,
+      "category": "VARIAS_ACCIONES",
+      "title": "Dos explicaciones sobre una migración",
+      "description": "Analiza estas fuentes ficticias: A: «La familia salió porque perdió su empleo». B: «La familia se mudó para vivir cerca de sus parientes». Identifica la causa mencionada por cada fuente, distingue lo que sabemos de lo que falta saber y redacta una conclusión que admita la posible combinación de motivos sin inventar una causa principal.",
+      "product": "Análisis de fuentes y conclusión escrita",
+      "content": [
+        "Motivos de migración y límites de fuentes"
+      ],
+      "requirements": [
+        "Ambas causas atribuidas",
+        "Información conocida y faltante",
+        "Conclusión compatible con las fuentes"
+      ],
+      "inherent": [
+        "Uso crítico de evidencia y coherencia"
+      ],
+      "forbidden": [
+        "Atribuir prioridad a una causa sin información",
+        "Encuestar o investigar la familia ficticia",
+        "Cifras o causas políticas inventadas",
+        "Debate oral obligatorio"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "CASE_STUDY",
+        "NONE"
+      ]
+    },
+    {
+      "id": "SOC04",
+      "subjectCode": "SOC",
+      "grade": 1,
+      "category": "ALTERNATIVA_NEGACION",
+      "holdout": true,
+      "title": "Una comparación de paisajes",
+      "description": "Compara un paisaje urbano y uno rural que conozcas. Presenta una semejanza y dos diferencias mediante una explicación escrita o una exposición breve. No necesitas fotografías ni visitar los lugares.",
+      "product": "Comparación geográfica en modalidad elegida",
+      "content": [
+        "Paisaje urbano y rural"
+      ],
+      "requirements": [
+        "Una semejanza y dos diferencias",
+        "Escrito O exposición"
+      ],
+      "inherent": [
+        "Pertinencia geográfica y organización comparativa",
+        "Claridad según medio"
+      ],
+      "forbidden": [
+        "Visitas,fotografías o ambos medios",
+        "Estereotipos de superioridad o inferioridad",
+        "Investigación documental obligatoria",
+        "Pronunciación en texto escrito"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "NAT01",
+      "subjectCode": "NAT",
+      "grade": 1,
+      "category": "BREVE",
+      "title": "Las capas de la Tierra",
+      "description": "Explica cómo se organiza el interior de la Tierra.",
+      "product": "Explicación científica",
+      "content": [
+        "Organización interna de la Tierra"
+      ],
+      "requirements": [
+        "Explicar organización interna"
+      ],
+      "inherent": [
+        "Diferenciación y relaciones científicamente correctas",
+        "Claridad de explicación"
+      ],
+      "forbidden": [
+        "Maqueta, laboratorio, dibujo o exposición como entregas ciertas",
+        "Tectónica o sismos completos si no se piden",
+        "Lista exhaustiva de propiedades cuantitativas"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "NAT02",
+      "subjectCode": "NAT",
+      "grade": 1,
+      "category": "DETALLADA",
+      "title": "¿Por qué se producen los sismos?",
+      "description": "Escribe una explicación de la relación entre el movimiento de las placas tectónicas y los sismos. Distingue el lugar donde se inicia la ruptura del punto situado sobre él en la superficie y acompaña la explicación con un esquema rotulado. No realices un experimento.",
+      "product": "Explicación científica escrita y esquema",
+      "content": [
+        "Tectónica,sismos,hipocentro,epicentro"
+      ],
+      "requirements": [
+        "Relación causal placas/sismos",
+        "Diferenciación foco y punto superficial",
+        "Esquema rotulado consistente"
+      ],
+      "inherent": [
+        "Precisión científica y coherencia entre texto/esquema"
+      ],
+      "forbidden": [
+        "Experimento,maqueta,plan de evacuación o prevención no pedidos",
+        "Toda la deriva continental y estructura terrestre como criterios autónomos",
+        "Diseño artístico",
+        "Medición sísmica real"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    },
+    {
+      "id": "NAT03",
+      "subjectCode": "NAT",
+      "grade": 1,
+      "category": "VARIAS_ACCIONES",
+      "title": "Una indagación con rocas",
+      "description": "Observa tres muestras de rocas disponibles en el aula. Registra su color, textura y tamaño de grano en una tabla, propone una clasificación provisional y justifica qué observaciones la sostienen. Señala qué información adicional necesitarías para confirmar su origen. No uses ácidos ni hagas pruebas destructivas.",
+      "product": "Registro de observación y clasificación provisional",
+      "content": [
+        "Propiedades observables de rocas y límites de clasificación"
+      ],
+      "requirements": [
+        "Observación de tres muestras",
+        "Tabla de tres propiedades",
+        "Clasificación provisional con evidencia",
+        "Información faltante para origen"
+      ],
+      "inherent": [
+        "Trazabilidad de observación a inferencia",
+        "Uso seguro y no destructivo"
+      ],
+      "forbidden": [
+        "Clasificación geológica definitiva por color solamente",
+        "Ácidos o destrucción",
+        "Inventar mediciones",
+        "Exigir hipótesis,variables y experimento formal no pedidos"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "INQUIRY_BASED",
+        "NONE"
+      ]
+    },
+    {
+      "id": "NAT04",
+      "subjectCode": "NAT",
+      "grade": 1,
+      "category": "ALTERNATIVA_NEGACION",
+      "holdout": true,
+      "title": "Un modelo que necesita explicación",
+      "description": "Representa el ciclo del agua mediante un dibujo rotulado o una explicación escrita. Muestra cómo se relacionan evaporación, condensación y precipitación. No construyas una maqueta ni realices un experimento.",
+      "product": "Modelo explicativo gráfico O escrito",
+      "content": [
+        "Relaciones entre tres procesos del ciclo del agua"
+      ],
+      "requirements": [
+        "Dibujo rotulado O explicación escrita",
+        "Tres procesos conectados"
+      ],
+      "inherent": [
+        "Exactitud de transformaciones y relaciones",
+        "Comprensibilidad del modelo"
+      ],
+      "forbidden": [
+        "Ambos medios",
+        "Maqueta o experimento",
+        "Todas las etapas adicionales como obligaciones",
+        "Decoración artística o búsqueda bibliográfica"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ]
+    }
+  ]
+}

@@ -20,7 +20,9 @@ describe('Guía1: reservas con expectativas anteriores a sus salidas',()=>{
    expect(t).toMatch(/registro/)
    expect(t).toMatch(/dibujo/)
    expect(t).toMatch(/digital.*plataforma|plataforma.*digital/)
-   expect(t).toMatch(/Revisa|revisión|revisada/i)
+   // La consigna exige calidad del escrito final, sin una entrega del proceso.
+   expect(p.criteria.some(c=>c.templateId==='guide-revision')).toBe(true)
+   expect(p.criteria.some(c=>c.templateId==='guide-process-revision')).toBe(false)
    expect(t).not.toMatch(/familias|mural|borrador|ambas versiones|compañero|mapa/)
   })
   it(`${format}: paráfrasis de escucha no impone recursos ni soporte de respuesta`,()=>{

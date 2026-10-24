@@ -35,6 +35,8 @@ export function deliveryConditions(description:string,options:DeliveryOptions={}
  const indent=presentationText.match(/\bsangria\s+(?:de\s+)?(\d+(?:[.,]\d+)?)\s*(cm|centimetros?|mm|milimetros?)\b/)
  if(/\bsangria\b/.test(presentationText))add('indent',indent?`sangría de ${value(indent[1])} ${indent[2].startsWith('c')?'cm':'mm'}`:/sangria\s+al comenzar los parrafos/.test(presentationText)?'sangría al comenzar los párrafos':'sangría solicitada')
  if(/\bcolor\s+(?:indicado|solicitado)\b/.test(presentationText)&&/\b(?:documento|informe|texto|arial|calibri|fuente|interlineado|sangria)\b/.test(presentationText))add('color','color indicado')
+ const color=presentationText.match(/\b(titulos?|texto|letra|fuente)\s+(?:en\s+)?color\s+(azul|verde|rojo|negro|gris|amarillo|blanco)\b/)
+ if(color)add('color',`${color[1].replace('titulo','título')} en color ${color[2]}`)
  if(options.includeFileFormats)for(const raw of text.split(/[.;](?!\d)/)){
   if(/^\s*(?:puede|pueden|podra|podran)\b/.test(raw))continue
   const clause=raw.replace(/\b(?:no|sin)\s+[^.;]*/g,'')
@@ -62,7 +64,7 @@ export function deliveryConditions(description:string,options:DeliveryOptions={}
  const spacing=[...presentationText.matchAll(/\binterlineado\s*(?:de\s*)?(\d+(?:[.,]\d+)?)\b/g)].map(m=>value(m[1]))
  if(distinct(spacing).length>1)throw new TaskRequirementError('se indican varios interlineados incompatibles')
  if(spacing.length)add('spacing',`interlineado ${spacing[0]}`)
- const fontMatches=[...presentationText.matchAll(/(?:\b(?:fuente|usen?|usar|usa|utili[cz][a-z]*|con)\s+(?:fuente\s+)?|(?:^|[.;,])\s*)((?:arial|calibri|times new roman)(?:\s+o\s+(?:arial|calibri|times new roman))*)\b(?:\s+(\d+(?:[.,]\d+)?))?/g)]
+ const fontMatches=[...presentationText.matchAll(/(?:\b(?:fuente|letra|usen?|usar|usa|utili[cz][a-z]*|con)\s+(?:fuente\s+)?|(?:^|[.;,])\s*)((?:arial|calibri|times new roman)(?:\s+o\s+(?:arial|calibri|times new roman))*)\b(?:\s+(\d+(?:[.,]\d+)?))?/g)]
  const fonts=fontMatches.map(m=>m[1].split(/\s+o\s+/).map(f=>f==='times new roman'?'Times New Roman':f[0].toUpperCase()+f.slice(1)).join(' o '))
  if(distinctStrings(fonts).length>1)throw new TaskRequirementError('se indican fuentes incompatibles; expresa las alternativas con «o»')
  if(fonts.length)add('font',`fuente ${fonts[0]}`)

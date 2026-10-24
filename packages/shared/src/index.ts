@@ -86,7 +86,9 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
     }
     const writing = /\b(?:redact\w*|escrib\w*|elabor\w*|planifi[cq]\w*|revis(?:ar|aran|a|en)|corrij\w*|correg\w*|cre(?:ar\w*|an|a|acion)|disen\w*|produc(?:ir\w*|iran|en|cion)|compon(?:er|dr\w*|en|e|gan|iendo))\b/.test(value)
       || /\b(?:hagan|haz|hacer)\s+(?:una?\s+)?(?:guia|noticia|afiche|cuento|caligrama)\b/.test(value)
-    const comparing = /\b(?:compar(?:ar\w*|an|a|en|ando)|contrast\w*|comparacion entre)\b/.test(value)
+    const comparisonIndex = value.search(/\b(?:compar(?:ar\w*|an|a|en|ando)|contrast\w*|comparacion entre)\b/)
+    const creationIndex = value.search(/\b(?:prepar\w*|redact\w*|escrib\w*|elabor\w*|cre\w*|disen\w*)\s+(?:(?:un|una|el|la)\s+)?(?:guia|noticia|afiche|cuento|caligrama)\b/)
+    const comparing = comparisonIndex>=0 && (creationIndex<0 || comparisonIndex<creationIndex)
     const oralAction = contract.oral || /\bexposicion\b/.test(value)
     const presenting = oralAction
     const analyzing = /\b(?:analiz\w*|analic\w*|identific\w*|identifiqu\w*|interpret\w*|leer\w*|leeran|lean|lee|lectura|escuch\w*)\b/.test(value)
@@ -94,7 +96,7 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
     if (module === 'DETECTIVE_STORY' && /\b(?:narrar\w*|narren|narra|narracion|narraran|contar|contaran|cuenten)\b/.test(value)) return 'DETECTIVE_STORY_NARRATION'
     if (module === 'CALLIGRAM' && /\b(?:recit\w*|declam\w*)\b/.test(value)) return 'CALLIGRAM_RECITATION'
     if (comparing) return `${module}_COMPARISON`
-    if (writing) return module === 'NEWS' ? 'NEWS_WRITING' : `${module}_CREATION`.replace('READING_REPORT_CREATION', 'READING_REPORT_WRITING').replace('DETECTIVE_STORY_CREATION', 'DETECTIVE_STORY_WRITING')
+    if (writing || creationIndex>=0) return module === 'NEWS' ? 'NEWS_WRITING' : `${module}_CREATION`.replace('READING_REPORT_CREATION', 'READING_REPORT_WRITING').replace('DETECTIVE_STORY_CREATION', 'DETECTIVE_STORY_WRITING')
     if (/\b(?:investig\w*|document\w*)\b/.test(value) && ['NEWS','TOURIST_GUIDE'].includes(module)) return 'RESEARCH'
     if (analyzing && !oralAction) return `${module}_ANALYSIS`
     if (presenting) return module === 'NEWS' ? 'NEWSCAST' : module === 'DETECTIVE_STORY' ? 'DETECTIVE_STORY_ANALYSIS_PRESENTATION' : module === 'CALLIGRAM' ? 'CALLIGRAM_EXPLANATION' : `${module}_PRESENTATION`

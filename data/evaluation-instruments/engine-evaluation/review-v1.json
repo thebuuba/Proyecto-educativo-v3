@@ -1,0 +1,248 @@
+{
+  "method": "Lectura semántica por el coordinador de criterios y descriptores completos; textos idénticos entre formatos contrastados por igualdad, no por palabras clave.",
+  "bank": "bank-v1.json",
+  "diagnosticBefore": "before.json",
+  "diagnosticAfter": "after-reviewed.json",
+  "reservedFirst": "reserved.json",
+  "reservedFinal": "reserved-reviewed.json",
+  "automaticCases": 24,
+  "fullFormatCases": [
+    "LEN02",
+    "ING02",
+    "FRA02",
+    "MAT02",
+    "SOC02",
+    "NAT02"
+  ],
+  "manualSelectionsHonored": true,
+  "scorePending": true,
+  "totalsChecked": [
+    20,
+    17.35
+  ],
+  "heldoutPolicy": {
+    "sixNeverExecutedBeforeCorrection": true,
+    "firstFailuresPreserved": true,
+    "noRulesAdjustedToTheirOutputs": true,
+    "nowExposedNotFreshHoldouts": true
+  },
+  "rows": [
+    {
+      "id": "LEN01",
+      "before": "PARCIAL",
+      "after": "ADECUADO_EN_ALCANCE",
+      "beforeEvidence": "Información y estructura pertinentes; el tono informativo y la fidelidad no quedaban explícitos.",
+      "afterEvidence": "Ahora conserva información, estructura, cohesión, tono y convenciones sin imponer otra entrega.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "LEN02",
+      "before": "FALLA",
+      "after": "REQUISITOS_CORREGIDOS_CON_RESERVA_DE_NIVELES",
+      "beforeEvidence": "Exige cambios entre borrador/final no pedidos; pierde tono y ortografía al activar puntuación.",
+      "afterEvidence": "Seis criterios distintos cubren las cinco dimensiones solicitadas; no exige borrador ni modificar un texto correcto. La conversión común de cinco a cuatro niveles conserva una reserva indicada en el informe.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "LEN03",
+      "before": "FALLA",
+      "after": "PARCIAL",
+      "beforeEvidence": "Convierte comparar lugares en comparar dos guías; omite fuente/tamaño/color.",
+      "afterEvidence": "Producto y formato corregidos; aún no quedan explícitas la comparación de lugares y la ruta. Inserción en el entorno sigue siendo una sugerencia injustificada.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "LEN04",
+      "before": "NO_EJECUTADO_RESERVADO",
+      "after": "FALLA",
+      "beforeEvidence": "Reservado antes de la corrección.",
+      "afterEvidence": "Confunde recomendación de lectura con creación de cuento; exige resolución, expresión literaria y escritura; pierde audio O nota, reserva del desenlace y valoración negativa válida.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "ING01",
+      "before": "FALLA",
+      "after": "FALLA",
+      "beforeEvidence": "No reconoce la presentación breve y cae en género/estructura/conectores genéricos.",
+      "afterEvidence": "Sin cambios: no construye una base específica de presentación ni mantiene paridad con la alternativa local.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "ING02",
+      "before": "ADECUADO_EN_ALCANCE",
+      "after": "ADECUADO_EN_ALCANCE",
+      "beforeEvidence": "Entrevista simulada, experiencia/capacidades, preguntas, respuestas y alternancia presentes.",
+      "afterEvidence": "Los cuatro formatos conservan ambas actuaciones, referentes y claridad oral; simulación defendible. No añade CV, grabación ni perfil real entregable.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "ING03",
+      "before": "PARCIAL",
+      "after": "PARCIAL",
+      "beforeEvidence": "Reconoce personaje/gusto/preferencia pero no exige justificar qué preferencia falta por conocer.",
+      "afterEvidence": "Conserva la omisión de justificación y ausencia de preferencia; un único criterio no cubre toda la tarea.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "ING04",
+      "before": "NO_EJECUTADO_RESERVADO",
+      "after": "FALLA",
+      "beforeEvidence": "Reservado antes de la corrección.",
+      "afterEvidence": "No contextualiza nombre, aspecto y hábito de mascota ni preserva claramente audio O ficha; respuesta genérica con paridad ausente.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "FRA01",
+      "before": "BASE_PRUDENTE",
+      "after": "BASE_PRUDENTE",
+      "beforeEvidence": "Un criterio prudente de identificación; modalidad sin precisar y no inventa cuatro datos obligatorios.",
+      "afterEvidence": "Se conserva la base prudente; debe concretarse la modalidad para evaluar expresión oral o escrita.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "FRA02",
+      "before": "FALLA",
+      "after": "FALLA",
+      "beforeEvidence": "Solo recoge nombre y edad; pierde Santiago/ciudad y gusto por dibujar.",
+      "afterEvidence": "Los cuatro formatos repiten la omisión: el cotejo divide nombre/edad pero no recupera los otros datos.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "FRA03",
+      "before": "FALLA",
+      "after": "FALLA",
+      "beforeEvidence": "Preguntas/respuestas/claridad reconocidas; se pierde ciudad y presentación posterior del compañero.",
+      "afterEvidence": "La familia de interacción sigue sin integrar la segunda actuación.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "FRA04",
+      "before": "NO_EJECUTADO_RESERVADO",
+      "after": "FALLA",
+      "beforeEvidence": "Reservado antes de la corrección.",
+      "afterEvidence": "Impone interacción realizada y escrito, omite dos rasgos y pierde audio O escrito, pese a la exclusión de conversación/presentación en vivo.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "MAT01",
+      "before": "ADECUADO_EN_ALCANCE",
+      "after": "ADECUADO_EN_ALCANCE",
+      "beforeEvidence": "Procedimiento y resultado de operaciones enteras adecuados.",
+      "afterEvidence": "Se conservan cálculo/signos y procedimiento sin inventar otro método o entrega.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "MAT02",
+      "before": "PARCIAL",
+      "after": "PARCIAL",
+      "beforeEvidence": "Relaciones de enteros, cálculo y representación presentes, pero descriptores no conservan explícitamente el significado del saldo.",
+      "afterEvidence": "Duplicación entre relaciones/concepto y razonamiento, representación de orden no pedida; falta contextualizar el signo y movimientos.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "MAT03",
+      "before": "FALLA",
+      "after": "FALLA",
+      "beforeEvidence": "Calcula media/mediana, pero representación no explicita gráfico de barras ni tabla de frecuencias; omite conclusión sustentada.",
+      "afterEvidence": "Mantiene las omisiones e incorpora notación como actuación aislada no solicitada.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "MAT04",
+      "before": "NO_EJECUTADO_RESERVADO",
+      "after": "PARCIAL",
+      "beforeEvidence": "Reservado antes de la corrección.",
+      "afterEvidence": "Base de análisis/justificación útil pero no contextualiza racionales negativos ni conserva la alternativa de procedimiento.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "SOC01",
+      "before": "FALLA",
+      "after": "FALLA",
+      "beforeEvidence": "Antillas dispara colonización del Caribe; se pierde rotulado y se traslada el foco histórico.",
+      "afterEvidence": "Se conserva el cruce: localización geográfica no acredita colonización.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "SOC02",
+      "before": "FALLA",
+      "after": "FALLA",
+      "beforeEvidence": "Fallback social exige seleccionar/contrastar fuentes y defender interpretación; omite comparación geográfica precisa.",
+      "afterEvidence": "Servicio/local siguen distintos; la falta de proveedor contextual no autoriza añadir investigación.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "SOC03",
+      "before": "FALLA",
+      "after": "FALLA",
+      "beforeEvidence": "Añade selección de fuentes, contexto temporal/espacial ausente y consecuencias; no identifica lo que falta saber.",
+      "afterEvidence": "No integra atribución de causas y conclusión prudente; descriptores evalúan autonomía/apoyo genéricos.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "SOC04",
+      "before": "NO_EJECUTADO_RESERVADO",
+      "after": "PARCIAL",
+      "beforeEvidence": "Reservado antes de la corrección.",
+      "afterEvidence": "Base de análisis pertinente pero pierde una semejanza/dos diferencias y modalidad oral O escrita; no demuestra comparación geográfica específica.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "NAT01",
+      "before": "FALLA",
+      "after": "FALLA",
+      "beforeEvidence": "No reconoce interior terrestre, trunca el tema y añade procedimiento científico.",
+      "afterEvidence": "Sin cambios: ni base contextual suficiente ni paridad local.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "NAT02",
+      "before": "FALLA",
+      "after": "FALLA",
+      "beforeEvidence": "Distinguir dos referentes se convierte en comparar dos temas completos; esquema/foco/epicentro no quedan cubiertos.",
+      "afterEvidence": "Los cuatro formatos mantienen comparación no solicitada y generalización temática; faltan productos y relaciones explícitas.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "NAT03",
+      "before": "FALLA",
+      "after": "FALLA",
+      "beforeEvidence": "Reconoce observación de rocas pero solo registra/identifica; omite tabla, clasificación provisional justificada e información faltante.",
+      "afterEvidence": "No se exige ácido ni experimento, pero la consigna queda incompleta y el tema se ensancha a ciclo de las rocas.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    },
+    {
+      "id": "NAT04",
+      "before": "NO_EJECUTADO_RESERVADO",
+      "after": "FALLA_ALTERNATIVA",
+      "beforeEvidence": "Reservado antes de la corrección.",
+      "afterEvidence": "Ciencia pertinente, pero explicación y representación aparecen como obligaciones simultáneas; el dibujo O texto no se conserva expresamente.",
+      "reviewer": "COORDINADOR_SOLO",
+      "independent": false
+    }
+  ],
+  "conclusion": "Las correcciones acotadas resuelven defectos reproducidos de proceso/formato/clasificación, pero no establecen consistencia transversal. Se recomienda simplificar la composición compartida antes de reanudar ampliación; propuesta en el informe, sin reescritura ejecutada."
+}
