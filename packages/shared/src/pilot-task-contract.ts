@@ -21,7 +21,8 @@ export function extractPilotContract(description:string,context:InstrumentAcadem
  if(context?.level!=='SECONDARY'||context.grade!==1||context.optativeExitName)return null
  const original=foldPilotText(description)
  // Keep offsets while masking negative clauses; their original spans are retained separately below.
- const text=original.replace(/\b(?:no(?!\s+mas de\b)|sin|opcionalmente|si lo deseas)\b[^.;\n]*(?:\.(?=\d)[^.;\n]*)*/g,match=>' '.repeat(match.length)),subject=context.subjectCode?.trim().toUpperCase()
+ const text=original.replace(/\b(?:no(?!\s+mas de\b)|sin|opcionalmente|si lo deseas)\b[^.;\n]*(?:\.(?=\d)[^.;\n]*)*/g,match=>' '.repeat(match.length))
+ const code=context.subjectCode?.trim().toUpperCase(),subject=code==='NAT-TU'?'NAT':code
  const news=/\b(?:escrib\w*|redact\w*|elabor\w*)\s+(?:(?:individualmente|una|la)\s+)*noticia\b/.exec(text)
  const oral=/\b(?:exposicion|expongan|expone\w*|expon\w*|oralmente)\b/.exec(text)
  const solar=/\bplanetas\b/.test(text)&&/\bsistema solar\b/.test(text)

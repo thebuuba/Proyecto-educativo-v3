@@ -5,6 +5,10 @@ import {scoreInstrumentFields,rememberManualScoreWeights} from './instrumentScor
 const context={level:'SECONDARY' as const,grade:1,cycle:1,subjectCode:'MAT',subjectName:'Matemática',modalityCode:null,optativeExitName:null}
 const description='Compara −3/4 y −2/3. Justifica cuál es mayor con una recta numérica o con un texto que incluya los cálculos; no entregues ambas opciones.'
 describe('Piloto compartido en los campos editables existentes',()=>{
+ it('usa el contexto académico efectivo de Ciencias primero',()=>{
+  const p=editableFallbackRecommendation({activityTitle:'Actividad',description:'Expongan todos los planetas del sistema solar y expliquen qué son.',maxScore:20,instrumentType:'rubrica',participationMode:'INDIVIDUAL',academicContext:{...context,subjectCode:'NAT-TU',subjectName:'Ciencias de la Naturaleza'}})
+  expect(p.internalTrace.composition?.contract.context.subjectCode).toBe('NAT')
+ })
  it.each(['rubrica','lista-cotejo','escala','lista-ponderada'] as const)('%s conserva puntuación pendiente, texto, identidad y pesos manuales',instrumentType=>{
   const p=editableFallbackRecommendation({activityTitle:'Nombre neutral',description,maxScore:20,instrumentType,participationMode:'INDIVIDUAL',academicContext:context})
   expect(p.internalTrace.composition?.version).toBe('composition-pilot-v1')

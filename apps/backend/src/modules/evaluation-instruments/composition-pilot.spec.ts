@@ -25,6 +25,11 @@ describe('Piloto: requisitos trazables reconciliados antes del formato',()=>{
   expect(extractPilotContract('Redactarán una noticia sin publicar. Revisarán el borrador con sus compañeros.',context('LEN'))).toBeNull()
   expect(extractPilotContract('Elige entre un afiche o una exposición de todos los planetas del sistema solar.',context('NAT'))).toBeNull()
  })
+ it('normaliza el código real NAT-TU de primero, sin aceptar códigos de otros componentes',()=>{
+  const c=task('B-NAT1-solar-exacta'),input={description:c.description,instrumentType:'rubrica' as const,maxScore:20,participationMode:'INDIVIDUAL' as const}
+  expect(composePilotInstrument({...input,context:context('NAT-TU')})).toEqual(composePilotInstrument({...input,context:context('NAT')}))
+  expect(extractPilotContract(c.description,context('NAT-VIDA'))).toBeNull()
+ })
  it('noticia: conserva requisitos previos sin convertir revisión en dos entregas',()=>{
   for(const id of ['LEN02','NEW-A2']){
    const p=proposal(id),text=JSON.stringify(p.criteria)
