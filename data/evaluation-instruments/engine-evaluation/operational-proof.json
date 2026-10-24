@@ -1,0 +1,187 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.172",
+  "sourceCommit": "459eee302b757b47361c7b3b7ae7acb4cab1e73d",
+  "installation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.172",
+    "sourceCommit": "459eee302b757b47361c7b3b7ae7acb4cab1e73d",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "catalogFingerprint": "8549003d80310fea0bf6a4950a9e266e9604e7da56c88a794bbbbc9f38dffedf",
+    "sourceEqualsCompiled": true,
+    "frozen171Exact": true,
+    "versionOnlyPayloadChange": true,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "deploy": false,
+    "push": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.172",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-DTtdBT4q.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-DTtdBT4q.js",
+        "sha256": "f2e5f500a80d38ba779734d63576726afb3e24069b9871d455121de3447a6cef",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-DEPW41XH.js",
+        "sha256": "dd0ce399e2fa26788c6db10cc47a6d30af833d815bb243de88d571ac29daafa7",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-ByGE8_4X.js",
+        "sha256": "682f2d2853efbabca5e6321218a202d094f8ea3f8b9649334dd8ef886345b10f",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-ingles-1-preferences-Byp552fb.js",
+        "sha256": "635088b25714ca59c79093db35038cb1bda8396127128faa949a213a5ee17b1e",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-OtHjWZdw.js",
+        "sha256": "a3468ca3f169e9c89ab9c1e57ae5a3327783f70023aab37dd072b57d9787aec2",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-Bm5ZnZDv.js",
+        "sha256": "69a08f4b10875a6c8ba1eb3b930ec259410583e4e8788532bf099d5251bb34be",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "b87f747922ec9b608fa946c013751286f43f899a2bbe65df1d2d258e187532a5",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "http": {
+    "samples": [
+      {
+        "caseId": "LEN02",
+        "format": "rubrica",
+        "score": 17.35,
+        "activityType": "NEWS_WRITING",
+        "savedReopened": true,
+        "manualTextPreserved": true,
+        "strategyOnlyInstrumentExact": true
+      }
+    ],
+    "timings": [
+      {
+        "endpoint": "/auth/login",
+        "status": 201,
+        "ms": 3468
+      },
+      {
+        "endpoint": "/activities/center",
+        "status": 200,
+        "ms": 2850
+      },
+      {
+        "endpoint": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 14528
+      },
+      {
+        "endpoint": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 16013
+      },
+      {
+        "endpoint": "/activities",
+        "status": 201,
+        "ms": 3387
+      },
+      {
+        "endpoint": "/activities",
+        "status": 200,
+        "ms": 38293
+      },
+      {
+        "endpoint": "/activities",
+        "status": 201,
+        "ms": 6465
+      },
+      {
+        "endpoint": "/activities",
+        "status": 200,
+        "ms": 27271
+      }
+    ],
+    "context": {
+      "curriculumMatch": "NONE",
+      "hasScope": false,
+      "selectedReferences": 0,
+      "mapping": "NO_PUBLISHED_VERSION"
+    },
+    "mode": "AUTHENTICATED_QA_HTTP_NOT_BROWSER"
+  },
+  "browser": {
+    "mode": "REAL_CHROME_PERSONAL_DEVELOPMENT_SESSION",
+    "originalDraft": "OPENED_READ_ONLY_NOT_REGENERATED_OR_DELETED",
+    "newFictitiousActivity": true,
+    "exactRegressionText": true,
+    "initialPointsBlank": true,
+    "sixCriteriaVisible": true,
+    "revisionDraftCriterionAbsentInNewGeneration": true,
+    "manualEditProtectedByConfirmation": true,
+    "score17_35": true,
+    "saveConfirmedByUI": true,
+    "savedRowReadOnlyCheck": {
+      "exact_score": true,
+      "manual_text_preserved": true,
+      "final_catalog": true,
+      "snapshot_present": true
+    },
+    "reopening": "BLOCKED_LA_SOLICITUD_TARDO_DEMASIADO",
+    "retries": 0
+  },
+  "history": {
+    "previousReleases": 102,
+    "previousSnapshots": 1273,
+    "finalReleases": 103,
+    "finalSnapshots": 1275,
+    "allPreviousHashesExact": true,
+    "newSnapshotsExactlyTwoAuthorizedSamples": true,
+    "personalReferencesExact": 15,
+    "duplicates": 0,
+    "baselinesRecaptured": false
+  },
+  "limitations": [
+    "Reapertura visual no completada; HTTP QA no la sustituye.",
+    "Consultas de actividades QA:38.293s y27.271s; no se aumentaron timeouts.",
+    "Persisten cabeceras contradictorias no-cache/immutable en assets; no se borró almacenamiento.",
+    "La evaluación24 no cierra asignaturas ni demuestra consistencia transversal."
+  ],
+  "productionWrites": false,
+  "push": false,
+  "merge": false,
+  "deploy": false,
+  "newAccounts": 0,
+  "schemaMigrations": 0
+}
