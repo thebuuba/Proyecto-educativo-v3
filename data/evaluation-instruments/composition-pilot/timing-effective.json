@@ -1,0 +1,13 @@
+{
+  "samples": 60,
+  "actualScienceCode": "NAT-TU",
+  "sameReviewedContentInAllTwelve": true,
+  "scope": "PURE_COMPOSER_NO_IO",
+  "milliseconds": {
+    "min": 0.023400000000037835,
+    "median": 0.08699999999998909,
+    "p95": 0.8859999999999673,
+    "max": 2.127200000000016
+  },
+  "sourceSha256": "6dade1b0d362be5898c98a485f9905b4125e3f3015245b0fb416fddceb5301d0"
+}

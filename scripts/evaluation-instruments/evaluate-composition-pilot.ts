@@ -9,9 +9,10 @@ import {composePilotInstrument} from '../../packages/shared/src/instrument-compo
 
 const root='data/evaluation-instruments/composition-pilot/',read=(p:string)=>JSON.parse(readFileSync(p,'utf8'))
 const bank=read(root+'bank.json'),lock=read(root+'bank.lock.json'),phase=process.argv[2]
+const fileDigest=(path:string)=>createHash('sha256').update(readFileSync(path,'utf8').replace(/\r\n/g,'\n')).digest('hex')
 assert(['before','after'].includes(phase),'Fase explícita before/after')
-assert.equal(createHash('sha256').update(readFileSync(root+'bank.json')).digest('hex'),lock.sha256)
-for(const source of lock.sources)assert.equal(createHash('sha256').update(readFileSync(source.path)).digest('hex'),source.sha256,'Banco anterior inmutable')
+assert.equal(fileDigest(root+'bank.json'),lock.sha256)
+for(const source of lock.sources)assert.equal(fileDigest(source.path),source.sha256,'Banco anterior inmutable')
 const names={LEN:'Lengua Española',NAT:'Ciencias de la Naturaleza',MAT:'Matemática',SOC:'Ciencias Sociales',ING:'Inglés',FRA:'Francés'}
 const context=(task:any)=>({level:'SECONDARY' as const,grade:task.grade,cycle:task.grade<=3?1:2,subjectCode:task.subjectCode,subjectName:names[task.subjectCode],modalityCode:null,optativeExitName:null})
 // Solo se separa identidad/referencias del transporte: ningún texto, peso, orden o cálculo se normaliza.

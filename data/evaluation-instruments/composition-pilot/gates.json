@@ -1,0 +1,40 @@
+{
+  "active": null,
+  "results": [
+    {
+      "name": "backend-test",
+      "exit": 0,
+      "ms": 183919
+    },
+    {
+      "name": "frontend-focal",
+      "exit": 0,
+      "ms": 7426
+    },
+    {
+      "name": "backend-build",
+      "exit": 0,
+      "ms": 16335
+    },
+    {
+      "name": "frontend-build",
+      "exit": 0,
+      "ms": 40851
+    },
+    {
+      "name": "cloudflare-build",
+      "exit": 0,
+      "ms": 70364
+    },
+    {
+      "name": "backend-lint",
+      "exit": 0,
+      "ms": 5531
+    },
+    {
+      "name": "shared-lint",
+      "exit": 0,
+      "ms": 3362
+    }
+  ]
+}

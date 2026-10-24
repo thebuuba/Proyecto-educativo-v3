@@ -1,0 +1,41 @@
+{
+  "reviewer": "COORDINADOR_SOLO",
+  "independentReview": false,
+  "verdict": "PARCIAL",
+  "automaticCases": 12,
+  "manualFullFormats": 12,
+  "contentParityExact": 24,
+  "outsideRegressionsUnchanged": 10,
+  "completeInstrumentsRead": ["LEN02", "B-NAT1-solar-exacta", "MAT04"],
+  "observedOutputQuality": {
+    "essentialExplicitOmissionsInTwelveOutputs": [],
+    "inventedMandatoryDeliverablesInTwelveOutputs": [],
+    "lostAlternativesInReviewedOutputs": [],
+    "duplicatePerformanceRowsInReviewedOutputs": []
+  },
+  "unresolved": [
+    {
+      "case": "MAT04",
+      "layer": "EXTRACTION_PROVENANCE",
+      "actualOrigin": "Compara −0",
+      "expectedOrigin": "Compara −0.75 y −2/3",
+      "finding": "El segmentador de comparación corta en el punto decimal. La consigna completa y los criterios referidos a los racionales dados se conservan; el contrato no acredita una extracción íntegra de los operandos. No se considera resuelto porque uncovered esté vacío."
+    },
+    {
+      "case": "B-NAT1-solar-exacta",
+      "layer": "PEDAGOGICAL_PROGRESSION",
+      "finding": "Los niveles intermedios de duración son débiles para una condición casi binaria; no se inventa una tolerancia para aparentar una graduación completa."
+    },
+    {
+      "case": "OUTSIDE_THE_TWELVE",
+      "layer": "EXTRACTOR_LIMIT",
+      "finding": "La traducción adicional de una prueba negativa queda uncovered sin fila de relleno. No se acredita comprensión general de acciones ni contenidos arbitrarios."
+    }
+  ],
+  "operationalLimitations": [
+    "Interpretación y recomendación HTTP QA tardan aproximadamente 23–29 segundos.",
+    "Una reapertura HTTP tardó casi 54 segundos.",
+    "Se observó caída DNS ENOTFOUND del runtime; recuperarlo no acredita una corrección definitiva."
+  ],
+  "recommendation": "No extender automáticamente el piloto; revisar primero la procedencia decimal y la graduación de duración. Diagnosticar la latencia y DNS por separado. La ampliación curricular permanece detenida."
+}

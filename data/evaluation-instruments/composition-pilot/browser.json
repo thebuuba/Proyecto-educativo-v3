@@ -1,0 +1,66 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "account": "PERSONAL_DEVELOPMENT",
+  "mode": "REAL_CHROME_UI_NOT_QA_HTTP",
+  "catalog": "evaluation-2026.173",
+  "servedEntry": "/assets/index-BBM_FG1U.js",
+  "initialConnectionBlock": "COURSES_TIMEOUT_AND_PROFILE_UNAVAILABLE",
+  "sessionRecoveredAfterRuntimeRestart": true,
+  "passwordEntered": false,
+  "emailSent": false,
+  "storageDeleted": false,
+  "oneConfirmationPerActivity": true,
+  "cases": [
+    {
+      "family": "A",
+      "name": "FICTICIA PERSONAL PILOTO A 2026-10-23 · Noticia escolar",
+      "state": "VISUALLY_REOPENED",
+      "score": 17.35,
+      "rows": 6,
+      "manualTitle": "Información esencial de la noticia · edición manual personal piloto",
+      "manualTitlePreserved": true,
+      "scoreExact": true,
+      "strategyVisible": true,
+      "initialScoreBlank": true,
+      "canonicalEditRouteUsed": true
+    },
+    {
+      "family": "B",
+      "name": "FICTICIA PERSONAL PILOTO B 2026-10-23 · Planetas",
+      "state": "VISUALLY_REOPENED",
+      "score": 20,
+      "rows": 5,
+      "format": "lista-cotejo",
+      "manualPoints": [
+        4,
+        6.77,
+        4.61,
+        1.54,
+        3.08
+      ],
+      "manualFormatSelected": true,
+      "manualTitlePreserved": true,
+      "manualPointsPreserved": true,
+      "strategyVisible": true,
+      "scoreExact": true,
+      "initialScoreBlank": true,
+      "canonicalEditRouteUsed": true,
+      "screenshot": ".wrangler/realistic-audit/pilot-personal-B.png"
+    },
+    {
+      "family": "C",
+      "name": "FICTICIA PERSONAL PILOTO C 2026-10-23 · Racionales",
+      "state": "VISUALLY_REOPENED",
+      "score": 17.35,
+      "rows": 2,
+      "format": "rubrica",
+      "alternativePreserved": true,
+      "manualTitlePreserved": true,
+      "scoreExact": true,
+      "strategyVisible": true,
+      "initialScoreBlank": true,
+      "canonicalEditRouteUsed": true,
+      "screenshot": ".wrangler/realistic-audit/pilot-personal-C.png"
+    }
+  ]
+}

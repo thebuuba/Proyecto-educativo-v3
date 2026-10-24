@@ -1,0 +1,66 @@
+{
+  "catalogBuild": "evaluation-2026.173",
+  "project": "eolgunypmtgrsyrjzcld",
+  "base": "http://localhost:8787",
+  "postgres": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "role": "app_backend_local",
+    "bypassRls": false
+  },
+  "auth": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "status": 200
+  },
+  "storage": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "status": 200
+  },
+  "frontend": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "entry": "/assets/index-BBM_FG1U.js",
+    "matchesBuild": true
+  },
+  "assets": [
+    {
+      "path": "/assets/index-BBM_FG1U.js",
+      "sha256": "ab8d49f513e6740ef8634ce46fba8d56025702ff33535a1ce28a92f8664cdf23",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/ActivityEditorWorkspace-Cy9XIQ2k.js",
+      "sha256": "681503be9edc0d846b8e9b8ce6cb94dea341f1ae1dc1827a5c6c1a46d61d96be",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/ActivityInfoModal-DesCG2yk.js",
+      "sha256": "2c59c8d9d2f57d686fa8a1623ee0f0bfeb06f57ef63b90bf5c4b0f1102d40c8a",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/instrumentos-ingles-1-preferences-CbbQXWpv.js",
+      "sha256": "505d34c6f7eead3169c8b27908892d399cc806f3418c3c90c01eed48b260ff8b",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/instrumentos-tecnicos-AD3PRA98.js",
+      "sha256": "148cf6085df2cf04f0ddfcdcdbfc1c089339e95f15b10c607ad9fc37ac8afe1b",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/PlanningPage-BekglLga.js",
+      "sha256": "e648ab852530dde935d185c125d4d5a2692bc3650f0d025755b097316299e094",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/instrumentos-composicion-piloto-BGTe1dAC.js",
+      "sha256": "86da2c780f66011221657b8b53a9eebead8194b1405ef40430a4e5168a03945c",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/sw.js",
+      "sha256": "098c173c11c83786e7350b46bb306899b103a5e102e15ad0a489fc5398ded8ef",
+      "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+    }
+  ],
+  "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+}

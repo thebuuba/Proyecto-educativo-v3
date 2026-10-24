@@ -1,4 +1,20 @@
-# Continuación vigente — evaluación del motor sin IA
+# Continuación vigente — piloto cerrado con dictamen parcial
+
+El piloto autorizado de tres familias de primero terminó. DETENERSE: no retomar currículo ni extender el compositor automáticamente. Sin agentes, push, main, despliegues, resets, credenciales ni producción. Informe final: `2026-10-23-piloto-compositor-compartido.md`; plan: `../plans/2026-10-23-compositor-compartido-piloto.md`. Banco y primeras salidas inmutables en `data/evaluation-instruments/composition-pilot/`; doce casos, cuatro formatos de tres representantes y diez regresiones fuera del piloto. Revisión del coordinador solo.
+
+Implementación: compositor puro compartido, contrato con origen, reconciliación previa al formato, OR y negaciones; frontera corregida tras detectar regresiones de noticia especializada. Contexto real NAT-TU normalizado únicamente en primero. Commits locales `33b11595` y `6ca0b9f5`; después, cierre documental local. Backend completo 98 318/246; editor frontend 176/7 y cinco focalizadas finales aprobados. Backend build, frontend build, Cloudflare dry-run y lints aprobados. Chunk del piloto separado para conservar precaché de 2 MiB. No repetir suites sin cambios.
+
+Development efectivo: `eolgunypmtgrsyrjzcld`, catálogo173 registrado individualmente CREATED/UNCHANGED; 172 íntegro. PostgreSQL app_backend_local sin bypass, Auth/Storage/frontend Development. Una instancia en8787; entry `index-BBM_FG1U.js`, chunk `instrumentos-composicion-piloto-BGTe1dAC.js`, SW y assets verificados contra build. Hubo una caída ENOTFOUND; tras confirmar DNS y puerto libre se inició una sola instancia estable. No se cambiaron red, secretos ni timeouts.
+
+Tres QA HTTP y tres muestras personales Chrome completaron generación, edición, guardado y reapertura. La sesión personal se recuperó sin contraseña/correo después de la incidencia de conexión. Se usó la ruta de edición existente para reabrir; no confundir con el listado global lento. A/C: rúbricas con edición manual y17.35; B: cotejo seleccionado manualmente, cinco dimensiones,20 puntos y pesos4/6.77 conservados. C quedó abierta como entrega. No recrear esas seis muestras.
+
+Conservación final: 104 releases/1281 snapshots; los103/1275 anteriores exactos y solo seis snapshots nuevos de los diarios de pruebas. Quince referencias personales originales exactas y sin duplicados. No duplicar servidor ni recapturar referencias: `pilot-history-before.json` y la referencia original169 siguen siendo inmutables. Respaldos y diarios privados ignorados por Git.
+
+Dictamen PARCIAL. Pendientes reales: origen MAT04 truncado en el punto decimal («Compara −0»), operandos sin extracción íntegra; graduación débil de duración; comprensión fuera del extractor acotado no acreditada. HTTP interpretación/recomendación23–29s y una reapertura54s; compositor puro mediana0.087ms. DNS y latencia requieren diagnóstico separado. No se recomienda extender todavía. No hacer push ni iniciar otra asignatura al terminar este informe.
+
+## Antecedentes del encargo anterior, conservados como historial
+
+# Evaluación del motor sin IA — cierre anterior
 
 La ampliación curricular está DETENIDA por el encargo del usuario «CAMBIO DE ENFOQUE». No agentes ni subagentes. Sin push, main, despliegues, resets, producción, credenciales, nuevas dependencias ni flujos visibles.
 

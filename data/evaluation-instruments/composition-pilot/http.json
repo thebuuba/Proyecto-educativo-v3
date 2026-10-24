@@ -1,0 +1,145 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.173",
+  "mode": "AUTHENTICATED_QA_HTTP; THREE IDENTIFIABLE FICTITIOUS ACTIVITIES; NOT PERSONAL BROWSER",
+  "samples": [
+    {
+      "case": "LEN02",
+      "academicContext": {
+        "level": "SECONDARY",
+        "grade": 1,
+        "subjectCode": "LEN"
+      },
+      "actualSubjectCode": "LEN",
+      "catalog": "evaluation-2026.173",
+      "compositionVersion": "composition-pilot-v1",
+      "activityType": "NEWS_WRITING",
+      "instrumentType": "rubrica",
+      "exactParity": true,
+      "scoreUnits": 1735,
+      "pendingBlank": true,
+      "curriculumStatus": null,
+      "hasScope": false,
+      "retrievedReferences": 0,
+      "saved": true,
+      "httpReopened": true,
+      "manualTextExact": true
+    },
+    {
+      "case": "B-NAT1-solar-exacta",
+      "academicContext": {
+        "level": "SECONDARY",
+        "grade": 1,
+        "subjectCode": "NAT"
+      },
+      "actualSubjectCode": "NAT-TU",
+      "catalog": "evaluation-2026.173",
+      "compositionVersion": "composition-pilot-v1",
+      "activityType": "ORAL_PRESENTATION",
+      "instrumentType": "rubrica",
+      "exactParity": true,
+      "scoreUnits": 1735,
+      "pendingBlank": true,
+      "curriculumStatus": "PUBLISHED",
+      "hasScope": true,
+      "retrievedReferences": 0,
+      "saved": true,
+      "httpReopened": true,
+      "manualTextExact": true
+    },
+    {
+      "case": "MAT04",
+      "academicContext": {
+        "level": "SECONDARY",
+        "grade": 1,
+        "subjectCode": "MAT"
+      },
+      "actualSubjectCode": "MAT",
+      "catalog": "evaluation-2026.173",
+      "compositionVersion": "composition-pilot-v1",
+      "activityType": "ANALYSIS",
+      "instrumentType": "rubrica",
+      "exactParity": true,
+      "scoreUnits": 1735,
+      "pendingBlank": true,
+      "curriculumStatus": "PUBLISHED",
+      "hasScope": true,
+      "retrievedReferences": 0,
+      "saved": true,
+      "httpReopened": true,
+      "manualTextExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 3581.8833
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 4860.656499999999
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 23210.623700000004
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 24867.500299999996
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5808.7016
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 53960.7898
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 25963.341799999995
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 25933.04640000002
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 9077.246800000023
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5725.297100000025
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 24662.119600000005
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 29396.982600000018
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 6586.368600000016
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5608.154299999995
+    }
+  ]
+}
