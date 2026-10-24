@@ -1,5 +1,13 @@
 # AGENTS.md
 
+## Uso obligatorio de habilidades
+
+- Todos los agentes que trabajen en este repositorio, incluidos los subagentes y agentes delegados, deben revisar las habilidades disponibles antes de iniciar cada tarea y usar las que correspondan al trabajo solicitado.
+- Antes de actuar, deben leer el archivo `SKILL.md` de cada habilidad aplicable y seguir sus instrucciones; no basta con mencionar su nombre. No deben omitir habilidades aplicables porque la tarea parezca sencilla.
+- En tareas de programación, corrección, refactorización o revisión de código, deben usar `ponytail` cuando esté disponible, junto con las demás habilidades pertinentes.
+- Deben indicar brevemente qué habilidades utilizan y con qué propósito la primera vez que las apliquen en la conversación.
+- Si una habilidad necesaria no está disponible o no se puede leer, deben comunicar la limitación y usar una alternativa disponible cuando permita completar el trabajo; si es imprescindible, deben informar del bloqueo. Las habilidades se aplican respetando las instrucciones de mayor prioridad y las indicaciones explícitas del usuario.
+
 ## Project Rules
 
 - Use pnpm; do not add npm/yarn lockfiles.
