@@ -17,12 +17,14 @@ export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTop
 }
 
 export function editableAuthoredRecommendation(authored: ContextualTopicCriterion[], input: {
-  activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; includeAdditionalCandidates?: boolean
+  activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; includeAdditionalCandidates?: boolean; levelCount?:4|5
 }, activity: string, moduleName: string, deliveryOptions:DeliveryOptions={}): InstrumentRecommendation {
   authored = formatAuthoredCriteria(withDeliveryCriteria(authored,input.description??'',{...deliveryOptions,instrumentType:input.instrumentType}), input.instrumentType)
   if (!input.includeAdditionalCandidates) assertInstrumentCapacity(authored.length)
+  const levelCount=input.levelCount??4
+  const labels=levelCount===4?['Destacado', 'Logrado', 'En proceso', 'Inicial']:['Destacado','Logrado','En proceso','Incipiente','Inicial']
   const levels = input.instrumentType === 'rubrica' || input.instrumentType === 'escala'
-    ? ['Destacado', 'Logrado', 'En proceso', 'Inicial'].map((label, index) => ({ id: `L${4 - index}`, label, proportion: (3 - index) / 3 })) : []
+    ? labels.map((label, index) => ({ id: `L${levelCount - index}`, label, proportion: (levelCount-1-index)/(levelCount-1) })) : []
   const weights = authored.map(criterion => criterion.weight)
   const points = distributeScoreUnits(Math.round(input.maxScore * 100), input.instrumentType === 'lista-ponderada'
     ? distributeScoreUnits(10000, weights) : weights)
@@ -37,7 +39,7 @@ export function editableAuthoredRecommendation(authored: ContextualTopicCriterio
       progressionLevels: [...criterion.progressionLevels],
       ...(criterion.fourLevelLowest ? {fourLevelLowest:criterion.fourLevelLowest} : {}),
       relativeWeight: criterion.weight,
-      descriptors: levels.map((level, levelIndex) => ({ levelId: level.id, text: levelIndex===3&&criterion.fourLevelLowest ? criterion.fourLevelLowest : criterion.progressionLevels[[0, 1, 2, 4][levelIndex]], scoreUnits: Math.round(points[index] * level.proportion) })),
+      descriptors: levels.map((level, levelIndex) => ({ levelId: level.id, text: levelCount===4&&levelIndex===3&&criterion.fourLevelLowest ? criterion.fourLevelLowest : criterion.progressionLevels[(levelCount===4?[0, 1, 2, 4]:[0,1,2,3,4])[levelIndex]], scoreUnits: Math.round(points[index] * level.proportion) })),
     })),
     levels, totalScore: input.maxScore, totalScoreUnits: points.reduce((sum, units) => sum + units, 0), scoreUnit: 0.01,
     internalTrace: { mappingStatus: 'FALLBACK', reasons: [`module=${moduleName}`, 'Adaptación evaluativa editable; no constituye aprobación curricular.'],

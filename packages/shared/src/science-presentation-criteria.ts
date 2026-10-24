@@ -47,13 +47,22 @@ export function explicitScienceContent(topic:CommonScienceTopic,text:string):Con
 
 const numbers:Record<string,string>={un:'1',uno:'1',dos:'2',tres:'3',cuatro:'4',cinco:'5',seis:'6',siete:'7',ocho:'8',nueve:'9',diez:'10',quince:'15',veinte:'20'}
 /** El texto recibido ya excluye recursos opcionales y acciones negadas. */
-function presentationDuration(text:string):string|null{
+export function presentationDurationMatch(text:string):RegExpExecArray|null{
  const number='(\\d+(?:[.,]\\d+)?|'+Object.keys(numbers).join('|')+')'
- const timingText=text.split(/[.;](?!\d)/).filter(clause=>
-  (/duracion|durara?\w*|exposicion|presentacion|intervencion|expong\w*|expon\w*/.test(clause)
-   ||new RegExp('^\\s*(?:maximo|aproximadamente|alrededor de|unos|unas|no mas de|hasta)?\\s*'+number+'\\s+(?:minutos?|segundos?)\\s*$').test(clause))
-  &&!/para preparar|preparacion|ensay\w*|recreo|descanso/.test(clause)).join('; ')
- const match=timingText.match(new RegExp('\\b(?:(maximo|aproximadamente|alrededor de|unos|unas|no mas de|hasta)\\s+)?'+number+'\\s+(minutos?|segundos?)\\b'))
+ for(const clause of text.matchAll(/(?:[^.;]|\.(?=\d))+/g)){
+  const value=clause[0]
+  const eligible=
+  (/duracion|durara?\w*|exposicion|presentacion|intervencion|expong\w*|expon\w*/.test(value)
+   ||new RegExp('^\\s*(?:maximo|aproximadamente|alrededor de|unos|unas|no mas de|hasta)?\\s*'+number+'\\s+(?:minutos?|segundos?)\\s*$').test(value))
+  &&!/para preparar|preparacion|ensay\w*|recreo|descanso/.test(value)
+  if(!eligible)continue
+  const match=new RegExp('\\b(?:(maximo|aproximadamente|alrededor de|unos|unas|no mas de|hasta)\\s+)?'+number+'\\s+(minutos?|segundos?)\\b').exec(value)
+  if(match){match.index+=clause.index!;return match}
+ }
+ return null
+}
+function presentationDuration(text:string):string|null{
+ const match=presentationDurationMatch(text)
  if(!match)return null
  const unit=match[3],amount=numbers[match[2]]??match[2].replace(',','.'),limit=match[1]
  if(limit&&/maximo|no mas de|hasta/.test(limit))return `duración de máximo ${amount} ${unit}`

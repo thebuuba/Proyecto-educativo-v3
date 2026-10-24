@@ -16,6 +16,8 @@ export default defineConfig(({ mode }) => {
     rollupOptions: {
       output: {
         manualChunks(id: string) {
+          // El compositor acotado queda en su propio chunk; no aumenta el límite de precaché.
+          if (/[/\\]packages[/\\]shared[/\\]src[/\\](?:instrument-composition-pilot|pilot-task-contract)\.ts$/.test(id)) return 'instrumentos-composicion-piloto'
           // Los datos puros por grado deben caber en la precaché del service worker.
           // Estas reglas no tienen dependencias de ejecución; se separan sin ciclos
           // y conservan la precaché bajo el límite de 2 MiB por archivo.

@@ -4,10 +4,13 @@ import { evaluationCatalogCurrent, evaluationCatalogForVersion } from './catalog
 import {catalogFingerprint} from './catalog-fingerprint'
 
 describe('generic product criteria release', () => {
+  it('conserva172 instalado y separa el contenido del piloto173',()=>{
+    expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.172')!)).toBe('8549003d80310fea0bf6a4950a9e266e9604e7da56c88a794bbbbc9f38dffedf')
+  })
   it('conserva171 instalado al corregir requisitos y composición sin ampliar currículo',()=>{
     const frozen=evaluationCatalogForVersion('evaluation-2026.171')!
     expect(catalogFingerprint(frozen)).toBe('05e2f686d57d38bba9707cdb04134ecb8ce69b456aa1716ed192f7f7335e5b15')
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...frozen,version:'evaluation-2026.172'})))
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...frozen,version:'evaluation-2026.173'})))
   })
   it('conserva170 instalado antes de corregir gustos y preferencias',()=>{
     const frozen=evaluationCatalogForVersion('evaluation-2026.170')!
@@ -65,47 +68,47 @@ describe('generic product criteria release', () => {
   })
   it('conserva158 como candidato local previo a completar actitudes y puntuación de guía',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.158')!)).toBe('d930f78dcf94c17d98c8963a40ce6d027d67d11d20f4d6a204efd038b501c2f3')
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.172')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.173')
   })
   it('conserva159 instalado antes de corregir informe de lectura',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.159')!)).toBe('99f46e348a162a9a2c8a8216774c7e107ffe474e1d61a812eba13ddf31419507')
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.159'),version:'evaluation-2026.172'})))
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.159'),version:'evaluation-2026.173'})))
   })
   it('conserva162 instalado antes de completar requisitos del caligrama',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.162')!)).toBe('b819c805b1e11811522d0a349c62fd270a82aa4c42360b8ab9ba970dd97add32')
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.162'),version:'evaluation-2026.172'})))
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.162'),version:'evaluation-2026.173'})))
   })
   it('conserva168 instalado antes de completar el razonamiento oral',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.168')!)).toBe('f819506e344a6dd30173c348e25926fbe1e4f48e6bd54a6fcf45f5c3dd08c7bb')
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.168'),version:'evaluation-2026.172'})))
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.168'),version:'evaluation-2026.173'})))
   })
   it('conserva167 instalado antes de corregir los componentes de fuente',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.167')!)).toBe('d33ecf696fc8c8bc3308500a683ced13884f53c82a81e6c9756181950cc0b861')
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.167'),version:'evaluation-2026.172'})))
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.167'),version:'evaluation-2026.173'})))
   })
   it('conserva166 instalado antes de corregir publicaciones e intercambio',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.166')!)).toBe('22baf31348c0eddf37b54afceb1940505e0ad84f76d42e8fed2e55107f5247d8')
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.166'),version:'evaluation-2026.172'})))
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.166'),version:'evaluation-2026.173'})))
   })
   it('conserva165 instalado antes de corregir consignas independientes',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.165')!)).toBe('000a88ef6bcfe7d9ef17f78449b6688b31857437a9dd60968af62a18936fd5d5')
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.165'),version:'evaluation-2026.172'})))
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.165'),version:'evaluation-2026.173'})))
   })
   it('conserva164 instalado antes de completar componentes transversales',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.164')!)).toBe('ea77d443cdcc2e0d6761a9dedde555415a2afbeddb1eff9604fdaab03a975fa1')
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.164'),version:'evaluation-2026.172'})))
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.164'),version:'evaluation-2026.173'})))
   })
   it('conserva163 instalado antes de completar géneros del indicador de salud',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.163')!)).toBe('cbf092090d3ede4666c7064429351019175c4f8543f7187d16bc816faec5689b')
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.163'),version:'evaluation-2026.172'})))
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.163'),version:'evaluation-2026.173'})))
   })
   it('conserva161 instalado antes de completar requisitos del cuento',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.161')!)).toBe('b477d9f4a03e3ead1dd47790fb43721b4c62d8f025061f7109a4cfd97e623739')
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.161'),version:'evaluation-2026.172'})))
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.161'),version:'evaluation-2026.173'})))
   })
   it('conserva160 instalado antes de completar requisitos del afiche',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.160')!)).toBe('f8c0fe103ef0683a9504a04fec0fa3fea903dceeb4920f21d75cc26d377ef69b')
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.160'),version:'evaluation-2026.172'})))
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.160'),version:'evaluation-2026.173'})))
   })
   it.each([
     ['evaluation-2026.46','main','00d4a2d9d0586159392675cb1f59d35ff21411a3b644d384bbced1cb159d8ac0'],
@@ -152,7 +155,7 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.172')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.173')
     const frozen138=evaluationCatalogForVersion('evaluation-2026.138')!
     expect(frozen138.version).toBe('evaluation-2026.138')
     expect(frozen138.optativeScienceModules).toBeUndefined()

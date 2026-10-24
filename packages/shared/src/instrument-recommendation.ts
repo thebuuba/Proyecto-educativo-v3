@@ -23,6 +23,7 @@ export interface InstrumentRecommendation {
   selectedCurriculumElements: CurriculumReference[]; criteria: RecommendationCriterion[]
   levels: { id: string; label: string; proportion: number }[]; totalScore: number; totalScoreUnits: number; scoreUnit: 0.01
   internalTrace: {
+    composition?: import('./instrument-composition-pilot').PilotCompositionTrace
     mappingStatus: string; reasons: string[]; ruleId: string; activityTypeOrigin: 'EXPLICIT' | 'DETECTED' | 'DEFAULT'
     ranking: { elementId: string; score: number; topicCoverage: number; reasons: string[] }[]
     curriculumStatus: string | null; lowCurriculumConfidence: boolean; consideredTypes: string[]

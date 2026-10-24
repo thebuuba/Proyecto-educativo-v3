@@ -1,4 +1,5 @@
 import {markEnglishTaskProvisional} from '@aula/shared'
+import {composePilotInstrument} from '@aula/shared'
 import {resolveOptativeSocialTask,optativeSocialCriteria,optativeSocialSelections} from '@aula/shared'
 import {resolveOptativeLanguageTask,optativeLanguageCriteria,optativeLanguageSelections,adaptOptativeLanguageScale} from '@aula/shared'
 import {resolveCommonPhysicalTask,commonPhysicalCriteria,commonPhysicalSelections,adaptPhysicalScale} from '@aula/shared'
@@ -245,7 +246,7 @@ export function suggestedSelections(activityType: string, context: AcademicConte
 }
 
 export function recommend(input: RecommendationInput, context: AcademicContext | null, scope: ScopeCandidate | null,
-  elements: RankedElement[], mappingStatus: string, curriculumStatus: string | null, catalog: EvaluationCatalog = evaluationCatalogCurrent): InstrumentRecommendation {
+  elements: RankedElement[], mappingStatus: string, curriculumStatus: string | null, catalog: EvaluationCatalog = evaluationCatalogCurrent, compositionMode:'SHARED'|'LEGACY'='SHARED'): InstrumentRecommendation {
   if (input.evidenceInstructions?.trim()) input = { ...input, description: [input.description, input.evidenceInstructions].filter(Boolean).join('\n'), evidenceInstructions: undefined }
   const genericDescription = [withoutResources(input.description ?? ''), input.evidenceInstructions ?? '', ...(input.evaluationPriorities ?? [])].join(' ')
   const text = normalize(`${input.activityTitle} ${genericDescription} ${(input.resources ?? []).join(' ')}`)
@@ -338,6 +339,18 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const transversal=resolveFirstGradeTransversalTask(input.activityTitle,input.description??'',context)
   const instrumentIntent = context?.level === 'SECONDARY' && (context.subjectCode === 'LEN'||commonSecondaryEnglish(context)) ? languageInstrumentIntent(input.description ?? '') : undefined
   const chosenInstrument = input.preferredInstrumentType ?? (technical?technicalSelections(technical,input.description??'').suggestedInstrumentType:undefined) ?? (optativeScience?optativeScienceSelections(optativeScience,input.description??'').suggestedInstrumentType:undefined) ?? (optativeMath?optativeMathSelections(optativeMath,input.description??'').suggestedInstrumentType:undefined) ?? (socialOptative?optativeSocialSelections(socialOptative).suggestedInstrumentType:undefined) ?? (optativeTask?optativeLanguageSelections(optativeTask).suggestedInstrumentType:undefined) ?? (fhrTask?commonFhrSelections(fhrTask).suggestedInstrumentType:undefined) ?? (physicalTask?commonPhysicalSelections(physicalTask).suggestedInstrumentType:undefined) ?? (artTask ? commonArtSelections(artTask).suggestedInstrumentType : undefined) ?? (socialTask?commonSocialSelections(socialTask,input.description??'').suggestedInstrumentType:undefined) ?? (commonScience?commonScienceSelections(commonScience,input.description??'').suggestedInstrumentType:undefined) ?? (mathTask?commonMathSelections(mathTask,input.description??'').suggestedInstrumentType:undefined) ?? (frenchTask?commonFrenchSelections(frenchTask,input.description??'').suggestedInstrumentType:undefined) ?? instrumentIntent ?? (transversal&&transversal.activityType===activity.id?firstGradeTransversalSelections(transversal).suggestedInstrumentType:undefined) ?? (englishTask?commonEnglishSelections(englishTask,input.description??'').suggestedInstrumentType:rule.instrument)
+  const pilot=compositionMode==='SHARED'&&catalog.version==='evaluation-2026.173'?composePilotInstrument({description:input.description??'',context,instrumentType:chosenInstrument,maxScore:input.maxScore,participationMode:input.participationMode,activityType:input.pedagogicalActivityType,levelCount:input.levelCount,includeAdditionalCandidates:input.includeAdditionalCandidates}):null
+  if(pilot){
+    pilot.catalogVersion=catalog.version
+    pilot.criteria=pilot.criteria.map(c=>({...c,sourceType:'CONTEXTUALIZED'}))
+    pilot.confidence=confidence
+    pilot.curriculumVersionId=scope?.versionId??null
+    pilot.curriculumScopeId=scope?.id??null
+    pilot.selectedCurriculumElements=selectedRefs
+    pilot.internalTrace={...pilot.internalTrace,mappingStatus,curriculumStatus,lowCurriculumConfidence:confidence==='LOW',ruleId:input.preferredInstrumentType?'COMPOSITION_PILOT:TEACHER_OVERRIDE':'COMPOSITION_PILOT',ranking:ranking.slice(0,24).map(r=>({elementId:r.element.elementId,score:r.score,topicCoverage:r.topicCoverage,reasons:r.reasons}))}
+    assertValidRecommendation(pilot,Boolean(input.includeAdditionalCandidates))
+    return pilot
+  }
   const scores = distributeScoreUnits(Math.round(input.maxScore * 100), chosenInstrument === 'lista-ponderada'
     ? distributeScoreUnits(10000, candidateWeights) : candidateWeights)
   const template = catalog.instrumentTemplates.find(t => t.id === chosenInstrument)!

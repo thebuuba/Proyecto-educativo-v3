@@ -1,4 +1,5 @@
 import {resolveOptativeSocialTask,optativeSocialSelections} from '@aula/shared'
+import {extractPilotContract} from '@aula/shared'
 import {resolveOptativeLanguageTask,optativeLanguageSelections} from '@aula/shared'
 import {resolveCommonPhysicalTask,commonPhysicalSelections} from '@aula/shared'
 import {resolveCommonFhrTask,commonFhrSelections} from '@aula/shared'
@@ -47,14 +48,15 @@ export class EvaluationInstrumentsService {
     const detected = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === scopedType)
       ?? detectActivityType(input.activityTitle, input.description ?? '', evaluationCatalogCurrent, false, input.evaluationTechnique)
     const selections = technical ? technicalSelections(technical,input.description??'') : optativeScience ? optativeScienceSelections(optativeScience,input.description??'') : optativeMath ? optativeMathSelections(optativeMath,input.description??'') : socialOptative ? optativeSocialSelections(socialOptative) : optativeTask ? optativeLanguageSelections(optativeTask) : fhrTask ? commonFhrSelections(fhrTask) : physicalTask ? commonPhysicalSelections(physicalTask) : artTask ? commonArtSelections(artTask) : socialTask?commonSocialSelections(socialTask,input.description??''):commonScience?commonScienceSelections(commonScience,input.description??''):mathTask?commonMathSelections(mathTask,input.description??''):frenchTask?commonFrenchSelections(frenchTask,input.description??''):englishTask?commonEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '', resolved.context) : suggestedSelections(detected.id, resolved.context, input.description ?? '')
-    const type = input.pedagogicalActivityType ?? detected.id
+    const pilot=extractPilotContract(input.description??'',resolved.context,input.pedagogicalActivityType)
+    const type = input.pedagogicalActivityType ?? pilot?.activityType ?? detected.id
     const ranked = rankCurriculum(input.activityTitle, input.description ?? '', type, input.competencyBlock,
       resolved.resolution.scope, resolved.rows)
     const candidates = ranked.slice(0, 5).map(({ element, topicCoverage }) => ({
       ...element, normalizedText: undefined, topicCoverage,
     }))
     const confident = Boolean(resolved.resolution.scope && ranked[0]?.topicCoverage >= 0.6)
-    return { suggestedActivityType: detected.id, activityType: type, activityTypes: evaluationCatalogCurrent.activityTypes.map(({ id }) => id),
+    return { suggestedActivityType: pilot?.activityType ?? detected.id, activityType: type, activityTypes: evaluationCatalogCurrent.activityTypes.map(({ id }) => id),
       ...(selections ?? {}),
       ...(input.evaluationTechnique ? { suggestedEvaluationTechnique: input.evaluationTechnique } : {}),
       curriculumVersionId: resolved.version?.id ?? null, curriculumScopeId: resolved.resolution.scope?.id ?? null,
@@ -70,7 +72,7 @@ export class EvaluationInstrumentsService {
       const result = recommend(input, context, resolution.scope, rows, resolution.status, version?.status ?? null)
       result.internalTrace.reasons.push(resolution.reason)
       result.curriculumVersionId = version?.id ?? null
-      return await this.refineWithAi(result, input, context)
+      return result.internalTrace.composition ? result : await this.refineWithAi(result, input, context)
     } catch (error) {
       if(error instanceof InstrumentCapacityError||error instanceof TaskRequirementError)throw new BadRequestException(error.message)
       const details = { route: 'POST /evaluation-instruments/recommend', sectionSubjectId: input.sectionSubjectId,

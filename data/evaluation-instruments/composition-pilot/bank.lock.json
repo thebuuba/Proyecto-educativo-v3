@@ -1,0 +1,14 @@
+{
+  "sha256": "793bed1047df72826ffab52028ede1922e6a3dec4474730d3759d53e49ce9f67",
+  "outputsExecutedBeforeLock": false,
+  "sources": [
+    {
+      "path": "data/evaluation-instruments/engine-evaluation/bank-v1.json",
+      "sha256": "dc1e9f6b5fcd1c4bbeb9c4f90d06b7809df359fdce467d658bcce2621111f632"
+    },
+    {
+      "path": "data/evaluation-instruments/realistic-audit-bank-v1.json",
+      "sha256": "f4530dedd26e1d12f4f4c92998491d784a87e257b113a163f71fa6feeae2f817"
+    }
+  ]
+}

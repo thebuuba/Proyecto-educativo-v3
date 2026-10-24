@@ -1,0 +1,531 @@
+{
+  "version": 1,
+  "designer": "COORDINADOR_SOLO",
+  "review": "SIN REVISIÓN INDEPENDIENTE",
+  "scope": "SECUNDARIA COMÚN, PRIMERO; tres familias acotadas",
+  "representatives": [
+    "LEN02",
+    "B-NAT1-solar-exacta",
+    "MAT04"
+  ],
+  "cases": [
+    {
+      "id": "LEN01",
+      "subjectCode": "LEN",
+      "grade": 1,
+      "category": "BREVE",
+      "title": "Una noticia de la escuela",
+      "description": "Escribe una noticia sobre una actividad de tu escuela.",
+      "product": "Noticia escrita",
+      "content": [
+        "Actividad escolar elegida"
+      ],
+      "requirements": [
+        "Escribir una noticia"
+      ],
+      "inherent": [
+        "Información esencial verificable",
+        "Titular, entrada y cuerpo proporcionados",
+        "Organización, tono informativo y convenciones escritas"
+      ],
+      "forbidden": [
+        "Entrevistar personas",
+        "Presentar borrador y versión final",
+        "Publicar o exponer oralmente"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ],
+      "family": "NEWS",
+      "source": "data/evaluation-instruments/engine-evaluation/bank-v1.json",
+      "known": true
+    },
+    {
+      "id": "LEN02",
+      "subjectCode": "LEN",
+      "grade": 1,
+      "category": "DETALLADA",
+      "provenance": "REGRESION_SOLICITADA_POR_USUARIO_TEXTO_ORIGINADO_EN_ASISTENTE",
+      "title": "Una noticia para el mural escolar",
+      "description": "Redacta individualmente una noticia a partir de estos datos ficticios: el viernes por la mañana, los estudiantes de 1.º A organizaron una jornada de lectura en la biblioteca de la escuela. Participaron 25 estudiantes y la profesora de Lengua Española. Leyeron cuentos en pequeños grupos y compartieron sus recomendaciones de lectura.\n\nIncluye un titular, una entrada que resuma lo principal y un cuerpo que desarrolle los hechos. Explica qué ocurrió, quiénes participaron, cuándo y dónde sucedió. Mantén un tono informativo, evita inventar datos y revisa la organización, la ortografía y la puntuación antes de entregar.",
+      "product": "Noticia escrita final individual",
+      "content": [
+        "Jornada de lectura ficticia con los datos dados"
+      ],
+      "requirements": [
+        "Fidelidad a los datos y qué/quién/cuándo/dónde",
+        "Titular, entrada y cuerpo",
+        "Organización y tono informativo",
+        "Ortografía y puntuación revisadas"
+      ],
+      "inherent": [
+        "Cohesión entre entrada y cuerpo",
+        "Selección y jerarquía de información esencial"
+      ],
+      "forbidden": [
+        "Entregar borrador además del final",
+        "Modificar obligatoriamente un texto correcto",
+        "Investigar, entrevistar o realizar una jornada",
+        "Convertir 25 estudiantes y cada otro dato en criterios independientes"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "NONE"
+      ],
+      "family": "NEWS",
+      "source": "data/evaluation-instruments/engine-evaluation/bank-v1.json",
+      "known": true
+    },
+    {
+      "id": "B-NAT1-solar-exacta",
+      "set": "B",
+      "provenance": "Caso sintético literal del encargo; grado primero elegido para la prueba",
+      "subjectCode": "NAT",
+      "subjectName": "Ciencias de la Naturaleza",
+      "grade": 1,
+      "topic": "Sistema solar",
+      "family": "ORAL_SCIENCE",
+      "title": "Actividad de ciencias",
+      "description": "Los estudiantes realizarán una exposición sobre el sistema solar. Presentarán todos los planetas y explicarán qué es cada uno. La exposición durará cinco minutos y utilizarán material de apoyo.",
+      "expected": {
+        "explicit": [
+          "Presentar todos los planetas",
+          "Explicar científicamente qué es cada planeta",
+          "Exponer oralmente",
+          "Duración de cinco minutos",
+          "Utilizar material de apoyo"
+        ],
+        "pedagogical": [
+          "Comunicación oral comprensible",
+          "Usar el apoyo para explicar"
+        ],
+        "optional": [],
+        "alternatives": [],
+        "excluded": [
+          "Una fila obligatoria por planeta",
+          "Tolerancia temporal inventada",
+          "Maqueta obligatoria",
+          "Bibliografía no solicitada"
+        ],
+        "ambiguities": [
+          "El material no está especificado"
+        ],
+        "groups": [
+          [
+            "cobertura de planetas"
+          ],
+          [
+            "explicación científica"
+          ],
+          [
+            "comunicación oral"
+          ],
+          [
+            "duración exacta"
+          ],
+          [
+            "material y uso pertinente"
+          ]
+        ]
+      },
+      "source": "data/evaluation-instruments/realistic-audit-bank-v1.json",
+      "known": true,
+      "originalExpectations": {
+        "explicit": [
+          "Presentar todos los planetas",
+          "Explicar científicamente qué es cada planeta",
+          "Exponer oralmente",
+          "Duración de cinco minutos",
+          "Utilizar material de apoyo"
+        ],
+        "pedagogical": [
+          "Comunicación oral comprensible",
+          "Usar el apoyo para explicar"
+        ],
+        "optional": [],
+        "alternatives": [],
+        "excluded": [
+          "Una fila obligatoria por planeta",
+          "Tolerancia temporal inventada",
+          "Maqueta obligatoria",
+          "Bibliografía no solicitada"
+        ],
+        "ambiguities": [
+          "El material no está especificado"
+        ],
+        "groups": [
+          [
+            "cobertura de planetas"
+          ],
+          [
+            "explicación científica"
+          ],
+          [
+            "comunicación oral"
+          ],
+          [
+            "duración exacta"
+          ],
+          [
+            "material y uso pertinente"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "B-NAT1-solar-maxima",
+      "set": "B",
+      "provenance": "Variante sintética de límite; no se cuenta como nueva familia",
+      "subjectCode": "NAT",
+      "subjectName": "Ciencias de la Naturaleza",
+      "grade": 1,
+      "topic": "Sistema solar",
+      "family": "ORAL_SCIENCE",
+      "title": "Actividad de ciencias",
+      "description": "Expongan todos los planetas del sistema solar y expliquen qué son. Máximo cinco minutos. Usen material de apoyo.",
+      "expected": {
+        "explicit": [
+          "Todos los planetas y su explicación",
+          "Exposición oral",
+          "Duración no superior a cinco minutos",
+          "Material de apoyo"
+        ],
+        "pedagogical": [
+          "Claridad oral",
+          "Precisión científica"
+        ],
+        "optional": [],
+        "alternatives": [],
+        "excluded": [
+          "Exigir exactamente cinco minutos",
+          "Penalizar una duración menor por sí sola",
+          "Intervalo de tolerancia"
+        ],
+        "ambiguities": [],
+        "groups": [
+          [
+            "cobertura"
+          ],
+          [
+            "explicación"
+          ],
+          [
+            "comunicación"
+          ],
+          [
+            "duración máxima"
+          ],
+          [
+            "apoyo"
+          ]
+        ]
+      },
+      "source": "data/evaluation-instruments/realistic-audit-bank-v1.json",
+      "known": true,
+      "originalExpectations": {
+        "explicit": [
+          "Todos los planetas y su explicación",
+          "Exposición oral",
+          "Duración no superior a cinco minutos",
+          "Material de apoyo"
+        ],
+        "pedagogical": [
+          "Claridad oral",
+          "Precisión científica"
+        ],
+        "optional": [],
+        "alternatives": [],
+        "excluded": [
+          "Exigir exactamente cinco minutos",
+          "Penalizar una duración menor por sí sola",
+          "Intervalo de tolerancia"
+        ],
+        "ambiguities": [],
+        "groups": [
+          [
+            "cobertura"
+          ],
+          [
+            "explicación"
+          ],
+          [
+            "comunicación"
+          ],
+          [
+            "duración máxima"
+          ],
+          [
+            "apoyo"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "MAT03",
+      "subjectCode": "MAT",
+      "grade": 1,
+      "category": "VARIAS_ACCIONES",
+      "title": "Lecturas del grupo",
+      "description": "Estos son los libros leídos por ocho estudiantes durante un mes: 0, 1, 1, 2, 2, 2, 3, 5. Organiza una tabla de frecuencias, representa los datos en un gráfico de barras, calcula la media y la mediana y escribe una conclusión que los datos permitan sostener.",
+      "product": "Análisis estadístico escrito con tabla y gráfico",
+      "content": [
+        "Frecuencias, barras,media,mediana"
+      ],
+      "requirements": [
+        "Tabla de frecuencias",
+        "Gráfico fiel y rotulado",
+        "Media y mediana con cálculos",
+        "Conclusión respaldada"
+      ],
+      "inherent": [
+        "Coherencia entre representaciones y cálculos"
+      ],
+      "forbidden": [
+        "Realizar encuesta o recopilar más datos",
+        "Moda obligatoria",
+        "Generalizar a toda la escuela",
+        "Exposición oral o informe formal extenso"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "PROBLEM_BASED",
+        "NONE"
+      ],
+      "family": "MATH_REPRESENTATION",
+      "source": "data/evaluation-instruments/engine-evaluation/bank-v1.json",
+      "known": true
+    },
+    {
+      "id": "MAT04",
+      "subjectCode": "MAT",
+      "grade": 1,
+      "category": "ALTERNATIVA_NEGACION",
+      "holdout": true,
+      "title": "¿Cuál queda más a la izquierda?",
+      "description": "Compara −0.75 y −2/3. Justifica cuál es menor mediante una recta numérica o una explicación escrita con cálculos. No es necesario usar ambos procedimientos.",
+      "product": "Comparación justificada de racionales",
+      "content": [
+        "Orden de números negativos racionales"
+      ],
+      "requirements": [
+        "Comparación correcta",
+        "Recta O explicación con cálculos",
+        "Justificación consistente"
+      ],
+      "inherent": [
+        "Equivalencia de representaciones y signos"
+      ],
+      "forbidden": [
+        "Ambos procedimientos",
+        "Investigación o exposición",
+        "Premiar solo resultado sin justificación",
+        "Redondeo arbitrario que cambie el orden"
+      ],
+      "instruments": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "strategies": [
+        "PROBLEM_BASED",
+        "NONE"
+      ],
+      "family": "MATH_REPRESENTATION",
+      "source": "data/evaluation-instruments/engine-evaluation/bank-v1.json",
+      "known": true
+    },
+    {
+      "id": "NEW-A1",
+      "family": "NEWS",
+      "subjectCode": "LEN",
+      "grade": 1,
+      "title": "Registro semanal",
+      "description": "Escribe una noticia sobre la jornada deportiva de la escuela. Revisa la ortografía antes de entregar.",
+      "expected": {
+        "explicit": [
+          "noticia escrita sobre la jornada deportiva",
+          "ortografía revisada sin exigir borrador ni cambios artificiales"
+        ],
+        "inherent": [
+          "hecho y datos disponibles",
+          "titular, entrada y cuerpo",
+          "secuencia coherente",
+          "tono informativo y convenciones escritas"
+        ],
+        "forbidden": [
+          "borrador obligatorio",
+          "cambios obligatorios en un texto correcto",
+          "consulta obligatoria de fuentes",
+          "datos no proporcionados"
+        ]
+      },
+      "known": false,
+      "provenance": "SINTÉTICO DEL COORDINADOR; expectativas anteriores a la primera ejecución"
+    },
+    {
+      "id": "NEW-A2",
+      "family": "NEWS",
+      "subjectCode": "LEN",
+      "grade": 1,
+      "title": "Los planetas en una exposición",
+      "description": "Redacta una noticia con estos datos ficticios: el lunes, 18 estudiantes de 1.º visitaron la biblioteca escolar con su profesora y leyeron cuentos. Incluye titular, entrada y cuerpo; informa qué ocurrió, quiénes participaron, cuándo y dónde, sin inventar datos. Usa letra Arial 12, interlineado 1.5, sangría y títulos en color azul. Revisa la puntuación antes de entregar; no entregues borrador.",
+      "expected": {
+        "explicit": [
+          "noticia con los datos dados",
+          "titular, entrada y cuerpo",
+          "qué, quiénes, cuándo, dónde",
+          "no inventar datos",
+          "Arial 12",
+          "interlineado 1.5",
+          "sangría",
+          "títulos azules",
+          "puntuación"
+        ],
+        "inherent": [
+          "organización",
+          "tono informativo"
+        ],
+        "forbidden": [
+          "exposición de planetas heredada del título",
+          "borrador",
+          "fuentes externas obligatorias",
+          "cómo o por qué no aportados"
+        ]
+      },
+      "known": false,
+      "provenance": "SINTÉTICO DEL COORDINADOR; expectativas anteriores a la primera ejecución"
+    },
+    {
+      "id": "NEW-B1",
+      "family": "ORAL_SCIENCE",
+      "subjectCode": "NAT",
+      "grade": 1,
+      "title": "Una noticia",
+      "description": "Explica oralmente qué son los planetas del sistema solar. No uses material de apoyo.",
+      "expected": {
+        "explicit": [
+          "explicar qué son los planetas del sistema solar",
+          "comunicación oral",
+          "exclusión del material de apoyo"
+        ],
+        "inherent": [
+          "precisión científica",
+          "explicación comprensible"
+        ],
+        "forbidden": [
+          "material obligatorio",
+          "duración no solicitada",
+          "memorización de datos numéricos",
+          "informe escrito"
+        ]
+      },
+      "known": false,
+      "provenance": "SINTÉTICO DEL COORDINADOR; expectativas anteriores a la primera ejecución"
+    },
+    {
+      "id": "NEW-B2",
+      "family": "ORAL_SCIENCE",
+      "subjectCode": "NAT",
+      "grade": 1,
+      "title": "Actividad del lunes",
+      "description": "Expongan todos los planetas del sistema solar y expliquen qué es cada uno. La exposición durará aproximadamente cinco minutos. Como material de apoyo obligatorio, elijan un dibujo o una lámina y utilícenlo para explicar; no tienen que presentar ambos. No construyan una maqueta.",
+      "expected": {
+        "explicit": [
+          "todos los planetas",
+          "explicar qué es cada planeta",
+          "comunicación oral",
+          "duración aproximada de cinco minutos sin tolerancia numérica inventada",
+          "apoyo obligatorio usado para explicar",
+          "dibujo O lámina",
+          "sin maqueta"
+        ],
+        "inherent": [
+          "precisión científica"
+        ],
+        "forbidden": [
+          "cinco minutos exactos",
+          "intervalo inventado",
+          "ambos materiales",
+          "maqueta"
+        ]
+      },
+      "known": false,
+      "provenance": "SINTÉTICO DEL COORDINADOR; expectativas anteriores a la primera ejecución"
+    },
+    {
+      "id": "NEW-C1",
+      "family": "MATH_REPRESENTATION",
+      "subjectCode": "MAT",
+      "grade": 1,
+      "title": "Una entrevista de trabajo",
+      "description": "Compara −3/4 y −2/3. Justifica cuál es mayor con una recta numérica o con un texto que incluya los cálculos; no entregues ambas opciones.",
+      "expected": {
+        "explicit": [
+          "comparar los racionales dados",
+          "justificar cuál es mayor",
+          "recta numérica O texto con cálculos"
+        ],
+        "inherent": [
+          "comparación correcta",
+          "justificación matemática coherente"
+        ],
+        "forbidden": [
+          "ambos productos",
+          "entrevista oral",
+          "encuesta",
+          "unidades físicas"
+        ]
+      },
+      "known": false,
+      "provenance": "SINTÉTICO DEL COORDINADOR; expectativas anteriores a la primera ejecución"
+    },
+    {
+      "id": "NEW-C2",
+      "family": "MATH_REPRESENTATION",
+      "subjectCode": "MAT",
+      "grade": 1,
+      "title": "Prueba de lectura",
+      "description": "Con estos datos ficticios de libros leídos: 0, 1, 1, 2, 2, 2, 3, 5, construye una tabla de frecuencias y un gráfico de barras. Calcula la media y la mediana. Interpreta ambas medidas y formula una conclusión que se sostenga en los datos. Entrega la explicación en un audio o en un texto, a tu elección; no se piden ambos ni una encuesta.",
+      "expected": {
+        "explicit": [
+          "tabla de frecuencias de los datos dados",
+          "gráfico de barras correspondiente",
+          "media",
+          "mediana",
+          "interpretación de ambas medidas",
+          "conclusión sostenida por los datos",
+          "explicación en audio O texto",
+          "sin encuesta"
+        ],
+        "inherent": [
+          "corrección de representaciones y cálculos"
+        ],
+        "forbidden": [
+          "ambas entregas",
+          "recolectar datos nuevos",
+          "fuentes externas",
+          "encuesta"
+        ]
+      },
+      "known": false,
+      "provenance": "SINTÉTICO DEL COORDINADOR; expectativas anteriores a la primera ejecución"
+    }
+  ]
+}

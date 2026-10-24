@@ -1,4 +1,5 @@
 import {markEnglishTaskProvisional} from '@aula/shared'
+import {composePilotInstrument} from '@aula/shared'
 import {resolveOptativeSocialTask,optativeSocialCriteria} from '@aula/shared'
 import {resolveCommonPhysicalTask,commonPhysicalCriteria,adaptPhysicalScale} from '@aula/shared'
 import {resolveCommonFhrTask,commonFhrCriteria,adaptFhrScale} from '@aula/shared'
@@ -62,8 +63,10 @@ export function preparationFingerprint(input: InstrumentPreparationContext & { n
     input.evaluationTechnique ?? '', input.evidenceInstructions ?? '', input.resources ?? [], input.evaluationPriorities ?? [], input.observations ?? '', input.organizationMode ?? '', input.planningMoment ?? '', input.teamIds ?? []])
 }
 
-export function editableFallbackRecommendation(input: InstrumentPreparationContext & { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: number; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean }): InstrumentRecommendation {
+export function editableFallbackRecommendation(input: InstrumentPreparationContext & { activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentRecommendation['instrumentType']; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; variation?: number; secondaryLanguageGrade?: number; academicContext?: InstrumentAcademicContext | null; includeAdditionalCandidates?: boolean;levelCount?:4|5;compositionMode?:'SHARED'|'LEGACY' }): InstrumentRecommendation {
   if (input.evidenceInstructions?.trim()) input = { ...input, description: [input.description, input.evidenceInstructions].filter(Boolean).join('\n') }
+  const pilot=input.compositionMode!=='LEGACY'?composePilotInstrument({...input,description:input.description??'',context:input.academicContext}):null
+  if(pilot)return pilot
   const authorizedGrade=input.academicContext?commonSecondaryLanguageGrade(input.academicContext):input.secondaryLanguageGrade
   if(authorizedGrade)input={...input,secondaryLanguageGrade:authorizedGrade}
   const transversal=resolveFirstGradeTransversalTask(input.activityTitle,input.description??'',input.academicContext)
