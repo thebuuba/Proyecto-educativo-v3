@@ -44,7 +44,7 @@ export function extractTaskRequirements(description:string):TaskRequirementRepor
    const prior=scopes.filter(s=>s.index!<=index).at(-1)
    if(!prior)return 'documento'
    const attachment=clause.slice(prior.index!+prior[0].length,index)
-   return !attachment.trim()||/^\s*(?:en\b|de\b|con\b|sin\b|organizad|justificad|centrad|alinead|tamano\b|color\b|negrita\b|cursiva\b)/.test(attachment)?canonicalScope(prior[1]):'documento'
+   return !attachment.trim()||/^\s*(?:en\b|de\b|con\b|sin\b|utiliz\w*\b|us[ae]\w*\b|ira\b|sera\b|tendra\w*\b|llevar\w*\b|organizad|justificad|centrad|alinead|tamano\b|color\b|negrita\b|cursiva\b)/.test(attachment)?canonicalScope(prior[1]):'documento'
   }
   const add=(property:string,m:{0:string;index?:number},values:string[],unit?:string,scope?:string,operator:TaskCondition['operator']='EXACT')=>{
    const index=m.index??0,end=index+m[0].length,before=clause.slice(0,index)
@@ -61,7 +61,7 @@ export function extractTaskRequirements(description:string):TaskRequirementRepor
    conditions.push({id:`task:${conditions.length+1}`,property,values,unit,scope:actualScope,operator,relation,
     origin:{...original,text:description.slice(original.start,original.end)},
     ...(conditional||neg?{condition:description.slice(folded.span(span.start,span.start+clause.length).start,folded.span(span.start,span.start+clause.length).end).trim()}:{}),
-    ...(/sin contar\s+la\s+portada/.test(clause)?{exclusion:'sin contar la portada'}:{})})
+    ...(property==='extent'&&/^p[aá]ginas?$/.test(unit??'')&&/sin contar\s+la\s+portada/.test(clause)?{exclusion:'sin contar la portada'}:{})})
   }
   const original=(start:number,end:number)=>{const p=folded.span(span.start+start,span.start+end);return description.slice(p.start,p.end)}
   // Formats can be unknown when explicitly introduced with “formato”; known product formats also work after “en”.
@@ -130,6 +130,10 @@ export function extractTaskRequirements(description:string):TaskRequirementRepor
    }
   }
   if(instruction.test(clause)||/\b(?:sin portada|con (?:una )?portada|secciones|apartados)/.test(clause)){
+   for(const m of clause.matchAll(/\bdibujos?\b[^,;]*/g)){
+    const location=clause.match(/\ben\s+(?:el|la)\s+(desarrollo|cuerpo|introduccion|conclusion|anexos?)\b/)
+    add('drawing',m,[original(m.index!,m.index!+m[0].length).trim()],undefined,location?canonicalScope(location[1]):undefined)
+   }
    for(const m of clause.matchAll(/\bpara que\s+(?:se\s+)?(?:utili\w*|us\w*|destin\w*)[^;]*/g))add('content-purpose',m,[original(m.index!,m.index!+m[0].length)],undefined,'contenido')
    for(const m of clause.matchAll(/\b(?:conserv\w*\s+(?:los?|las?)\s+(?:datos|cantidades)[^;]*|evit\w*\s+inventar\s+(?:datos|informacion))\b/g))add('fidelity',m,[original(m.index!,m.index!+m[0].length)],undefined,'contenido')
    for(const m of clause.matchAll(/\bincorpor\w*\s+la\s+declaracion\s+de\s+(?:la|el)\s+[^,;]+/g))add('citation',m,[`declaración fiel, entre comillas y atribuida: ${original(m.index!,m.index!+m[0].length)}`],undefined,'contenido')

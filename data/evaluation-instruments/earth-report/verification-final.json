@@ -1,0 +1,56 @@
+{
+  "checksFinal": [
+    {
+      "name": "backend-test",
+      "exitCode": 0,
+      "ms": 103251
+    },
+    {
+      "name": "backend-build",
+      "exitCode": 0,
+      "ms": 8789
+    },
+    {
+      "name": "frontend-build",
+      "exitCode": 0,
+      "ms": 20581
+    },
+    {
+      "name": "cloudflare-build",
+      "exitCode": 0,
+      "ms": 148658
+    },
+    {
+      "name": "backend-lint",
+      "exitCode": 0,
+      "ms": 6039
+    },
+    {
+      "name": "frontend-lint",
+      "exitCode": 0,
+      "ms": 15669
+    }
+  ],
+  "backendTestsFinal": 98372,
+  "backendFiles": 250,
+  "frontendFullBeforeCompatibilityGuard": {
+    "tests": 95224,
+    "files": 227,
+    "exitCode": 0
+  },
+  "frontendFocusedAfterCompatibilityGuard": {
+    "tests": 52,
+    "files": 3,
+    "exitCode": 0
+  },
+  "backendCompatibilityFocused": {
+    "tests": 60,
+    "files": 3,
+    "exitCode": 0
+  },
+  "modifiedSharedLintExitCode": 0,
+  "historicalCatalog86KeepsPriorProvider": true,
+  "currentFrozenFiveCaseOutputExact": true,
+  "cloudflareDryRun": true,
+  "noDeployment": true
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "earth",
+    "formats": [
+      {
+        "format": "rubrica",
+        "completeContentEqual": true
+      },
+      {
+        "format": "lista-cotejo",
+        "completeContentEqual": true
+      },
+      {
+        "format": "escala",
+        "completeContentEqual": true
+      },
+      {
+        "format": "lista-ponderada",
+        "completeContentEqual": true
+      }
+    ]
+  },
+  {
+    "id": "earth-no-format",
+    "formats": [
+      {
+        "format": "rubrica",
+        "completeContentEqual": true
+      }
+    ]
+  },
+  {
+    "id": "earth-variant",
+    "formats": [
+      {
+        "format": "rubrica",
+        "completeContentEqual": true
+      }
+    ]
+  },
+  {
+    "id": "atmosphere-report",
+    "formats": [
+      {
+        "format": "rubrica",
+        "completeContentEqual": true
+      }
+    ]
+  },
+  {
+    "id": "density-experiment",
+    "formats": [
+      {
+        "format": "rubrica",
+        "completeContentEqual": true
+      }
+    ]
+  }
+]

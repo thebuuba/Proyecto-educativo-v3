@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "name": "backend-test",
+      "exitCode": 0,
+      "ms": 101811
+    },
+    {
+      "name": "backend-build",
+      "exitCode": 0,
+      "ms": 12403
+    },
+    {
+      "name": "frontend-test",
+      "exitCode": 0,
+      "ms": 470413
+    },
+    {
+      "name": "frontend-build",
+      "exitCode": 0,
+      "ms": 38944
+    },
+    {
+      "name": "cloudflare-build",
+      "exitCode": 0,
+      "ms": 46924
+    },
+    {
+      "name": "backend-lint",
+      "exitCode": 0,
+      "ms": 7825
+    },
+    {
+      "name": "frontend-lint",
+      "exitCode": 0,
+      "ms": 21763
+    }
+  ],
+  "backendTests": 98371,
+  "backendFiles": 250,
+  "frontendTests": 95224,
+  "frontendFiles": 227,
+  "redTests": {
+    "failed": 8,
+    "passed": 1
+  },
+  "firstFullBackend": {
+    "failed": 2,
+    "passed": 98369,
+    "cause": "HTML schema misclassified as drawing; corrected without changing activities"
+  },
+  "focusedAfterRegression": 55,
+  "frontendEditorFocused": 110,
+  "modifiedSharedLintExitCode": 0,
+  "cloudflareDryRun": true,
+  "noDeployment": true
+}

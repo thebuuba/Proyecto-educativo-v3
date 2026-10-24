@@ -1,5 +1,5 @@
 import {markEnglishTaskProvisional} from '@aula/shared'
-import {composePilotInstrument,extractTaskRequirements} from '@aula/shared'
+import {composePilotInstrument,extractTaskRequirements,scienceReportGeneratorVersion} from '@aula/shared'
 import {resolveOptativeSocialTask,optativeSocialCriteria} from '@aula/shared'
 import {resolveCommonPhysicalTask,commonPhysicalCriteria,adaptPhysicalScale} from '@aula/shared'
 import {resolveCommonFhrTask,commonFhrCriteria,adaptFhrScale} from '@aula/shared'
@@ -90,7 +90,11 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
   const optativeScience=resolveOptativeScienceTask(input.activityTitle,input.description??'',input.academicContext)
   if(optativeScience)return adaptOptativeScienceScale(editableAuthoredRecommendation(optativeScienceCriteria(optativeScience),input,input.activityType??optativeScience.activityType,optativeScience.module.id,optativeScience.grade===6?{includeFileFormats:true,requestedOnly:true}:undefined),input.description??'',optativeScience)
   const commonScience=resolveCommonScienceTask(input.activityTitle,input.description??'',input.academicContext)
-  if(commonScience)return adaptScienceScale(editableAuthoredRecommendation(commonScienceCriteria(commonScience),input,input.activityType??commonScience.activityType,`ciencias-naturaleza-comun-${commonScience.grade}`),input.description??'')
+  if(commonScience){
+    const result=adaptScienceScale(editableAuthoredRecommendation(commonScienceCriteria(commonScience),input,input.activityType??commonScience.activityType,`ciencias-naturaleza-comun-${commonScience.grade}`),input.description??'')
+    if(commonScience.reportPurpose==='DESCRIPTIVE')result.internalTrace.generatorVersion=scienceReportGeneratorVersion
+    return result
+  }
   const optativeMath=resolveOptativeMathTask(input.activityTitle,input.description??'',input.academicContext)
   if(optativeMath)return adaptMathScale(editableAuthoredRecommendation(optativeMathCriteria(optativeMath),input,input.activityType??optativeMath.activityType,optativeMath.module.id),input.description??'')
   const commonMath=resolveCommonMathTask(input.activityTitle,input.description??'',input.academicContext)

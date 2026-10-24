@@ -24,6 +24,7 @@ export interface InstrumentRecommendation {
   selectedCurriculumElements: CurriculumReference[]; criteria: RecommendationCriterion[]
   levels: { id: string; label: string; proportion: number }[]; totalScore: number; totalScoreUnits: number; scoreUnit: 0.01
   internalTrace: {
+    generatorVersion?: string
     taskRequirements?: import('./task-presentation-requirements').TaskRequirementReport
     composition?: import('./instrument-composition-pilot').PilotCompositionTrace
     mappingStatus: string; reasons: string[]; ruleId: string; activityTypeOrigin: 'EXPLICIT' | 'DETECTED' | 'DEFAULT'

@@ -2,7 +2,7 @@ import type {ContextualTopicCriterion as Criterion} from './secondary-topic-crit
 import {extractTaskRequirements,taskConditionLabel,type TaskCondition,type TaskRequirementReport} from './task-presentation-requirements'
 
 const formal=new Set(['font','font-size','emphasis','color','line-spacing','alignment','indent','paragraph-spacing','margin','paper-size','orientation','page-numbering','page-number-start'])
-const evidence=new Set(['images','tables','charts','captions','citation','citations','evidence-count','attribution','bibliography','reference-style','fidelity','content-purpose'])
+const evidence=new Set(['drawing','images','tables','charts','captions','citation','citations','evidence-count','attribution','bibliography','reference-style','fidelity','content-purpose'])
 const structure=(c:TaskCondition)=>c.property==='section'||c.property==='extent'&&/p[aá]rrafo/.test(c.unit??'')&&c.scope!=='documento'
 const groupFor=(c:TaskCondition)=>formal.has(c.property)?'format':structure(c)?'organization':evidence.has(c.property)?'evidence':'submission'
 export const actionableTaskConditions=(report:TaskRequirementReport)=>{
@@ -26,6 +26,22 @@ function row(id:string,title:string,conditions:TaskCondition[]):Criterion{
   levels[3]=`Los elementos presentan información que contradice el contenido que deberían apoyar. Condiciones solicitadas: ${details}.`
   levels[4]=`No aporta los elementos informativos solicitados: ${details}.`
  }
+ if(id==='delivery-format'){
+  const typography=conditions.filter(c=>c.property==='font'||c.property==='font-size').map(taskConditionLabel).join('; ')
+  const layout=conditions.filter(c=>c.property!=='font'&&c.property!=='font-size').map(taskConditionLabel).join('; ')
+  if(typography&&layout){
+   levels[1]=`Mantiene la tipografía solicitada (${typography}); presenta inconsistencias localizadas en la disposición o el estilo: ${layout}.`
+   levels[2]=`La fuente o el tamaño se omiten o se aplican a un ámbito distinto del indicado (${typography}); conserva parte de la disposición solicitada: ${layout}.`
+   levels[3]=`Aplica formatos aislados sin mantener la tipografía ni la disposición asignadas a los elementos: ${details}.`
+  }
+ }
+ if(id==='delivery-submission'&&conditions.some(c=>c.property==='file-format')&&conditions.some(c=>c.property==='extent')){
+  const file=conditions.filter(c=>c.property==='file-format').map(taskConditionLabel).join('; ')
+  const extent=conditions.filter(c=>c.property!=='file-format').map(taskConditionLabel).join('; ')
+  levels[1]=`El archivo utiliza una de las opciones permitidas (${file}), pero la extensión no respeta ${extent}.`
+  levels[2]=`El texto se presenta en un formato distinto de los permitidos (${file}); la cantidad de páginas no compensa ese incumplimiento. Extensión solicitada: ${extent}.`
+  levels[3]=`La entrega está incompleta: no presenta el texto completo en una de las opciones permitidas (${file}); no satisface ${extent}.`
+ }
  return {templateId:id,title,observable:levels[0],progressionLevels:levels,weight:1,coveredTaskConditionIds:conditions.map(c=>c.id),
   // One grouped check per coherent dimension; no row for each Word property.
   checklistParts:[{key:'requested',observable:`Sí solo si se cumplen las condiciones de ${title.toLowerCase()} en los ámbitos indicados: ${details}.`,progressionLevels:levels}]}
@@ -41,7 +57,7 @@ export function reconcileTaskCriteria(criteria:Criterion[],description:string,re
  // Quantity belongs to the existing table/chart/visual evidence when a provider already supplies it.
  const bound=new Set<string>()
  for(const c of conditions){
-  const pattern=c.property==='tables'?/table|tabla/:c.property==='charts'?/chart|graf/:c.property==='images'?/image|photo|visual|imagen|foto/:null
+  const pattern=c.property==='tables'?/table|tabla/:c.property==='charts'?/chart|graf/:c.property==='images'?/image|photo|visual|imagen|foto/:c.property==='drawing'?/drawing|representation/:null
   const target=pattern?result.find(r=>pattern.test(r.templateId)):undefined
   if(!target)continue
   if(!target.coveredTaskConditionIds?.includes(c.id)){

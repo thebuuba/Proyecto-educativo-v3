@@ -287,6 +287,7 @@ export {englishGradeSixStrategies} from './secondary-english-grade-six-strategie
 export {englishGradeSixGenres} from './secondary-english-grade-six-genres'
 export {deliveryConditions,deliveryCriteria,withDeliveryCriteria,TaskRequirementError} from './task-delivery-requirements'
 export {extractTaskRequirements,taskConditionLabel} from './task-presentation-requirements'
+export {scienceReportGeneratorVersion} from './science-descriptive-report'
 export type {TaskCondition,TaskRequirementReport} from './task-presentation-requirements'
 export {composePilotInstrument,extractPilotContract,pilotCompositionVersion} from './instrument-composition-pilot'
 export { teachingStrategies, teachingStrategyCatalogVersion, resolveTeachingStrategy, teachingStrategyAllowed, detectTeachingStrategy, normalizeTeachingStrategyText } from './teaching-strategies'

@@ -11,6 +11,7 @@ import {commonScienceGradeFiveTopics} from './secondary-science-grade-5'
 import {commonScienceGradeSixTopics} from './secondary-science-grade-6'
 import {resolveEvaluationTask} from './evaluation-task-contract'
 import {explicitScienceContent,sciencePresentationCriteria} from './science-presentation-criteria'
+import {descriptiveScienceReportCriteria} from './science-descriptive-report'
 
 export const commonScienceTopicsByGrade:Record<number,CommonScienceTopic[]>={1:commonScienceGradeOneTopics,2:commonScienceGradeTwoTopics,3:commonScienceGradeThreeTopics,4:commonScienceGradeFourTopics,5:commonScienceGradeFiveTopics,6:commonScienceGradeSixTopics}
 export const commonScienceModules=Object.entries(commonScienceTopicsByGrade).map(([grade,topics])=>({id:`ciencias-naturaleza-comun-${grade}`,grade:Number(grade),topics,policy:'REQUESTED_SCIENTIFIC_ACTIONS_V1'}))
@@ -28,7 +29,7 @@ export function scienceRequirementText(value:string){
   .replace(new RegExp(`\\b(?:no\\s+(?:(?:se|deben?|es necesario|hay que)\\s+)?|sin\\s+)${actionVerb}[^.;\\n]*`,'g'),'').trim()
 }
 type Action={text:string;topics:CommonScienceTopic[]}
-export type CommonScienceTask={grade:number;actions:Action[];activityType:string;technique:string}
+export type CommonScienceTask={grade:number;actions:Action[];activityType:string;technique:string;description?:string;reportPurpose?:'DESCRIPTIVE'}
 const explanation=(text:string)=>/\bexplic\w*\b/.test(text)
 const cognitiveBefore=(text:string,action:RegExp)=>{
  const operation=text.search(action),cognitive=text.search(/\b(?:explic\w*|describ\w*|analiz\w*|interpret\w*)\b/)
@@ -107,18 +108,19 @@ function focusedTopic(t:CommonScienceTopic,text:string):CommonScienceTopic{
  const label=euk&&pro?'células eucariotas y procariotas':euk?'células eucariotas':pro?'células procariotas':animal&&plant?choice?'tipo celular elegido (animal o vegetal)':'célula animal y vegetal':animal?'célula animal':plant?'célula vegetal':'células solicitadas'
  return{...t,label,relation:`la organización y las relaciones entre las estructuras y funciones solicitadas de ${label}`}
 }
-export function resolveCommonScienceTask(title:string,description:string,context?:InstrumentAcademicContext|null):CommonScienceTask|null{
+export function resolveCommonScienceTask(title:string,description:string,context?:InstrumentAcademicContext|null,descriptiveReports=true):CommonScienceTask|null{
  if(context?.level!=='SECONDARY'||context.optativeExitName)return null
  const codes=['NAT-TU','NAT-VIDA','NAT-FISICAS','NAT-BIO','NAT-QUI','NAT-FIS'],code=context.subjectCode.trim().toUpperCase()
  if(code!=='NAT'&&code!==codes[context.grade-1])return null
  const topics=commonScienceTopicsByGrade[context.grade];if(!topics)return null
- return resolveScienceTaskForTopics(title,description,context.grade,topics)
+ return resolveScienceTaskForTopics(title,description,context.grade,topics,{descriptiveReports})
 }
-type ScienceTaskOptions={additionalVerbs?:string;selectTopics?:(text:string,topics:CommonScienceTopic[])=>CommonScienceTopic[]}
+type ScienceTaskOptions={additionalVerbs?:string;selectTopics?:(text:string,topics:CommonScienceTopic[])=>CommonScienceTopic[];descriptiveReports?:boolean}
 /** Shares the scientific parser; callers retain responsibility for their academic-context guard. */
 export function resolveScienceTaskForTopics(title:string,description:string,grade:number,topics:CommonScienceTopic[],options:ScienceTaskOptions={}):CommonScienceTask|null{
  const text=scienceRequirementText(description.trim()||title)
- const find=(part:string)=>options.selectTopics?options.selectTopics(part,topics):topics.filter(t=>new RegExp(`\\b(?:${t.match})\\b`).test(part)&&(!t.exclude||!new RegExp(t.exclude).test(part)))
+ const find=(part:string)=>options.selectTopics?options.selectTopics(part,topics):topics.filter(t=>(new RegExp(`\\b(?:${t.match})\\b`).test(part)
+  ||options.descriptiveReports&&t.id==='earth-structure'&&['corteza','manto','nucleo'].every(name=>new RegExp(`\\b${name}\\b`).test(part)))&&(!t.exclude||!new RegExp(t.exclude).test(part)))
   .filter(t=>t.grade!==6||t.id!=='heat-temperature'||!/movimiento de atomos y moleculas/.test(part)||/calor|transferencia/.test(part))
   .filter(t=>t.grade!==5||t.id!=='element-families'||!/puente de hidrogeno/.test(part))
   .filter(t=>t.id!=='ecosystems'||!/flujo de energia/.test(part)||/estructura|funcion|sucesion|componentes|interacciones/.test(part))
@@ -134,7 +136,9 @@ export function resolveScienceTaskForTopics(title:string,description:string,grad
  const cellModel=(grade===2||grade===4||grade===5)&&actions.some(a=>represents(a.text)&&/maqueta|modelo/.test(a.text)&&!cognitiveBefore(a.text,/\b(?:dibuj\w*|represent\w*|constru\w*|elabor\w*)\b/))
  const activityType=actions.some(a=>procedure(a.text))?'LAB_PRACTICE':/\b(?:redact\w*|elabor\w*|escrib\w*)\b.*\binforme\b/.test(text)?'REPORT':investigates(text)?'RESEARCH':designedProduct||cellModel?'PROJECT':/\b(?:debat\w*|debate)\b/.test(text)?'DEBATE':oralRequested(text)?'ORAL_PRESENTATION':actions.some(a=>computes(a.text)||solves(a.text)||grade===5&&balances(a.text))?'EXERCISE_SET':/\b(?:elabor\w*|desarroll\w*)\b.*\bproyecto\b/.test(text)?'PROJECT':/\b(?:observ\w*|registr\w*)\b/.test(text)&&!explanation(text)?'OBSERVATION':actions.some(a=>compares(a.text)&&!contrastsHypothesis(a.text))?'COMPARISON':'ANALYSIS'
  const technique=activityType==='LAB_PRACTICE'||activityType==='OBSERVATION'?'observacion-sistematica':activityType==='DEBATE'?'debate':activityType==='ORAL_PRESENTATION'?'presentacion':activityType==='RESEARCH'||activityType==='PROJECT'?'proyecto':'analisis-producciones'
- return{grade,actions,activityType,technique}
+ const descriptive=options.descriptiveReports&&activityType==='REPORT'&&/\binforme\b[^.;]*\b(?:descriptiv\w*|describ\w*|explic\w*|compar\w*)\b/.test(text)
+  &&!investigates(text)&&!actions.some(a=>procedure(a.text))&&!/\b(?:hipotesis|resultados|procedimiento|experimento|practica experimental)\b/.test(text)
+ return{grade,actions,activityType,technique,description,...(descriptive?{reportPurpose:'DESCRIPTIVE' as const}:{})}
 }
 type Levels=ContextualTopicCriterion['progressionLevels']
 /** Each row has an observable success condition and distinct, non-personal progression. */
@@ -207,6 +211,8 @@ function actionCriteria({text,topics}:Action):ContextualTopicCriterion[]{
  return rows
 }
 export function commonScienceCriteria(task:CommonScienceTask){
+ const descriptive=descriptiveScienceReportCriteria(task)
+ if(descriptive)return descriptive
  const text=task.actions.map(a=>a.text).join('. ')
  // Preserve the authored five-evidence antecedent only for its complete requested purpose.
  if(task.grade===6&&task.actions.some(a=>a.topics.some(t=>t.id==='ohm'))

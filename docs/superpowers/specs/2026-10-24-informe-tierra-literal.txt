@@ -1,0 +1,218 @@
+CORREGIR EL CASO REAL «ASÍ ES LA TIERRA POR DENTRO»
+
+Trabaja SOLO, SIN AGENTES NI SUBAGENTES.
+
+La prueba real del usuario contradice parte de lo declarado en el informe de requisitos transversales: faltan valores de formato y se genera un instrumento de investigación para un informe descriptivo.
+
+Autorizo investigar y corregir las causas de este caso, incluyendo los componentes compartidos responsables. Implementa la solución y verifícala en el creador real. No te limites a otro informe de diagnóstico.
+
+Conserva el trabajo existente. No retomes la ampliación curricular ni reconstruyas el motor completo.
+
+1. REPRODUCCIÓN EXACTA
+
+Contexto:
+- Primero de secundaria.
+- Ciencias de la Naturaleza, código académico real correspondiente.
+- Título: Así es la Tierra por dentro.
+
+Descripción exacta:
+“Los estudiantes elaborarán un informe breve que describa la corteza, el manto y el núcleo y explique sus diferencias. Incluirán una introducción, un desarrollo de tres párrafos y una conclusión. Añadirán en el desarrollo un dibujo de las capas con sus nombres.
+
+Entregarán el trabajo en Word o PDF, con una extensión de entre dos y tres páginas, sin contar la portada. El cuerpo utilizará letra Calibri 13, interlineado 1,5 y texto justificado. El título irá centrado, en tamaño 18 y negrita. Revisarán la ortografía antes de entregar.”
+
+No cambies la consigna para facilitar su detección.
+
+Resultado observado:
+- Exige propósito/pregunta, procedimiento de investigación y análisis de resultados.
+- No evalúa expresamente corteza, manto, núcleo ni sus diferencias.
+- Omite el dibujo y sus rótulos.
+- Conserva Calibri, pero pierde tamaño 13.
+- Omite justificación del cuerpo.
+- Pierde tamaño 18 y centrado del título.
+- Menciona negrita sin asociarla claramente al título.
+- Redacta “archivo en Word o PDF sin contar la portada”, mezclando la condición de archivo con la extensión.
+- No conserva explícitamente la revisión ortográfica.
+
+Reproduce primero y registra las salidas completas.
+
+2. COMPROBAR EL ENTORNO ANTES DE ATRIBUIR LA CAUSA
+
+Identifica:
+- Rama y commit.
+- Cambios sin confirmar.
+- Catálogo efectivo.
+- Build, assets y código que carga el navegador.
+- Backend y proyecto de Development utilizados.
+
+Comprueba si el usuario está ejecutando el cambio más reciente. No atribuyas el problema a caché sin demostrarlo y no borres almacenamiento ni borradores.
+
+Si existe una diferencia de versiones, corrige el arranque local y repite el caso. No cierres la investigación solo por encontrar esa diferencia: verifica el resultado final.
+
+3. RASTREAR LA PÉRDIDA DE REQUISITOS
+
+Sigue esta misma consigna por:
+- Texto/HTML del editor y normalización.
+- Interpretación de actividad y tema.
+- Extracción de requisitos.
+- Selección del proveedor.
+- Composición temática.
+- Reconciliación de presentación, estructura y entrega.
+- Formateo.
+- Respuesta HTTP.
+- Alternativa local.
+- Conversión al editor y vista previa.
+- Snapshot al guardar y reabrir.
+
+Para cada requisito, registra dónde aparece y en qué etapa se pierde o transforma.
+
+No basta con que el extractor aislado devuelva Calibri 13 si el instrumento visible solo muestra Calibri.
+
+No declares que un requisito está cubierto por figurar en una traza interna: debe estar expresado de forma evaluable en el instrumento.
+
+4. CORREGIR LA SELECCIÓN DEL PRODUCTO
+
+Un informe descriptivo o explicativo no debe clasificarse automáticamente como investigación científica por contener “informe” o pertenecer a Ciencias.
+
+Distingue:
+- Describir y comparar contenido.
+- Investigar mediante un procedimiento.
+- Realizar una práctica experimental.
+- Informar resultados de una investigación o experimento.
+
+Activa pregunta, método, resultados experimentales o hipótesis únicamente cuando la actividad los justifique.
+
+Para este caso, conserva:
+- Descripción científica de corteza, manto y núcleo.
+- Diferencias entre las capas.
+- Dibujo con ubicación y nombres pertinentes.
+- Estructura y claridad del informe.
+- Ortografía.
+- Presentación y entrega solicitadas.
+
+No exijas características científicas, materiales o procedimientos que la consigna no pide. Reutiliza el contenido curricular existente y no impongas todos los subtemas disponibles.
+
+Corrige la selección en la causa compartida. No añadas excepciones por título exacto ni sustituyas simplemente todas las plantillas de investigación por descriptivas.
+
+5. CORREGIR VALORES Y ÁMBITOS
+
+El instrumento final debe conservar:
+
+Presentación del cuerpo:
+- Calibri.
+- Tamaño 13.
+- Interlineado 1,5.
+- Alineación justificada.
+
+Presentación del título:
+- Centrado.
+- Tamaño 18.
+- Negrita.
+
+Estructura:
+- Introducción.
+- Desarrollo de tres párrafos.
+- Conclusión.
+
+Recurso:
+- Dibujo de las capas con sus nombres.
+- Ubicado en el desarrollo.
+
+Entrega y extensión:
+- Word O PDF.
+- Entre dos y tres páginas.
+- La portada se excluye del conteo de páginas.
+
+La exclusión de portada no debe convertirse por sí sola en una obligación nueva de elaborarla.
+
+La evaluación del dibujo debe centrarse en la representación científica y los rótulos, sin exigir habilidad artística avanzada.
+
+Extrae los valores dinámicamente. Comprueba también una variante con otros tamaños y fuente, sin modificar reglas entre ejemplos.
+
+6. AGRUPACIÓN Y DESCRIPTORES
+
+No crees un criterio por cada tamaño, alineación o estilo.
+Agrupa presentación conservando sus ámbitos.
+
+Integra los tres párrafos en estructura.
+Incluye el dibujo y sus nombres donde puedan evaluarse sin duplicar puntuación.
+Conserva el contenido científico como parte principal del instrumento.
+
+No escribas descriptores genéricos como “cumple parcialmente” sin explicar qué evidencia cambia.
+No uses autonomía, acompañamiento o incertidumbre del evaluador como sustitutos de la progresión solicitada.
+No inventes tolerancias ni porcentajes arbitrarios de cumplimiento.
+
+Mantén los cuatro formatos:
+- Rúbrica.
+- Lista de cotejo.
+- Escala estimativa.
+- Lista ponderada.
+
+Respeta la elección explícita del docente y no fuerces una recomendación única solo para hacer pasar la prueba.
+
+7. PRUEBAS PEQUEÑAS QUE DISTINGAN LAS CAUSAS
+
+Además del caso exacto, verifica:
+- La misma actividad sin condiciones de formato.
+- Una variante de valores y ámbito de título/cuerpo.
+- Un informe descriptivo de otro tema ya implementado.
+- Una investigación o práctica real que sí solicite procedimiento y resultados.
+
+Define las expectativas antes de ejecutar.
+No cambies los textos ni rebajes expectativas después de observar fallos.
+
+Comprueba:
+- Contenido pertinente.
+- Ausencia de tareas inventadas.
+- Valores y ámbitos completos en el editor.
+- Alternativas y exclusiones conservadas.
+- Paridad de contenido entre servidor y alternativa local en las rutas afectadas.
+
+No extiendas el compositor a todas las asignaturas ni resuelvas ahora todas las divergencias genéricas. Documenta cualquier limitación que quede fuera.
+
+8. VERIFICACIÓN REAL Y CONSERVACIÓN
+
+En Development, utiliza una muestra ficticia nueva:
+- Introduce la consigna en el creador habitual.
+- Comprueba los cuatro formatos.
+- Verifica puntaje inicialmente vacío.
+- Asigna 20 o 17.35.
+- Edita un texto.
+- Guarda una sola vez y reabre.
+- Compara el instrumento visible con el snapshot.
+
+No regeneres instrumentos históricos ni sobrescribas borradores del usuario.
+
+Mantén selección automática/manual, estrategia, textos, pesos, identidades, confirmaciones, respuestas obsoletas, añadir/completar y opción manual al agotar candidatos.
+
+Ejecuta primero pruebas focalizadas y después los controles obligatorios. No multipliques combinaciones ni repitas suites completas sin nuevos cambios que lo justifiquen.
+
+Si una limitación de sesión o conexión bloquea el recorrido, informa exactamente hasta dónde se verificó; no presentes HTTP como prueba visual.
+
+9. RESTRICCIONES
+
+- Sin agentes ni subagentes.
+- Sin IA nueva, dependencias o rediseño.
+- Sin ampliación curricular.
+- Sin push, merge, despliegues, resets ni force push.
+- Sin modificar producción, credenciales o integraciones.
+- Una sola instancia de desarrollo.
+- Conserva históricos y catálogos congelados.
+
+No alteres globalmente el significado de un catálogo histórico para resolver este caso. Documenta cualquier cambio necesario en la versión del generador.
+
+10. INFORME FINAL OBLIGATORIO
+
+Entrega:
+- Entorno y versión realmente reproducidos.
+- Causa de la plantilla de investigación incorrecta.
+- Etapa exacta de pérdida de cada requisito.
+- Archivos y cambios realizados.
+- Tabla requisito → criterio/descriptor visible.
+- Instrumentos completos corregidos de los cuatro formatos.
+- Resultados de las variantes y controles negativos.
+- Pruebas automáticas, HTTP y navegador separadas.
+- Preservación de datos y ediciones.
+- Límites pendientes.
+- Rama, commits locales, catálogo y build servido.
+
+No declares resuelta la interpretación general de informes ni completas las asignaturas. Finaliza este encargo sin retomar la ampliación.

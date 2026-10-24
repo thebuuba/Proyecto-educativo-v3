@@ -1,5 +1,5 @@
 import {markEnglishTaskProvisional} from '@aula/shared'
-import {composePilotInstrument,extractTaskRequirements} from '@aula/shared'
+import {composePilotInstrument,extractTaskRequirements,scienceReportGeneratorVersion} from '@aula/shared'
 import {resolveOptativeSocialTask,optativeSocialCriteria,optativeSocialSelections} from '@aula/shared'
 import {resolveOptativeLanguageTask,optativeLanguageCriteria,optativeLanguageSelections,adaptOptativeLanguageScale} from '@aula/shared'
 import {resolveCommonPhysicalTask,commonPhysicalCriteria,commonPhysicalSelections,adaptPhysicalScale} from '@aula/shared'
@@ -249,6 +249,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   elements: RankedElement[], mappingStatus: string, curriculumStatus: string | null, catalog: EvaluationCatalog = evaluationCatalogCurrent, compositionMode:'SHARED'|'LEGACY'='SHARED'): InstrumentRecommendation {
   const result=recommendContent(input,context,scope,elements,mappingStatus,curriculumStatus,catalog,compositionMode)
   result.internalTrace.taskRequirements=extractTaskRequirements([input.description,input.evidenceInstructions].filter(Boolean).join('\n'))
+  if(result.criteria.some(c=>c.templateId.includes('-descriptive-')))result.internalTrace.generatorVersion=scienceReportGeneratorVersion
   return result
 }
 function recommendContent(input: RecommendationInput, context: AcademicContext | null, scope: ScopeCandidate | null,
@@ -266,7 +267,7 @@ function recommendContent(input: RecommendationInput, context: AcademicContext |
   const mathTask=catalog.mathCommonModules?.some(module=>module.grade===context?.grade)?resolveCommonMathTask(input.activityTitle,input.description??'',context):null
   const technical=resolveTechnicalTask(input.activityTitle,input.description??'',context,catalog.technicalModules??[])
   const optativeScience=resolveOptativeScienceTask(input.activityTitle,input.description??'',context,catalog.optativeScienceModules??[])
-  const commonScience=catalog.scienceCommonModules?.some(module=>module.grade===context?.grade)?resolveCommonScienceTask(input.activityTitle,input.description??'',context):null
+  const commonScience=catalog.scienceCommonModules?.some(module=>module.grade===context?.grade)?resolveCommonScienceTask(input.activityTitle,input.description??'',context,catalog.version===evaluationCatalogCurrent.version):null
   const socialModule=catalog.socialCommonModules?.find(m=>m.grade===context?.grade)
   const socialTask=socialModule?resolveCommonSocialTask(input.activityTitle,input.description??'',context,socialModule.topics):null
   const socialOptative=resolveOptativeSocialTask(input.activityTitle,input.description??'',context,catalog.optativeSocialModules??[])
