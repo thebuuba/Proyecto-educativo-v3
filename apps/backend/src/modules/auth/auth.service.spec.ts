@@ -463,6 +463,7 @@ describe('AuthService.register', () => {
       updatedAt,
     }
     const teacherRole = { id: 'role-teacher', key: 'teacher', name: 'Docente' }
+    const adminRole = { id: 'role-admin', key: 'admin', name: 'Administrador' }
     mocks.prisma.school.findFirst.mockResolvedValue({
       id: 'school-1',
       name: registerDto.schoolName,
@@ -472,7 +473,8 @@ describe('AuthService.register', () => {
       status: 'ACTIVE',
     })
     const tx = {
-      role: { upsert: vi.fn().mockResolvedValue(teacherRole) },
+      role: { upsert: vi.fn().mockImplementation(({ where }: { where: { key: string } }) => where.key === 'admin' ? adminRole : teacherRole) },
+      school: { create: vi.fn().mockResolvedValue({ id: 'personal-school-1' }) },
       appUser: { create: vi.fn().mockResolvedValue(user) },
       userRole: { create: vi.fn() },
       teacher: { create: vi.fn().mockResolvedValue({ id: 'teacher-1' }) },
@@ -507,22 +509,37 @@ describe('AuthService.register', () => {
     expect(tx.teacher.create).toHaveBeenCalledWith({
       data: expect.objectContaining({
         userId: user.id,
-        schoolId: 'school-1',
+        schoolId: 'personal-school-1',
         email: registerDto.email,
         preferredLevels: ['secondary'],
         preferredShifts: ['morning'],
         preferredModalities: ['regular'],
       }),
     })
-    expect(mocks.prisma.school.findFirst).toHaveBeenCalledWith({ where: { id: 'school-1', status: 'ACTIVE' } })
+    expect(mocks.prisma.school.findFirst).toHaveBeenCalledWith({ where: {
+      id: 'school-1', status: 'ACTIVE', slug: { not: { startsWith: 'aulabase-cuenta-' } },
+    } })
     expect(tx.role.upsert).toHaveBeenCalledWith({
       where: { key: 'teacher' },
       update: {},
       create: { key: 'teacher', name: 'Docente' },
     })
+    expect(tx.school.create).toHaveBeenCalledWith({ data: expect.objectContaining({
+      name: registerDto.schoolName,
+      slug: 'aulabase-cuenta-auth-created-user',
+    }) })
+    expect(tx.appUser.create).toHaveBeenCalledWith({ data: expect.objectContaining({
+      schoolId: 'personal-school-1',
+    }) })
     expect(tx.userRole.create).toHaveBeenCalledWith({
-      data: { userId: user.id, roleId: teacherRole.id, schoolId: 'school-1' },
+      data: { userId: user.id, roleId: teacherRole.id, schoolId: 'personal-school-1' },
     })
+    expect(tx.userRole.create).toHaveBeenCalledWith({
+      data: { userId: user.id, roleId: adminRole.id, schoolId: 'personal-school-1' },
+    })
+    expect(tx.schoolYear.upsert).toHaveBeenCalledWith(expect.objectContaining({
+      where: { schoolId_name: { schoolId: 'personal-school-1', name: '2026-2027' } },
+    }))
     expect(tx.academicPeriod.create).not.toHaveBeenCalled()
     expect(tx.grade.create).not.toHaveBeenCalled()
     expect(tx.section.create).not.toHaveBeenCalled()
@@ -530,6 +547,7 @@ describe('AuthService.register', () => {
     expect(tx.sectionSubject.create).not.toHaveBeenCalled()
     expect(result.user).toEqual({ id: user.id, email: user.email })
     expect(result.token).toBe('signed-token')
+    expect(result.roles).toEqual([teacherRole, adminRole])
   })
 
   it('rejects login with wrong password', async () => {

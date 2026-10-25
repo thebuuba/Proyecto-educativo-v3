@@ -388,7 +388,7 @@ export class AuthService {
 
 
     const selectedSchool = await prisma.school.findFirst({
-      where: { id: dto.school.id, status: 'ACTIVE' },
+      where: { id: dto.school.id, status: 'ACTIVE', slug: { not: { startsWith: 'aulabase-cuenta-' } } },
     })
     if (!selectedSchool) throw new BadRequestException('Selecciona un centro educativo válido.')
 
@@ -411,13 +411,41 @@ export class AuthService {
           update: {},
           create: { key: 'teacher', name: 'Docente' },
         })
+        const adminRole = await tx.role.upsert({
+          where: { key: 'admin' },
+          update: {},
+          create: { key: 'admin', name: 'Administrador' },
+        })
+        const accountSchool = await tx.school.create({
+          data: {
+            name: selectedSchool.name,
+            slug: `aulabase-cuenta-${authUser.id}`,
+            logoUrl: selectedSchool.logoUrl,
+            sector: selectedSchool.sector,
+            centerCode: selectedSchool.centerCode,
+            district: selectedSchool.district,
+            regionalCode: selectedSchool.regionalCode,
+            regionalName: selectedSchool.regionalName,
+            districtCode: selectedSchool.districtCode,
+            districtName: selectedSchool.districtName,
+            lat: selectedSchool.lat,
+            lng: selectedSchool.lng,
+            niveles: selectedSchool.niveles,
+            tandas: selectedSchool.tandas,
+            modalidades: selectedSchool.modalidades,
+            schoolShift: selectedSchool.schoolShift,
+            primaryModality: selectedSchool.primaryModality,
+            enabledSubsystems: selectedSchool.enabledSubsystems,
+            officialExportsEnabled: selectedSchool.officialExportsEnabled,
+          },
+        })
 
         const user = await tx.appUser.create({
           data: {
             authUserId: authUser.id,
             email,
             fullName: dto.fullName,
-            schoolId: selectedSchool.id,
+            schoolId: accountSchool.id,
             provider: authUser.app_metadata?.provider,
           },
         })
@@ -426,14 +454,21 @@ export class AuthService {
           data: {
             userId: user.id,
             roleId: teacherRole.id,
-            schoolId: selectedSchool.id,
+            schoolId: accountSchool.id,
+          },
+        })
+        await tx.userRole.create({
+          data: {
+            userId: user.id,
+            roleId: adminRole.id,
+            schoolId: accountSchool.id,
           },
         })
 
         const _teacher = await tx.teacher.create({
           data: {
             userId: user.id,
-            schoolId: selectedSchool.id,
+            schoolId: accountSchool.id,
             employeeCode: `DOC-${Date.now()}`,
             firstName,
             lastName,
@@ -446,15 +481,15 @@ export class AuthService {
         })
 
         await tx.schoolYear.updateMany({
-          where: { schoolId: selectedSchool.id, name: { not: dto.schoolYear.name }, isCurrent: true },
+          where: { schoolId: accountSchool.id, name: { not: dto.schoolYear.name }, isCurrent: true },
           data: { isCurrent: false },
         })
 
         await tx.schoolYear.upsert({
-          where: { schoolId_name: { schoolId: selectedSchool.id, name: dto.schoolYear.name } },
+          where: { schoolId_name: { schoolId: accountSchool.id, name: dto.schoolYear.name } },
           update: { isCurrent: true, status: 'ACTIVE' },
           create: {
-            schoolId: selectedSchool.id,
+            schoolId: accountSchool.id,
             name: dto.schoolYear.name,
             startDate,
             endDate,
@@ -462,7 +497,7 @@ export class AuthService {
           },
         })
 
-        return { user, roles: [teacherRole] }
+        return { user, roles: [teacherRole, adminRole] }
       },
       { timeout: 20_000 },
     )
