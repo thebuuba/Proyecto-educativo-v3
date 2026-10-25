@@ -39,11 +39,11 @@ export class SchoolsService {
       await tx.$queryRaw`SELECT pg_advisory_xact_lock(hashtext('schools:register'))::text`
       const duplicates = await tx.$queryRaw<Array<{ id: string }>>(Prisma.sql`
         SELECT id FROM schools
-        WHERE (${centerCode}::text IS NOT NULL AND UPPER(TRIM(center_code)) = ${centerCode})
+        WHERE slug NOT LIKE 'aulabase-cuenta-%' AND ((${centerCode}::text IS NOT NULL AND UPPER(TRIM(center_code)) = ${centerCode})
           OR (
             TRIM(REGEXP_REPLACE(TRANSLATE(LOWER(name), 'áéíóúüñ', 'aeiouun'), '[^a-z0-9]+', ' ', 'g')) = ${normalizedName}
             AND TRIM(REGEXP_REPLACE(TRANSLATE(LOWER(COALESCE(district, '')), 'áéíóúüñ', 'aeiouun'), '[^a-z0-9]+', ' ', 'g')) = ${normalizedDistrict}
-          )
+          ))
         ORDER BY created_at ASC LIMIT 1
       `)
       if (duplicates.length) {
@@ -119,7 +119,7 @@ export class SchoolsService {
           ORDER BY start_date DESC
           LIMIT 1
         ) sy ON true
-        WHERE s.status = 'active'
+        WHERE s.status = 'active' AND s.slug NOT LIKE 'aulabase-cuenta-%'
           AND (${matches})
       ), ranked AS (
         SELECT candidates.*,

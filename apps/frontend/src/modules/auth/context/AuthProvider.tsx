@@ -66,7 +66,7 @@ function rememberAccount(appUser: LoginResponse['appUser'], roles: Role[]) {
       email: appUser.email,
       fullName: appUser.fullName,
       avatarUrl: appUser.avatarUrl,
-      role: roles[0]?.name,
+      role: (roles.find((role) => role.key === 'admin') ?? roles[0])?.name,
     }))
   } catch { /* El inicio de sesión funciona aunque el navegador bloquee el almacenamiento. */ }
 }

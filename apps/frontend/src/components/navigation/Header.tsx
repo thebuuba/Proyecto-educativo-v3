@@ -49,7 +49,8 @@ export function Header({ onOpenSidebar, isSidebarExpanded, onToggleSidebar }: He
 
   const displayName = appUser?.fullName?.trim() || 'Usuario'
   const initials = getInitials(displayName)
-  const roleLabel = roles[0]?.key ? roleLabels[roles[0].key] : 'USUARIO'
+  const primaryRole = roles.find((role) => role.key === 'admin') ?? roles[0]
+  const roleLabel = primaryRole?.key ? roleLabels[primaryRole.key] : 'USUARIO'
   const profileMeta = periodName ? `${roleLabel} · ${periodName.toUpperCase()}` : roleLabel
   const isPlanningPage = location.pathname.startsWith('/planificaciones')
   const isCoursesPage = location.pathname === '/cursos'

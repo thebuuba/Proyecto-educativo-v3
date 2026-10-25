@@ -27,6 +27,7 @@ describe('SchoolsService', () => {
     expect(sql).toContain('WITH candidates AS')
     expect(sql).toContain('ranked AS')
     expect(sql.lastIndexOf('LIMIT')).toBeGreaterThan(sql.indexOf('ORDER BY ("textScore"'))
+    expect(sql).toContain("s.slug NOT LIKE 'aulabase-cuenta-%'")
   })
 
   it('keeps centers with the same name as separate results by id', async () => {
@@ -61,7 +62,7 @@ describe('SchoolsService', () => {
     const query = queryRaw.mock.calls[0][0]
     expect(query.sql).toContain('s.lat IS NOT NULL AND s.lng IS NOT NULL')
     expect(query.sql).toContain('distance ASC NULLS LAST')
-    expect(query.sql).not.toContain('LIKE')
+    expect(query.sql).not.toContain('normalized_name LIKE')
   })
 
   it('does not list all centers without either a name or a complete location', async () => {

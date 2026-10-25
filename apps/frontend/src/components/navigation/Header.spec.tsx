@@ -44,7 +44,7 @@ describe('Búsqueda de la cabecera', () => {
         <Header onOpenSidebar={vi.fn()} onToggleSidebar={vi.fn()} isSidebarExpanded />
       </MemoryRouter>,
     )
-    const avatar = screen.getByText('US')
+    const avatar = screen.getByText('U')
     expect(avatar).toHaveClass('rounded-full', 'size-10', 'overflow-hidden')
     expect(avatar).not.toHaveClass('rounded-xl')
   })
